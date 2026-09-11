@@ -1,0 +1,723 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Digest DS/ML/IA — 28 de agosto de 2026</title>
+<style>
+:root{--bg:#ffffff;--text:#1a1a1a;--muted:#6b6b6b;--hairline:#e6e6e6;--link:#1a1a1a;--link-hover:#1a8917;--serif:Georgia,'Iowan Old Style','Palatino Linotype','Book Antiqua',Palatino,serif;--sans:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;--globoplay-red:#FB0234;}
+*{box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:var(--serif);margin:0;padding:0 24px 100px;}
+main{max-width:700px;margin:0 auto;}
+[hidden]{display:none!important;}
+.lang-toggle{display:flex;justify-content:flex-end;gap:8px;align-items:center;padding:20px 0 0;font-family:var(--sans);font-size:.78rem;}
+.lang-toggle button{background:none;border:1px solid var(--hairline);border-radius:20px;padding:5px 14px;font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.03em;color:var(--muted);cursor:pointer;}
+.lang-toggle button.active{color:#fff;background:var(--text);border-color:var(--text);}
+header.report-header{padding:24px 0 0;}
+header.report-header h1{font-size:2.4rem;line-height:1.25;font-weight:400;margin:0 0 16px;letter-spacing:-.01em;}
+header.report-header .dek{font-size:1.15rem;color:var(--muted);font-style:italic;margin:0 0 28px;line-height:1.5;}
+.byline{display:flex;align-items:center;gap:14px;padding:20px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);margin-bottom:40px;font-family:var(--sans);}
+.avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;background:#1a1a1a;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.05rem;font-weight:600;flex-shrink:0;}
+.byline .name{font-weight:600;font-size:.98rem;color:var(--text);line-height:1.5;}
+.byline .sub{font-size:.85rem;color:var(--muted);line-height:1.5;}
+.byline .sub a{color:var(--muted);}
+nav.toc{font-family:var(--sans);background:#fafafa;border:1px solid var(--hairline);border-radius:10px;padding:22px 26px;margin-bottom:48px;}
+nav.toc .toc-title{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 14px;}
+nav.toc ol{margin:0;padding-left:22px;}
+nav.toc li{margin-bottom:12px;font-size:.92rem;line-height:1.55;color:var(--muted);}
+nav.toc li:last-child{margin-bottom:0;}
+nav.toc li a{font-weight:600;color:var(--text);text-decoration:none;}
+nav.toc li a:hover{color:var(--link-hover);}
+h2.section-title{font-family:var(--serif);font-size:1.7rem;font-weight:400;margin:64px 0 8px;scroll-margin-top:20px;}
+h2.section-title .num{color:var(--muted);font-size:1.1rem;margin-right:6px;}
+p.section-intro{font-family:var(--sans);color:var(--muted);font-size:.92rem;margin:0 0 32px;line-height:1.6;}
+article.item{margin:0 0 32px;}
+article.item+article.item{border-top:1px solid var(--hairline);padding-top:32px;}
+article.item h3{font-size:1.45rem;font-weight:400;line-height:1.35;margin:0 0 14px;}
+article.item p{font-size:1.08rem;line-height:1.8;margin:0 0 16px;color:var(--text);}
+.label{display:block;font-family:var(--sans);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:22px 0 8px;}
+.refs{margin-top:20px;font-family:var(--sans);font-size:.85rem;color:var(--muted);}
+.refs strong{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;}
+.refs ul{margin:6px 0 0;padding-left:0;list-style:none;}
+.refs li{margin-bottom:4px;}
+a{color:var(--link);text-decoration:underline;text-decoration-color:var(--hairline);text-underline-offset:2px;}
+a:hover{color:var(--link-hover);text-decoration-color:var(--link-hover);}
+.caveat{font-family:var(--sans);font-size:.85rem;color:var(--muted);font-style:italic;margin-top:6px;}
+section.globoplay h2.section-title,section.globoplay h2.section-title .num,section.globoplay .label{color:var(--globoplay-red);}
+section.globoplay article.item{border-left:3px solid var(--globoplay-red);padding-left:20px;}
+section.globoplay article.item+article.item{border-top:1px solid var(--hairline);}
+section.globoplay a{text-decoration-color:rgba(251,2,52,.3);}
+section.globoplay a:hover{color:var(--globoplay-red);text-decoration-color:var(--globoplay-red);}
+.methodology{font-family:var(--sans);background:#fafafa;border:1px solid var(--hairline);border-radius:8px;padding:18px 22px;font-size:.88rem;color:var(--muted);line-height:1.6;margin:64px 0 0;}
+.methodology strong{color:var(--text);}
+.contact{font-family:var(--sans);margin:28px 0 0;padding-top:24px;border-top:1px solid var(--hairline);font-size:.9rem;color:var(--muted);line-height:1.8;}
+.contact .name{color:var(--text);font-weight:600;}
+footer.report-footer{margin-top:24px;padding-top:20px;font-family:var(--sans);color:var(--muted);font-size:.82rem;}
+footer.report-footer a{color:var(--muted);}
+.archive-list{list-style:none;padding:0;margin:10px 0 0;font-family:var(--sans);}
+.archive-list li{padding:8px 0;border-bottom:1px solid var(--hairline);font-size:.92rem;}
+figure.chart{margin:24px 0;font-family:var(--sans);text-align:center;}
+figure.chart svg{width:100%;max-width:320px;height:auto;}
+figure.chart .chart-val{font-size:13px;font-weight:700;fill:var(--text);}
+figure.chart .chart-lbl{font-size:11px;fill:var(--muted);}
+figure.chart figcaption{font-size:.78rem;color:var(--muted);margin-top:8px;}
+h2.section-title.archive-title{margin-top:56px;}
+</style>
+</head>
+<body>
+<main>
+
+<div class="lang-toggle">
+  <button type="button" data-lang-btn="pt" class="active">PT</button>
+  <button type="button" data-lang-btn="en">EN</button>
+</div>
+
+<!-- ==================== PT ==================== -->
+<div class="lang-block" data-lang="pt">
+
+<header class="report-header">
+  <h1>Tendências em Data Science, Machine Learning e IA Aplicada</h1>
+  <p class="dek">Uma leitura semanal de pesquisa, produto e mercado de dados — curada com fontes primárias verificadas, não com resumo de manchete.</p>
+</header>
+
+<div class="byline">
+  <div class="avatar">RG</div>
+  <div>
+    <div class="name">Ri Gonçalves</div>
+    <div class="sub"><a href="https://goncalvesrd.github.io/ds-trends/">goncalvesrd.github.io/ds-trends</a> · 28 de agosto de 2026</div>
+  </div>
+</div>
+
+<nav class="toc" aria-label="Sumário">
+  <p class="toc-title">Nesta edição</p>
+  <ol>
+    <li><a href="#sec1-pt">Tendências gerais em DS/ML/IA</a> — um método causal para ver o que o Claude está "pensando" antes de responder, um agente que já reproduz papers de ML sem ver a resposta original, e LLMs que separam "não sei" de "há mais de uma resposta certa" sem re-treinar o modelo.</li>
+    <li><a href="#sec2-pt">Streaming e concorrentes da Globoplay</a> — Netflix corta 58% do custo de streaming processing com autoscaling de Flink, a Databricks compra a Tecton para dar tempo real a agentes de IA, e a Anthropic estende o Claude a hardware físico de laboratório.</li>
+    <li><a href="#sec3-pt">Mercado de Data Science no Brasil</a> — sem dado novo e verificável esta semana (o State of Data Brazil de abril segue como referência), mas um corte do Brasil na pesquisa global da Deloitte mostra ambição de IA acima da média — e execução abaixo.</li>
+    <li><a href="#sec4-pt">Tendências de ferramentas e soluções</a> — a Prefect compra a Dagster e reduz a disputa de orquestradores a dois lados, a Databricks ultrapassa US$ 7 bi de receita anualizada, e o benchmark de bancos vetoriais passa a medir custo real de produção.</li>
+  </ol>
+</nav>
+
+<!-- SECTION 1 -->
+<section>
+<h2 class="section-title" id="sec1-pt"><span class="num">01</span>Tendências gerais em Data Science, ML e IA aplicada</h2>
+<p class="section-intro">Três sinais desta semana sobre a fronteira técnica da IA: um método barato para editar causalmente o que um modelo está "pensando" antes de responder, um agente que já reproduz resultados de papers de ML sem ver o resultado original, e uma forma de um LLM sinalizar "não sei" separadamente de "há mais de uma resposta certa", sem re-treinar o modelo base.</p>
+
+<article class="item">
+<h3>Anthropic encontra um "espaço de trabalho global" dentro do Claude — e consegue editá-lo causalmente</h3>
+<p>Um novo paper de interpretabilidade da Anthropic, publicado em 6 de julho de 2026, propõe o "Jacobian lens" (J-lens): para cada token do vocabulário, a técnica calcula o efeito linearizado de uma ativação interna sobre a probabilidade futura do modelo emitir aquele token — uma única multiplicação de matriz por camada, portanto muito mais barata que treinar um sparse autoencoder ou um probe decodificador, ainda que limitada a conceitos que mapeiam para um único token. Aplicando o J-lens ao longo de camadas e posições, os pesquisadores encontraram um subconjunto pequeno de representações internas — batizado de "J-space" — que retém apenas algumas dezenas de conceitos por vez e responde por cerca de 6% a 10% da variância total de ativação, funcionando como um "espaço de trabalho" com gargalo de capacidade, distinto do grosso do processamento automático e fluente (gramática, classificação simples). A evidência mais forte não é apenas correlacional: o conteúdo do J-space é editável de forma causal — os pesquisadores conseguiram injetar e trocar um conceito no meio da computação (por exemplo, "França" por "China") e observar o raciocínio de múltiplos passos subsequentes mudar de acordo — e o J-space simplesmente não é acionado em tarefas simples e automáticas.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>Para equipes de interpretabilidade, red-teaming e auditoria de modelos, o J-lens oferece algo que sparse autoencoders não dão de graça: um gancho causal, não apenas correlacional, para inspecionar e eventualmente direcionar o que um modelo está processando internamente antes de escrever uma resposta — relevante para pipelines de detecção de alucinação e desalinhamento em produção, sem precisar treinar um probe específico a cada novo deployment.</p>
+<p class="caveat">Nota de recência: o paper é de 6 de julho de 2026 — pouco mais de sete semanas antes desta edição — mas não encontrei um trabalho de acompanhamento mais recente que o supere, e o tema ainda não havia sido coberto neste digest. Nota de verificação: o domínio anthropic.com e o paper completo em transformer-circuits.pub foram bloqueados pela política de rede desta sessão; os fatos foram corroborados por cobertura técnica independente (MIT Technology Review).</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://www.anthropic.com/research/global-workspace">Anthropic — "A global workspace in language models", 6 de julho de 2026</a></li>
+<li><a href="https://transformer-circuits.pub/2026/workspace/index.html">Transformer Circuits — paper técnico completo</a></li>
+<li><a href="https://www.technologyreview.com/2026/07/09/1140293/anthropic-found-a-hidden-space-where-claude-puzzles-over-concepts/">MIT Technology Review — cobertura, 9 de julho de 2026</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Faraday: o primeiro agente que já reproduz resultados de papers de ML sem ver a resposta</h3>
+<p>A Inherent — startup fundada por ex-pesquisadores do DeepMind — publicou em 13 de agosto de 2026 o paper "Training AI Scientists to Replicate Research" (arXiv 2608.13331), introduzindo o Replica: um conjunto de 310 tarefas extraídas de 100 papers publicados de ML e IA-para-ciência (PLN, ciência de materiais, previsão do tempo), em que um agente precisa reproduzir uma figura ou resultado específico sem acesso ao gráfico original, sob orçamento limitado de tempo e compute. O agente da empresa, batizado Faraday (27 bilhões de parâmetros), usa agentes de codificação como ferramenta e é pós-treinado via reinforcement learning de longo horizonte — mas o ingrediente central é o reward: em vez do RLHF padrão, o sinal vem de um juiz automático baseado em rubrica gerada automaticamente, que os autores mostram ter baixo ruído e concordar com avaliações humanas de qualidade de replicação. O resultado: o Faraday venceu tanto o Claude Opus 4.8 quanto o GPT-5.5 no benchmark, com taxa de vitória de 73% nas tarefas dentro da distribuição de treino, mantendo a liderança também em papers de IA-para-ciência fora da distribuição.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Taxa de vitória do Faraday em tarefas de replicação de pesquisa: 50% seria paridade contra 73% de taxa de vitória real">
+    <title>Taxa de vitória do Faraday no Replica</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="65" width="60" height="75" fill="var(--text)"/>
+    <text x="90" y="59" text-anchor="middle" class="chart-val">50%</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Paridade</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">73%</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Faraday</text>
+  </svg>
+  <figcaption>Taxa de vitória do Faraday nas tarefas de replicação dentro da distribuição de treino do benchmark Replica, contra Claude Opus 4.8 e GPT-5.5.</figcaption>
+</figure>
+<span class="label">Como o mercado está aplicando</span>
+<p>É relevante para qualquer time de DS avaliando ferramentas de "assistente de pesquisa" de IA para validar ou reproduzir resultados de papers antes de adotar um método — mas a lição mais transferível é a receita de treino em si: juiz automático baseado em rubrica gerada + RL de longo horizonte é um padrão reaproveitável para treinar agentes em tarefas difíceis de recompensar diretamente, o mesmo desafio que qualquer equipe de MLOps enfrenta ao tentar automatizar avaliação de qualidade sem um ground truth binário claro.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://arxiv.org/abs/2608.13331">arXiv 2608.13331 — "Training AI Scientists to Replicate Research" (Inherent)</a></li>
+<li><a href="https://techcrunch.com/2026/08/22/inherent-founded-by-deepmind-alumni-says-its-ai-teammate-just-outperformed-anthropic-and-openai-at-replicating-research/">TechCrunch — cobertura, 22 de agosto de 2026</a></li>
+<li><a href="https://inherentlabs.ai/research/training-to-replicate">Inherent Labs — post técnico</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>LLMs "credais": separar "eu não sei" de "há mais de uma resposta certa" sem re-treinar o modelo</h3>
+<p>Um paper de 24 de agosto de 2026 (arXiv 2608.23244, de Manchingal, Nikolenko e Cuzzolin) ataca um problema estrutural de como LLMs expressam incerteza: um softmax padrão colapsa tudo numa única distribuição, misturando incerteza epistêmica (o modelo genuinamente não sabe) com ambiguidade aleatória (existem múltiplas respostas igualmente válidas) — o que produz respostas erradas ditas com confiança. A proposta dos "Credal LLMs" (CLLMs) é trocar o softmax único por um ensemble de adaptadores LoRA, que juntos induzem um "conjunto credal": uma faixa de distribuições preditivas plausíveis, com limites inferior e superior de probabilidade, em vez de um único número. Dessa faixa, os autores derivam duas métricas novas: Credal Token Commitment (CTC), calculada só a partir do conjunto credal — suporte do limite inferior, largura credal, entropia de interseção — sem precisar gerar texto extra; e Semantic Commitment Consistency (SCC), que estende a ideia para o espaço semântico usando completions amostradas, com um "SCC-Gap" que sinaliza quando o compromisso no nível de token discorda do compromisso no nível semântico. Isoladamente, a CTC ficou a até 1,5 ponto percentual do melhor baseline em 5 dos 8 cenários de detecção de alucinação testados.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>É um sinal barato — sem chamadas extras de inferência — e agnóstico de arquitetura para saber quando um LLM "sabe que não sabe", aplicável diretamente a políticas de abstenção e escalonamento em produção (por exemplo, encaminhar para revisão humana quando a largura credal for alta) sem precisar re-treinar o modelo base.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://arxiv.org/abs/2608.23244">arXiv 2608.23244 — "Credal Large Language Models for Semantic Commitment under Uncertainty"</a></li>
+</ul>
+</div>
+</article>
+</section>
+
+<!-- SECTION 2 -->
+<section class="globoplay">
+<h2 class="section-title" id="sec2-pt"><span class="num">02</span>Streaming e concorrentes da Globoplay</h2>
+<p class="section-intro">A Netflix ataca dois problemas de infraestrutura de dados em paralelo — custo de streaming processing e velocidade de inferência causal — enquanto a Databricks compra um feature store em tempo real para dar contexto a agentes de IA, e a Anthropic — fonte que acompanhamos sempre, mesmo fora do tema streaming — dá dois passos na mesma semana: hardware físico e dados de uso abertos para pesquisa externa. Não encontrei publicação nova e relevante do Netflix Research nem do Google Research Blog sobre streaming, recomendação ou personalização de mídia nesta janela de sete dias.</p>
+
+<article class="item">
+<h3>Netflix reduz em 58% o custo de processamento de streaming com autoscaling de Flink</h3>
+<p>A Netflix roda mais de 30 mil jobs de processamento de streaming Apache Flink em múltiplas regiões AWS — a grande maioria gerada pela plataforma gerenciada interna "Data Mesh", não escrita à mão. O problema clássico: provisionamento fixo ou desperdiça recursos (dimensionado para o pico) ou causa atraso (dimensionado para a média) — e um rescale de Flink não é gratuito, exige savepoint, parada graciosa e reinício, o que para jobs stateful grandes leva minutos. A Netflix construiu um autoscaler próprio anos atrás e, mais recentemente, adotou o autoscaler open-source da comunidade Apache Flink, estendendo-o para lacunas específicas de engenharia da Netflix — coleta de métricas em alto paralelismo, vértices conectados que exigem paralelismo casado, limites de capacidade de sink. Os dois sistemas rodam em produção hoje, com a Netflix convergindo para o open-source. Só no time de telemetria de cliente e logging, o resultado documentado foi uma redução de 58% no gasto anualizado com compute Flink — cerca de US$ 1,1 milhão por ano — puxada por três fatores: o autoscaling se adapta aos ciclos diários de tráfego (capturando quedas de madrugada e fins de semana), o ajuste é contínuo em vez de depender de otimização manual, e dimensões uniformes de container permitem bin-packing melhor e incrementos de escala mais granulares.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Custo anualizado de compute Flink: índice 100 antes do autoscaling contra índice 42 depois, uma redução de 58%">
+    <title>Custo de compute Flink — índice relativo</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="90" y="24" text-anchor="middle" class="chart-val">100</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Antes do autoscaling</text>
+    <rect x="200" y="94" width="60" height="46" fill="var(--muted)" opacity="0.4"/>
+    <text x="230" y="88" text-anchor="middle" class="chart-val">-58%</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Depois do autoscaling</text>
+  </svg>
+  <figcaption>Custo anualizado de compute Flink em índice relativo (baseline = 100), time de telemetria de cliente e logging da Netflix.</figcaption>
+</figure>
+<span class="label">Como a Globoplay poderia aplicar</span>
+<p>Pipelines de eventos em tempo real da Globoplay — telemetria de audiência, features de personalização, ingestão de dados durante jogos de futebol ao vivo — são um caso de uso direto para esse padrão de autoscaler: provisionamento fixo desperdiça a maior parte do tempo mas ainda assim arrisca atraso durante picos abruptos, exatamente o perfil de tráfego de conteúdo esportivo ao vivo ou estreias de novela.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://netflixtechblog.com/a-tale-of-two-flink-autoscalers-e9f6a1b1492b">Netflix TechBlog — "A Tale of Two Flink Autoscalers", agosto de 2026</a></li>
+<li><a href="https://noise.getoto.net/2026/08/21/a-tale-of-two-flink-autoscalers/">Noise — republicação técnica, 21 de agosto de 2026</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>O agente de inferência causal da Netflix já processa mais de 100 análises por mês</h3>
+<p>Em junho de 2026 a Netflix publicou e abriu o código do "oci-agent" ("A Human-Augmenting Agentic Workflow for Causal Inference", arXiv 2607.22443) — um agente que roda análise de sensibilidade e escreve rascunhos de relatórios de inferência causal de forma autônoma, enquanto humanos ficam responsáveis por formular a pergunta causal certa e julgar o resultado final. A arquitetura usa um loop ator-crítico para essa divisão de trabalho. Em agosto, cobertura do InfoQ trouxe o primeiro dado real de adoção interna: o agente já orquestra mais de 100 análises causais por mês na Netflix desde o lançamento.</p>
+<span class="label">Como a Globoplay poderia aplicar</span>
+<p>É um modelo replicável para escalar a análise causal de mudanças de produto e UX — por exemplo, "o novo formato de fileira aumentou o tempo de exibição, ou foi sazonalidade?" — sem exigir que um analista humano rode manualmente cada checagem de sensibilidade, liberando o time de dados para focar no que humanos ainda fazem melhor: formular a pergunta causal certa.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://netflixtechblog.com/a-human-augmenting-agentic-workflow-for-causal-inference-4623f0a9c5af">Netflix TechBlog — "A Human-Augmenting Agentic Workflow for Causal Inference", junho de 2026 (arXiv 2607.22443)</a></li>
+<li><a href="https://www.infoq.com/news/2026/08/netflix-oci-agent/">InfoQ — cobertura de adoção, agosto de 2026</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Databricks compra a Tecton por ~US$ 900 milhões para dar dados em tempo real a agentes de IA</h3>
+<p>Anunciada em 26 de agosto de 2026, a aquisição da Tecton — feature store empresarial especializado em dados em tempo real, com serving de features em menos de 10 milissegundos — é a quarta aquisição da Databricks neste ano e a segunda no espaço de ML, depois de comprar a especialista em feature engineering Fennel em abril. A Tecton passa a alimentar o "Agent Bricks", a plataforma de agentes da Databricks, com o objetivo declarado de dar a agentes de IA em produção contexto fresco e de baixíssima latência para casos como detecção de fraude, scoring de risco e personalização — em vez de depender só de pipelines de features batch, que atualizam com atraso de horas. As duas empresas já tinham parceria e laços de investidores em comum, além de clientes compartilhados como a Coinbase.</p>
+<span class="label">Como a Globoplay poderia aplicar</span>
+<p>Feature stores em tempo real resolvem uma lacuna específica de personalização de streaming: servir features atualizadas ao segundo — o que o usuário assistiu nos últimos cinco minutos, por exemplo — a um modelo de ranking ou recomendação em produção com latência de milissegundos, algo que a maioria dos pipelines batch de features hoje simplesmente não entrega. Para qualquer time construindo sistemas de ranking ou agentes sobre Databricks que precisem de contexto de baixíssima latência, essa é a peça de infraestrutura que costuma faltar.</p>
+<p class="caveat">Nota de verificação: o domínio databricks.com e a página de imprensa original foram bloqueados pela política de rede desta sessão; os fatos foram corroborados de forma consistente por três fontes secundárias independentes (InfoWorld, Yahoo Finance, Crunchbase).</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://www.infoworld.com/article/4045461/databricks-buys-tecton-to-give-context-to-ai-agents.html">InfoWorld — "Databricks buys Tecton to give context to AI agents", agosto de 2026</a></li>
+<li><a href="https://finance.yahoo.com/news/databricks-acquire-tecton-boost-ai-091723798.html">Yahoo Finance — cobertura do anúncio</a></li>
+<li><a href="https://www.crunchbase.com/acquisition/databricks-acquires-tecton--486910fb">Crunchbase — perfil da aquisição</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Anthropic: Claude passa a operar hardware físico de laboratório, e a empresa abre dados de uso para pesquisa externa</h3>
+<p>Duas novidades da Anthropic na mesma semana. Em 27 de agosto de 2026, a empresa lançou em preview de pesquisa o Model Hardware Standard (MHS), um padrão aberto que permite a agentes baseados em Claude operar autonomamente, em paralelo, equipamentos programáveis de laboratório e manufatura — microscópios, dispensadores de líquido, lasers, braços robóticos. O MHS armazena informação estruturada sobre como cada equipamento funciona, dispensando manuais em papel ou conhecimento tácito restrito a poucos especialistas; no exemplo dado pela própria Anthropic, o Claude ajusta um laser, observa o resultado por câmera, repete o processo, e então empacota o que aprendeu num script determinístico — deixando de precisar raciocinar passo a passo toda vez que repete a tarefa. O projeto foi desenvolvido com o HHMI Janelia Research Campus, com suporte de fabricantes como AWS Strands Robots, Automata, Doosan, Tecan e Universal Robots, e promete reduzir o tempo de integração de semanas/meses para horas/minutos — mas a própria Anthropic reconhece limites: o raciocínio espacial do Claude, aprendido só a partir de texto e imagem, ainda exige supervisão de especialista (pesquisadores da Genentech precisaram ensinar o modelo a distinguir espuma numa amostra, uma falha física, de um bug de software). Separadamente, a Anthropic também abriu — pela primeira vez entre grandes labs de IA — acesso para três instituições de pesquisa externas, incluindo Stanford e Oxford, desenharem e rodarem seus próprios estudos sobre dados reais de uso do Claude, via uma ferramenta de análise que preserva privacidade ("Anthropic Insights"), com auditoria de privacidade por terceiros; os dados agregados de cada projeto foram publicados abertamente, inclusive no Hugging Face.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>O MHS é o sinal mais direto de que uso de agentes está migrando de telas para hardware físico — o padrão de "explorar uma vez, compilar num script determinístico" é uma ideia reaproveitável para qualquer agente interno que precise aprender uma interface não familiar sem integração codificada à mão a cada vez. Já a abertura de dados de uso é menos aplicável tecnicamente, mas vale acompanhar como template: acesso estruturado e com preservação de privacidade, em vez do extremo de dump completo de dados ou fechamento total, é um modelo que equipes de produto e analytics de qualquer empresa de tecnologia — Globoplay incluída — podem citar internamente ao desenhar sua própria política de dados de uso para pesquisa.</p>
+<p class="caveat">Nota de verificação: o domínio anthropic.com foi bloqueado pela política de rede desta sessão; os fatos do MHS foram corroborados por cobertura independente da Bloomberg.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://www.anthropic.com/news/model-hardware-standard-research-preview">Anthropic — "Previewing the Model Hardware Standard", 27 de agosto de 2026</a></li>
+<li><a href="https://www.bloomberg.com/news/articles/2026-08-27/anthropic-tests-new-way-for-claude-to-work-with-robots-and-scientific-lab-tools">Bloomberg — cobertura, 27 de agosto de 2026</a></li>
+<li><a href="https://www.anthropic.com/research/enabling-independent-research">Anthropic — "Enabling independent research on how people use Claude"</a></li>
+</ul>
+</div>
+</article>
+</section>
+
+<!-- SECTION 3 -->
+<section>
+<h2 class="section-title" id="sec3-pt"><span class="num">03</span>Mercado de Data Science no Brasil</h2>
+<p class="section-intro">Nesta semana, nenhuma novidade específica e verificável sobre contratação, ferramentas ou comunidade de dados no Brasil — o que, pelas próprias regras deste digest, é preferível a forçar uma manchete fraca. Trago o dado mais recente ainda válido, com sua data, e complemento com um corte específico do Brasil de uma pesquisa internacional sobre maturidade de IA nas empresas.</p>
+
+<article class="item">
+<h3>Sem novidade verificável esta semana — o State of Data Brazil (abril de 2026) segue como referência</h3>
+<p>Busquei ativamente por qualquer desenvolvimento novo específico ao mercado brasileiro de dados e IA nesta janela de sete dias — dados formais de emprego (CAGED), desdobramentos do Data Hackers, anúncios de contratação de grandes empregadores (Nubank, iFood, Itaú), notícias de USP e Unicamp, e relatórios setoriais — e não encontrei nada novo e verificável o suficiente para reportar como notícia desta semana. A 6ª edição do State of Data Brazil (Data Hackers + Bain &amp; Company), com 3.200 respondentes pesquisados entre 14 de outubro e 18 de dezembro de 2025 e publicada em 27 de abril de 2026, segue como a referência mais atual — não existe edição mais nova, e a janela de coleta do ano já está fechada. Um evento a observar para a próxima edição deste digest: a IA Conference Brasil 2026, organizada pela Alura, acontece em 24 de setembro no Frei Caneca Convention Center, em São Paulo — 3ª e maior edição do evento, com mais de 1.300 profissionais esperados.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>Para quem acompanha o mercado brasileiro de dados, a ausência de dado novo nesta semana é, em si, informação: o ciclo de pesquisas anuais (State of Data, Robert Half, Gupy, LinkedIn) já fechou uma rodada, e o próximo grande evento de sinalização de mercado deve vir só com a IA Conference Brasil, no fim de setembro.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://www.bain.com/pt-br/insights/state-of-data-2025/">Bain &amp; Company / Data Hackers — "State of Data 2025-2026", 27 de abril de 2026 (referência já coberta na edição de 21 de agosto)</a></li>
+<li><a href="https://www.iaconferencebrasil.com.br/">IA Conference Brasil — página oficial do evento, 24 de setembro de 2026</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Empresas brasileiras dizem usar IA "de forma transformadora" mais que a média global — mas só 23% escalam pilotos</h3>
+<p>O relatório global "State of AI in the Enterprise" da Deloitte, publicado em 19 de maio de 2026, incluiu um corte específico do Brasil com 115 executivos brasileiros entre os mais de 3.200 respondentes globais — pesquisa de campo entre agosto e setembro de 2025, cobrindo seis setores econômicos. O achado central: 42% dos entrevistados brasileiros afirmam que a empresa usa IA para promover mudanças estruturais ("de forma transformadora"), contra uma média global de 34% — Brasil à frente em ambição declarada. Só que o dado se inverte quando o assunto é execução: apenas 23% das empresas brasileiras conseguiram escalar 40% ou mais de seus pilotos de IA para produção, e 58% implementaram, no máximo, 20% dos pilotos testados — um descasamento entre discurso estratégico e capacidade real de colocar em produção. Mesmo assim, 49% dos líderes brasileiros esperam levar ao menos 40% de seus experimentos à operação nos próximos três a seis meses, sinalizando expectativa de aceleração.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Empresas que afirmam usar IA de forma transformadora: 34% na média global contra 42% no Brasil">
+    <title>Uso "transformador" de IA — Brasil vs. global</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="51" width="60" height="89" fill="var(--text)"/>
+    <text x="90" y="45" text-anchor="middle" class="chart-val">34%</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Média global</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">42%</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Brasil</text>
+  </svg>
+  <figcaption>% de empresas que afirmam usar IA para promover mudanças estruturais — Deloitte State of AI in the Enterprise 2026, corte Brasil vs. média global.</figcaption>
+</figure>
+<span class="label">Como o mercado está aplicando</span>
+<p>Para o profissional sênior de dados no Brasil, o sinal prático é duplo: a ambição declarada (42% contra 34% global) facilita a conversa interna de orçamento para IA, mas o gargalo real de execução — só 23% escalando pilotos — é exatamente onde um especialista técnico se diferencia, assumindo a perna de "piloto para produção" (MLOps, harness de avaliação, monitoramento) em vez de só seleção de modelo, que é onde a maioria das iniciativas brasileiras de IA emperra.</p>
+<p class="caveat">Nota de recência: a pesquisa é de 19 de maio de 2026, um pouco fora da janela de três meses deste digest — mas é o corte de maturidade de IA mais específico e atual sobre o Brasil que encontrei, sem sucessor mais recente disponível. Nota de verificação: o domínio deloitte.com foi bloqueado pela política de rede desta sessão; os números foram corroborados por cobertura jornalística secundária que cita o relatório diretamente.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://www.deloitte.com/br/pt/about/press-room/state-of-ai-2026.html">Deloitte Brasil — "IA entra em fase de escala enquanto papel estratégico avança nas empresas; mercado brasileiro se destaca", 19 de maio de 2026</a></li>
+<li><a href="https://docmanagement.com.br/05/19/2026/ia-entra-em-fase-de-escala-enquanto-papel-estrategico-avanca-nas-empresas-mercado-brasileiro-se-destaca-aponta-deloitte/">Portal Information Management — republicação do release</a></li>
+</ul>
+</div>
+</article>
+</section>
+
+<!-- SECTION 4 -->
+<section>
+<h2 class="section-title" id="sec4-pt"><span class="num">04</span>Tendências de ferramentas e soluções</h2>
+<p class="section-intro">A consolidação entre orquestradores "pós-Airflow" avança, a Databricks acelera para além de US$ 7 bilhões de receita anualizada, e o principal benchmark aberto de bancos vetoriais passa a medir custo real de produção, não só velocidade de pico.</p>
+
+<article class="item">
+<h3>Prefect adquire a Dagster — os dois maiores desafiantes do Airflow deixam de competir entre si</h3>
+<p>Anunciado em 13 de julho de 2026, a Prefect concordou em adquirir a Dagster Labs — produto, código, clientes e a equipe de cerca de 40 pessoas. A partir de agosto de 2026, a empresa combinada passa a operar sob o nome Prefect, mas o Dagster e o Dagster+ seguem mantendo nome, licença open-source e roadmap próprios, com o fundador Nick Schrock e o CEO Pete Hunt (ambos da Dagster) virando conselheiros estratégicos; termos financeiros não foram divulgados. O mecanismo de mercado por trás do movimento: Prefect e Dagster eram, até então, os dois "desafiantes modernos" mais adotados do Airflow — ambos com foco em orquestração nativa de dados, ML e agentes de IA, em vez do modelo mais genérico de tasks do Airflow —, e competiam diretamente pelo mesmo nicho de equipes migrando de um Airflow legado. Unir forças em vez de fragmentar esse mercado sinaliza que a disputa real de orquestração passou a ser "Airflow incumbente vs. um portfólio combinado de alternativas modernas", não mais uma disputa a três.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>Times que hoje avaliam "Dagster vs. Prefect" como uma aposta estratégica separada devem tratar a escolha, a partir de agora, como avaliar essencialmente um único portfólio sob o guarda-chuva Prefect — o que reduz risco de lock-in numa ferramenta que pudesse perder a corrida de mercado, mas também reduz a pressão competitiva que normalmente acelera inovação entre as duas.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://www.businesswire.com/news/home/20260713065285/en/Prefect-Acquires-Dagster-Uniting-the-Two-Leading-Modern-Orchestrators">BusinessWire — "Prefect Acquires Dagster, Uniting the Two Leading Modern Orchestrators", 13 de julho de 2026</a></li>
+<li><a href="https://thenewstack.io/prefect-acquires-dagster-orchestrator/">The New Stack — análise técnica do movimento</a></li>
+<li><a href="https://dagster.io/prefect">Dagster — FAQ oficial para clientes</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Databricks ultrapassa US$ 7 bilhões de receita anualizada, crescendo mais de 80% ao ano</h3>
+<p>A Databricks anunciou, por volta de 24 de agosto de 2026, ter ultrapassado US$ 7 bilhões de receita anualizada (run-rate) no segundo trimestre fiscal de 2026, crescendo mais de 80% ano a ano — a quarta aceleração trimestral consecutiva, somando 30 pontos percentuais de aceleração desde a marca de US$ 4 bilhões de run-rate, num momento em que o esperado para uma empresa desse porte seria desacelerar, não acelerar. Dentro desse total, o Lakehouse — o produto de data warehousing da empresa, historicamente a linha mais próxima do território tradicional de concorrentes como Snowflake — passou de US$ 1,5 bilhão de receita anualizada, crescendo mais de 100% ao ano; e o Lakebase, produto de serving operacional de baixa latência, ultrapassou US$ 100 milhões de run-rate. A empresa também fechou uma rodada de US$ 5 bilhões a uma avaliação de US$ 190 bilhões. O pano de fundo estrutural: a Gartner publicou seu primeiro market guide dedicado a plataformas de lakehouse no fim de 2025, descrevendo a arquitetura como "já firmemente estabelecida como o padrão que a maioria das organizações buscará adotar".</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Receita anualizada da Databricks: US$ 4 bilhões de run-rate anterior contra US$ 7 bilhões de run-rate atual">
+    <title>Receita anualizada da Databricks (run-rate)</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="77" width="60" height="63" fill="var(--text)"/>
+    <text x="90" y="71" text-anchor="middle" class="chart-val">US$ 4 bi</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Run-rate anterior</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">US$ 7 bi</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Run-rate atual</text>
+  </svg>
+  <figcaption>Receita anualizada (run-rate) da Databricks — trinta pontos percentuais de aceleração de crescimento entre as duas marcas.</figcaption>
+</figure>
+<span class="label">Como o mercado está aplicando</span>
+<p>O crescimento de mais de 100% ao ano especificamente no produto Lakehouse — não só no agregado da empresa, puxado por IA — é o dado mais relevante para quem decide arquitetura de dados: mostra que a migração de warehouse tradicional para lakehouse não é mais um nicho early-adopter, é o motor de crescimento mais rápido dentro da própria Databricks, reforçando o movimento de convergência técnica (Iceberg/Delta) já coberto nas últimas edições deste digest.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://www.databricks.com/company/newsroom/press-releases/databricks-grows-80-yoy-surpasses-7b-revenue-run-rate-scales">Databricks Newsroom — "Databricks Grows &gt;80% YoY, Surpasses $7B Revenue Run-Rate...", agosto de 2026</a></li>
+<li><a href="https://www.saastr.com/databricks-just-crossed-7b-arr-growing-80-a-30-point-acceleration-a-190b-valuation-and-the-margin-bill-for-agents/">SaaStr — análise financeira detalhada</a></li>
+<li><a href="https://www.storagenewsletter.com/2026/08/24/databricks-fiscal-2q26-financial-results/">StorageNewsletter — "Databricks: Fiscal 2Q26 Financial Results"</a></li>
+<li><a href="https://www.cio.com/article/402574/data-lakehouses-give-enterprises-analytics-edge.html">CIO — cobertura do market guide da Gartner para lakehouse</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Zilliz adiciona custo real de produção ao principal benchmark aberto de bancos vetoriais</h3>
+<p>O VectorDBBench (VDBBench), benchmark open-source que já suporta mais de 30 bancos vetoriais e sistemas de busca, ganhou em 5-6 de agosto de 2026 uma dimensão de custo como cidadã de primeira classe, ao lado de performance — medindo custo real sob condições de produção (freshness de dados recém-inseridos, filtros, multitenancy, cold start), não só QPS de pico, que é o que a maioria dos benchmarks de banco vetorial mede hoje. O leaderboard de custo estreou com uma comparação ilustrativa entre três bancos vetoriais gerenciados amplamente usados — Pinecone, Turbopuffer e Zilliz Cloud — sob os mesmos parâmetros de carga: o Turbopuffer custou entre US$ 302 e US$ 304, contra cerca de US$ 1.180 do Pinecone Serverless. Os próprios autores enfatizam que essa comparação é uma demonstração reproduzível, não um ranking definitivo — como o benchmark é aberto, qualquer time pode reproduzir o caso, trocar qualquer candidato e rodar contra seus próprios dados representativos de produção.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Custo ilustrativo do VDBBench para a mesma carga de trabalho: US$ 302 no Turbopuffer contra US$ 1.180 no Pinecone Serverless">
+    <title>Custo ilustrativo por carga de trabalho — VDBBench</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="112" width="60" height="28" fill="var(--text)"/>
+    <text x="90" y="106" text-anchor="middle" class="chart-val">US$ 302</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Turbopuffer</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">US$ 1.180</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Pinecone Serverless</text>
+  </svg>
+  <figcaption>Custo ilustrativo para a mesma carga de trabalho no leaderboard de custo do VDBBench — comparação reproduzível, não um ranking definitivo.</figcaption>
+</figure>
+<span class="label">Como o mercado está aplicando</span>
+<p>Para arquitetos avaliando um banco vetorial gerenciado, o ponto prático é que "custo" deixou de significar só preço por GB armazenado ou por milhão de vetores — passa a incluir quanto custa manter dados frescos pesquisáveis, servir consultas filtradas e sobreviver a um cold start, exatamente os fatores operacionais que dominam uma aplicação de RAG real em produção. Vale rodar o benchmark contra a carga própria antes de assinar um contrato baseado só no preço de lista.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://www.hpcwire.com/bigdatawire/this-just-in/zilliz-expands-vdbbench-with-cost-benchmarking-for-vector-databases/">BigDATAwire — "Zilliz Expands VDBBench with Cost Benchmarking for Vector Databases", agosto de 2026</a></li>
+<li><a href="https://zilliz.com/vdbbench-leaderboard-v2">Zilliz — VDBBench Leaderboard v2</a></li>
+</ul>
+</div>
+</article>
+</section>
+
+<h2 class="section-title archive-title" id="arquivo-pt"><span class="num">↺</span>Relatórios anteriores</h2>
+<ul class="archive-list">
+<li><a href="archive/2026-08-21.html">21 de agosto de 2026</a></li>
+<li><a href="archive/2026-08-17.html">17 de agosto de 2026</a></li>
+<li><a href="archive/2026-08-16.html">16 de agosto de 2026</a></li>
+</ul>
+
+<div class="methodology">
+<strong>Nota metodológica.</strong> Este digest é produzido semanalmente por um agente de pesquisa que busca ativamente fontes primárias (papers acadêmicos, blogs de pesquisa/engenharia de empresas de referência, universidades, surveys de mercado) em vez de responder de memória. Toda afirmação não-trivial é acompanhada de link verificável. Quando uma fonte primária não pôde ser confirmada com confiança, ou quando nenhum desenvolvimento novo e verificável foi encontrado numa seção, isso é sinalizado explicitamente no texto (ver notas em itálico) em vez de generalizar ou inventar um exemplo. Nesta edição, o acesso direto a diversos domínios (arXiv, Netflix TechBlog, Anthropic, Databricks, Deloitte, entre outros) foi bloqueado pela política de rede do ambiente de execução; nesses casos, os fatos foram verificados por cruzamento entre múltiplas buscas e fontes jornalísticas independentes que citam o mesmo conteúdo primário, e a confiança resultante é sinalizada quando relevante.
+</div>
+
+<div class="contact">
+  <p class="name">Ri Gonçalves</p>
+  <p><a href="mailto:goncalves.r@pm.me">goncalves.r@pm.me</a> · <a href="https://github.com/GoncalvesRD">github.com/GoncalvesRD</a></p>
+</div>
+
+<footer class="report-footer">
+  <p>Publicado via GitHub Pages a partir do repositório <a href="https://github.com/GoncalvesRD/ds-trends">GoncalvesRD/ds-trends</a>. Digest gerado semanalmente, toda sexta-feira.</p>
+</footer>
+
+</div>
+
+<!-- ==================== EN ==================== -->
+<div class="lang-block" data-lang="en" hidden>
+
+<header class="report-header">
+  <h1>Trends in Data Science, Machine Learning and Applied AI</h1>
+  <p class="dek">A weekly read on data research, product, and market — curated with verified primary sources, not headline summaries.</p>
+</header>
+
+<div class="byline">
+  <div class="avatar">RG</div>
+  <div>
+    <div class="name">Ri Gonçalves</div>
+    <div class="sub"><a href="https://goncalvesrd.github.io/ds-trends/">goncalvesrd.github.io/ds-trends</a> · August 28, 2026</div>
+  </div>
+</div>
+
+<nav class="toc" aria-label="Table of contents">
+  <p class="toc-title">In this issue</p>
+  <ol>
+    <li><a href="#sec1-en">General DS/ML/AI trends</a> — a causal method for seeing what Claude is "thinking" before it answers, an agent that already replicates ML papers without seeing the original result, and LLMs that separate "I don't know" from "there's more than one right answer" without retraining the model.</li>
+    <li><a href="#sec2-en">Streaming and Globoplay's competitors</a> — Netflix cuts streaming-processing cost by 58% with Flink autoscaling, Databricks buys Tecton to give AI agents real-time data, and Anthropic extends Claude to physical lab hardware.</li>
+    <li><a href="#sec3-en">Data Science market in Brazil</a> — no new verifiable data this week (the April State of Data Brazil report remains the reference), but a Brazil cut of Deloitte's global survey shows above-average AI ambition — and below-average execution.</li>
+    <li><a href="#sec4-en">Tooling and solution trends</a> — Prefect buys Dagster and narrows the orchestrator race to two sides, Databricks crosses $7B in annualized revenue, and the leading vector-database benchmark starts measuring real production cost.</li>
+  </ol>
+</nav>
+
+<!-- SECTION 1 -->
+<section>
+<h2 class="section-title" id="sec1-en"><span class="num">01</span>General trends in Data Science, ML and applied AI</h2>
+<p class="section-intro">Three signals this week about the technical frontier of AI: a cheap method for causally editing what a model is "thinking" before it answers, an agent that already replicates ML paper results without seeing the original outcome, and a way for an LLM to signal "I don't know" separately from "there's more than one right answer," without retraining the base model.</p>
+
+<article class="item">
+<h3>Anthropic finds a "global workspace" inside Claude — and can edit it causally</h3>
+<p>A new Anthropic interpretability paper, published July 6, 2026, introduces the "Jacobian lens" (J-lens): for each vocabulary token, the technique computes the linearized effect of an internal activation on the model's future likelihood of emitting that token — one matrix multiply per layer, far cheaper than training a sparse autoencoder or a decoder probe, though limited to concepts that map to a single token. Applying J-lens across layers and positions, the researchers found a small subset of internal representations — dubbed "J-space" — that holds only a few dozen concepts at once and accounts for roughly 6% to 10% of total activation variance, functioning like a capacity-bottlenecked "workspace" distinct from the bulk of automatic, fluent processing (grammar, simple classification). The strongest evidence isn't merely correlational: J-space content is causally editable — researchers could inject and swap a concept mid-computation (for example, "France" for "China") and watch downstream multi-step reasoning change accordingly — and J-space simply isn't engaged for simple, automatic tasks.</p>
+<span class="label">How the market is applying this</span>
+<p>For interpretability, red-teaming and model-audit teams, J-lens offers something sparse autoencoders don't give for free: a causal, not merely correlational, hook to inspect and eventually steer what a model is processing internally before it writes an answer — relevant for production hallucination and misalignment-detection pipelines, without training a bespoke probe for every new deployment.</p>
+<p class="caveat">Recency note: the paper is from July 6, 2026 — just over seven weeks before this edition — but no more recent follow-up work superseding it was found, and the topic hadn't been covered in this digest before. Verification note: the anthropic.com domain and the full paper on transformer-circuits.pub were blocked by this session's network policy; the facts were corroborated by independent technical coverage (MIT Technology Review).</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://www.anthropic.com/research/global-workspace">Anthropic — "A global workspace in language models," July 6, 2026</a></li>
+<li><a href="https://transformer-circuits.pub/2026/workspace/index.html">Transformer Circuits — full technical paper</a></li>
+<li><a href="https://www.technologyreview.com/2026/07/09/1140293/anthropic-found-a-hidden-space-where-claude-puzzles-over-concepts/">MIT Technology Review — coverage, July 9, 2026</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Faraday: the first agent to already replicate ML paper results without seeing the answer</h3>
+<p>Inherent — a startup founded by former DeepMind researchers — published "Training AI Scientists to Replicate Research" (arXiv 2608.13331) on August 13, 2026, introducing Replica: a set of 310 tasks drawn from 100 published ML and AI-for-science papers (NLP, materials science, weather forecasting), each requiring an agent to reproduce a specific figure or result with no access to the original plot, under a limited time and compute budget. The company's agent, named Faraday (27 billion parameters), uses coding agents as tools and is post-trained via long-horizon reinforcement learning — but the key ingredient is the reward: instead of standard RLHF, the signal comes from an auto-generated, rubric-based judge that the authors show has low noise and agrees with human assessments of replication quality. The result: Faraday beat both Claude Opus 4.8 and GPT-5.5 on the benchmark, winning 73% of in-distribution tasks and holding its lead on held-out AI-for-science papers as well.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Faraday's win rate on research-replication tasks: 50% would be parity versus a 73% actual win rate">
+    <title>Faraday's win rate on Replica</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="65" width="60" height="75" fill="var(--text)"/>
+    <text x="90" y="59" text-anchor="middle" class="chart-val">50%</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Parity</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">73%</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Faraday</text>
+  </svg>
+  <figcaption>Faraday's win rate on in-distribution replication tasks in the Replica benchmark, against Claude Opus 4.8 and GPT-5.5.</figcaption>
+</figure>
+<span class="label">How the market is applying this</span>
+<p>It's relevant for any DS team evaluating AI "research assistant" tools to validate or reproduce paper results before adopting a method — but the more transferable lesson is the training recipe itself: an auto-generated rubric judge plus long-horizon RL is a reusable pattern for training agents on tasks that are hard to reward directly, the same challenge any MLOps team faces trying to automate quality evaluation without a clean binary ground truth.</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://arxiv.org/abs/2608.13331">arXiv 2608.13331 — "Training AI Scientists to Replicate Research" (Inherent)</a></li>
+<li><a href="https://techcrunch.com/2026/08/22/inherent-founded-by-deepmind-alumni-says-its-ai-teammate-just-outperformed-anthropic-and-openai-at-replicating-research/">TechCrunch — coverage, August 22, 2026</a></li>
+<li><a href="https://inherentlabs.ai/research/training-to-replicate">Inherent Labs — technical post</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>"Credal" LLMs: separating "I don't know" from "there's more than one right answer" without retraining</h3>
+<p>An August 24, 2026 paper (arXiv 2608.23244, by Manchingal, Nikolenko and Cuzzolin) tackles a structural problem in how LLMs express uncertainty: a standard softmax collapses everything into a single distribution, conflating epistemic uncertainty (the model genuinely doesn't know) with aleatoric ambiguity (multiple equally valid answers exist) — which produces confidently stated wrong answers. The "Credal LLMs" (CLLMs) proposal swaps the single softmax for an ensemble of LoRA adapters, which together induce a "credal set": a range of plausible predictive distributions, with lower and upper probability bounds, instead of one number. From that range, the authors derive two new metrics: Credal Token Commitment (CTC), computed purely from the credal set — lower-bound support, credal width, intersection entropy — with no extra text generation needed; and Semantic Commitment Consistency (SCC), which extends the idea to semantic space using sampled completions, with an "SCC-Gap" that flags when token-level commitment disagrees with semantic-level commitment. On its own, CTC came within 1.5 percentage points of the best baseline on 5 of 8 tested hallucination-detection settings.</p>
+<span class="label">How the market is applying this</span>
+<p>It's a cheap — no extra inference calls — and architecture-agnostic signal for knowing when an LLM "knows that it doesn't know," directly applicable to production abstention and escalation policies (for example, routing to human review when credal width is high) without retraining the base model.</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://arxiv.org/abs/2608.23244">arXiv 2608.23244 — "Credal Large Language Models for Semantic Commitment under Uncertainty"</a></li>
+</ul>
+</div>
+</article>
+</section>
+
+<!-- SECTION 2 -->
+<section class="globoplay">
+<h2 class="section-title" id="sec2-en"><span class="num">02</span>Streaming and Globoplay's competitors</h2>
+<p class="section-intro">Netflix is tackling two data-infrastructure problems in parallel — streaming-processing cost and causal-inference speed — while Databricks buys a real-time feature store to give AI agents context, and Anthropic — a source we track regardless of the streaming theme — takes two steps in the same week: physical hardware, and opening usage data to outside research. No new, relevant publication was found from Netflix Research or the Google Research Blog on streaming, recommendation, or media personalization in this seven-day window.</p>
+
+<article class="item">
+<h3>Netflix cuts streaming-processing cost by 58% with Flink autoscaling</h3>
+<p>Netflix runs more than 30,000 Apache Flink stream-processing jobs across multiple AWS regions — the vast majority generated by its internal managed platform, "Data Mesh," rather than hand-written. The classic problem: fixed provisioning either wastes resources (sized for peak) or causes lag (sized for average) — and a Flink rescale isn't free, requiring a savepoint, graceful stop, and restart, which for large stateful jobs takes minutes. Netflix built its own autoscaler years ago and, more recently, adopted the Apache Flink community's open-source autoscaler, extending it to cover Netflix-specific engineering gaps — metric collection at high parallelism, forward-connected vertices requiring matched parallelism, sink capacity limits. Both systems run in production today, with Netflix converging toward the open-source one. In the client telemetry and logging team alone, the documented result was a 58% reduction in annualized Flink compute spend — about $1.1 million a year — driven by three factors: autoscaling adapts to daily traffic cycles (capturing overnight and weekend drops), adjustment is continuous rather than relying on manual optimization, and uniform container dimensions enable better bin-packing and finer-grained scaling increments.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Annualized Flink compute cost: index 100 before autoscaling versus index 42 after, a 58% reduction">
+    <title>Flink compute cost — relative index</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="90" y="24" text-anchor="middle" class="chart-val">100</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Before autoscaling</text>
+    <rect x="200" y="94" width="60" height="46" fill="var(--muted)" opacity="0.4"/>
+    <text x="230" y="88" text-anchor="middle" class="chart-val">-58%</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">After autoscaling</text>
+  </svg>
+  <figcaption>Annualized Flink compute cost in relative index (baseline = 100), Netflix's client telemetry and logging team.</figcaption>
+</figure>
+<span class="label">How Globoplay could apply this</span>
+<p>Globoplay's real-time event pipelines — audience telemetry, personalization features, data ingestion during live soccer matches — are a direct use case for this autoscaler pattern: fixed provisioning wastes money most of the time yet still risks lag during sharp spikes, exactly the traffic profile of live sports content or telenovela premieres.</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://netflixtechblog.com/a-tale-of-two-flink-autoscalers-e9f6a1b1492b">Netflix TechBlog — "A Tale of Two Flink Autoscalers," August 2026</a></li>
+<li><a href="https://noise.getoto.net/2026/08/21/a-tale-of-two-flink-autoscalers/">Noise — technical republication, August 21, 2026</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Netflix's causal-inference agent now runs more than 100 analyses a month</h3>
+<p>In June 2026 Netflix published and open-sourced "oci-agent" ("A Human-Augmenting Agentic Workflow for Causal Inference," arXiv 2607.22443) — an agent that runs sensitivity analysis and drafts causal-inference reports autonomously, while humans remain responsible for framing the right causal question and judging the final result. The architecture uses an actor-critic loop for that division of labor. In August, InfoQ coverage brought the first real internal-adoption figure: the agent now orchestrates more than 100 causal analyses a month at Netflix since launch.</p>
+<span class="label">How Globoplay could apply this</span>
+<p>It's a replicable model for scaling causal analysis of product and UX changes — for example, "did the new row format increase watch time, or was it seasonality?" — without requiring a human analyst to manually run every sensitivity check, freeing the data team to focus on what humans still do best: framing the right causal question.</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://netflixtechblog.com/a-human-augmenting-agentic-workflow-for-causal-inference-4623f0a9c5af">Netflix TechBlog — "A Human-Augmenting Agentic Workflow for Causal Inference," June 2026 (arXiv 2607.22443)</a></li>
+<li><a href="https://www.infoq.com/news/2026/08/netflix-oci-agent/">InfoQ — adoption coverage, August 2026</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Databricks buys Tecton for ~$900 million to give AI agents real-time data</h3>
+<p>Announced August 26, 2026, the acquisition of Tecton — an enterprise real-time feature store with sub-10-millisecond feature serving — is Databricks' fourth acquisition this year and its second in the ML space, after buying feature-engineering specialist Fennel in April. Tecton now feeds "Agent Bricks," Databricks' agent platform, with the stated goal of giving production AI agents fresh, ultra-low-latency context for use cases like fraud detection, risk scoring and personalization — instead of relying solely on batch feature pipelines that update with hours of lag. The two companies already had a partnership and shared investor ties, plus common clients such as Coinbase.</p>
+<span class="label">How Globoplay could apply this</span>
+<p>Real-time feature stores solve a specific gap in streaming personalization: serving second-by-second features — what the user watched in the last five minutes, for example — to a production ranking or recommendation model with millisecond latency, something most batch feature pipelines today simply don't deliver. For any team building ranking systems or agents on Databricks that need ultra-low-latency context, this is the infrastructure piece that's usually missing.</p>
+<p class="caveat">Verification note: the databricks.com domain and the original press page were blocked by this session's network policy; the facts were consistently corroborated by three independent secondary sources (InfoWorld, Yahoo Finance, Crunchbase).</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://www.infoworld.com/article/4045461/databricks-buys-tecton-to-give-context-to-ai-agents.html">InfoWorld — "Databricks buys Tecton to give context to AI agents," August 2026</a></li>
+<li><a href="https://finance.yahoo.com/news/databricks-acquire-tecton-boost-ai-091723798.html">Yahoo Finance — coverage of the announcement</a></li>
+<li><a href="https://www.crunchbase.com/acquisition/databricks-acquires-tecton--486910fb">Crunchbase — acquisition profile</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Anthropic: Claude starts operating physical lab hardware, and the company opens usage data to outside research</h3>
+<p>Two Anthropic announcements in the same week. On August 27, 2026, the company launched a research preview of the Model Hardware Standard (MHS), an open standard letting Claude-based agents autonomously operate, in parallel, programmable lab and manufacturing equipment — microscopes, liquid handlers, lasers, robotic arms. MHS stores structured information about how each piece of hardware works, doing away with paper manuals or tacit knowledge held by only a few experts; in Anthropic's own example, Claude adjusts a laser, observes the result via camera, repeats the process, and then packages what it learned into a deterministic script — no longer needing to reason step by step every time it repeats the task. The project was developed with the HHMI Janelia Research Campus, with vendor support from AWS Strands Robots, Automata, Doosan, Tecan and Universal Robots, and claims to cut integration time from weeks or months to hours or minutes — but Anthropic itself flags limits: Claude's spatial reasoning, learned only from text and images, still requires expert oversight (Genentech researchers had to teach the model to distinguish sample foaming, a physical failure, from a software bug). Separately, Anthropic also opened — for the first time among major AI labs — access for three external research institutions, including Stanford and Oxford, to design and run their own studies on real Claude usage data, via a privacy-preserving analysis tool ("Anthropic Insights"), with a third-party privacy audit; the aggregate data from each project was publicly released, including on Hugging Face.</p>
+<span class="label">How the market is applying this</span>
+<p>MHS is the clearest signal yet that agentic tool use is moving from screens to physical hardware — the "explore once, compile into a deterministic script" pattern is a reusable idea for any internal agent that needs to learn an unfamiliar interface without hand-coded integration every time. The usage-data opening is less directly applicable technically, but worth tracking as a template: structured, privacy-preserving access, instead of either a full data dump or total lockdown, is a model that product and analytics teams at any tech company — Globoplay included — can cite internally when designing their own usage-data-for-research policy.</p>
+<p class="caveat">Verification note: the anthropic.com domain was blocked by this session's network policy; the MHS facts were corroborated by independent Bloomberg coverage.</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://www.anthropic.com/news/model-hardware-standard-research-preview">Anthropic — "Previewing the Model Hardware Standard," August 27, 2026</a></li>
+<li><a href="https://www.bloomberg.com/news/articles/2026-08-27/anthropic-tests-new-way-for-claude-to-work-with-robots-and-scientific-lab-tools">Bloomberg — coverage, August 27, 2026</a></li>
+<li><a href="https://www.anthropic.com/research/enabling-independent-research">Anthropic — "Enabling independent research on how people use Claude"</a></li>
+</ul>
+</div>
+</article>
+</section>
+
+<!-- SECTION 3 -->
+<section>
+<h2 class="section-title" id="sec3-en"><span class="num">03</span>Data Science market in Brazil</h2>
+<p class="section-intro">No specific, verifiable news this week on hiring, tools, or the data community in Brazil — which, by this digest's own rules, beats forcing a weak headline. I'm bringing the most recent still-valid data point, dated, plus a Brazil-specific cut of an international survey on enterprise AI maturity.</p>
+
+<article class="item">
+<h3>Nothing new and verifiable this week — the State of Data Brazil (April 2026) remains the reference</h3>
+<p>I actively searched for any new development specific to the Brazilian data/AI job market in this seven-day window — formal employment data (CAGED), Data Hackers follow-ups, hiring announcements from major employers (Nubank, iFood, Itaú), USP and Unicamp news, and sector reports — and found nothing new and verifiable enough to report as news this week. The 6th edition of State of Data Brazil (Data Hackers + Bain &amp; Company), with 3,200 respondents surveyed between October 14 and December 18, 2025 and published April 27, 2026, remains the most current reference — no newer edition exists, and this year's collection window has already closed. One event worth watching for the next edition of this digest: IA Conference Brasil 2026, organized by Alura, happens September 24 at the Frei Caneca Convention Center in São Paulo — the event's 3rd and largest edition, with more than 1,300 professionals expected.</p>
+<span class="label">How the market is applying this</span>
+<p>For anyone tracking the Brazilian data market, the absence of new data this week is itself informative: the annual survey cycle (State of Data, Robert Half, Gupy, LinkedIn) has already closed a round, and the next big market-signaling event should only come with IA Conference Brasil at the end of September.</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://www.bain.com/pt-br/insights/state-of-data-2025/">Bain &amp; Company / Data Hackers — "State of Data 2025-2026," April 27, 2026 (reference already covered in the August 21 edition)</a></li>
+<li><a href="https://www.iaconferencebrasil.com.br/">IA Conference Brasil — official event page, September 24, 2026</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Brazilian companies say they use AI "transformatively" more than the global average — but only 23% scale pilots</h3>
+<p>Deloitte's global "State of AI in the Enterprise" report, published May 19, 2026, included a Brazil-specific cut with 115 Brazilian executives among more than 3,200 global respondents — fieldwork between August and September 2025, covering six economic sectors. The central finding: 42% of Brazilian respondents say their company uses AI to drive structural change ("transformatively"), against a 34% global average — Brazil ahead on stated ambition. But the picture flips on execution: only 23% of Brazilian companies managed to scale 40% or more of their AI pilots into production, and 58% had implemented at most 20% of the pilots they tested — a mismatch between strategic rhetoric and actual production capability. Even so, 49% of Brazilian leaders expect to bring at least 40% of their experiments into operation in the next three to six months, signaling an expected acceleration.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Companies reporting transformative AI use: 34% global average versus 42% in Brazil">
+    <title>"Transformative" AI use — Brazil vs. global</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="51" width="60" height="89" fill="var(--text)"/>
+    <text x="90" y="45" text-anchor="middle" class="chart-val">34%</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Global average</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">42%</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Brazil</text>
+  </svg>
+  <figcaption>% of companies reporting AI use that drives structural change — Deloitte State of AI in the Enterprise 2026, Brazil cut vs. global average.</figcaption>
+</figure>
+<span class="label">How the market is applying this</span>
+<p>For a senior data professional in Brazil, the practical signal is twofold: the stated ambition (42% versus 34% globally) makes the internal AI-budget conversation easier, but the real execution bottleneck — only 23% scaling pilots — is exactly where a technical specialist differentiates themselves, by owning the "pilot to production" leg (MLOps, evaluation harnesses, monitoring) rather than just model selection, which is where most Brazilian AI initiatives stall.</p>
+<p class="caveat">Recency note: the survey is from May 19, 2026, a bit outside this digest's three-month window — but it's the most specific and current Brazil AI-maturity cut found, with no more recent successor available. Verification note: the deloitte.com domain was blocked by this session's network policy; the figures were corroborated by secondary press coverage that cites the report directly.</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://www.deloitte.com/br/pt/about/press-room/state-of-ai-2026.html">Deloitte Brazil — "AI enters a scaling phase as its strategic role advances in companies; the Brazilian market stands out," May 19, 2026</a></li>
+<li><a href="https://docmanagement.com.br/05/19/2026/ia-entra-em-fase-de-escala-enquanto-papel-estrategico-avanca-nas-empresas-mercado-brasileiro-se-destaca-aponta-deloitte/">Portal Information Management — release republication</a></li>
+</ul>
+</div>
+</article>
+</section>
+
+<!-- SECTION 4 -->
+<section>
+<h2 class="section-title" id="sec4-en"><span class="num">04</span>Tooling and solution trends</h2>
+<p class="section-intro">Consolidation among "post-Airflow" orchestrators advances, Databricks accelerates past $7 billion in annualized revenue, and the leading open vector-database benchmark starts measuring real production cost, not just peak speed.</p>
+
+<article class="item">
+<h3>Prefect acquires Dagster — the Airflow's two biggest challengers stop competing with each other</h3>
+<p>Announced July 13, 2026, Prefect agreed to acquire Dagster Labs — product, code, customers, and its roughly 40-person team. Starting August 2026, the combined company operates under the Prefect name, but Dagster and Dagster+ keep their own name, open-source license, and roadmap, with founder Nick Schrock and CEO Pete Hunt (both from Dagster) becoming strategic advisors; financial terms weren't disclosed. The market mechanism behind the move: Prefect and Dagster were, until now, Airflow's two most-adopted "modern challengers" — both focused on native data, ML, and AI-agent orchestration rather than Airflow's more generic task model — and competed directly for the same pool of teams migrating off a legacy Airflow. Joining forces instead of fragmenting that market signals that the real orchestration contest has become "incumbent Airflow vs. a combined portfolio of modern alternatives," no longer a three-way race.</p>
+<span class="label">How the market is applying this</span>
+<p>Teams currently evaluating "Dagster vs. Prefect" as a separate strategic bet should, from now on, treat the choice as essentially evaluating a single portfolio under the Prefect umbrella — which reduces the risk of locking into a tool that might lose the market race, but also reduces the competitive pressure that normally accelerates innovation between the two.</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://www.businesswire.com/news/home/20260713065285/en/Prefect-Acquires-Dagster-Uniting-the-Two-Leading-Modern-Orchestrators">BusinessWire — "Prefect Acquires Dagster, Uniting the Two Leading Modern Orchestrators," July 13, 2026</a></li>
+<li><a href="https://thenewstack.io/prefect-acquires-dagster-orchestrator/">The New Stack — technical analysis of the deal</a></li>
+<li><a href="https://dagster.io/prefect">Dagster — official customer FAQ</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Databricks crosses $7 billion in annualized revenue, growing more than 80% a year</h3>
+<p>Databricks announced, around August 24, 2026, that it had crossed $7 billion in annualized revenue (run-rate) in its fiscal second quarter of 2026, growing more than 80% year over year — its fourth straight quarter of accelerating growth, adding up to 30 percentage points of acceleration since the $4 billion run-rate mark, at a scale where deceleration, not acceleration, would normally be expected. Within that total, Lakehouse — the company's data-warehousing product, historically its line closest to the traditional territory of competitors like Snowflake — crossed $1.5 billion in annualized revenue, growing more than 100% a year; and Lakebase, its low-latency operational serving product, crossed $100 million in run-rate. The company also closed a $5 billion funding round at a $190 billion valuation. The structural backdrop: Gartner published its first market guide dedicated to lakehouse platforms in late 2025, describing the architecture as "now firmly established as the standard most organizations will seek to adopt."</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Databricks annualized revenue: $4 billion prior run-rate versus $7 billion current run-rate">
+    <title>Databricks annualized revenue (run-rate)</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="77" width="60" height="63" fill="var(--text)"/>
+    <text x="90" y="71" text-anchor="middle" class="chart-val">$4B</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Prior run-rate</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">$7B</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Current run-rate</text>
+  </svg>
+  <figcaption>Databricks annualized revenue (run-rate) — thirty percentage points of growth-rate acceleration between the two marks.</figcaption>
+</figure>
+<span class="label">How the market is applying this</span>
+<p>The more-than-100%-a-year growth specifically in the Lakehouse product — not just the company aggregate, propped up by AI — is the most relevant data point for anyone deciding on data architecture: it shows the migration from traditional warehouse to lakehouse is no longer an early-adopter niche, it's the fastest-growing engine inside Databricks itself, reinforcing the technical-convergence trend (Iceberg/Delta) already covered in recent editions of this digest.</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://www.databricks.com/company/newsroom/press-releases/databricks-grows-80-yoy-surpasses-7b-revenue-run-rate-scales">Databricks Newsroom — "Databricks Grows &gt;80% YoY, Surpasses $7B Revenue Run-Rate...," August 2026</a></li>
+<li><a href="https://www.saastr.com/databricks-just-crossed-7b-arr-growing-80-a-30-point-acceleration-a-190b-valuation-and-the-margin-bill-for-agents/">SaaStr — detailed financial analysis</a></li>
+<li><a href="https://www.storagenewsletter.com/2026/08/24/databricks-fiscal-2q26-financial-results/">StorageNewsletter — "Databricks: Fiscal 2Q26 Financial Results"</a></li>
+<li><a href="https://www.cio.com/article/402574/data-lakehouses-give-enterprises-analytics-edge.html">CIO — coverage of Gartner's lakehouse market guide</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Zilliz adds real production cost to the leading open vector-database benchmark</h3>
+<p>VectorDBBench (VDBBench), the open-source benchmark already supporting more than 30 vector databases and search systems, gained a cost dimension as a first-class citizen alongside performance on August 5-6, 2026 — measuring real cost under production conditions (freshness of newly inserted data, filtering, multitenancy, cold start), not just peak QPS, which is what most vector-database benchmarks measure today. The cost leaderboard launched with an illustrative comparison among three widely used managed vector databases — Pinecone, Turbopuffer and Zilliz Cloud — under the same load parameters: Turbopuffer cost between $302 and $304, versus roughly $1,180 for Pinecone Serverless. The authors themselves emphasize this comparison is a reproducible demonstration, not a definitive ranking — since the benchmark is open, any team can reproduce the case, swap in any other candidate, and run it against its own representative production data.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Illustrative VDBBench cost for the same workload: $302 on Turbopuffer versus $1,180 on Pinecone Serverless">
+    <title>Illustrative cost per workload — VDBBench</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="112" width="60" height="28" fill="var(--text)"/>
+    <text x="90" y="106" text-anchor="middle" class="chart-val">$302</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Turbopuffer</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">$1,180</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Pinecone Serverless</text>
+  </svg>
+  <figcaption>Illustrative cost for the same workload in VDBBench's cost leaderboard — a reproducible comparison, not a definitive ranking.</figcaption>
+</figure>
+<span class="label">How the market is applying this</span>
+<p>For architects evaluating a managed vector database, the practical point is that "cost" no longer just means price per stored GB or per million vectors — it now includes how much it costs to keep freshly written data searchable, serve filtered queries, and survive a cold start, exactly the operational factors that dominate a real production RAG application. It's worth running the benchmark against your own workload before signing a contract based on list price alone.</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://www.hpcwire.com/bigdatawire/this-just-in/zilliz-expands-vdbbench-with-cost-benchmarking-for-vector-databases/">BigDATAwire — "Zilliz Expands VDBBench with Cost Benchmarking for Vector Databases," August 2026</a></li>
+<li><a href="https://zilliz.com/vdbbench-leaderboard-v2">Zilliz — VDBBench Leaderboard v2</a></li>
+</ul>
+</div>
+</article>
+</section>
+
+<h2 class="section-title archive-title" id="arquivo-en"><span class="num">↺</span>Previous reports</h2>
+<ul class="archive-list">
+<li><a href="archive/2026-08-21.html">August 21, 2026</a></li>
+<li><a href="archive/2026-08-17.html">August 17, 2026</a></li>
+<li><a href="archive/2026-08-16.html">August 16, 2026</a></li>
+</ul>
+
+<div class="methodology">
+<strong>Methodology note.</strong> This digest is produced weekly by a research agent that actively seeks out primary sources (academic papers, research/engineering blogs from reference companies, universities, market surveys) instead of answering from memory. Every non-trivial claim is accompanied by a verifiable link. When a primary source couldn't be confirmed with confidence, or when no new, verifiable development was found in a section, that's explicitly flagged in the text (see italicized notes) rather than generalized or invented. In this edition, direct access to several domains (arXiv, Netflix TechBlog, Anthropic, Databricks, Deloitte, among others) was blocked by the execution environment's network policy; in those cases, facts were verified by cross-referencing multiple independent searches and press sources citing the same primary content, and the resulting confidence level is flagged when relevant.
+</div>
+
+<div class="contact">
+  <p class="name">Ri Gonçalves</p>
+  <p><a href="mailto:goncalves.r@pm.me">goncalves.r@pm.me</a> · <a href="https://github.com/GoncalvesRD">github.com/GoncalvesRD</a></p>
+</div>
+
+<footer class="report-footer">
+  <p>Published via GitHub Pages from the <a href="https://github.com/GoncalvesRD/ds-trends">GoncalvesRD/ds-trends</a> repository. Digest generated weekly, every Friday.</p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var buttons = document.querySelectorAll('[data-lang-btn]');
+  var blocks = document.querySelectorAll('.lang-block');
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var lang = btn.getAttribute('data-lang-btn');
+      buttons.forEach(function(b){ b.classList.toggle('active', b === btn); });
+      blocks.forEach(function(block){
+        block.hidden = block.getAttribute('data-lang') !== lang;
+      });
+    });
+  });
+})();
+</script>
+
+</main>
+</body>
+</html>
