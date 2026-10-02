@@ -1,9 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Digest DS/ML/IA — 25 de setembro de 2026</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digest DS/ML/IA — 2 de outubro de 2026</title>
 <style>
 :root{--bg:#ffffff;--text:#1a1a1a;--muted:#6b6b6b;--hairline:#e6e6e6;--link:#1a1a1a;--link-hover:#1a8917;--serif:Georgia,'Iowan Old Style','Palatino Linotype','Book Antiqua',Palatino,serif;--sans:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;--globoplay-red:#FB0234;}
 *{box-sizing:border-box;}
@@ -72,428 +72,189 @@ h2.section-title.archive-title{margin-top:56px;}
   <button type="button" data-lang-btn="en">EN</button>
 </div>
 
-<!-- ==================== PT ==================== -->
 <div class="lang-block" data-lang="pt">
 
 <header class="report-header">
   <h1>Tendências em Data Science, Machine Learning e IA Aplicada</h1>
-  <p class="dek">Uma leitura semanal de pesquisa, produto e mercado de dados — curada com fontes primárias verificadas, não com resumo de manchete.</p>
+  <p class="dek">Claude passa 21 horas sozinho numa busca genômica e volta com um candidato a mecanismo do tipo CRISPR, a Databricks expõe seu catálogo de governança como um servidor MCP único, e o dbt reescreve seu motor inteiro em Rust.</p>
 </header>
 
 <div class="byline">
   <div class="avatar">RG</div>
   <div>
     <div class="name">Ri Gonçalves</div>
-    <div class="sub"><a href="https://goncalvesrd.github.io/ds-trends/">goncalvesrd.github.io/ds-trends</a> · 25 de setembro de 2026</div>
+    <div class="sub"><a href="https://goncalvesrd.github.io/ds-trends/">goncalvesrd.github.io/ds-trends</a> · 2 de outubro de 2026</div>
   </div>
 </div>
 
-<nav class="toc" aria-label="Sumário">
+<nav class="toc">
   <p class="toc-title">Nesta edição</p>
   <ol>
-    <li><a href="#sec1-pt">Tendências gerais em DS/ML/IA</a> — a Anthropic mostra um agente autônomo superando pesquisadores humanos de segurança em horas, o Google Research troca raciocínio caro em tempo de inferência por um retriever de difusão 12-20x mais rápido, e um novo paper expõe como muitos benchmarks de agentes medem o scaffold em vez do modelo.</li>
-    <li><a href="#sec2-pt">Streaming e concorrentes da Globoplay</a> — a Netflix detalha GenRec e GenPage, dois sistemas generativos de produção que comprimem contexto e colapsam pipelines para cortar custo e latência, e a Anthropic corta o preço do novo Opus 5.5 em até 40%.</li>
-    <li><a href="#sec3-pt">Mercado de Data Science no Brasil</a> — o State of Data Brazil 2025-2026 mostra profissionais remotos ganhando quase o dobro dos presenciais, a fidelização por contraproposta perdendo força, e a Unicamp elevando seu hub de IA para saúde a Centro de Pesquisa Aplicada da FAPESP.</li>
-    <li><a href="#sec4-pt">Tendências de ferramentas e soluções</a> — Snowflake e Databricks convergem no Apache Iceberg como padrão de lakehouse, a Prefect compra a Dagster Labs, a Hugging Face desativa seu próprio servidor de inferência a favor do vLLM/SGLang, e a intenção de adotar retrieval híbrido triplica em um trimestre.</li>
+    <li><a href="#sec1-pt">Tendências gerais em Data Science / ML / IA aplicada</a> — um detector de contaminação sintética para dados de treino, e o Google inverte a lógica de geração de dados para agentes de function-calling.</li>
+    <li><a href="#sec2-pt">Streaming e concorrentes da Globoplay</a> — Claude aponta um candidato a mecanismo do tipo CRISPR numa busca genômica autônoma; a Databricks expõe seu catálogo de governança via MCP e corta pela metade a latência de busca.</li>
+    <li><a href="#sec3-pt">Mercado de Data Science no Brasil</a> — o Inter formaliza parceria com o Data Hackers, e o State of Data Brazil revela quem os profissionais de dados mais admiram no país e no mundo.</li>
+    <li><a href="#sec4-pt">Tendências de ferramentas e soluções</a> — o dbt abre o motor Fusion em Rust com parsing até 10x mais rápido, e o Ray Data ganha operadores nativos de GPU que cortam até 80% do custo de deduplicação.</li>
   </ol>
 </nav>
 
-<!-- SECTION 1 -->
-<section>
-<h2 class="section-title" id="sec1-pt"><span class="num">01</span>Tendências gerais em Data Science, ML e IA aplicada</h2>
-<p class="section-intro">Três sinais desta semana sobre a fronteira técnica: pesquisa que usa agentes para fazer pesquisa sobre si mesma, um novo padrão arquitetural para substituir raciocínio caro em tempo de inferência, e um alerta metodológico sobre a confiabilidade dos benchmarks de agentes que o mercado usa para escolher modelos.</p>
+<h2 class="section-title" id="sec1-pt"><span class="num">01</span>Tendências gerais em Data Science, Machine Learning e IA aplicada</h2>
+<p class="section-intro">Duas peças sobre a mesma dor: como garantir a qualidade dos dados que alimentam os próprios modelos, seja para evitar degradação por retroalimentação sintética, seja para treinar agentes de function-calling sem pagar o preço de anotação manual.</p>
 
 <article class="item">
-<h3>A Anthropic mostra que um agente autônomo pode fazer pesquisa de alinhamento sozinho — e superar humanos em horas, a uma fração do custo</h3>
-<p>Em "Automated Researchers Can Reliably Mitigate Alignment Failures" (28 de agosto de 2026), a Anthropic descreve um Automated Alignment Researcher (AAR) — um agente rodando Claude Sonnet 5 de forma autônoma — recebendo um checkpoint inicial e desalinhado de um modelo mais forte (um Opus 4.8 em estágio inicial) e a tarefa de corrigir seu comportamento sem supervisão passo a passo. Ao longo de aproximadamente 60 horas de trabalho autônomo, o AAR testou mais de 50 ideias de treinamento até convergir para um método construído sobre cerca de 2.400 exemplos curados. Aplicadas a 10 modos de falha de alinhamento bem caracterizados — sicofantia, reward hacking, comportamento enganoso, entre outros — as intervenções desenhadas pelo AAR reduziram significativamente todas as falhas-alvo mantendo a capacidade geral do modelo, e as correções generalizaram para benchmarks não vistos, auditorias comportamentais multi-turno e até para modelos até 4,7x maiores do que aquele em que o AAR foi originalmente treinado.</p>
-<p>O ponto mais forte do paper é a comparação direta com humanos: 28 pesquisadores de segurança de IA com experiência média de 2,5 anos tiveram até 8 horas cada para propor uma correção. O melhor método produzido pelo AAR superou, em média, a melhor proposta humana — e chegou lá em apenas 6 horas de otimização automatizada, custando cerca de US$ 4 por hora de inferência via API, contra os cerca de US$ 150 por hora de um pesquisador humano.</p>
-<figure class="chart">
-  <svg viewBox="0 0 320 170" role="img" aria-label="Tempo para superar a melhor proposta humana: orçamento humano de 8 horas contra 6 horas do agente autônomo AAR">
-    <title>Tempo até superar a melhor proposta humana</title>
-    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
-    <rect x="60" y="30" width="60" height="110" fill="var(--text)"/>
-    <text x="90" y="24" text-anchor="middle" class="chart-val">8h</text>
-    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Pesquisadores humanos</text>
-    <rect x="200" y="57" width="60" height="83" fill="var(--muted)" opacity="0.4"/>
-    <text x="230" y="51" text-anchor="middle" class="chart-val">6h</text>
-    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Agente autônomo (AAR)</text>
-  </svg>
-  <figcaption>Tempo até produzir a melhor correção para uma falha de alinhamento — Anthropic Research, ago. 2026.</figcaption>
-</figure>
+<h3>Um "detector de contaminação" para dados sintéticos: pesquisadores lançam o SynthSentry contra o colapso de modelos</h3>
+<p>Modelos cada vez mais treinam sobre dados gerados por outros modelos — seja por conveniência, seja porque dados humanos de qualidade estão ficando escassos em certos domínios. O risco conhecido como "model collapse" é sutil: a fluência do texto sobrevive, mas as caudas da distribuição e a precisão factual se deterioram a cada geração recursiva, porque erros e vieses do gerador se acumulam e se amplificam em vez de se cancelar. Um paper publicado em setembro apresenta o SynthSentry, um protocolo de avaliação construído sobre validação cruzada "leave-one-generator-out" (testar a detecção contra geradores nunca vistos no treino do detector), acompanhado de um toolkit de pontuação e um benchmark rotulado com múltiplas gerações sintéticas. O diferencial é uma análise de falsos positivos estratificada por domínio, que separa artefatos típicos de geração sintética de estruturas que já são nativas de textos jurídicos, clínicos e de código-fonte — áreas onde um detector ingênuo tende a confundir formalidade ou repetição estrutural com sinal de contaminação.</p>
 <span class="label">Como o mercado está aplicando</span>
-<p>O paper é explícito sobre o escopo: são 10 falhas já bem caracterizadas, não auto-aperfeiçoamento recursivo aberto. Ainda assim, é um dado concreto e quantificado no debate sobre "IA fazendo P&D sobre si mesma" que molda roadmaps de laboratórios de fronteira em 2026 — o padrão emergente é usar LLMs agênticos como "pesquisadores internos" para loops de otimização estreitos e mensuráveis (busca de estratégia de fine-tuning, desenho de avaliação), além do uso já consolidado como copiloto de código.</p>
+<p>Times que usam LLMs para gerar dados de treinamento sintético — prática hoje rotineira em fine-tuning e em pipelines de RAG — não têm, na maioria dos casos, nenhuma etapa de due diligence sobre esses dados antes de colocá-los em produção. Uma ferramenta como essa aponta para um próximo item óbvio de checklist em MLOps: auditar a procedência sintética de um dataset da mesma forma que hoje se audita viés ou vazamento de dados de teste, antes de qualquer re-treino.</p>
 <div class="refs">
 <strong>Referências</strong>
-<ul>
-<li><a href="https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures">Anthropic Research — "Automated Researchers Can Reliably Mitigate Alignment Failures"</a></li>
-<li><a href="https://arxiv.org/abs/2608.28945">arXiv 2608.28945</a></li>
-<li><a href="https://techcrunch.com/2026/08/28/an-anthropic-researcher-just-gave-us-a-peek-at-self-improving-ai/">TechCrunch — cobertura, 28 de agosto de 2026</a></li>
-</ul>
+<ul><li><a href="https://arxiv.org/abs/2609.12353">arXiv 2609.12353 — "SynthSentry: Detecting Synthetic Data Contamination in Language Model Training Data"</a></li></ul>
 </div>
 </article>
 
 <article class="item">
-<h3>Google Research substitui raciocínio caro em tempo de inferência por um retriever de difusão — e corta latência em até 20x</h3>
-<p>Em "Bypassing inference bottlenecks: Accelerating complex AI search with Retrieve-for-Train" (15 de setembro de 2026), o Google Research detalha o R4T, técnica para o problema de "query fan-out" em busca com IA — transformar uma consulta ampla em um conjunto grande, diverso e não redundante de subconsultas. Em vez de um LLM autorregressivo gastar centenas de tokens de cadeia de raciocínio planejando esse fan-out em tempo de inferência — custo que escala mal em lotes grandes — a equipe move o raciocínio caro para treinamento offline via RL e depois o destila num modelo de difusão pequeno (53,9 milhões de parâmetros) que gera todo o conjunto de resultados numa única passada paralela, não autorregressiva, pelo espaço de embeddings contínuo.</p>
-<p>O mecanismo resolve também um problema de qualidade específico de geração sequencial: o "colapso parafrástico", quando subconsultas geradas token a token convergem para o mesmo significado em vez de cobrir facetas diferentes da pergunta original. O artigo técnico completo, "Efficient, Property-Aligned Fan-Out Retrieval via RL-Compiled Diffusion" (ICML 2026), enquadra isso como um padrão arquitetural mais amplo: decodificação paralela por difusão pode substituir geração autorregressiva sequencial especificamente para saídas de valor-conjunto (set-valued outputs) — relevante para qualquer pipeline agêntico com planejamento caro em tempo de inferência, não só busca.</p>
-<figure class="chart">
-  <svg viewBox="0 0 320 170" role="img" aria-label="Latência em lote de 1024 requisições: cerca de 50 segundos com LLM autorregressivo contra 4,21 segundos com o retriever de difusão R4T">
-    <title>Latência em lote de 1024 — fan-out de consultas</title>
-    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
-    <rect x="60" y="30" width="60" height="110" fill="var(--text)"/>
-    <text x="90" y="24" text-anchor="middle" class="chart-val">~50s</text>
-    <text x="90" y="158" text-anchor="middle" class="chart-lbl">LLM autorregressivo</text>
-    <rect x="200" y="131" width="60" height="9" fill="var(--muted)" opacity="0.4"/>
-    <text x="230" y="125" text-anchor="middle" class="chart-val">4,21s</text>
-    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Retriever de difusão (R4T)</text>
-  </svg>
-  <figcaption>Latência de fan-out em lote de 1024 requisições — Google Research Blog, set. 2026.</figcaption>
-</figure>
+<h3>Google inverte a lógica de geração de dados para agentes: primeiro a resposta, depois a pergunta — e chega a 99,8% de aproveitamento</h3>
+<p>A forma padrão de gerar dados de treino para agentes de function-calling é: gerar uma pergunta de usuário e, em seguida, anotar manualmente (ou via busca em árvore) a cadeia de chamadas de ferramentas que a resolveria — um processo caro, lento e sujeito a falhas de anotação quando a cadeia é complexa. O ToolGrad, publicado no blog do Google Research em setembro (e aceito como ACL 2026 Findings), inverte essa ordem: primeiro constrói cadeias de uso de ferramentas válidas, de forma iterativa, guiado por "gradientes textuais" — críticas em linguagem natural que funcionam como sinal de correção a cada passo, de forma análoga a um gradiente numérico, mas aplicado a texto — e só depois sintetiza a pergunta de usuário que naturalmente levaria àquela cadeia. O resultado, batizado ToolGrad-500, atinge uma taxa de aproveitamento de 99,8% a um custo de geração mais baixo que o método tradicional; modelos Gemma-3 de 12 bilhões de parâmetros ajustados sobre esse dataset superam baselines bem maiores no Berkeley Function Calling Leaderboard.</p>
 <span class="label">Como o mercado está aplicando</span>
-<p>Diretamente aplicável a sistemas de RAG e pipelines de recuperação agêntica em produção com orçamentos de latência apertados: é uma instância concreta da tendência de 2026 de "compilar" raciocínio que antes acontecia em tempo de inferência em artefatos treinados uma única vez e servidos rápido — padrão que já aparece também em pilhas de agentes fortemente destiladas. Times de DS construindo RAG que esbarram em paredes de latência com expansão de consulta baseada em cadeia de raciocínio têm aqui uma alternativa arquitetural concreta, não apenas "usar um modelo menor".</p>
+<p>Para quem treina ou ajusta agentes de function-calling, o resultado reforça um ponto que vem se acumulando: o gargalo real costuma ser a qualidade do dado de demonstração, não o tamanho do modelo. Isso significa que times menores, sem orçamento de compute de um laboratório de ponta, podem competir investindo em engenharia de pipeline de dados em vez de em escala de parâmetros.</p>
 <div class="refs">
 <strong>Referências</strong>
 <ul>
-<li><a href="https://research.google/blog/bypassing-inference-bottlenecks-accelerating-complex-ai-search-with-retrieve-for-train/">Google Research Blog — "Bypassing inference bottlenecks: Accelerating complex AI search with Retrieve-for-Train"</a></li>
-<li><a href="https://www.marktechpost.com/2026/09/16/google-research-introduces-retrieve-for-train-r4t-an-rl-compiled-diffusion-retriever-for-12x-to-20x-faster-query-fan-out/">MarkTechPost — cobertura técnica com números, 16 de setembro de 2026</a></li>
+<li><a href="https://research.google/blog/toolgrad-efficient-tool-use-dataset-generation-with-textual-gradients/">Google Research Blog — "ToolGrad: Efficient Tool-use Dataset Generation with Textual 'Gradients'"</a></li>
+<li><a href="https://arxiv.org/abs/2508.04086">arXiv 2508.04086 (ACL 2026 Findings)</a></li>
 </ul>
 </div>
 </article>
 
-<article class="item">
-<h3>Muitos benchmarks de agentes medem o scaffold, não o modelo — e a correção muda o ranking</h3>
-<p>Um paper submetido em 6 de setembro de 2026, "The Double Measurement Confound in Agent Benchmarks", formaliza um problema já suspeitado informalmente em todo o ecossistema de benchmarks de agentes: muitos benchmarks amplamente usados confundem a capacidade do modelo com a capacidade do scaffold fixo ao redor dele — decisões críticas de execução como retries, heurísticas de escolha de ferramenta e recuperação de erro — e, separadamente, muitos scorers avaliam a forma da saída ou metadados em vez da correção real (ground truth). Os autores chamam isso de "double measurement confound".</p>
-<p>No estudo de caso dos autores — ComtradeBench, um benchmark adversarial de uso de ferramentas em dados de comércio exterior — dois modelos de fronteira (Kimi e Claude) pontuaram 97,5, praticamente empatados com um script baseado em regras, sem nenhum LLM no loop, que pontuou 96,8. Mais revelador ainda: sob o scorer existente, um conjunto de registros fabricado/incorreto pontuou 0,987 — o mesmo valor do conjunto de registros genuinamente correto. Os autores propõem um protocolo de reparo — "de-scaffolding" (mover decisões críticas de execução do scaffold para o modelo testado), scoring por ground truth em vez de forma, e reportar métricas de confiabilidade além da média (pior caso, risco de cauda). Aplicando as duas correções ao experimento pré-registrado, um ranking "quase plano" — em que modelos são indistinguíveis entre si e de uma linha de base sem LLM — vira um espectro real que separa os modelos por robustez entre seeds.</p>
-<figure class="chart">
-  <svg viewBox="0 0 320 170" role="img" aria-label="Pontuação no ComtradeBench sob o scorer original: 97,5 para LLMs de fronteira contra 96,8 para um script sem nenhum LLM">
-    <title>ComtradeBench — pontuação sob o scorer original</title>
-    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
-    <rect x="60" y="30" width="60" height="110" fill="var(--text)"/>
-    <text x="90" y="24" text-anchor="middle" class="chart-val">97,5</text>
-    <text x="90" y="158" text-anchor="middle" class="chart-lbl">LLM de fronteira</text>
-    <rect x="200" y="31" width="60" height="109" fill="var(--muted)" opacity="0.4"/>
-    <text x="230" y="25" text-anchor="middle" class="chart-val">96,8</text>
-    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Script sem LLM</text>
-  </svg>
-  <figcaption>Pontuação no benchmark ComtradeBench antes da correção de de-scaffolding e ground-truth scoring — arXiv 2609.09218, set. 2026.</figcaption>
-</figure>
-<span class="label">Como o mercado está aplicando</span>
-<p>É um alerta prático direto para qualquer time de DS/ML escolhendo modelo ou framework para fluxos agênticos em produção com base em leaderboards públicos: um escore alto pode refletir engenharia de scaffold e leniência do scorer, não qualidade de raciocínio do modelo em si. Times avaliando agentes deveriam exigir — ou construir — avaliações com scoring por ground truth, de-scaffolding e variância entre seeds reportada, em vez de confiar num único número médio de leaderboard.</p>
-<div class="refs">
-<strong>Referências</strong>
-<ul>
-<li><a href="https://arxiv.org/abs/2609.09218">arXiv 2609.09218 — "The Double Measurement Confound in Agent Benchmarks"</a></li>
-</ul>
-</div>
-</article>
-</section>
-
-<!-- SECTION 2 -->
 <section class="globoplay">
 <h2 class="section-title" id="sec2-pt"><span class="num">02</span>Streaming e concorrentes da Globoplay</h2>
-<p class="section-intro">A Netflix publicou dois sistemas generativos de produção em sequência — um para ranqueamento, outro para montagem de home — que compartilham o mesmo princípio: comprimir contexto e colapsar pipelines multi-estágio em uma única passada de modelo. A Anthropic, acompanhada à parte por ser fonte prioritária do autor, cortou o preço do seu modelo mais recente em até 40%.</p>
+<p class="section-intro">Nesta semana, Netflix Research e Netflix TechBlog não publicaram nada novo que se encaixasse em streaming, recomendação, personalização, dados ou infraestrutura de mídia — os dois posts mais recentes do TechBlog (18 e 25 de setembro) tratam de gestão de dependências Java e identidade de workload em nuvem, fora do escopo desta seção. Google Research também não trouxe nada novo em recomendação ou personalização de mídia desde o retriever de difusão já coberto na edição passada. Por isso, o destaque desta semana é da Anthropic — fonte que acompanhamos sempre, mesmo fora do tema streaming — e da Databricks, com duas novidades sobre como dar a agentes de IA acesso confiável a dados corporativos.</p>
 
 <article class="item">
-<h3>Netflix substitui décadas de engenharia de features por um LLM nativo de recomendação</h3>
-<p>No Netflix TechBlog, "GenRec: Towards LLM-Native Recommendation at Netflix" (julho de 2026, com artigo técnico companheiro no arXiv) descreve o GenRec, primeiro passo em produção da Netflix para substituir sua esteira de ranqueamento madura — baseada em milhares de features manualmente projetadas — por um ranker nativo de LLM, construído sobre um modelo de fundação pós-treinado internamente, não um modelo de API genérico.</p>
-<p>O treinamento segue duas fases: a Fase 1 adapta um LLM open-source ao domínio de catálogo e comportamento de membros da Netflix (entendimento de conteúdo e capacidade de seguir instruções); a Fase 2 pós-treina em históricos de usuário verbalizados como texto, metadados de itens e contexto, somando cabeças de pontuação cientes do catálogo e objetivos ponderados por recompensa ligados à satisfação de longo prazo do membro — não apenas cliques de curto prazo. O ponto crucial de viabilidade econômica: a equipe comprimiu a representação de contexto serializado por item de cerca de 5.000 para 1.700 tokens, com degradação offline desprezível — é essa compressão que torna um ranker de LLM tratável na escala de QPS da Netflix. Os números reportados: cerca de 40x menos exemplos rotulados na Fase 2 do que o sistema de produção usa, ainda assim com ganho offline de MRR de +1,6%; teste A/B online, cobrindo cerca de 10% do tráfego da Netflix em superfícies de recomendação com computação em lote, mostrou ganhos estatisticamente significativos tanto em engajamento de curto quanto de longo prazo.</p>
+<h3>A Anthropic deixa Claude sozinho por 21 horas numa busca genômica — e ele volta com um candidato a mecanismo do tipo CRISPR</h3>
+<p>Em 23 de setembro, a Anthropic anunciou um novo grupo e laboratório de pesquisa em ciências da vida, e usou como primeiro resultado público uma descoberta feita quase inteiramente por agentes autônomos. Cerca de 950 instâncias do Claude rodaram em paralelo por 21 horas, consumindo 210 milhões de tokens, para vasculhar mais de 200 mil transcriptases reversas (enzimas que copiam RNA em DNA) catalogadas em bancos de dados genômicos. Os agentes sinalizaram 3.500 novos sistemas candidatos e, a partir daí, reduziram o funil aos 20 mais promissores, produzindo relatórios legíveis por humanos para que cientistas da própria Anthropic validassem em laboratório. Um desses candidatos — batizado ART ("array-associated reverse transcriptase"), encontrado principalmente em bacteriófagos — combina uma transcriptase reversa, um gene parceiro e um array de repetições de DNA igualmente espaçadas que, em experimentos iniciais, se mostram expressas como pequenos RNAs. Essa combinação específica de características só havia sido vista, até hoje, num punhado de outros sistemas — entre eles o CRISPR. A Anthropic é explícita sobre o limite do que foi provado: a função do ART ainda é desconhecida, nenhum experimento demonstrou edição genética, e a investigação sobre sua função real segue em andamento.</p>
+<span class="label">O que isso sinaliza para quem trabalha com dados</span>
+<p>Do ponto de vista de um Data Scientist, o interessante não é a biologia, e sim a arquitetura do processo: a Anthropic montou uma pipeline de "ciência em lote" em que centenas de agentes rodam heurísticas de triagem em paralelo sobre um espaço de busca massivo, e só então escalam humanos para validar um funil já reduzido a duas dezenas de itens. É o mesmo padrão de busca agêntica com humano-no-loop a jusante que já aparece em descoberta de materiais e triagem de fraude — a genômica é apenas o domínio mais vistoso em que a empresa decidiu demonstrar o conceito publicamente.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul><li><a href="https://www.anthropic.com/news/claude-discovers-novel-enzyme-system">Anthropic — "Claude discovers a novel enzyme system"</a></li></ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Databricks transforma seu catálogo de governança num servidor MCP único — e qualquer agente de IA passa a "falar a língua do negócio"</h3>
+<p>Assistentes de uso geral como ChatGPT, Claude, Microsoft Copilot e agentes de coding conseguem, hoje, consultar dados corporativos — mas sem contexto de negócio, não sabem qual tabela é a fonte confiável de uma métrica, o que essa métrica realmente significa, ou quem tem permissão para ver o quê. O Genie One MCP, que a Databricks tornou disponível de forma geral em 22 de setembro, resolve isso expondo a "Genie Ontology" — definições de métricas aprovadas, relações entre dados, autoridade de fonte e regras de permissão — através de um único servidor Model Context Protocol. Qualquer agente externo conectado a esse servidor herda automaticamente acesso governado e consciente de permissões a dados estruturados e não estruturados, em vez de ter que inferir (ou inventar) a lógica de negócio por conta própria.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>Isso é sintoma de uma mudança maior: o MCP está se consolidando como a camada de integração padrão entre "onde os dados vivem" (warehouses e lakehouses) e "onde os agentes vivem" (assistentes de terceiros), deslocando parte do trabalho de governança de pipelines de ETL para contratos de contexto que qualquer agente externo consegue consumir diretamente — um movimento que volta a aparecer na seção de ferramentas desta edição.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul><li><a href="https://www.databricks.com/blog/genie-one-mcp-give-any-ai-agent-right-business-context">Databricks Blog — "Genie One MCP: Give any AI Agent the Right Business Context"</a></li></ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Databricks corta pela metade a latência de busca "de qualidade de fronteira" ao decidir, em tempo real, quando vale a pena buscar mais</h3>
+<p>O Instructed-Retriever-1 da Databricks já incorporava esquemas de dados corporativos e instruções customizadas usando test-time scaling paralelo para melhorar a precisão de recuperação com baixa latência. O problema é que perguntas complexas de múltiplos saltos (multi-hop) se beneficiam de busca sequencial — o modelo refina a consulta iterativamente, acumulando evidência a cada passo —, o que é mais lento. A nova versão, Adaptive Instructed-Retriever, combina os dois modos: usa busca paralela por padrão e só aciona passos sequenciais adicionais de busca quando o ganho esperado de qualidade compensa o custo extra, em vez de aplicar o mesmo orçamento de computação a toda consulta. Em benchmarks internos da Databricks, o modelo atinge a qualidade de modelos de referência do mercado a uma latência média ponta a ponta de 5,8 segundos — mais do que o dobro da velocidade de modelos comparáveis.</p>
 <figure class="chart">
-  <svg viewBox="0 0 320 170" role="img" aria-label="Contexto serializado por item: cerca de 5.000 tokens antes contra 1.700 tokens no GenRec">
-    <title>Compressão de contexto no GenRec</title>
+  <svg viewBox="0 0 320 170" role="img" aria-label="Comparação de latência média de busca: modelos comparáveis em cerca de 11,6 segundos contra 5,8 segundos do Adaptive Instructed-Retriever">
+    <title>Latência média de busca ponta a ponta</title>
     <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
-    <rect x="60" y="30" width="60" height="110" fill="var(--text)"/>
-    <text x="90" y="24" text-anchor="middle" class="chart-val">5.000 tokens</text>
-    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Contexto por item (antes)</text>
-    <rect x="200" y="103" width="60" height="37" fill="var(--muted)" opacity="0.4"/>
-    <text x="230" y="97" text-anchor="middle" class="chart-val">1.700 tokens</text>
-    <text x="230" y="158" text-anchor="middle" class="chart-lbl">GenRec (compactado)</text>
+    <rect x="60" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="24" text-anchor="middle" class="chart-val">~11,6s</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Modelos comparáveis</text>
+    <rect x="200" y="85" width="60" height="55" fill="var(--text)"/>
+    <text x="230" y="79" text-anchor="middle" class="chart-val">5,8s</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Adaptive Instructed-Retriever</text>
   </svg>
-  <figcaption>Compressão do contexto serializado por item — corte de ~3x no custo de inferência. Netflix TechBlog, jul. 2026.</figcaption>
+  <figcaption>Latência média ponta a ponta reportada pela Databricks para o Adaptive Instructed-Retriever; o valor "~11,6s" é estimado a partir da razão de "mais de 2x" divulgada pela empresa, não uma medição direta divulgada por ela.</figcaption>
 </figure>
-<span class="label">Como o mercado está aplicando</span>
-<p>É o padrão industrial concreto de "LLM como ranker" substituindo uma pilha two-tower/GBDT — relevante para qualquer time, incluindo o da Globoplay, avaliando se modelos generativos podem substituir ou aumentar seu próprio pipeline de recomendação. As técnicas de eficiência (compressão de tokens, objetivos ponderados por recompensa de longo prazo) são o que torna esse tipo de ranking tratável em escala real de produto, não apenas um experimento de pesquisa.</p>
+<span class="label">Aplicação em produção</span>
+<p>Para equipes de dados que hoje pagam o preço de latência de pipelines RAG multi-hop — comuns em assistentes corporativos que cruzam dados tabulares com documentos —, a lição de engenharia importa mais que o produto específico: alocar computação de busca de forma condicional, gastando passos extras só quando o ganho esperado compensa, é o mesmo princípio de test-time scaling adaptativo que já apareceu em modelos de raciocínio, agora replicado na camada de retrieval.</p>
 <div class="refs">
 <strong>Referências</strong>
-<ul>
-<li><a href="https://netflixtechblog.com/genrec-towards-llm-native-recommendation-at-netflix-f20be6f643e3">Netflix TechBlog — "GenRec: Towards LLM-Native Recommendation at Netflix"</a></li>
-<li><a href="https://arxiv.org/abs/2608.10257">arXiv 2608.10257 — "GenRec: An LLM-Backed Recommendation Ranker at Netflix"</a></li>
-</ul>
+<ul><li><a href="https://www.databricks.com/blog/adaptive-instructed-retriever-frontier-quality-search-2x-lower-latency">Databricks Blog — "Adaptive Instructed-Retriever: Frontier-Quality Search at 2x Lower Latency"</a></li></ul>
 </div>
 </article>
-
-<article class="item">
-<h3>A Netflix trocou seu pipeline de montagem da home por um único transformer generativo — e ficou mais rápida, não mais lenta</h3>
-<p>"GenPage: Towards End-to-End Generative Homepage Construction at Netflix" (Netflix TechBlog, final de junho de 2026) descreve como a Netflix substituiu seu pipeline multi-estágio de montagem de home — geração de candidatos, seleção de fileiras, ranqueamento, layout — por um único transformer que gera de forma autorregressiva a home inteira, estruturada e com múltiplas fileiras, em uma única passada, tratando o contexto do usuário e da requisição como um "prompt". O treinamento segue receita estilo LLM: pré-treino em páginas de produção históricas, seguido de pós-treino via classificação binária ponderada ou reinforcement learning.</p>
-<p>Dois achados chamam atenção: enriquecer o prompt de entrada ajudou mais do que aumentar o tamanho do modelo, e o pós-treino por RL aumentou a diversidade de fileiras e títulos na home mesmo sem otimizar explicitamente para isso — um efeito colateral emergente do desenho do objetivo. E, apesar de ser um modelo maior e autorregressivo, o GenPage melhorou a latência de serving frente ao pipeline anterior, porque colapsa várias chamadas sequenciais de microsserviço numa única passada direta.</p>
-<figure class="chart">
-  <svg viewBox="0 0 320 170" role="img" aria-label="Latência de serving ponta a ponta em índice: 100 no pipeline anterior contra 80 no GenPage, uma queda de 20%">
-    <title>Latência de serving — pipeline anterior vs. GenPage</title>
-    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
-    <rect x="60" y="30" width="60" height="110" fill="var(--text)"/>
-    <text x="90" y="24" text-anchor="middle" class="chart-val">Índice 100</text>
-    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Pipeline anterior</text>
-    <rect x="200" y="52" width="60" height="88" fill="var(--muted)" opacity="0.4"/>
-    <text x="230" y="46" text-anchor="middle" class="chart-val">Índice 80</text>
-    <text x="230" y="158" text-anchor="middle" class="chart-lbl">GenPage</text>
-  </svg>
-  <figcaption>Latência de serving ponta a ponta, índice relativo (-20%). Netflix TechBlog, jun. 2026.</figcaption>
-</figure>
-<span class="label">Como o mercado está aplicando</span>
-<p>Diretamente aplicável se a Globoplay estiver avaliando migrar de uma arquitetura modular de home ("fileiras + ranker") para um modelo generativo único. O artigo é honesto sobre uma surpresa real: generativo não é sinônimo de mais lento — em teste A/B online, o GenPage também produziu um lift de +0,24% na métrica central de decisão de engajamento da Netflix (p&lt;0,001), um efeito percentual pequeno mas estatisticamente robusto, típico de plataformas com N muito grande.</p>
-<div class="refs">
-<strong>Referências</strong>
-<ul>
-<li><a href="https://netflixtechblog.com/genpage-towards-end-to-end-generative-homepage-construction-at-netflix-77146fba8a08">Netflix TechBlog — "GenPage: Towards End-to-End Generative Homepage Construction at Netflix"</a></li>
-<li><a href="https://arxiv.org/abs/2606.31031">arXiv 2606.31031</a></li>
-</ul>
-</div>
-</article>
-
-<article class="item">
-<h3>Netflix separa decisão "rápida" e "lenta" para reduzir fadiga de notificação</h3>
-<p>Em "Thinking Fast & Slow for a Personalized Notification System" (Netflix TechBlog, junho de 2026), a Netflix descreve uma política hierárquica de notificações dividida em duas camadas: uma política "lenta", semanal e estratégica, que define a frequência de envio por canal, e uma política "rápida", tática e em tempo real, que decide qual mensagem enviar agora — modelada diretamente no System 1/System 2 de Kahneman. Separar as duas decisões evita que um único modelo monolítico otimize simultaneamente "quanto comunicar" e "o que comunicar", e acabe superenviando.</p>
-<span class="label">Como o mercado está aplicando</span>
-<p>Relevante para o próprio problema de fadiga de notificação push/CRM da Globoplay: separar a decisão de cadência da decisão de conteúdo/momento é um padrão de desenho aplicável mesmo sem replicar a arquitetura exata da Netflix.</p>
-<p class="caveat">Não encontramos, nas fontes disponíveis, um número de lift divulgado publicamente para este sistema — citamos o item pelo mecanismo de desenho, não por uma métrica de resultado.</p>
-<div class="refs">
-<strong>Referências</strong>
-<ul>
-<li><a href="https://netflixtechblog.com/thinking-fast-slow-for-a-personalized-notification-system-4d89b26525cd">Netflix TechBlog — "Thinking Fast & Slow for a Personalized Notification System"</a></li>
-</ul>
-</div>
-</article>
-
-<article class="item">
-<h3>Anthropic lança Claude Opus 5.5: capacidade no patamar do Fable 5.1, 40% mais barato</h3>
-<p>Em "Introducing Claude Opus 5.5" (22 de setembro de 2026), a Anthropic lançou o primeiro modelo da nova família "Claude 5.5": desempenho comparável ao Claude Fable 5.1 — o flagship anterior da empresa — mas com custo substancialmente menor e maior velocidade. A própria Anthropic enquadra o lançamento como uma geração de custo/eficiência, não um salto de capacidade: mesmo patamar de avaliação, serving mais barato. Os números: tokens de entrada a US$ 4/milhão (ante US$ 5, -20%), saída a US$ 20/milhão (ante US$ 25, -20%), leitura de cache a US$ 0,20/milhão (ante US$ 0,50, -60%) — cerca de 40% mais barato no geral em cargas de trabalho típicas, e cerca de 30% mais rápido na geração de saída que o Opus 5.</p>
-<figure class="chart">
-  <svg viewBox="0 0 320 170" role="img" aria-label="Custo por carga de trabalho típica em índice: 100 no Opus 5 contra 60 no Opus 5.5, uma queda de 40%">
-    <title>Custo por carga de trabalho típica — Opus 5 vs. Opus 5.5</title>
-    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
-    <rect x="60" y="30" width="60" height="110" fill="var(--text)"/>
-    <text x="90" y="24" text-anchor="middle" class="chart-val">Índice 100</text>
-    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Opus 5</text>
-    <rect x="200" y="74" width="60" height="66" fill="var(--muted)" opacity="0.4"/>
-    <text x="230" y="68" text-anchor="middle" class="chart-val">Índice 60</text>
-    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Opus 5.5</text>
-  </svg>
-  <figcaption>Custo por carga de trabalho típica, índice relativo (-40%). Anthropic Newsroom, set. 2026.</figcaption>
-</figure>
-<span class="label">Como o mercado está aplicando</span>
-<p>Para qualquer time rodando inferência de LLM em produção — recomendação, personalização, geração de descrição, moderação, atendimento — a curva de custo por token caindo 20-60% a cada geração muda a conta de "dá para rodar isso em produção". Vale reavaliar orçamentos de inferência a cada trimestre, não anualmente, especialmente em funcionalidades onde o custo de inferência hoje é a restrição que limita a escala, como em rankers baseados em LLM (ver GenRec, acima).</p>
-<div class="refs">
-<strong>Referências</strong>
-<ul>
-<li><a href="https://www.anthropic.com/news/claude-opus-5-5">Anthropic Newsroom — "Introducing Claude Opus 5.5"</a></li>
-</ul>
-</div>
-</article>
-
-<p class="caveat">Nesta edição, não encontramos publicação recente (últimos ~3 meses) do <a href="https://research.google/blog/">Google Research</a> ou do <a href="https://www.databricks.com/blog">Databricks Blog</a> especificamente sobre streaming, recomendação ou personalização de mídia. O conteúdo mais atual e verificável do Databricks nessa linha é de 21 de maio de 2026, "<a href="https://www.databricks.com/blog/youve-built-media-products-now-make-them-personalized">You've built the media products, now make them personalized</a>" — fora da janela de três meses, por isso não é tratado como novidade desta semana. Preferimos sinalizar a lacuna a forçar um exemplo fraco; ambas as fontes seguem como prioritárias para a próxima edição.</p>
 </section>
 
-<!-- SECTION 3 -->
-<section>
 <h2 class="section-title" id="sec3-pt"><span class="num">03</span>Mercado de Data Science no Brasil</h2>
-<p class="section-intro">O State of Data Brazil 2025-2026, produzido pela Data Hackers em parceria com a Bain & Company, é a pesquisa de mercado de trabalho de dados mais abrangente do país — cerca de 3.200 a 3.495 respondentes, coleta entre 14 de outubro e 18 de dezembro de 2025 — e segue sendo a edição mais atual disponível. Complementamos com uma novidade institucional da Unicamp.</p>
+<p class="section-intro">Uma parceria institucional nova e um recorte ainda não explorado do State of Data Brazil 2025/2026: quais empresas os profissionais de dados brasileiros mais admiram.</p>
 
 <article class="item">
-<h3>Trabalho remoto quase dobra o salário médio, e a faixa entre júnior e especialista chega a 5x</h3>
-<p>Segundo uma análise independente construída sobre o dataset oficial do State of Data Brazil 2025-2026 publicado pela Data Hackers no Kaggle, o salário médio mensal sobe de aproximadamente R$ 4.152 no nível júnior para R$ 14.469 no sênior e R$ 20.028 no nível especialista/staff+ — uma faixa de cerca de 5x entre a base e o topo da carreira técnica. Separadamente, profissionais 100% remotos ganham em média R$ 13.470 por mês contra R$ 6.645 para quem trabalha totalmente no escritório — trabalho remoto correlaciona com aproximadamente o dobro do salário.</p>
-<figure class="chart">
-  <svg viewBox="0 0 320 170" role="img" aria-label="Salário médio mensal: R$ 6.645 para profissionais 100% presenciais contra R$ 13.470 para 100% remotos">
-    <title>Salário médio mensal por modelo de trabalho</title>
-    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
-    <rect x="60" y="86" width="60" height="54" fill="var(--text)"/>
-    <text x="90" y="80" text-anchor="middle" class="chart-val">R$ 6.645</text>
-    <text x="90" y="158" text-anchor="middle" class="chart-lbl">100% presencial</text>
-    <rect x="200" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
-    <text x="230" y="24" text-anchor="middle" class="chart-val">R$ 13.470</text>
-    <text x="230" y="158" text-anchor="middle" class="chart-lbl">100% remoto</text>
-  </svg>
-  <figcaption>Salário médio mensal por modelo de trabalho — análise sobre o dataset oficial do State of Data Brazil 2025-2026 no Kaggle.</figcaption>
-</figure>
-<span class="label">Como o mercado está aplicando</span>
-<p>Para o mercado brasileiro especificamente, isso captura dois deslocamentos estruturais pós-pandemia: empresas locais passaram a recompensar trilhas técnicas de especialista/staff com um prêmio incomum numa escada salarial corporativa historicamente mais achatada, e trabalho remoto virou um proxy de acesso a empregadores que pagam mais — frequentemente multinacionais, empresas remote-first, ou vagas atreladas a moeda estrangeira — frente a papéis presos a empregadores regionais/tradicionais.</p>
-<p class="caveat">Nota metodológica: os valores de salário vêm de uma análise de terceiros sobre o dataset oficial (não da leitura direta do relatório em PDF, cujo acesso não pôde ser confirmado nesta execução) — recomenda-se conferência do documento oficial da Bain/Data Hackers antes de usar os números em decisões de política salarial.</p>
+<h3>Banco Inter firma parceria institucional com o Data Hackers para dados e IA</h3>
+<p>Em 30 de setembro, o Inter anunciou uma parceria institucional com o Data Hackers, a maior comunidade de dados e inteligência artificial do Brasil, com o objetivo declarado de ampliar a troca de conhecimento técnico e de estratégias de IA entre profissionais do setor. A primeira atividade da parceria já aconteceu: executivos do Data Hackers visitaram a sede do Inter em Belo Horizonte para um evento "DNA Monthly" cobrindo arquitetura, governança, engenharia, ciência e analytics de dados.</p>
+<span class="label">O que isso sinaliza no mercado</span>
+<p>O Inter se soma a uma lista crescente de instituições financeiras brasileiras — Itaú já mantém relação formal com o Data Hackers, incluindo meetups e hackathons internos de agentes — que formalizam canais abertos com a comunidade técnica. Esse tipo de parceria institucional costuma ser um proxy razoável de onde a contratação em dados e IA está se acelerando: empresas que investem em visibilidade junto à comunidade tipicamente também estão escalando times internamente.</p>
 <div class="refs">
 <strong>Referências</strong>
-<ul>
-<li><a href="https://www.datahackers.news/p/download-do-relatorio-state-of-data-brazil-2025-2026">Data Hackers — "State of Data Brazil 2025-2026"</a></li>
-<li><a href="https://www.kaggle.com/datasets/datahackers/state-of-data-brazil-2025-2026">Kaggle — dataset oficial "state-of-data-brazil-2025-2026"</a></li>
-<li><a href="https://github.com/alanbarion/dashboard-mercado-dados-bi-powerbi">Análise independente sobre o dataset oficial (Power BI)</a></li>
-</ul>
+<ul><li><a href="https://tiinside.com.br/30/09/2026/inter-e-data-hackers-anunciam-parceria-focada-em-ia-e-arquitetura-de-dados/">TI Inside — "Inter e Data Hackers anunciam parceria focada em IA e arquitetura de dados"</a></li></ul>
 </div>
 </article>
 
 <article class="item">
-<h3>Procura por novo emprego segue alta, mas a fidelização por contraproposta está perdendo força</h3>
-<p>51,3% dos respondentes entrevistaram para uma nova vaga nos 6 meses anteriores à pesquisa — próximo dos 50,1% da edição 2024-2025, mas bem abaixo dos 61,4% de 2021. Apenas cerca de 17% dos que entrevistaram foram aprovados e de fato trocaram de emprego, mas a capacidade das empresas de reter esses candidatos caiu: 59,2% dos que receberam uma oferta escolheram sair mesmo assim, sinal de que contraproposta/retenção pelo empregador atual está perdendo eficácia. Ao mesmo tempo, 25% dos respondentes relataram ter presenciado demissões na própria empresa em 2025, ante 29,5% em 2024 — e remuneração segue como critério nº1 na escolha de empregador para 83,4% dos respondentes.</p>
-<figure class="chart">
-  <svg viewBox="0 0 320 170" role="img" aria-label="Percentual de profissionais que presenciaram demissões na própria empresa: 29,5% em 2024 contra 25% em 2025">
-    <title>Demissões presenciadas pelo respondente</title>
-    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
-    <rect x="60" y="30" width="60" height="110" fill="var(--text)"/>
-    <text x="90" y="24" text-anchor="middle" class="chart-val">29,5%</text>
-    <text x="90" y="158" text-anchor="middle" class="chart-lbl">2024</text>
-    <rect x="200" y="47" width="60" height="93" fill="var(--muted)" opacity="0.4"/>
-    <text x="230" y="41" text-anchor="middle" class="chart-val">25%</text>
-    <text x="230" y="158" text-anchor="middle" class="chart-lbl">2025</text>
-  </svg>
-  <figcaption>Percentual de respondentes que presenciaram demissões na própria empresa — State of Data Brazil, edições 2024-2025 e 2025-2026.</figcaption>
-</figure>
-<span class="label">Como o mercado está aplicando</span>
-<p>É um retrato nuançado do Brasil: a movimentação por novas vagas segue historicamente elevada frente ao mercado aquecido de 2021, mesmo com o mercado geral esfriando desde o boom de contratação de 2021-2022 — mas o "prêmio de fidelidade" que empresas usavam para reter talento está erodindo, com profissionais cada vez mais dispostos a sair mesmo diante de contraproposta. Ao mesmo tempo, a queda em demissões reportadas sugere que times de dados no Brasil já absorveram boa parte da correção pós-boom e estão estabilizando quadro rumo a 2026.</p>
+<h3>Google é a empresa mais admirada por profissionais de dados no Brasil pelo quarto ano seguido — mas o pódio regional muda</h3>
+<p>O State of Data Brazil 2025/2026 (Data Hackers em parceria com a Bain & Company, 6ª edição, mais de 3.200 respondentes ouvidos entre outubro e dezembro de 2025) trouxe um recorte que ainda não havia aparecido nesta coluna: o ranking de empresas mais admiradas por profissionais de dados para construir carreira. No ranking global, o Google aparece no topo pelo quarto ano consecutivo, concentrando 12% das menções espontâneas. No recorte específico de empresas da América Latina, quem lidera é o Grupo Boticário, com a Ambev Tech aparecendo no top 10 regional pelo quarto ano seguido.</p>
+<span class="label">O que isso sinaliza no mercado</span>
+<p>Para quem recruta no Brasil, "admiração espontânea" é, na prática, uma métrica de employer brand medida contra o próprio público técnico que a empresa quer atrair. O fato de companhias brasileiras tradicionais — não apenas multinacionais de tecnologia — aparecerem de forma consistente e recorrente nesse ranking local sugere que employer branding em dados deixou de ser terreno exclusivo das big techs no país.</p>
 <div class="refs">
 <strong>Referências</strong>
-<ul>
-<li><a href="https://www.datahackers.news/p/download-do-relatorio-state-of-data-brazil-2025-2026">Data Hackers — "State of Data Brazil 2025-2026"</a></li>
-<li><a href="https://www.bain.com/pt-br/insights/state-of-data-2025/">Bain & Company — "State of Data 2025"</a></li>
-</ul>
+<ul><li><a href="https://www.datahackers.news/podcast/s/data_hackers/top_10_empresas_mais_admiradas_no_brasil_segundo_state_of_data_brazil_2026_brasil_entra_no_centro_da_disputa_entre_eua_e_china_pela_ia_lancamento_do_chatgpt_imagens_2_0_-_data_hackers_news_108">Data Hackers News — "Top 10 empresas mais admiradas no Brasil segundo o State of Data Brazil 2026"</a></li></ul>
 </div>
 </article>
 
-<article class="item">
-<h3>Unicamp eleva seu hub de IA para saúde a Centro de Pesquisa Aplicada da FAPESP, com aporte de R$ 20 milhões</h3>
-<p>O "Viva Bem", hub de inovação em IA da Unicamp em parceria com a Samsung desde 2015, foi elevado em ~6-7 de julho de 2026 a um Centro de Pesquisa Aplicada (CPA) formal da FAPESP — parceria entre Unicamp, FAPESP e Samsung com vigência até 2030 (renovável por mais 5 anos) e aporte inicial de R$ 20 milhões. O foco são algoritmos de IA embarcados em wearables (smartwatches, anéis inteligentes) para monitoramento contínuo e proativo de saúde, mirando explicitamente a detecção precoce/pré-sintomática de Parkinson e outras condições.</p>
-<span class="label">Como o mercado está aplicando</span>
-<p>Para o mercado de dados brasileiro, é um sinal concreto de que universidades públicas conseguem estruturar parcerias de pesquisa aplicada de longo prazo (5+ anos, com cláusula de renovação) com empresas privadas globais em IA — um modelo de financiamento que deve ampliar a demanda por profissionais de dados/ML em saúde digital no Brasil, área historicamente carente de dados rotulados e infraestrutura própria.</p>
-<div class="refs">
-<strong>Referências</strong>
-<ul>
-<li><a href="https://jornal.unicamp.br/noticias/2026/07/06/centro-de-pesquisa-aplicada-viva-bem-trabalha-com-inteligencia-artificial-voltada-a-saude-e-ao-bem-estar/">Jornal da Unicamp — "Centro de Pesquisa Aplicada Viva Bem trabalha com inteligência artificial voltada à saúde e ao bem-estar"</a></li>
-<li><a href="https://agencia.fapesp.br/novo-centro-de-pesquisa-usara-relogios-e-aneis-inteligentes-para-deteccao-precoce-de-doencas/58613">Agência FAPESP — cobertura, jul. 2026</a></li>
-</ul>
-</div>
-</article>
-</section>
-
-<!-- SECTION 4 -->
-<section>
 <h2 class="section-title" id="sec4-pt"><span class="num">04</span>Tendências de ferramentas e soluções</h2>
-<p class="section-intro">Quatro movimentos de adoção nesta janela: convergência de formato no lakehouse, consolidação entre orquestradores, a própria Hugging Face abandonando seu motor de serving em favor da comunidade, e bancos relacionais avançando sobre o mercado de vetores enquanto o problema de recuperação em si fica mais difícil.</p>
+<p class="section-intro">Duas reescritas de infraestrutura que miram o mesmo alvo — reduzir o tempo morto entre "ter o dado" e "poder processá-lo" — uma na camada de transformação (dbt), outra na camada de processamento em lote (Ray Data).</p>
 
 <article class="item">
-<h3>As "guerras de formato" no lakehouse terminam: Snowflake e Databricks convergem no Apache Iceberg</h3>
-<p>No Snowflake Summit 2026 (2 de junho de 2026), a Snowflake anunciou disponibilidade geral do Apache Iceberg v3 e interoperabilidade total de leitura/escrita entre Snowflake e engines externas — incluindo o Databricks — via "Horizon Catalog", que incorpora o Apache Polaris (catálogo open-source cocriado por Snowflake e Dremio, doado à Apache Software Foundation e promovido a projeto de nível superior em 18 de fevereiro de 2026). O Databricks respondeu confirmando que está desenhando o Iceberg v4 em torno de uma nova "adaptive metadata tree" e propondo que o Delta Lake 5.0 adote a mesma estrutura — os dois maiores fornecedores de warehouse/lakehouse estão convergindo sua camada de armazenamento para uma única especificação aberta, em vez de formatos concorrentes.</p>
-<p>Prender dados no formato de tabela proprietário de um único fornecedor força duplicação cara — cópias via ETL entre Snowflake e Databricks só para cada engine conseguir ler os mesmos dados. O modelo de catálogo-como-plano-de-controle do Iceberg (Polaris) permite que uma única cópia física de dados seja escrita e lida por múltiplas engines de computação sob governança compartilhada, cortando custo de armazenamento e complexidade de pipeline — relevante direto para times de DS que consultam as mesmas tabelas a partir de notebooks, Spark e SQL de warehouse.</p>
+<h3>dbt Labs lança a versão 2.0 em Rust — e abre pela primeira vez o código do motor Fusion</h3>
+<p>Depois de uma série de builds alpha ao longo do ano (corrigindo, por exemplo, um panic no motor de templates minijinja que travava em cascata, e adicionando suporte a catalog_database para Snowflake, BigQuery e Databricks), o dbt Core v2.0 chegou à disponibilidade geral no dbt Summit 2026. A mudança central é uma reescrita completa em Rust, compartilhando a mesma base de código do motor proprietário Fusion — parte desse código é open source pela primeira vez. O ganho de performance é concreto: em um projeto de 10 mil models, o parsing chega a ser 10 vezes mais rápido que na v1. O projeto passa a ser distribuído em duas versões: o núcleo aberto sob licença Apache 2.0 (dbt-core / dbt-oss) e a distribuição proprietária completa (dbt, com o Fusion). Os adaptadores para BigQuery, Databricks, DuckDB, Redshift e Snowflake já estão em disponibilidade geral; ClickHouse e Spark seguem em beta.</p>
 <figure class="chart">
-  <svg viewBox="0 0 320 170" role="img" aria-label="Adoção de Apache Iceberg entre grandes empresas: 12% em 2024 contra 38% no início de 2026">
-    <title>Adoção de Apache Iceberg em grandes empresas</title>
+  <svg viewBox="0 0 320 170" role="img" aria-label="Tempo relativo de parsing de um projeto de 10 mil modelos: dbt Core v1 muito mais lento que o dbt Core v2">
+    <title>Tempo relativo de parsing (10 mil models)</title>
     <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
-    <rect x="60" y="105" width="60" height="35" fill="var(--text)"/>
-    <text x="90" y="99" text-anchor="middle" class="chart-val">12%</text>
-    <text x="90" y="158" text-anchor="middle" class="chart-lbl">2024</text>
-    <rect x="200" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
-    <text x="230" y="24" text-anchor="middle" class="chart-val">38%</text>
-    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Início de 2026</text>
+    <rect x="60" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="24" text-anchor="middle" class="chart-val">10x</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">dbt Core v1</text>
+    <rect x="200" y="129" width="60" height="11" fill="var(--text)"/>
+    <text x="230" y="123" text-anchor="middle" class="chart-val">1x</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">dbt Core v2</text>
   </svg>
-  <figcaption>Percentual de grandes empresas avaliando/adotando Apache Iceberg como formato de tabela padrão. Fonte: State of the Apache Iceberg Ecosystem — pesquisa de fev./mar. 2026, mais antiga que a janela de 3 meses, citada por ser a mais atual disponível sobre adoção do formato.</figcaption>
+  <figcaption>Tempo de parsing relativo em um projeto de referência de 10 mil models, segundo a dbt Labs ("até 10x mais rápido"); valores normalizados, não segundos absolutos.</figcaption>
 </figure>
 <span class="label">Como o mercado está aplicando</span>
-<p>Para um time de DS, a decisão "qual lakehouse comprar" está sendo desacoplada da decisão "qual formato de tabela usar" — o Iceberg virando infraestrutura neutra de fornecedor, o que reduz o custo de trocar de warehouse no futuro sem reescrever pipelines.</p>
+<p>Projetos dbt grandes — na casa de milhares de models — historicamente sofriam com tempo de parse/compile que travava o ciclo de desenvolvimento local a cada `dbt run`. Essa reescrita ataca diretamente esse gargalo de produtividade, e abrir o código do Fusion dentro do Core sinaliza que a dbt Labs está tentando reduzir o atrito entre a versão gratuita e a paga antes que concorrentes como o SQLMesh capturem esse descontentamento específico.</p>
 <div class="refs">
 <strong>Referências</strong>
-<ul>
-<li><a href="https://www.snowflake.com/en/blog/engineering/bidirectional-interoperability-iceberg-snowflake-horizon-catalog/">Snowflake Engineering Blog — "Bidirectional Interoperability for Snowflake Iceberg Tables"</a></li>
-<li><a href="https://www.snowflake.com/en/news/press-releases/snowflake-pioneers-new-open-framework-for-interoperable-enterprise-data-and-ai/">Snowflake — comunicado, 2 de junho de 2026</a></li>
-<li><a href="https://www.dremio.com/blog/state-of-the-open-lakehouse-september-2026/">Dremio Blog — "State of the Open Lakehouse, September 2026"</a></li>
-<li><a href="https://datalakehousehub.com/blog/2026-02-state-of-the-apache-iceberg-ecosystem/">DataLakehouseHub — "State of the Apache Iceberg Ecosystem" (fev./mar. 2026)</a></li>
-</ul>
+<ul><li><a href="https://docs.getdbt.com/blog/dbt-core-v2-is-here">dbt Labs — "dbt Core v2 is here"</a></li></ul>
 </div>
 </article>
 
 <article class="item">
-<h3>Prefect compra a Dagster Labs, consolidando os dois sucessores mais adotados do Airflow em uma empresa</h3>
-<p>Em 13 de julho de 2026, a Prefect anunciou a aquisição da Dagster Labs, unindo o que múltiplos veículos descrevem como "os dois sucessores mais amplamente adotados do Apache Airflow". A partir de agosto de 2026 a empresa combinada opera sob o nome Prefect, mas Dagster e Dagster+ continuam como produtos com suporte independente, licença open-source própria e roadmap próprio — é consolidação de negócio, não fusão técnica, ao menos por enquanto.</p>
-<p>Os dois projetos nasceram como reação às mesmas lacunas arquiteturais do Airflow — pensar em DAG de tarefas não mapeia bem para linhagem de dados/ativos, e operar o scheduler é pesado. Com a orquestração se expandindo para cobrir não só ETL em lote mas fluxos disparados por agentes de IA — um agente decidindo que uma tabela precisa de backfill e chamando a API do orquestrador —, os dois fornecedores corriam para construir a mesma camada de "agentes como chamadores" de forma independente; unir o esforço de engenharia evita duplicar esse P&D. O Airflow segue como incumbente com a maior base instalada, mas novos projetos cada vez mais nascem no Dagster ou no Prefect em vez do Airflow.</p>
+<h3>Ray Data ganha operadores nativos de GPU com a NVIDIA — e corta em até 80% o custo de deduplicação de dados</h3>
+<p>Anunciada no Ray Summit 2026 (24 a 26 de agosto, São Francisco), a versão 2.58 do Ray Data passa a integrar o cuDF da NVIDIA como backend para operações de map_batches, além de um shuffle experimental em GPU construído sobre o RapidsMPF — eliminando conversões manuais de formato entre CPU e GPU dentro do pipeline de dados. Em benchmarks de deduplicação fuzzy sobre o dataset FineWeb 10BT, a geração de assinaturas MinHash via cuDF ficou cerca de 15 vezes mais rápida que em cluster CPU equivalente; o shuffle em GPU acelerou em até 3 vezes as etapas de agrupamento e componentes conectados; e o pipeline completo rodou até 4 vezes mais rápido, com um custo total de propriedade até 3,1 vezes melhor numa GPU RTX PRO 4500 Blackwell frente a clusters apenas de CPU.</p>
 <figure class="chart">
-  <svg viewBox="0 0 320 170" role="img" aria-label="Times rodando cargas de GenAI/MLOps em produção no Airflow: 32% na base geral contra 62% entre clientes do serviço gerenciado Astro">
-    <title>Cargas de GenAI/MLOps em produção no Airflow</title>
+  <svg viewBox="0 0 320 170" role="img" aria-label="Velocidade relativa de geração de assinaturas MinHash: GPU com cuDF cerca de 15 vezes mais rápida que CPU">
+    <title>Geração de assinaturas MinHash: CPU vs. GPU (cuDF)</title>
     <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
-    <rect x="60" y="83" width="60" height="57" fill="var(--text)"/>
-    <text x="90" y="77" text-anchor="middle" class="chart-val">32%</text>
-    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Airflow (geral)</text>
-    <rect x="200" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
-    <text x="230" y="24" text-anchor="middle" class="chart-val">62%</text>
-    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Clientes Astro (gerenciado)</text>
+    <rect x="60" y="133" width="60" height="7" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="127" text-anchor="middle" class="chart-val">1x</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Cluster CPU</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">~15x</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">GPU com cuDF</text>
   </svg>
-  <figcaption>Times que rodam cargas de GenAI/MLOps em produção no Airflow. Fonte: State of Airflow 2026, Astronomer — pesquisa de jan. 2026, mais antiga que a janela de 3 meses, citada como a mais atual disponível sobre adoção do Airflow.</figcaption>
+  <figcaption>Velocidade relativa de geração de assinaturas MinHash no benchmark FineWeb 10BT, segundo a Anyscale; valores normalizados ao desempenho do cluster CPU.</figcaption>
 </figure>
 <span class="label">Como o mercado está aplicando</span>
-<p>Para times de dados avaliando orquestradores, o sinal é duplo: a consolidação comercial reduz o número de apostas independentes de longo prazo disponíveis no mercado, e a lacuna entre adoção geral e adoção em ambientes gerenciados sugere que operação e observabilidade — não a engine em si — são o que trava a adoção de cargas de IA em produção.</p>
+<p>Isso é relevante para qualquer time que roda pré-processamento de dados em lote — deduplicação, limpeza, feature engineering — como etapa prévia a treino ou fine-tuning de modelos: a fronteira de otimização está migrando de "paralelizar mais nós de CPU" para "usar a GPU ociosa entre batches de treino para o próprio pipeline de dados", um padrão que tende a se espalhar para outros frameworks de processamento distribuído nos próximos trimestres.</p>
 <div class="refs">
 <strong>Referências</strong>
-<ul>
-<li><a href="https://dagster.io/blog/prefect-is-acquiring-dagster">Dagster Blog — "Prefect is Acquiring Dagster"</a></li>
-<li><a href="https://www.prefect.io/prefect-acquires-dagster">Prefect Blog — "Prefect acquires Dagster Labs"</a></li>
-<li><a href="https://www.astronomer.io/blog/state-of-airflow-2026/">Astronomer — "State of Airflow 2026"</a></li>
-</ul>
+<ul><li><a href="https://anyscale.com/blog/gpu-native-operators-in-ray-data">Anyscale Blog — "GPU-native operators in Ray Data"</a></li></ul>
 </div>
 </article>
 
-<article class="item">
-<h3>Hugging Face desativa seu próprio servidor de inferência (TGI) e recomenda migrar para vLLM ou SGLang</h3>
-<p>A Hugging Face colocou o Text Generation Inference (TGI) em modo de manutenção (anunciado em dez. de 2025) e arquivou o repositório no GitHub como somente leitura em 21 de março de 2026; desde 5 de setembro de 2026 o README limita novos trabalhos a pequenas correções de bug e documentação, recomendando explicitamente que novos projetos usem vLLM, SGLang, ou engines locais como llama.cpp/MLX. É notável porque a própria Hugging Face construiu e defendeu o TGI — a empresa parar de manter seu próprio motor de serving em favor de dois projetos open-source independentes é um sinal forte de adoção de mercado.</p>
-<p>Arquiteturas de modelo hoje são lançadas mais rápido do que qualquer motor mantido por um único fornecedor consegue acompanhar — o código congelado do TGI já não suportava lançamentos mais novos no momento do arquivamento, enquanto vLLM e SGLang, como projetos comunitários com dezenas de contribuidores ativos, adicionam novas arquiteturas em dias. O RadixAttention do SGLang (compartilhamento automático de prefixo/cache KV entre requisições) dá a ele uma vantagem medida de throughput em cargas conversacionais/RAG justamente por evitar recomputar prefixos de prompt compartilhados — relevante direto para times de DS/ML rodando RAG ou agentes com prompts de sistema repetidos.</p>
-<figure class="chart">
-  <svg viewBox="0 0 320 170" role="img" aria-label="Throughput em H100 com prefixos compartilhados: 12.500 tokens por segundo no vLLM contra 16.200 no SGLang">
-    <title>Throughput em H100 — cargas com prefixo compartilhado</title>
-    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
-    <rect x="60" y="55" width="60" height="85" fill="var(--text)"/>
-    <text x="90" y="49" text-anchor="middle" class="chart-val">12.500 tok/s</text>
-    <text x="90" y="158" text-anchor="middle" class="chart-lbl">vLLM</text>
-    <rect x="200" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
-    <text x="230" y="24" text-anchor="middle" class="chart-val">16.200 tok/s</text>
-    <text x="230" y="158" text-anchor="middle" class="chart-lbl">SGLang (RadixAttention)</text>
-  </svg>
-  <figcaption>Throughput reportado em H100 para cargas com prefixos compartilhados (RAG/multi-turno) — benchmark de terceiros, não números oficiais dos projetos.</figcaption>
-</figure>
-<span class="label">Como o mercado está aplicando</span>
-<p>Para times avaliando stack de serving de modelos abertos, o vLLM segue como o default mais amplo e seguro (mais de 75 mil estrelas no GitHub, usado em produção por Amazon, Roblox e Stripe), enquanto o SGLang é preferido para cargas com muito reuso de prefixo, como RAG e chat multi-turno.</p>
-<div class="refs">
-<strong>Referências</strong>
-<ul>
-<li><a href="https://huggingface.co/docs/text-generation-inference">Hugging Face — documentação do Text Generation Inference (modo manutenção)</a></li>
-<li><a href="https://www.spheron.network/blog/migrate-tgi-to-vllm-sglang-2026/">Spheron — "Migrate from Hugging Face TGI to vLLM or SGLang: A 2026 Move-Off Guide"</a></li>
-<li><a href="https://github.com/vllm-project/vllm">vLLM — repositório no GitHub</a></li>
-<li><a href="https://github.com/sgl-project/sglang">SGLang — repositório no GitHub</a></li>
-</ul>
-</div>
-</article>
-
-<article class="item">
-<h3>Postgres com pgvectorscale supera o Qdrant em throughput por 11x — mas a corrida real é pelo retrieval híbrido</h3>
-<p>O mercado de bancos de dados vetoriais está se consolidando de volta para bancos relacionais estendidos, em vez de sistemas nativos de vetores dedicados. Um levantamento da Actian ("State of Vector Databases, Q2 2026") nota que a participação de uso do ChromaDB caiu de 15,6% para 13,4% num período de medição, enquanto o pgvector absorveu atenção de times que já rodam Postgres. Um benchmark da Tiger Data (ex-Timescale), publicado em abril de 2026, mostrou o Postgres com a extensão pgvectorscale (DiskANN + quantização binária estatística) superando o Qdrant em 11,4x em throughput bruto a 99% de recall em 50 milhões de vetores (471 QPS contra 41 QPS) — embora o Qdrant ainda vença em latência de cauda (p99: 38,7ms contra 74,6ms) e velocidade de construção de índice (3,3h contra 11,1h): uma troca arquitetural real, não uma vitória unilateral.</p>
-<p>Bancos de vetores standalone eram a resposta padrão de 2022-2024 para "como fazer RAG", mas obrigam os times a operar um segundo banco só para embeddings, duplicando dados que já existem no Postgres/MySQL e somando overhead de sincronização. pgvector/pgvectorscale fecham essa lacuna para o caso comum — cargas abaixo de 50 milhões de vetores, que cobre a maioria dos deployments corporativos de RAG — mantendo os embeddings no mesmo banco transacional dos dados de origem. Ao mesmo tempo, o problema de recuperação em si está ficando mais difícil: uma pesquisa da VentureBeat Pulse (três ondas mensais, 45-58 respondentes qualificados por onda, empresas com 100+ funcionários; publicada em 29 de abril de 2026) encontrou a intenção corporativa de adotar retrieval híbrido — vetor + palavra-chave/BM25 + reranking, não busca vetorial isolada — triplicando de 10,3% para 33,3% em um único trimestre (Q1 2026), à medida que times descobriram que busca por similaridade vetorial pura é insuficiente quando sistemas de RAG chegam à escala de produção.</p>
-<figure class="chart">
-  <svg viewBox="0 0 320 170" role="img" aria-label="Intenção corporativa de adotar retrieval híbrido: 10,3% no início do trimestre contra 33,3% no fim do primeiro trimestre de 2026">
-    <title>Intenção de adotar retrieval híbrido — Q1 2026</title>
-    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
-    <rect x="60" y="106" width="60" height="34" fill="var(--text)"/>
-    <text x="90" y="100" text-anchor="middle" class="chart-val">10,3%</text>
-    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Início do trimestre</text>
-    <rect x="200" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
-    <text x="230" y="24" text-anchor="middle" class="chart-val">33,3%</text>
-    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Fim do trimestre (Q1 2026)</text>
-  </svg>
-  <figcaption>Intenção corporativa de adotar retrieval híbrido (vetor + BM25 + reranking) em programas de RAG. Fonte: VentureBeat Pulse, abr. 2026.</figcaption>
-</figure>
-<span class="label">Como o mercado está aplicando</span>
-<p>Para arquitetos de dados, a mensagem é dupla: para a maioria das cargas (abaixo de 50 milhões de vetores), manter os embeddings no Postgres já existente é operacionalmente mais barato do que um banco vetorial dedicado; e, independentemente de onde os vetores moram, retrieval apenas por similaridade vetorial está deixando de ser suficiente — pipelines de RAG maduros estão migrando para arquiteturas híbridas.</p>
-<div class="refs">
-<strong>Referências</strong>
-<ul>
-<li><a href="https://www.tigerdata.com/blog/pgvector-vs-qdrant">Tiger Data Blog — "Pgvector vs. Qdrant"</a></li>
-<li><a href="https://www.actian.com/blog/developer/state-of-vector-databases-q2-2026/">Actian — "State of Vector Databases, Q2 2026"</a></li>
-<li><a href="https://venturebeat.com/data/the-retrieval-rebuild-why-hybrid-retrieval-intent-tripled-as-enterprise-rag-programs-hit-the-scale-wall">VentureBeat — "The Retrieval Rebuild: Why Hybrid Retrieval Intent Tripled..."</a></li>
-</ul>
-</div>
-</article>
-</section>
-
-<h2 class="section-title archive-title" id="arquivo-pt"><span class="num">↺</span>Relatórios anteriores</h2>
+<h2 class="section-title archive-title">Relatórios anteriores</h2>
 <ul class="archive-list">
+<li><a href="archive/2026-09-25.html">25 de setembro de 2026</a></li>
 <li><a href="archive/2026-09-18.html">18 de setembro de 2026</a></li>
 <li><a href="archive/2026-09-11.html">11 de setembro de 2026</a></li>
 <li><a href="archive/2026-08-28.html">28 de agosto de 2026</a></li>
@@ -503,7 +264,7 @@ h2.section-title.archive-title{margin-top:56px;}
 </ul>
 
 <div class="methodology">
-<strong>Nota metodológica.</strong> Este digest é produzido semanalmente por um agente de pesquisa que busca ativamente fontes primárias (papers acadêmicos, blogs de pesquisa/engenharia de empresas de referência, universidades, surveys de mercado) em vez de responder de memória. Toda afirmação não-trivial é acompanhada de link verificável. Quando uma fonte primária não pôde ser confirmada com confiança, quando um dado é mais antigo que a janela de três meses recomendada, ou quando nenhum desenvolvimento novo e verificável foi encontrado numa seção, isso é sinalizado explicitamente no texto (ver notas em itálico) em vez de generalizar ou inventar um exemplo. Nesta edição, o acesso direto (fetch de página completa) a diversos domínios — incluindo Netflix TechBlog, research.netflix.com, Databricks, Google Research, arXiv, Data Hackers, Kaggle, Bain, Tiger Data, Astronomer e Wikipedia — foi bloqueado pela política de rede do ambiente de execução; o domínio da Anthropic foi acessível diretamente. Nesses casos, os fatos foram verificados por cruzamento entre múltiplas buscas independentes e fontes jornalísticas, institucionais ou de terceiros que citam o mesmo conteúdo primário, com datas e números conferidos entre pelo menos duas fontes sempre que possível.
+<strong>Nota metodológica.</strong> Este digest é produzido semanalmente por um agente de pesquisa que busca ativamente fontes primárias (papers acadêmicos, blogs de pesquisa/engenharia de empresas de referência, universidades, surveys de mercado) em vez de responder de memória. Toda afirmação não-trivial é acompanhada de link verificável. Nesta edição, o acesso direto (fetch de página completa) a diversos domínios — incluindo arXiv, Databricks, Google Research, docs.getdbt.com e Anyscale — foi bloqueado pela política de rede do ambiente de execução; o domínio da Anthropic foi acessível diretamente e seus números (ex.: 950 agentes, 210 milhões de tokens, 21 horas, 200 mil candidatos) foram confirmados na própria página. Para os demais, os fatos foram verificados por cruzamento entre múltiplas buscas independentes e fontes jornalísticas ou de terceiros que citam o mesmo conteúdo primário, com números conferidos entre pelo menos duas fontes sempre que possível; números marcados como estimados ou derivados (ex.: a latência "~11,6s" na seção 2) são explicitamente sinalizados como tal nas legendas. Nesta semana, nenhum conteúdo novo e relevante foi encontrado no Netflix Research, Netflix TechBlog ou Google Research dentro do escopo de streaming/recomendação/personalização — isso é sinalizado na abertura da seção 2 em vez de forçar um exemplo fora de prazo ou irrelevante.
 </div>
 
 <div class="contact">
@@ -512,433 +273,194 @@ h2.section-title.archive-title{margin-top:56px;}
 </div>
 
 <footer class="report-footer">
-  <p>Publicado via GitHub Pages a partir do repositório <a href="https://github.com/GoncalvesRD/ds-trends">GoncalvesRD/ds-trends</a>. Digest gerado semanalmente, toda sexta-feira.</p>
+  <p>Publicado via GitHub Pages a partir de <a href="https://github.com/GoncalvesRD/ds-trends">github.com/GoncalvesRD/ds-trends</a>.</p>
 </footer>
 
 </div>
 
-<!-- ==================== EN ==================== -->
 <div class="lang-block" data-lang="en" hidden>
 
 <header class="report-header">
   <h1>Trends in Data Science, Machine Learning and Applied AI</h1>
-  <p class="dek">A weekly read on data research, product, and market — curated with verified primary sources, not headline summaries.</p>
+  <p class="dek">Claude spends 21 hours alone on a genomic search and comes back with a candidate CRISPR-like mechanism, Databricks exposes its governance catalog as a single MCP server, and dbt rewrites its entire engine in Rust.</p>
 </header>
 
 <div class="byline">
   <div class="avatar">RG</div>
   <div>
     <div class="name">Ri Gonçalves</div>
-    <div class="sub"><a href="https://goncalvesrd.github.io/ds-trends/">goncalvesrd.github.io/ds-trends</a> · September 25, 2026</div>
+    <div class="sub"><a href="https://goncalvesrd.github.io/ds-trends/">goncalvesrd.github.io/ds-trends</a> · October 2, 2026</div>
   </div>
 </div>
 
-<nav class="toc" aria-label="Table of contents">
+<nav class="toc">
   <p class="toc-title">In this issue</p>
   <ol>
-    <li><a href="#sec1-en">General DS/ML/AI trends</a> — Anthropic shows an autonomous agent outperforming human safety researchers within hours, Google Research swaps expensive inference-time reasoning for a diffusion retriever that's 12-20x faster, and a new paper exposes how many agent benchmarks measure the scaffold instead of the model.</li>
-    <li><a href="#sec2-en">Streaming and Globoplay's competitors</a> — Netflix details GenRec and GenPage, two production-grade generative systems that compress context and collapse pipelines to cut cost and latency, and Anthropic cuts the price of its new Opus 5.5 by up to 40%.</li>
-    <li><a href="#sec3-en">Data Science market in Brazil</a> — the State of Data Brazil 2025-2026 report shows remote professionals earning almost double their in-office peers, counter-offer retention losing effectiveness, and Unicamp elevating its AI-for-health hub to a FAPESP Applied Research Center.</li>
-    <li><a href="#sec4-en">Tooling and solution trends</a> — Snowflake and Databricks converge on Apache Iceberg as the lakehouse standard, Prefect acquires Dagster Labs, Hugging Face retires its own inference server in favor of vLLM/SGLang, and hybrid-retrieval adoption intent triples in one quarter.</li>
+    <li><a href="#sec1-en">General trends in Data Science / ML / applied AI</a> — a contamination detector for synthetic training data, and Google flips the data-generation logic for function-calling agents.</li>
+    <li><a href="#sec2-en">Streaming and Globoplay's competitors</a> — Claude flags a candidate CRISPR-like mechanism in an autonomous genomic search; Databricks exposes its governance catalog via MCP and halves search latency.</li>
+    <li><a href="#sec3-en">Data Science job market in Brazil</a> — Inter formalizes a partnership with Data Hackers, and the State of Data Brazil report reveals which companies data professionals admire most, in Brazil and worldwide.</li>
+    <li><a href="#sec4-en">Tooling and platform trends</a> — dbt open-sources its Rust-based Fusion engine with parsing up to 10x faster, and Ray Data gets GPU-native operators that cut deduplication cost by up to 80%.</li>
   </ol>
 </nav>
 
-<!-- SECTION 1 -->
-<section>
-<h2 class="section-title" id="sec1-en"><span class="num">01</span>General trends in Data Science, ML and applied AI</h2>
-<p class="section-intro">Three signals this week about the technical frontier: research that uses agents to do research on itself, a new architectural pattern for replacing expensive inference-time reasoning, and a methodological warning about the reliability of the agent benchmarks the market uses to pick models.</p>
+<h2 class="section-title" id="sec1-en"><span class="num">01</span>General trends in Data Science, Machine Learning and applied AI</h2>
+<p class="section-intro">Two stories about the same pain point: how to guarantee the quality of the data that feeds models themselves, whether to avoid degradation from synthetic feedback loops, or to train function-calling agents without paying the price of manual annotation.</p>
 
 <article class="item">
-<h3>Anthropic shows an autonomous agent can do alignment research on its own — and beat humans within hours, at a fraction of the cost</h3>
-<p>In "Automated Researchers Can Reliably Mitigate Alignment Failures" (August 28, 2026), Anthropic describes an Automated Alignment Researcher (AAR) — an agent running Claude Sonnet 5 autonomously — given an early, misaligned checkpoint of a stronger model (an early-stage Opus 4.8) and tasked with fixing its behavior without step-by-step supervision. Over roughly 60 hours of autonomous work, the AAR tested more than 50 candidate training ideas before converging on a method built on about 2,400 curated examples. Applied across 10 well-characterized alignment failure modes — sycophancy, reward hacking, deceptive behavior, among others — the AAR-designed interventions significantly reduced every targeted failure while preserving general capability, and the fixes generalized to held-out benchmarks, multi-turn behavioral audits, and even to models up to 4.7x larger than the one the AAR was originally trained against.</p>
-<p>The paper's strongest point is a direct human comparison: 28 AI safety researchers with an average of 2.5 years of experience were each given up to 8 hours to propose a fix. The best AAR-produced method beat the best human proposal on average — and got there in just 6 hours of automated hill-climbing, costing roughly $4 per hour of API inference versus roughly $150 per hour for a human researcher.</p>
-<figure class="chart">
-  <svg viewBox="0 0 320 170" role="img" aria-label="Time to beat the best human proposal: an 8-hour human budget versus 6 hours for the autonomous AAR agent">
-    <title>Time to beat the best human proposal</title>
-    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
-    <rect x="60" y="30" width="60" height="110" fill="var(--text)"/>
-    <text x="90" y="24" text-anchor="middle" class="chart-val">8h</text>
-    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Human researchers</text>
-    <rect x="200" y="57" width="60" height="83" fill="var(--muted)" opacity="0.4"/>
-    <text x="230" y="51" text-anchor="middle" class="chart-val">6h</text>
-    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Autonomous agent (AAR)</text>
-  </svg>
-  <figcaption>Time to produce the best fix for an alignment failure — Anthropic Research, Aug. 2026.</figcaption>
-</figure>
-<span class="label">How the market is applying this</span>
-<p>The paper is explicit about scope: these are 10 already well-characterized failures, not open-ended recursive self-improvement. Still, it's a concrete, quantified data point in the "can AI do R&D on itself" debate shaping frontier-lab roadmaps in 2026 — the emerging pattern is using agentic LLMs as "internal researchers" for narrow, measurable optimization loops (finetuning strategy search, eval design), beyond the already-established use as a coding copilot.</p>
+<h3>A "contamination detector" for synthetic data: researchers release SynthSentry against model collapse</h3>
+<p>Models increasingly train on data generated by other models — sometimes for convenience, sometimes because high-quality human data is becoming scarce in certain domains. The risk known as "model collapse" is subtle: text fluency survives, but the tails of the distribution and factual accuracy deteriorate with each recursive generation, because the generator's errors and biases accumulate and amplify instead of canceling out. A paper published in September introduces SynthSentry, an evaluation protocol built on "leave-one-generator-out" cross-validation (testing detection against generators the detector never saw during training), along with a scoring toolkit and a multi-generation labeled benchmark. The key contribution is a domain-stratified false-positive analysis that separates typical synthetic-generation artifacts from structures that are already native to legal, clinical and source-code text — areas where a naive detector tends to mistake formality or structural repetition for a contamination signal.</p>
+<span class="label">How the market is applying it</span>
+<p>Teams that use LLMs to generate synthetic training data — now routine practice in fine-tuning and in RAG pipelines — mostly have no due-diligence step on that data before shipping it to production. A tool like this points to an obvious next item on the MLOps checklist: auditing a dataset's synthetic provenance the same way bias or test-set leakage is audited today, before any retraining.</p>
 <div class="refs">
 <strong>References</strong>
-<ul>
-<li><a href="https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures">Anthropic Research — "Automated Researchers Can Reliably Mitigate Alignment Failures"</a></li>
-<li><a href="https://arxiv.org/abs/2608.28945">arXiv 2608.28945</a></li>
-<li><a href="https://techcrunch.com/2026/08/28/an-anthropic-researcher-just-gave-us-a-peek-at-self-improving-ai/">TechCrunch — coverage, August 28, 2026</a></li>
-</ul>
+<ul><li><a href="https://arxiv.org/abs/2609.12353">arXiv 2609.12353 — "SynthSentry: Detecting Synthetic Data Contamination in Language Model Training Data"</a></li></ul>
 </div>
 </article>
 
 <article class="item">
-<h3>Google Research replaces expensive inference-time reasoning with a diffusion retriever — cutting latency by up to 20x</h3>
-<p>In "Bypassing inference bottlenecks: Accelerating complex AI search with Retrieve-for-Train" (September 15, 2026), Google Research details R4T, a technique for the "query fan-out" problem in AI-powered search — turning one broad query into a large, diverse, non-redundant set of sub-queries. Instead of having an autoregressive LLM spend hundreds of chain-of-thought tokens planning that fan-out at inference time — a cost that scales poorly at large batch sizes — the team moves the expensive reasoning into offline RL training, then distills it into a small diffusion model (53.9 million parameters) that generates the entire result set in a single parallel, non-autoregressive pass through continuous embedding space.</p>
-<p>The mechanism also fixes a quality problem specific to sequential generation: "paraphrastic collapse," where sub-queries generated token by token converge on the same meaning instead of covering different facets of the original question. The full technical paper, "Efficient, Property-Aligned Fan-Out Retrieval via RL-Compiled Diffusion" (ICML 2026), frames this as a broader architectural pattern: parallel diffusion decoding can replace sequential autoregressive generation specifically for set-valued outputs — relevant to any agentic pipeline with expensive inference-time planning, not just search.</p>
-<figure class="chart">
-  <svg viewBox="0 0 320 170" role="img" aria-label="Latency at batch size 1024: about 50 seconds with an autoregressive LLM versus 4.21 seconds with the R4T diffusion retriever">
-    <title>Batch-1024 latency — query fan-out</title>
-    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
-    <rect x="60" y="30" width="60" height="110" fill="var(--text)"/>
-    <text x="90" y="24" text-anchor="middle" class="chart-val">~50s</text>
-    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Autoregressive LLM</text>
-    <rect x="200" y="131" width="60" height="9" fill="var(--muted)" opacity="0.4"/>
-    <text x="230" y="125" text-anchor="middle" class="chart-val">4.21s</text>
-    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Diffusion retriever (R4T)</text>
-  </svg>
-  <figcaption>Fan-out latency at batch size 1024 — Google Research Blog, Sept. 2026.</figcaption>
-</figure>
-<span class="label">How the market is applying this</span>
-<p>Directly applicable to production RAG systems and agentic retrieval pipelines with tight latency budgets: it's a concrete instance of the 2026 trend toward "compiling" reasoning that used to happen at inference time into artifacts trained once and served fast — a pattern also showing up in heavily distilled agent stacks. DS teams building RAG systems hitting latency walls with chain-of-thought-heavy query expansion now have a concrete architectural alternative, not just "use a smaller model."</p>
+<h3>Google flips the data-generation logic for agents: answer first, question second — hitting a 99.8% pass rate</h3>
+<p>The standard way to generate training data for function-calling agents is: generate a user query, then manually (or via tree search) annotate the tool-call chain that would solve it — an expensive, slow process prone to annotation failures when the chain gets complex. ToolGrad, published on the Google Research blog in September (and accepted as an ACL 2026 Findings paper), reverses that order: it first builds valid tool-use chains iteratively, guided by "textual gradients" — natural-language critiques that act as a correction signal at each step, analogous to a numerical gradient but applied to text — and only then synthesizes the user query that would naturally lead to that chain. The resulting dataset, ToolGrad-500, reaches a 99.8% pass rate at lower generation cost than the traditional method; 12-billion-parameter Gemma-3 models fine-tuned on it outperform much larger baselines on the Berkeley Function Calling Leaderboard.</p>
+<span class="label">How the market is applying it</span>
+<p>For teams training or fine-tuning function-calling agents, the result reinforces a point that keeps accumulating: the real bottleneck is usually demonstration-data quality, not model size. That means smaller teams without a frontier lab's compute budget can compete by investing in data-pipeline engineering instead of parameter scale.</p>
 <div class="refs">
 <strong>References</strong>
 <ul>
-<li><a href="https://research.google/blog/bypassing-inference-bottlenecks-accelerating-complex-ai-search-with-retrieve-for-train/">Google Research Blog — "Bypassing inference bottlenecks: Accelerating complex AI search with Retrieve-for-Train"</a></li>
-<li><a href="https://www.marktechpost.com/2026/09/16/google-research-introduces-retrieve-for-train-r4t-an-rl-compiled-diffusion-retriever-for-12x-to-20x-faster-query-fan-out/">MarkTechPost — technical coverage with figures, September 16, 2026</a></li>
+<li><a href="https://research.google/blog/toolgrad-efficient-tool-use-dataset-generation-with-textual-gradients/">Google Research Blog — "ToolGrad: Efficient Tool-use Dataset Generation with Textual 'Gradients'"</a></li>
+<li><a href="https://arxiv.org/abs/2508.04086">arXiv 2508.04086 (ACL 2026 Findings)</a></li>
 </ul>
 </div>
 </article>
 
-<article class="item">
-<h3>Many agent benchmarks measure the scaffold, not the model — and fixing that changes the leaderboard</h3>
-<p>A paper submitted September 6, 2026, "The Double Measurement Confound in Agent Benchmarks," formalizes a problem long suspected informally across the agent-benchmark ecosystem: many widely used benchmarks conflate the capability of the model with the capability of the fixed scaffold wrapped around it — execution-critical decisions like retries, tool-selection heuristics, and error recovery — and, separately, many scorers grade output shape or metadata rather than actual ground-truth correctness. The authors call this the "double measurement confound."</p>
-<p>In the authors' case study — ComtradeBench, an adversarial trade-data tool-use benchmark — two frontier models (Kimi and Claude) scored 97.5, essentially tied with a rule-based script with no LLM in the loop at all, which scored 96.8. Even more telling: under the existing scorer, a fabricated/incorrect record set scored 0.987 — the same value as the genuinely correct record set. The authors propose a repair protocol — "de-scaffolding" (moving execution-critical decisions from the scaffold into the model being tested), ground-truth scoring instead of shape-based scoring, and reporting reliability metrics beyond the mean (worst-case, tail risk). Applying both fixes to their pre-registered experiment turns a "nearly flat" leaderboard — where models are indistinguishable from each other and from a no-LLM baseline — into a real spectrum that separates models by robustness across seeds.</p>
-<figure class="chart">
-  <svg viewBox="0 0 320 170" role="img" aria-label="ComtradeBench score under the original scorer: 97.5 for frontier LLMs versus 96.8 for a script with no LLM at all">
-    <title>ComtradeBench — score under the original scorer</title>
-    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
-    <rect x="60" y="30" width="60" height="110" fill="var(--text)"/>
-    <text x="90" y="24" text-anchor="middle" class="chart-val">97.5</text>
-    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Frontier LLM</text>
-    <rect x="200" y="31" width="60" height="109" fill="var(--muted)" opacity="0.4"/>
-    <text x="230" y="25" text-anchor="middle" class="chart-val">96.8</text>
-    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Script, no LLM</text>
-  </svg>
-  <figcaption>Score on the ComtradeBench benchmark before de-scaffolding and ground-truth scoring fixes — arXiv 2609.09218, Sept. 2026.</figcaption>
-</figure>
-<span class="label">How the market is applying this</span>
-<p>This is a direct, practical warning for any DS/ML team picking a model or framework for production agentic workflows based on public leaderboards: a high score can reflect scaffold engineering and scorer leniency rather than actual model reasoning quality. Teams evaluating agents should demand — or build — ground-truth-scored, de-scaffolded evaluations that report seed variance, rather than trusting a single mean leaderboard number.</p>
-<div class="refs">
-<strong>References</strong>
-<ul>
-<li><a href="https://arxiv.org/abs/2609.09218">arXiv 2609.09218 — "The Double Measurement Confound in Agent Benchmarks"</a></li>
-</ul>
-</div>
-</article>
-</section>
-
-<!-- SECTION 2 -->
 <section class="globoplay">
 <h2 class="section-title" id="sec2-en"><span class="num">02</span>Streaming and Globoplay's competitors</h2>
-<p class="section-intro">Netflix published two production-grade generative systems back to back — one for ranking, one for homepage assembly — sharing the same principle: compress context and collapse multi-stage pipelines into a single model pass. Anthropic, tracked separately as the author's standing priority source, cut the price of its newest model by up to 40%.</p>
+<p class="section-intro">This week, Netflix Research and Netflix TechBlog published nothing new that fits streaming, recommendation, personalization, data or media infrastructure — the TechBlog's two most recent posts (September 18 and 25) cover Java dependency management and cloud workload identity, outside this section's scope. Google Research also had nothing new on media recommendation or personalization since the diffusion retriever already covered in last week's edition. So this week's spotlight goes to Anthropic — a source we track regardless of topic — and to Databricks, with two updates on giving AI agents trustworthy access to enterprise data.</p>
 
 <article class="item">
-<h3>Netflix replaces decades of feature engineering with an LLM-native recommendation ranker</h3>
-<p>On the Netflix TechBlog, "GenRec: Towards LLM-Native Recommendation at Netflix" (July 2026, with a companion technical paper on arXiv) describes GenRec, Netflix's first production step toward replacing its mature, feature-engineered ranking stack — built on thousands of hand-crafted features — with an LLM-native ranker built on an internally post-trained foundation model, not a generic API model.</p>
-<p>Training follows two phases: Phase 1 adapts an open-source LLM to Netflix's catalog and member-behavior domain (content understanding and instruction-following); Phase 2 post-trains on user histories verbalized as text, item metadata, and context, adding catalog-aware scoring heads and reward-weighted objectives tied to long-term member satisfaction — not just short-term clicks. The crucial point for economic viability: the team compressed the serialized per-item context from about 5,000 to 1,700 tokens, with negligible offline degradation — that compression is what makes an LLM ranker tractable at Netflix's QPS scale. The reported numbers: roughly 40x fewer labeled examples in Phase 2 than the production system uses, yet still delivering a +1.6% offline MRR gain; an online A/B test, covering roughly 10% of Netflix's traffic on batch-compute recommendation surfaces, showed statistically significant gains in both short- and long-term engagement.</p>
+<h3>Anthropic leaves Claude alone for 21 hours on a genomic search — and it comes back with a candidate CRISPR-like mechanism</h3>
+<p>On September 23, Anthropic announced a new life-sciences research group and laboratory, and used a discovery made almost entirely by autonomous agents as its first public result. About 950 instances of Claude ran in parallel for 21 hours, consuming 210 million tokens, to screen more than 200,000 reverse transcriptases (enzymes that copy RNA into DNA) cataloged in genomic databases. The agents flagged 3,500 novel candidate systems and, from there, narrowed the funnel to the 20 most promising, producing human-readable reports for Anthropic's own scientists to validate in the lab. One of those candidates — named ART ("array-associated reverse transcriptase"), found mainly in bacteriophages — pairs a reverse transcriptase with a partner gene and an evenly spaced array of DNA repeats that, in early lab experiments, are expressed as short RNAs. That specific combination of traits has, until now, only been seen together in a handful of other systems — CRISPR among them. Anthropic is explicit about the limits of what's been proven: ART's function remains unknown, no experiment has demonstrated gene editing, and the investigation into its actual function is ongoing.</p>
+<span class="label">What it signals for people working with data</span>
+<p>From a Data Scientist's vantage point, the interesting part isn't the biology — it's the architecture of the process: Anthropic built a "batch science" pipeline where hundreds of agents run triage heuristics in parallel over a massive search space, and only then bring in humans to validate a funnel already narrowed to two dozen items. It's the same pattern of agentic search with downstream human-in-the-loop already showing up in materials discovery and fraud triage — genomics is just the most eye-catching domain where the company chose to demonstrate the concept publicly.</p>
+<div class="refs">
+<strong>References</strong>
+<ul><li><a href="https://www.anthropic.com/news/claude-discovers-novel-enzyme-system">Anthropic — "Claude discovers a novel enzyme system"</a></li></ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Databricks turns its governance catalog into a single MCP server — and any AI agent can now "speak the business's language"</h3>
+<p>General-purpose assistants like ChatGPT, Claude, Microsoft Copilot and coding agents can already query enterprise data today — but without business context, they don't know which table is the trusted source for a metric, what that metric actually means, or who's allowed to see what. Genie One MCP, which Databricks made generally available on September 22, solves this by exposing the "Genie Ontology" — approved metric definitions, data relationships, source authority and permission rules — through a single Model Context Protocol server. Any external agent connected to that server automatically inherits governed, permission-aware access to structured and unstructured data, instead of having to infer (or invent) business logic on its own.</p>
+<span class="label">How the market is applying it</span>
+<p>This is a symptom of a bigger shift: MCP is consolidating as the standard integration layer between "where data lives" (warehouses and lakehouses) and "where agents live" (third-party assistants), moving part of the governance workload from ETL pipelines to context contracts that any external agent can consume directly — a theme that resurfaces in this issue's tools section.</p>
+<div class="refs">
+<strong>References</strong>
+<ul><li><a href="https://www.databricks.com/blog/genie-one-mcp-give-any-ai-agent-right-business-context">Databricks Blog — "Genie One MCP: Give any AI Agent the Right Business Context"</a></li></ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Databricks halves "frontier-quality" search latency by deciding, in real time, when it's worth searching more</h3>
+<p>Databricks' Instructed-Retriever-1 already incorporated enterprise data schemas and custom instructions using parallel test-time scaling to improve retrieval accuracy at low latency. The catch is that complex multi-hop questions benefit from sequential search — the model refines its query iteratively, accumulating evidence step by step — which is slower. The new Adaptive Instructed-Retriever combines both modes: it uses parallel retrieval by default and only triggers additional sequential search steps when the expected quality gain justifies the extra cost, instead of applying the same compute budget to every query. In Databricks' internal benchmarks, the model matches the quality of leading market models at an average end-to-end latency of 5.8 seconds — more than twice as fast as comparable models.</p>
 <figure class="chart">
-  <svg viewBox="0 0 320 170" role="img" aria-label="Serialized context per item: about 5,000 tokens before versus 1,700 tokens in GenRec">
-    <title>Context compression in GenRec</title>
+  <svg viewBox="0 0 320 170" role="img" aria-label="Average search latency comparison: comparable models at about 11.6 seconds versus 5.8 seconds for Adaptive Instructed-Retriever">
+    <title>Average end-to-end search latency</title>
     <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
-    <rect x="60" y="30" width="60" height="110" fill="var(--text)"/>
-    <text x="90" y="24" text-anchor="middle" class="chart-val">5,000 tokens</text>
-    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Context per item (before)</text>
-    <rect x="200" y="103" width="60" height="37" fill="var(--muted)" opacity="0.4"/>
-    <text x="230" y="97" text-anchor="middle" class="chart-val">1,700 tokens</text>
-    <text x="230" y="158" text-anchor="middle" class="chart-lbl">GenRec (compressed)</text>
+    <rect x="60" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="24" text-anchor="middle" class="chart-val">~11.6s</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Comparable models</text>
+    <rect x="200" y="85" width="60" height="55" fill="var(--text)"/>
+    <text x="230" y="79" text-anchor="middle" class="chart-val">5.8s</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Adaptive Instructed-Retriever</text>
   </svg>
-  <figcaption>Compression of serialized per-item context — roughly a 3x cut in inference cost. Netflix TechBlog, Jul. 2026.</figcaption>
+  <figcaption>Average end-to-end latency reported by Databricks for Adaptive Instructed-Retriever; the "~11.6s" figure is estimated from the "more than 2x" ratio the company disclosed, not a direct measurement it published.</figcaption>
 </figure>
-<span class="label">How the market is applying this</span>
-<p>This is the concrete industrial pattern for "LLM as ranker" replacing a two-tower/GBDT stack — relevant to any team, Globoplay included, evaluating whether generative models can replace or augment its own recommendation pipeline. The efficiency techniques (token compression, reward-weighted long-term objectives) are what make this kind of ranking tractable at real product scale, not just a research experiment.</p>
+<span class="label">Production application</span>
+<p>For data teams currently paying the latency price of multi-hop RAG pipelines — common in enterprise assistants that cross tabular data with documents — the engineering lesson matters more than the specific product: allocating search compute conditionally, spending extra steps only when the expected gain pays off, is the same adaptive test-time scaling principle already seen in reasoning models, now replicated at the retrieval layer.</p>
 <div class="refs">
 <strong>References</strong>
-<ul>
-<li><a href="https://netflixtechblog.com/genrec-towards-llm-native-recommendation-at-netflix-f20be6f643e3">Netflix TechBlog — "GenRec: Towards LLM-Native Recommendation at Netflix"</a></li>
-<li><a href="https://arxiv.org/abs/2608.10257">arXiv 2608.10257 — "GenRec: An LLM-Backed Recommendation Ranker at Netflix"</a></li>
-</ul>
-</div>
-</article>
-
-<article class="item">
-<h3>Netflix swapped its homepage-assembly pipeline for a single generative transformer — and got faster, not slower</h3>
-<p>"GenPage: Towards End-to-End Generative Homepage Construction at Netflix" (Netflix TechBlog, late June 2026) describes how Netflix replaced its multi-stage homepage-assembly pipeline — candidate generation, row selection, ranking, layout — with a single transformer that autoregressively generates the entire structured, multi-row homepage in one pass, treating user and request context as a "prompt." Training follows an LLM-style recipe: pretraining on historical production pages, followed by post-training via weighted binary classification or reinforcement learning.</p>
-<p>Two findings stand out: enriching the input prompt helped more than scaling model size, and RL post-training increased homepage row and title diversity even though diversity wasn't explicitly optimized for — an emergent side effect of the objective design. And despite being a bigger, autoregressive model, GenPage improved serving latency versus the previous pipeline, because it collapses several sequential microservice calls into a single forward pass.</p>
-<figure class="chart">
-  <svg viewBox="0 0 320 170" role="img" aria-label="End-to-end serving latency index: 100 for the previous pipeline versus 80 for GenPage, a 20% drop">
-    <title>Serving latency — previous pipeline vs. GenPage</title>
-    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
-    <rect x="60" y="30" width="60" height="110" fill="var(--text)"/>
-    <text x="90" y="24" text-anchor="middle" class="chart-val">Index 100</text>
-    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Previous pipeline</text>
-    <rect x="200" y="52" width="60" height="88" fill="var(--muted)" opacity="0.4"/>
-    <text x="230" y="46" text-anchor="middle" class="chart-val">Index 80</text>
-    <text x="230" y="158" text-anchor="middle" class="chart-lbl">GenPage</text>
-  </svg>
-  <figcaption>End-to-end serving latency, relative index (-20%). Netflix TechBlog, Jun. 2026.</figcaption>
-</figure>
-<span class="label">How the market is applying this</span>
-<p>Directly applicable if Globoplay is evaluating a move from a modular homepage architecture ("rows + ranker") to a single generative model. The piece is honest about a genuine surprise: generative doesn't mean slower — in an online A/B test, GenPage also produced a +0.24% lift on Netflix's core engagement decision metric (p&lt;0.001), a small percentage effect but statistically robust, typical of platforms operating at very large N.</p>
-<div class="refs">
-<strong>References</strong>
-<ul>
-<li><a href="https://netflixtechblog.com/genpage-towards-end-to-end-generative-homepage-construction-at-netflix-77146fba8a08">Netflix TechBlog — "GenPage: Towards End-to-End Generative Homepage Construction at Netflix"</a></li>
-<li><a href="https://arxiv.org/abs/2606.31031">arXiv 2606.31031</a></li>
-</ul>
-</div>
-</article>
-
-<article class="item">
-<h3>Netflix splits "fast" and "slow" decisions to cut notification fatigue</h3>
-<p>In "Thinking Fast & Slow for a Personalized Notification System" (Netflix TechBlog, June 2026), Netflix describes a hierarchical notification policy split into two layers: a "slow," weekly, strategic policy that sets per-channel send frequency, and a "fast," tactical, real-time policy that decides which message to send now — modeled directly on Kahneman's System 1/System 2. Separating the two decisions keeps a single monolithic model from optimizing "how much to communicate" and "what to communicate" at once, which tends to lead to over-sending.</p>
-<span class="label">How the market is applying this</span>
-<p>Relevant to Globoplay's own push/CRM notification-fatigue problem: separating the cadence decision from the content/timing decision is an applicable design pattern even without replicating Netflix's exact architecture.</p>
-<p class="caveat">We could not find a publicly disclosed lift figure for this system in the available sources — this item is cited for the design mechanism, not a result metric.</p>
-<div class="refs">
-<strong>References</strong>
-<ul>
-<li><a href="https://netflixtechblog.com/thinking-fast-slow-for-a-personalized-notification-system-4d89b26525cd">Netflix TechBlog — "Thinking Fast & Slow for a Personalized Notification System"</a></li>
-</ul>
-</div>
-</article>
-
-<article class="item">
-<h3>Anthropic launches Claude Opus 5.5: Fable 5.1-level capability, 40% cheaper</h3>
-<p>In "Introducing Claude Opus 5.5" (September 22, 2026), Anthropic launched the first model in its new "Claude 5.5" family: performance comparable to Claude Fable 5.1 — the company's prior flagship — at substantially lower cost and higher speed. Anthropic itself frames the release as a cost/efficiency generation rather than a capability leap: same eval tier, cheaper serving. The numbers: input tokens at $4/million (down from $5, -20%), output at $20/million (down from $25, -20%), cache reads at $0.20/million (down from $0.50, -60%) — roughly 40% cheaper overall on typical workloads, and about 30% faster output generation than Opus 5.</p>
-<figure class="chart">
-  <svg viewBox="0 0 320 170" role="img" aria-label="Cost per typical workload index: 100 for Opus 5 versus 60 for Opus 5.5, a 40% drop">
-    <title>Cost per typical workload — Opus 5 vs. Opus 5.5</title>
-    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
-    <rect x="60" y="30" width="60" height="110" fill="var(--text)"/>
-    <text x="90" y="24" text-anchor="middle" class="chart-val">Index 100</text>
-    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Opus 5</text>
-    <rect x="200" y="74" width="60" height="66" fill="var(--muted)" opacity="0.4"/>
-    <text x="230" y="68" text-anchor="middle" class="chart-val">Index 60</text>
-    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Opus 5.5</text>
-  </svg>
-  <figcaption>Cost per typical workload, relative index (-40%). Anthropic Newsroom, Sept. 2026.</figcaption>
-</figure>
-<span class="label">How the market is applying this</span>
-<p>For any team running LLM inference in production — recommendation, personalization, description generation, moderation, support — a cost-per-token curve dropping 20-60% every generation changes the "can we actually run this in production" math. Inference budgets are worth revisiting quarterly, not annually, especially for features where inference cost is currently the binding constraint on scale, such as LLM-based rankers (see GenRec, above).</p>
-<div class="refs">
-<strong>References</strong>
-<ul>
-<li><a href="https://www.anthropic.com/news/claude-opus-5-5">Anthropic Newsroom — "Introducing Claude Opus 5.5"</a></li>
-</ul>
-</div>
-</article>
-
-<p class="caveat">This week, we found no recent (last ~3 months) post from <a href="https://research.google/blog/">Google Research</a> or the <a href="https://www.databricks.com/blog">Databricks Blog</a> specifically about streaming, recommendation, or media personalization. The most current verifiable Databricks content on this topic is from May 21, 2026, "<a href="https://www.databricks.com/blog/youve-built-media-products-now-make-them-personalized">You've built the media products, now make them personalized</a>" — outside the three-month window, so it isn't treated as this week's news. We'd rather flag the gap than force a weak example; both sources remain priority watches for the next edition.</p>
-</section>
-
-<!-- SECTION 3 -->
-<section>
-<h2 class="section-title" id="sec3-en"><span class="num">03</span>Data Science market in Brazil</h2>
-<p class="section-intro">State of Data Brazil 2025-2026, produced by Data Hackers in partnership with Bain & Company, is the country's most comprehensive data-workforce survey — roughly 3,200 to 3,495 respondents, fielded October 14 through December 18, 2025 — and remains the most current edition available. We add one institutional development from Unicamp.</p>
-
-<article class="item">
-<h3>Remote work nearly doubles average pay, and the gap between junior and specialist reaches 5x</h3>
-<p>Per an independent analysis built on the official State of Data Brazil 2025-2026 dataset published by Data Hackers on Kaggle, average monthly pay rises from roughly R$4,152 at the junior level to R$14,469 at senior and R$20,028 at specialist/staff+ — roughly a 5x spread between the base and the top of the technical career track. Separately, fully remote professionals earn an average of R$13,470 per month versus R$6,645 for those working entirely in-office — remote work correlates with roughly double the pay.</p>
-<figure class="chart">
-  <svg viewBox="0 0 320 170" role="img" aria-label="Average monthly pay: R$6,645 for fully in-office professionals versus R$13,470 for fully remote">
-    <title>Average monthly pay by work model</title>
-    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
-    <rect x="60" y="86" width="60" height="54" fill="var(--text)"/>
-    <text x="90" y="80" text-anchor="middle" class="chart-val">R$6,645</text>
-    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Fully in-office</text>
-    <rect x="200" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
-    <text x="230" y="24" text-anchor="middle" class="chart-val">R$13,470</text>
-    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Fully remote</text>
-  </svg>
-  <figcaption>Average monthly pay by work model — analysis on the official State of Data Brazil 2025-2026 dataset on Kaggle.</figcaption>
-</figure>
-<span class="label">How the market is applying this</span>
-<p>For the Brazilian market specifically, this captures two post-pandemic structural shifts: local companies now reward specialist/staff technical tracks with a premium unusual for a historically flatter Brazilian corporate pay ladder, and remote work has become a proxy for access to higher-paying employers — often multinationals, remote-first companies, or roles pegged to foreign currency — versus roles tied to regional or traditional employers.</p>
-<p class="caveat">Methodology note: the pay figures come from a third-party analysis of the official dataset (not a direct read of the PDF report itself, which could not be confirmed accessible during this run) — we recommend checking the official Bain/Data Hackers document before using these numbers in compensation-policy decisions.</p>
-<div class="refs">
-<strong>References</strong>
-<ul>
-<li><a href="https://www.datahackers.news/p/download-do-relatorio-state-of-data-brazil-2025-2026">Data Hackers — "State of Data Brazil 2025-2026"</a></li>
-<li><a href="https://www.kaggle.com/datasets/datahackers/state-of-data-brazil-2025-2026">Kaggle — official "state-of-data-brazil-2025-2026" dataset</a></li>
-<li><a href="https://github.com/alanbarion/dashboard-mercado-dados-bi-powerbi">Independent analysis of the official dataset (Power BI)</a></li>
-</ul>
-</div>
-</article>
-
-<article class="item">
-<h3>Job searching stays elevated, but counter-offer retention is losing effectiveness</h3>
-<p>51.3% of respondents interviewed for a new job in the 6 months before the survey — close to the prior edition's 50.1%, but well below 2021's 61.4%. Only about 17% of those who interviewed were approved and actually switched jobs, but companies' ability to retain those candidates fell: 59.2% of candidates who received an offer left anyway, signaling that counter-offer retention by the current employer is losing effectiveness. Meanwhile, 25% of respondents reported witnessing layoffs at their own company in 2025, down from 29.5% in 2024 — and compensation remains the #1 criterion in choosing an employer for 83.4% of respondents.</p>
-<figure class="chart">
-  <svg viewBox="0 0 320 170" role="img" aria-label="Percentage of professionals who witnessed layoffs at their own company: 29.5% in 2024 versus 25% in 2025">
-    <title>Layoffs witnessed by respondents</title>
-    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
-    <rect x="60" y="30" width="60" height="110" fill="var(--text)"/>
-    <text x="90" y="24" text-anchor="middle" class="chart-val">29.5%</text>
-    <text x="90" y="158" text-anchor="middle" class="chart-lbl">2024</text>
-    <rect x="200" y="47" width="60" height="93" fill="var(--muted)" opacity="0.4"/>
-    <text x="230" y="41" text-anchor="middle" class="chart-val">25%</text>
-    <text x="230" y="158" text-anchor="middle" class="chart-lbl">2025</text>
-  </svg>
-  <figcaption>Percentage of respondents who witnessed layoffs at their own company — State of Data Brazil, 2024-2025 and 2025-2026 editions.</figcaption>
-</figure>
-<span class="label">How the market is applying this</span>
-<p>This is a nuanced picture for Brazil: job-seeking activity remains historically elevated compared with the hot 2021 market, even as the overall market cools from the 2021-2022 hiring boom — but the "loyalty premium" companies relied on to retain talent is eroding, with professionals increasingly willing to leave even when countered. At the same time, the drop in reported layoffs suggests Brazilian data teams have largely absorbed the post-boom correction and are stabilizing headcount heading into 2026.</p>
-<div class="refs">
-<strong>References</strong>
-<ul>
-<li><a href="https://www.datahackers.news/p/download-do-relatorio-state-of-data-brazil-2025-2026">Data Hackers — "State of Data Brazil 2025-2026"</a></li>
-<li><a href="https://www.bain.com/pt-br/insights/state-of-data-2025/">Bain & Company — "State of Data 2025"</a></li>
-</ul>
-</div>
-</article>
-
-<article class="item">
-<h3>Unicamp elevates its AI-for-health hub to a FAPESP Applied Research Center, with R$20 million in funding</h3>
-<p>"Viva Bem," Unicamp's AI innovation hub in partnership with Samsung since 2015, was elevated around July 6-7, 2026 to a formal FAPESP Applied Research Center (CPA) — a partnership between Unicamp, FAPESP, and Samsung running through 2030 (renewable for another 5 years) with an initial R$20 million investment. The focus is AI algorithms embedded in wearables (smartwatches, smart rings) for continuous, proactive health monitoring, explicitly targeting early, pre-symptomatic detection of Parkinson's disease and other conditions.</p>
-<span class="label">How the market is applying this</span>
-<p>For Brazil's data market, this is a concrete signal that public universities can structure long-term (5+ years, renewable) applied-research partnerships with global private AI companies — a funding model likely to expand demand for data/ML professionals in digital health in Brazil, a field historically short on labeled data and dedicated infrastructure.</p>
-<div class="refs">
-<strong>References</strong>
-<ul>
-<li><a href="https://jornal.unicamp.br/noticias/2026/07/06/centro-de-pesquisa-aplicada-viva-bem-trabalha-com-inteligencia-artificial-voltada-a-saude-e-ao-bem-estar/">Jornal da Unicamp — "Centro de Pesquisa Aplicada Viva Bem trabalha com inteligência artificial voltada à saúde e ao bem-estar"</a></li>
-<li><a href="https://agencia.fapesp.br/novo-centro-de-pesquisa-usara-relogios-e-aneis-inteligentes-para-deteccao-precoce-de-doencas/58613">Agência FAPESP — coverage, Jul. 2026</a></li>
-</ul>
+<ul><li><a href="https://www.databricks.com/blog/adaptive-instructed-retriever-frontier-quality-search-2x-lower-latency">Databricks Blog — "Adaptive Instructed-Retriever: Frontier-Quality Search at 2x Lower Latency"</a></li></ul>
 </div>
 </article>
 </section>
 
-<!-- SECTION 4 -->
-<section>
-<h2 class="section-title" id="sec4-en"><span class="num">04</span>Tooling and solution trends</h2>
-<p class="section-intro">Four adoption shifts in this window: format convergence in the lakehouse, consolidation among orchestrators, Hugging Face itself retiring its serving engine in favor of the community, and relational databases advancing on the vector-DB market as retrieval itself gets harder.</p>
+<h2 class="section-title" id="sec3-en"><span class="num">03</span>Data Science job market in Brazil</h2>
+<p class="section-intro">A new institutional partnership, and a previously unused cut of the State of Data Brazil 2025/2026 report: which companies Brazilian data professionals admire most.</p>
 
 <article class="item">
-<h3>The lakehouse "format wars" end: Snowflake and Databricks converge on Apache Iceberg</h3>
-<p>At Snowflake Summit 2026 (June 2, 2026), Snowflake announced general availability of Apache Iceberg v3 and full read/write interoperability between Snowflake and external engines — including Databricks — via "Horizon Catalog," which embeds Apache Polaris (an open-source catalog co-created by Snowflake and Dremio, donated to the Apache Software Foundation and promoted to a top-level project on February 18, 2026). Databricks responded by confirming it's designing Iceberg v4 around a new "adaptive metadata tree" and proposing that Delta Lake 5.0 adopt the same structure — the two largest warehouse/lakehouse vendors are converging their storage layer on a single open spec instead of competing formats.</p>
-<p>Locking data into one vendor's proprietary table format forces costly duplication — ETL copies between Snowflake and Databricks just so each engine can read the same data. Iceberg's catalog-as-control-plane model (Polaris) lets a single physical copy of data be written and read by multiple compute engines under shared governance, cutting storage cost and pipeline complexity — directly relevant to DS teams querying the same tables from notebooks, Spark, and warehouse SQL.</p>
-<figure class="chart">
-  <svg viewBox="0 0 320 170" role="img" aria-label="Apache Iceberg adoption among large enterprises: 12% in 2024 versus 38% in early 2026">
-    <title>Apache Iceberg adoption among large enterprises</title>
-    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
-    <rect x="60" y="105" width="60" height="35" fill="var(--text)"/>
-    <text x="90" y="99" text-anchor="middle" class="chart-val">12%</text>
-    <text x="90" y="158" text-anchor="middle" class="chart-lbl">2024</text>
-    <rect x="200" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
-    <text x="230" y="24" text-anchor="middle" class="chart-val">38%</text>
-    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Early 2026</text>
-  </svg>
-  <figcaption>Percentage of large enterprises evaluating/adopting Apache Iceberg as the standard table format. Source: State of the Apache Iceberg Ecosystem — survey from Feb./Mar. 2026, older than the 3-month window, cited as the most current adoption data available.</figcaption>
-</figure>
-<span class="label">How the market is applying this</span>
-<p>For a DS team, the "which lakehouse to buy" decision is being decoupled from "which table format to use" — Iceberg becoming vendor-neutral plumbing, which lowers the cost of switching warehouses later without rewriting pipelines.</p>
+<h3>Banco Inter signs an institutional partnership with Data Hackers for data and AI</h3>
+<p>On September 30, Inter announced an institutional partnership with Data Hackers, Brazil's largest data and artificial intelligence community, with the stated goal of expanding the exchange of technical knowledge and AI strategies among industry professionals. The partnership's first activity has already taken place: Data Hackers executives visited Inter's headquarters in Belo Horizonte for a "DNA Monthly" event covering data architecture, governance, engineering, science and analytics.</p>
+<span class="label">What it signals for the market</span>
+<p>Inter joins a growing list of Brazilian financial institutions — Itaú already maintains a formal relationship with Data Hackers, including meetups and internal agent hackathons — formalizing open channels with the technical community. This kind of institutional partnership tends to be a reasonable proxy for where data and AI hiring is accelerating: companies that invest in visibility with the community are typically also scaling their internal teams.</p>
 <div class="refs">
 <strong>References</strong>
-<ul>
-<li><a href="https://www.snowflake.com/en/blog/engineering/bidirectional-interoperability-iceberg-snowflake-horizon-catalog/">Snowflake Engineering Blog — "Bidirectional Interoperability for Snowflake Iceberg Tables"</a></li>
-<li><a href="https://www.snowflake.com/en/news/press-releases/snowflake-pioneers-new-open-framework-for-interoperable-enterprise-data-and-ai/">Snowflake — press release, June 2, 2026</a></li>
-<li><a href="https://www.dremio.com/blog/state-of-the-open-lakehouse-september-2026/">Dremio Blog — "State of the Open Lakehouse, September 2026"</a></li>
-<li><a href="https://datalakehousehub.com/blog/2026-02-state-of-the-apache-iceberg-ecosystem/">DataLakehouseHub — "State of the Apache Iceberg Ecosystem" (Feb./Mar. 2026)</a></li>
-</ul>
+<ul><li><a href="https://tiinside.com.br/30/09/2026/inter-e-data-hackers-anunciam-parceria-focada-em-ia-e-arquitetura-de-dados/">TI Inside — "Inter e Data Hackers anunciam parceria focada em IA e arquitetura de dados"</a></li></ul>
 </div>
 </article>
 
 <article class="item">
-<h3>Prefect acquires Dagster Labs, consolidating the two most-adopted Airflow successors into one company</h3>
-<p>On July 13, 2026, Prefect announced it is acquiring Dagster Labs, uniting what multiple outlets describe as "the two most widely adopted successors to Apache Airflow." Starting in August 2026 the combined company operates under the Prefect name, but Dagster and Dagster+ continue as independently supported products with their own open-source license and roadmap — this is business consolidation, not a technical merger, at least for now.</p>
-<p>Both projects emerged as reactions to the same architectural gaps in Airflow — DAG-of-tasks thinking that doesn't map cleanly to data/asset lineage, and heavyweight scheduler operations. As orchestration expands to cover not just batch ETL but AI-agent-triggered workflows — an agent deciding a table needs a backfill and calling the orchestrator's API — both vendors were racing to build the same "agents as callers" layer independently; pooling engineering effort avoids duplicating that R&D. Airflow remains the incumbent with the largest installed base, but new projects increasingly start on Dagster or Prefect instead of Airflow.</p>
-<figure class="chart">
-  <svg viewBox="0 0 320 170" role="img" aria-label="Teams running GenAI/MLOps workloads in production on Airflow: 32% overall versus 62% among managed Astro customers">
-    <title>GenAI/MLOps workloads in production on Airflow</title>
-    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
-    <rect x="60" y="83" width="60" height="57" fill="var(--text)"/>
-    <text x="90" y="77" text-anchor="middle" class="chart-val">32%</text>
-    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Airflow (overall)</text>
-    <rect x="200" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
-    <text x="230" y="24" text-anchor="middle" class="chart-val">62%</text>
-    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Astro (managed) customers</text>
-  </svg>
-  <figcaption>Teams running GenAI/MLOps workloads in production on Airflow. Source: State of Airflow 2026, Astronomer — survey from Jan. 2026, older than the 3-month window, cited as the most current orchestration-adoption data available.</figcaption>
-</figure>
-<span class="label">How the market is applying this</span>
-<p>For data teams evaluating orchestrators, the signal is twofold: commercial consolidation reduces the number of independent long-term bets available in the market, and the gap between general adoption and managed-environment adoption suggests operations and observability — not the engine itself — are what gate production AI workload adoption.</p>
+<h3>Google is the most admired company among data professionals in Brazil for the fourth year running — but the regional podium shifts</h3>
+<p>The State of Data Brazil 2025/2026 report (Data Hackers in partnership with Bain & Company, 6th edition, more than 3,200 respondents surveyed between October and December 2025) brought a cut that hadn't appeared in this column before: the ranking of companies data professionals most admire for building a career. In the global ranking, Google tops the list for the fourth consecutive year, drawing 12% of spontaneous mentions. In the Latin America-specific cut, Grupo Boticário leads, with Ambev Tech appearing in the regional top 10 for the fourth year in a row.</p>
+<span class="label">What it signals for the market</span>
+<p>For recruiters in Brazil, "spontaneous admiration" is, in practice, an employer-brand metric measured against the very technical audience a company wants to attract. The fact that traditional Brazilian companies — not just tech multinationals — keep showing up consistently in this local ranking suggests employer branding in data is no longer exclusive territory for big tech in the country.</p>
 <div class="refs">
 <strong>References</strong>
-<ul>
-<li><a href="https://dagster.io/blog/prefect-is-acquiring-dagster">Dagster Blog — "Prefect is Acquiring Dagster"</a></li>
-<li><a href="https://www.prefect.io/prefect-acquires-dagster">Prefect Blog — "Prefect acquires Dagster Labs"</a></li>
-<li><a href="https://www.astronomer.io/blog/state-of-airflow-2026/">Astronomer — "State of Airflow 2026"</a></li>
-</ul>
+<ul><li><a href="https://www.datahackers.news/podcast/s/data_hackers/top_10_empresas_mais_admiradas_no_brasil_segundo_state_of_data_brazil_2026_brasil_entra_no_centro_da_disputa_entre_eua_e_china_pela_ia_lancamento_do_chatgpt_imagens_2_0_-_data_hackers_news_108">Data Hackers News — "Top 10 empresas mais admiradas no Brasil segundo o State of Data Brazil 2026"</a></li></ul>
+</div>
+</article>
+
+<h2 class="section-title" id="sec4-en"><span class="num">04</span>Tooling and platform trends</h2>
+<p class="section-intro">Two infrastructure rewrites aiming at the same target — shrinking the dead time between "having the data" and "being able to process it" — one at the transformation layer (dbt), the other at the batch-processing layer (Ray Data).</p>
+
+<article class="item">
+<h3>dbt Labs ships version 2.0 in Rust — and open-sources the Fusion engine's code for the first time</h3>
+<p>After a series of alpha builds throughout the year (fixing, for instance, a panic in the minijinja templating engine that cascaded into lock-poisoned failures, and adding catalog_database support for Snowflake, BigQuery and Databricks), dbt Core v2.0 reached general availability at dbt Summit 2026. The central change is a full rewrite in Rust, sharing the same codebase as the proprietary Fusion engine — part of that code is open source for the first time. The performance gain is concrete: on a 10,000-model project, parsing is up to 10 times faster than on v1. The project now ships in two distributions: the open core under an Apache 2.0 license (dbt-core / dbt-oss) and the full proprietary distribution (dbt, with Fusion). BigQuery, Databricks, DuckDB, Redshift and Snowflake adapters are already generally available; ClickHouse and Spark remain in beta.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Relative parsing time for a 10,000-model project: dbt Core v1 much slower than dbt Core v2">
+    <title>Relative parsing time (10,000 models)</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="24" text-anchor="middle" class="chart-val">10x</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">dbt Core v1</text>
+    <rect x="200" y="129" width="60" height="11" fill="var(--text)"/>
+    <text x="230" y="123" text-anchor="middle" class="chart-val">1x</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">dbt Core v2</text>
+  </svg>
+  <figcaption>Relative parsing time on a reference 10,000-model project, per dbt Labs ("up to 10x faster"); normalized values, not absolute seconds.</figcaption>
+</figure>
+<span class="label">How the market is applying it</span>
+<p>Large dbt projects — in the thousands-of-models range — historically suffered from parse/compile times that stalled the local development loop on every `dbt run`. This rewrite directly attacks that productivity bottleneck, and open-sourcing Fusion's code inside Core signals that dbt Labs is trying to reduce the friction between its free and paid tiers before competitors like SQLMesh capture that specific discontent.</p>
+<div class="refs">
+<strong>References</strong>
+<ul><li><a href="https://docs.getdbt.com/blog/dbt-core-v2-is-here">dbt Labs — "dbt Core v2 is here"</a></li></ul>
 </div>
 </article>
 
 <article class="item">
-<h3>Hugging Face retires its own inference server (TGI) and recommends migrating to vLLM or SGLang</h3>
-<p>Hugging Face put Text Generation Inference (TGI) into maintenance mode (announced Dec. 2025) and archived the GitHub repo read-only on March 21, 2026; as of September 5, 2026 its README limits further work to small bug fixes and documentation, explicitly recommending new projects use vLLM, SGLang, or local engines like llama.cpp/MLX. This is notable because Hugging Face itself built and championed TGI — the company retiring its own serving engine in favor of two independent open-source projects is a strong market-adoption signal.</p>
-<p>Model architectures now ship faster than any single vendor-maintained engine can keep up with — TGI's frozen codebase already lacked support for newer releases by the time it was archived, while vLLM and SGLang, as community projects with dozens of active contributors, add new architectures within days. SGLang's RadixAttention (automatic prefix/KV-cache sharing across requests) gives it a measured throughput edge in conversational/RAG workloads precisely because it avoids recomputing shared prompt prefixes — directly relevant to DS/ML teams running RAG or agentic pipelines with repeated system prompts.</p>
+<h3>Ray Data gets GPU-native operators with NVIDIA — cutting deduplication cost by up to 80%</h3>
+<p>Announced at Ray Summit 2026 (August 24–26, San Francisco), Ray Data 2.58 integrates NVIDIA's cuDF as a backend for map_batches operations, plus an experimental GPU shuffle built on RapidsMPF — eliminating manual CPU-to-GPU format conversions inside the data pipeline. On fuzzy-deduplication benchmarks over the FineWeb 10BT dataset, cuDF-accelerated MinHash signature generation ran about 15 times faster than an equivalent CPU cluster; GPU shuffle sped up grouping and connected-components stages by up to 3x; and the full pipeline ran up to 4 times faster, with up to 3.1x better total cost of ownership on an RTX PRO 4500 Blackwell GPU versus CPU-only clusters.</p>
 <figure class="chart">
-  <svg viewBox="0 0 320 170" role="img" aria-label="H100 throughput with shared prefixes: 12,500 tokens per second for vLLM versus 16,200 for SGLang">
-    <title>H100 throughput — prefix-heavy workloads</title>
+  <svg viewBox="0 0 320 170" role="img" aria-label="Relative speed of MinHash signature generation: GPU with cuDF about 15 times faster than CPU">
+    <title>MinHash signature generation: CPU vs. GPU (cuDF)</title>
     <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
-    <rect x="60" y="55" width="60" height="85" fill="var(--text)"/>
-    <text x="90" y="49" text-anchor="middle" class="chart-val">12,500 tok/s</text>
-    <text x="90" y="158" text-anchor="middle" class="chart-lbl">vLLM</text>
-    <rect x="200" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
-    <text x="230" y="24" text-anchor="middle" class="chart-val">16,200 tok/s</text>
-    <text x="230" y="158" text-anchor="middle" class="chart-lbl">SGLang (RadixAttention)</text>
+    <rect x="60" y="133" width="60" height="7" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="127" text-anchor="middle" class="chart-val">1x</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">CPU cluster</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">~15x</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">GPU with cuDF</text>
   </svg>
-  <figcaption>Reported H100 throughput for prefix-heavy workloads (RAG/multi-turn) — third-party benchmark, not the projects' own figures.</figcaption>
+  <figcaption>Relative speed of MinHash signature generation in the FineWeb 10BT benchmark, per Anyscale; values normalized to CPU-cluster performance.</figcaption>
 </figure>
-<span class="label">How the market is applying this</span>
-<p>For teams evaluating an open-model serving stack, vLLM remains the broader, safer default (75,000+ GitHub stars, used in production at Amazon, Roblox, and Stripe), while SGLang is preferred for workloads with heavy prefix reuse, like RAG and multi-turn chat.</p>
+<span class="label">How the market is applying it</span>
+<p>This matters for any team running batch data preprocessing — deduplication, cleaning, feature engineering — ahead of model training or fine-tuning: the optimization frontier is shifting from "parallelize across more CPU nodes" to "use the GPU sitting idle between training batches for the data pipeline itself," a pattern likely to spread to other distributed-processing frameworks over the coming quarters.</p>
 <div class="refs">
 <strong>References</strong>
-<ul>
-<li><a href="https://huggingface.co/docs/text-generation-inference">Hugging Face — Text Generation Inference docs (maintenance mode)</a></li>
-<li><a href="https://www.spheron.network/blog/migrate-tgi-to-vllm-sglang-2026/">Spheron — "Migrate from Hugging Face TGI to vLLM or SGLang: A 2026 Move-Off Guide"</a></li>
-<li><a href="https://github.com/vllm-project/vllm">vLLM — GitHub repository</a></li>
-<li><a href="https://github.com/sgl-project/sglang">SGLang — GitHub repository</a></li>
-</ul>
+<ul><li><a href="https://anyscale.com/blog/gpu-native-operators-in-ray-data">Anyscale Blog — "GPU-native operators in Ray Data"</a></li></ul>
 </div>
 </article>
 
-<article class="item">
-<h3>Postgres with pgvectorscale beats Qdrant on throughput by 11x — but the real race is hybrid retrieval</h3>
-<p>The vector-database market is consolidating back toward extended relational databases rather than dedicated vector-native systems. A survey from Actian ("State of Vector Databases, Q2 2026") notes ChromaDB's usage share dropped from 15.6% to 13.4% over one measurement period as pgvector absorbed attention from teams already running Postgres. A benchmark from Tiger Data (formerly Timescale), published April 2026, showed Postgres with the pgvectorscale extension (DiskANN plus statistical binary quantization) outperforming Qdrant by 11.4x in raw throughput at 99% recall on 50 million vectors (471 QPS versus 41 QPS) — though Qdrant still wins on tail latency (p99: 38.7ms versus 74.6ms) and index-build speed (3.3h versus 11.1h): a real architectural trade-off, not a one-sided win.</p>
-<p>Standalone vector databases were the default 2022-2024 answer to "how do I do RAG," but they force teams to run and operationally maintain a second database purely for embeddings, duplicating data already in Postgres/MySQL and adding sync overhead. pgvector/pgvectorscale close that gap for the common case — workloads under 50 million vectors, which covers most enterprise RAG deployments — by keeping embeddings in the same transactional database as the source data. At the same time, the retrieval problem itself is getting harder: a VentureBeat Pulse survey (three monthly waves, 45-58 qualified respondents per wave, companies with 100+ employees; published April 29, 2026) found enterprise intent to adopt hybrid retrieval — vector plus keyword/BM25 plus reranking, not vector search alone — tripling from 10.3% to 33.3% in a single quarter (Q1 2026), as teams found pure vector similarity search insufficient once RAG systems hit production scale.</p>
-<figure class="chart">
-  <svg viewBox="0 0 320 170" role="img" aria-label="Enterprise intent to adopt hybrid retrieval: 10.3% at the start of the quarter versus 33.3% by the end of Q1 2026">
-    <title>Hybrid retrieval adoption intent — Q1 2026</title>
-    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
-    <rect x="60" y="106" width="60" height="34" fill="var(--text)"/>
-    <text x="90" y="100" text-anchor="middle" class="chart-val">10.3%</text>
-    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Start of quarter</text>
-    <rect x="200" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
-    <text x="230" y="24" text-anchor="middle" class="chart-val">33.3%</text>
-    <text x="230" y="158" text-anchor="middle" class="chart-lbl">End of quarter (Q1 2026)</text>
-  </svg>
-  <figcaption>Enterprise intent to adopt hybrid retrieval (vector + BM25 + reranking) in RAG programs. Source: VentureBeat Pulse, Apr. 2026.</figcaption>
-</figure>
-<span class="label">How the market is applying this</span>
-<p>For data architects, the message is twofold: for most workloads (under 50 million vectors), keeping embeddings in the Postgres instance you already run is operationally cheaper than a dedicated vector database; and regardless of where vectors live, retrieval by vector similarity alone is no longer sufficient — mature RAG pipelines are moving to hybrid architectures.</p>
-<div class="refs">
-<strong>References</strong>
-<ul>
-<li><a href="https://www.tigerdata.com/blog/pgvector-vs-qdrant">Tiger Data Blog — "Pgvector vs. Qdrant"</a></li>
-<li><a href="https://www.actian.com/blog/developer/state-of-vector-databases-q2-2026/">Actian — "State of Vector Databases, Q2 2026"</a></li>
-<li><a href="https://venturebeat.com/data/the-retrieval-rebuild-why-hybrid-retrieval-intent-tripled-as-enterprise-rag-programs-hit-the-scale-wall">VentureBeat — "The Retrieval Rebuild: Why Hybrid Retrieval Intent Tripled..."</a></li>
-</ul>
-</div>
-</article>
-</section>
-
-<h2 class="section-title archive-title" id="arquivo-en"><span class="num">↺</span>Previous reports</h2>
+<h2 class="section-title archive-title">Previous reports</h2>
 <ul class="archive-list">
+<li><a href="archive/2026-09-25.html">September 25, 2026</a></li>
 <li><a href="archive/2026-09-18.html">September 18, 2026</a></li>
 <li><a href="archive/2026-09-11.html">September 11, 2026</a></li>
 <li><a href="archive/2026-08-28.html">August 28, 2026</a></li>
@@ -948,7 +470,7 @@ h2.section-title.archive-title{margin-top:56px;}
 </ul>
 
 <div class="methodology">
-<strong>Methodology note.</strong> This digest is produced weekly by a research agent that actively searches for primary sources (academic papers, research/engineering blogs from reference companies, universities, market surveys) instead of answering from memory. Every non-trivial claim carries a verifiable link. When a primary source couldn't be confirmed with confidence, when a data point is older than the recommended three-month window, or when no new, verifiable development was found in a section, that's flagged explicitly in the text (see italicized notes) rather than generalized or invented. In this edition, direct full-page fetches to several domains — including Netflix TechBlog, research.netflix.com, Databricks, Google Research, arXiv, Data Hackers, Kaggle, Bain, Tiger Data, Astronomer, and Wikipedia — were blocked by the execution environment's network policy; Anthropic's domain was directly reachable. In those cases, facts were verified by cross-referencing multiple independent searches and journalistic, institutional, or third-party sources citing the same primary content, with dates and figures checked against at least two sources whenever possible.
+<strong>Methodology note.</strong> This digest is produced weekly by a research agent that actively searches for primary sources (academic papers, research/engineering blogs from reference companies, universities, market surveys) instead of answering from memory. Every non-trivial claim is accompanied by a verifiable link. In this edition, direct full-page fetches to several domains — including arXiv, Databricks, Google Research, docs.getdbt.com and Anyscale — were blocked by the execution environment's network policy; the Anthropic domain was directly accessible, and its numbers (e.g., 950 agents, 210 million tokens, 21 hours, 200,000 candidates) were confirmed on the page itself. For the rest, facts were verified by cross-referencing multiple independent searches and journalistic or third-party sources citing the same primary content, with numbers checked against at least two sources whenever possible; figures marked as estimated or derived (e.g., the "~11.6s" latency in section 2) are explicitly flagged as such in the captions. This week, no new relevant content was found from Netflix Research, Netflix TechBlog or Google Research within the streaming/recommendation/personalization scope — this is flagged at the top of section 2 rather than forcing in an outdated or irrelevant example.
 </div>
 
 <div class="contact">
@@ -957,27 +479,30 @@ h2.section-title.archive-title{margin-top:56px;}
 </div>
 
 <footer class="report-footer">
-  <p>Published via GitHub Pages from the <a href="https://github.com/GoncalvesRD/ds-trends">GoncalvesRD/ds-trends</a> repository. Digest generated weekly, every Friday.</p>
+  <p>Published via GitHub Pages from <a href="https://github.com/GoncalvesRD/ds-trends">github.com/GoncalvesRD/ds-trends</a>.</p>
 </footer>
 
 </div>
 
+</main>
 <script>
 (function(){
   var buttons = document.querySelectorAll('[data-lang-btn]');
-  var blocks = document.querySelectorAll('.lang-block');
+  var blocks = document.querySelectorAll('[data-lang]');
   buttons.forEach(function(btn){
     btn.addEventListener('click', function(){
       var lang = btn.getAttribute('data-lang-btn');
       buttons.forEach(function(b){ b.classList.toggle('active', b === btn); });
       blocks.forEach(function(block){
-        block.hidden = block.getAttribute('data-lang') !== lang;
+        if (block.getAttribute('data-lang') === lang) {
+          block.removeAttribute('hidden');
+        } else {
+          block.setAttribute('hidden', '');
+        }
       });
     });
   });
 })();
 </script>
-
-</main>
 </body>
 </html>
