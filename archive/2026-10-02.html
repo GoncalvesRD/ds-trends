@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digest DS/ML/IA — 2 de outubro de 2026</title>
+<style>
+:root{--bg:#ffffff;--text:#1a1a1a;--muted:#6b6b6b;--hairline:#e6e6e6;--link:#1a1a1a;--link-hover:#1a8917;--serif:Georgia,'Iowan Old Style','Palatino Linotype','Book Antiqua',Palatino,serif;--sans:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;--globoplay-red:#FB0234;}
+*{box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:var(--serif);margin:0;padding:0 24px 100px;}
+main{max-width:700px;margin:0 auto;}
+[hidden]{display:none!important;}
+.lang-toggle{display:flex;justify-content:flex-end;gap:8px;align-items:center;padding:20px 0 0;font-family:var(--sans);font-size:.78rem;}
+.lang-toggle button{background:none;border:1px solid var(--hairline);border-radius:20px;padding:5px 14px;font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.03em;color:var(--muted);cursor:pointer;}
+.lang-toggle button.active{color:#fff;background:var(--text);border-color:var(--text);}
+header.report-header{padding:24px 0 0;}
+header.report-header h1{font-size:2.4rem;line-height:1.25;font-weight:400;margin:0 0 16px;letter-spacing:-.01em;}
+header.report-header .dek{font-size:1.15rem;color:var(--muted);font-style:italic;margin:0 0 28px;line-height:1.5;}
+.byline{display:flex;align-items:center;gap:14px;padding:20px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);margin-bottom:40px;font-family:var(--sans);}
+.avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;background:#1a1a1a;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.05rem;font-weight:600;flex-shrink:0;}
+.byline .name{font-weight:600;font-size:.98rem;color:var(--text);line-height:1.5;}
+.byline .sub{font-size:.85rem;color:var(--muted);line-height:1.5;}
+.byline .sub a{color:var(--muted);}
+nav.toc{font-family:var(--sans);background:#fafafa;border:1px solid var(--hairline);border-radius:10px;padding:22px 26px;margin-bottom:48px;}
+nav.toc .toc-title{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 14px;}
+nav.toc ol{margin:0;padding-left:22px;}
+nav.toc li{margin-bottom:12px;font-size:.92rem;line-height:1.55;color:var(--muted);}
+nav.toc li:last-child{margin-bottom:0;}
+nav.toc li a{font-weight:600;color:var(--text);text-decoration:none;}
+nav.toc li a:hover{color:var(--link-hover);}
+h2.section-title{font-family:var(--serif);font-size:1.7rem;font-weight:400;margin:64px 0 8px;scroll-margin-top:20px;}
+h2.section-title .num{color:var(--muted);font-size:1.1rem;margin-right:6px;}
+p.section-intro{font-family:var(--sans);color:var(--muted);font-size:.92rem;margin:0 0 32px;line-height:1.6;}
+article.item{margin:0 0 32px;}
+article.item+article.item{border-top:1px solid var(--hairline);padding-top:32px;}
+article.item h3{font-size:1.45rem;font-weight:400;line-height:1.35;margin:0 0 14px;}
+article.item p{font-size:1.08rem;line-height:1.8;margin:0 0 16px;color:var(--text);}
+.label{display:block;font-family:var(--sans);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:22px 0 8px;}
+.refs{margin-top:20px;font-family:var(--sans);font-size:.85rem;color:var(--muted);}
+.refs strong{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;}
+.refs ul{margin:6px 0 0;padding-left:0;list-style:none;}
+.refs li{margin-bottom:4px;}
+a{color:var(--link);text-decoration:underline;text-decoration-color:var(--hairline);text-underline-offset:2px;}
+a:hover{color:var(--link-hover);text-decoration-color:var(--link-hover);}
+.caveat{font-family:var(--sans);font-size:.85rem;color:var(--muted);font-style:italic;margin-top:6px;}
+section.globoplay h2.section-title,section.globoplay h2.section-title .num,section.globoplay .label{color:var(--globoplay-red);}
+section.globoplay article.item{border-left:3px solid var(--globoplay-red);padding-left:20px;}
+section.globoplay article.item+article.item{border-top:1px solid var(--hairline);}
+section.globoplay a{text-decoration-color:rgba(251,2,52,.3);}
+section.globoplay a:hover{color:var(--globoplay-red);text-decoration-color:var(--globoplay-red);}
+.methodology{font-family:var(--sans);background:#fafafa;border:1px solid var(--hairline);border-radius:8px;padding:18px 22px;font-size:.88rem;color:var(--muted);line-height:1.6;margin:64px 0 0;}
+.methodology strong{color:var(--text);}
+.contact{font-family:var(--sans);margin:28px 0 0;padding-top:24px;border-top:1px solid var(--hairline);font-size:.9rem;color:var(--muted);line-height:1.8;}
+.contact .name{color:var(--text);font-weight:600;}
+footer.report-footer{margin-top:24px;padding-top:20px;font-family:var(--sans);color:var(--muted);font-size:.82rem;}
+footer.report-footer a{color:var(--muted);}
+.archive-list{list-style:none;padding:0;margin:10px 0 0;font-family:var(--sans);}
+.archive-list li{padding:8px 0;border-bottom:1px solid var(--hairline);font-size:.92rem;}
+figure.chart{margin:24px 0;font-family:var(--sans);text-align:center;}
+figure.chart svg{width:100%;max-width:320px;height:auto;}
+figure.chart .chart-val{font-size:13px;font-weight:700;fill:var(--text);}
+figure.chart .chart-lbl{font-size:11px;fill:var(--muted);}
+figure.chart figcaption{font-size:.78rem;color:var(--muted);margin-top:8px;}
+h2.section-title.archive-title{margin-top:56px;}
+</style>
+</head>
+<body>
+<main>
+
+<div class="lang-toggle">
+  <button type="button" data-lang-btn="pt" class="active">PT</button>
+  <button type="button" data-lang-btn="en">EN</button>
+</div>
+
+<div class="lang-block" data-lang="pt">
+
+<header class="report-header">
+  <h1>Tendências em Data Science, Machine Learning e IA Aplicada</h1>
+  <p class="dek">Claude passa 21 horas sozinho numa busca genômica e volta com um candidato a mecanismo do tipo CRISPR, a Databricks expõe seu catálogo de governança como um servidor MCP único, e o dbt reescreve seu motor inteiro em Rust.</p>
+</header>
+
+<div class="byline">
+  <div class="avatar">RG</div>
+  <div>
+    <div class="name">Ri Gonçalves</div>
+    <div class="sub"><a href="https://goncalvesrd.github.io/ds-trends/">goncalvesrd.github.io/ds-trends</a> · 2 de outubro de 2026</div>
+  </div>
+</div>
+
+<nav class="toc">
+  <p class="toc-title">Nesta edição</p>
+  <ol>
+    <li><a href="#sec1-pt">Tendências gerais em Data Science / ML / IA aplicada</a> — um detector de contaminação sintética para dados de treino, e o Google inverte a lógica de geração de dados para agentes de function-calling.</li>
+    <li><a href="#sec2-pt">Streaming e concorrentes da Globoplay</a> — Claude aponta um candidato a mecanismo do tipo CRISPR numa busca genômica autônoma; a Databricks expõe seu catálogo de governança via MCP e corta pela metade a latência de busca.</li>
+    <li><a href="#sec3-pt">Mercado de Data Science no Brasil</a> — o Inter formaliza parceria com o Data Hackers, e o State of Data Brazil revela quem os profissionais de dados mais admiram no país e no mundo.</li>
+    <li><a href="#sec4-pt">Tendências de ferramentas e soluções</a> — o dbt abre o motor Fusion em Rust com parsing até 10x mais rápido, e o Ray Data ganha operadores nativos de GPU que cortam até 80% do custo de deduplicação.</li>
+  </ol>
+</nav>
+
+<h2 class="section-title" id="sec1-pt"><span class="num">01</span>Tendências gerais em Data Science, Machine Learning e IA aplicada</h2>
+<p class="section-intro">Duas peças sobre a mesma dor: como garantir a qualidade dos dados que alimentam os próprios modelos, seja para evitar degradação por retroalimentação sintética, seja para treinar agentes de function-calling sem pagar o preço de anotação manual.</p>
+
+<article class="item">
+<h3>Um "detector de contaminação" para dados sintéticos: pesquisadores lançam o SynthSentry contra o colapso de modelos</h3>
+<p>Modelos cada vez mais treinam sobre dados gerados por outros modelos — seja por conveniência, seja porque dados humanos de qualidade estão ficando escassos em certos domínios. O risco conhecido como "model collapse" é sutil: a fluência do texto sobrevive, mas as caudas da distribuição e a precisão factual se deterioram a cada geração recursiva, porque erros e vieses do gerador se acumulam e se amplificam em vez de se cancelar. Um paper publicado em setembro apresenta o SynthSentry, um protocolo de avaliação construído sobre validação cruzada "leave-one-generator-out" (testar a detecção contra geradores nunca vistos no treino do detector), acompanhado de um toolkit de pontuação e um benchmark rotulado com múltiplas gerações sintéticas. O diferencial é uma análise de falsos positivos estratificada por domínio, que separa artefatos típicos de geração sintética de estruturas que já são nativas de textos jurídicos, clínicos e de código-fonte — áreas onde um detector ingênuo tende a confundir formalidade ou repetição estrutural com sinal de contaminação.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>Times que usam LLMs para gerar dados de treinamento sintético — prática hoje rotineira em fine-tuning e em pipelines de RAG — não têm, na maioria dos casos, nenhuma etapa de due diligence sobre esses dados antes de colocá-los em produção. Uma ferramenta como essa aponta para um próximo item óbvio de checklist em MLOps: auditar a procedência sintética de um dataset da mesma forma que hoje se audita viés ou vazamento de dados de teste, antes de qualquer re-treino.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul><li><a href="https://arxiv.org/abs/2609.12353">arXiv 2609.12353 — "SynthSentry: Detecting Synthetic Data Contamination in Language Model Training Data"</a></li></ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Google inverte a lógica de geração de dados para agentes: primeiro a resposta, depois a pergunta — e chega a 99,8% de aproveitamento</h3>
+<p>A forma padrão de gerar dados de treino para agentes de function-calling é: gerar uma pergunta de usuário e, em seguida, anotar manualmente (ou via busca em árvore) a cadeia de chamadas de ferramentas que a resolveria — um processo caro, lento e sujeito a falhas de anotação quando a cadeia é complexa. O ToolGrad, publicado no blog do Google Research em setembro (e aceito como ACL 2026 Findings), inverte essa ordem: primeiro constrói cadeias de uso de ferramentas válidas, de forma iterativa, guiado por "gradientes textuais" — críticas em linguagem natural que funcionam como sinal de correção a cada passo, de forma análoga a um gradiente numérico, mas aplicado a texto — e só depois sintetiza a pergunta de usuário que naturalmente levaria àquela cadeia. O resultado, batizado ToolGrad-500, atinge uma taxa de aproveitamento de 99,8% a um custo de geração mais baixo que o método tradicional; modelos Gemma-3 de 12 bilhões de parâmetros ajustados sobre esse dataset superam baselines bem maiores no Berkeley Function Calling Leaderboard.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>Para quem treina ou ajusta agentes de function-calling, o resultado reforça um ponto que vem se acumulando: o gargalo real costuma ser a qualidade do dado de demonstração, não o tamanho do modelo. Isso significa que times menores, sem orçamento de compute de um laboratório de ponta, podem competir investindo em engenharia de pipeline de dados em vez de em escala de parâmetros.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://research.google/blog/toolgrad-efficient-tool-use-dataset-generation-with-textual-gradients/">Google Research Blog — "ToolGrad: Efficient Tool-use Dataset Generation with Textual 'Gradients'"</a></li>
+<li><a href="https://arxiv.org/abs/2508.04086">arXiv 2508.04086 (ACL 2026 Findings)</a></li>
+</ul>
+</div>
+</article>
+
+<section class="globoplay">
+<h2 class="section-title" id="sec2-pt"><span class="num">02</span>Streaming e concorrentes da Globoplay</h2>
+<p class="section-intro">Nesta semana, Netflix Research e Netflix TechBlog não publicaram nada novo que se encaixasse em streaming, recomendação, personalização, dados ou infraestrutura de mídia — os dois posts mais recentes do TechBlog (18 e 25 de setembro) tratam de gestão de dependências Java e identidade de workload em nuvem, fora do escopo desta seção. Google Research também não trouxe nada novo em recomendação ou personalização de mídia desde o retriever de difusão já coberto na edição passada. Por isso, o destaque desta semana é da Anthropic — fonte que acompanhamos sempre, mesmo fora do tema streaming — e da Databricks, com duas novidades sobre como dar a agentes de IA acesso confiável a dados corporativos.</p>
+
+<article class="item">
+<h3>A Anthropic deixa Claude sozinho por 21 horas numa busca genômica — e ele volta com um candidato a mecanismo do tipo CRISPR</h3>
+<p>Em 23 de setembro, a Anthropic anunciou um novo grupo e laboratório de pesquisa em ciências da vida, e usou como primeiro resultado público uma descoberta feita quase inteiramente por agentes autônomos. Cerca de 950 instâncias do Claude rodaram em paralelo por 21 horas, consumindo 210 milhões de tokens, para vasculhar mais de 200 mil transcriptases reversas (enzimas que copiam RNA em DNA) catalogadas em bancos de dados genômicos. Os agentes sinalizaram 3.500 novos sistemas candidatos e, a partir daí, reduziram o funil aos 20 mais promissores, produzindo relatórios legíveis por humanos para que cientistas da própria Anthropic validassem em laboratório. Um desses candidatos — batizado ART ("array-associated reverse transcriptase"), encontrado principalmente em bacteriófagos — combina uma transcriptase reversa, um gene parceiro e um array de repetições de DNA igualmente espaçadas que, em experimentos iniciais, se mostram expressas como pequenos RNAs. Essa combinação específica de características só havia sido vista, até hoje, num punhado de outros sistemas — entre eles o CRISPR. A Anthropic é explícita sobre o limite do que foi provado: a função do ART ainda é desconhecida, nenhum experimento demonstrou edição genética, e a investigação sobre sua função real segue em andamento.</p>
+<span class="label">O que isso sinaliza para quem trabalha com dados</span>
+<p>Do ponto de vista de um Data Scientist, o interessante não é a biologia, e sim a arquitetura do processo: a Anthropic montou uma pipeline de "ciência em lote" em que centenas de agentes rodam heurísticas de triagem em paralelo sobre um espaço de busca massivo, e só então escalam humanos para validar um funil já reduzido a duas dezenas de itens. É o mesmo padrão de busca agêntica com humano-no-loop a jusante que já aparece em descoberta de materiais e triagem de fraude — a genômica é apenas o domínio mais vistoso em que a empresa decidiu demonstrar o conceito publicamente.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul><li><a href="https://www.anthropic.com/news/claude-discovers-novel-enzyme-system">Anthropic — "Claude discovers a novel enzyme system"</a></li></ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Databricks transforma seu catálogo de governança num servidor MCP único — e qualquer agente de IA passa a "falar a língua do negócio"</h3>
+<p>Assistentes de uso geral como ChatGPT, Claude, Microsoft Copilot e agentes de coding conseguem, hoje, consultar dados corporativos — mas sem contexto de negócio, não sabem qual tabela é a fonte confiável de uma métrica, o que essa métrica realmente significa, ou quem tem permissão para ver o quê. O Genie One MCP, que a Databricks tornou disponível de forma geral em 22 de setembro, resolve isso expondo a "Genie Ontology" — definições de métricas aprovadas, relações entre dados, autoridade de fonte e regras de permissão — através de um único servidor Model Context Protocol. Qualquer agente externo conectado a esse servidor herda automaticamente acesso governado e consciente de permissões a dados estruturados e não estruturados, em vez de ter que inferir (ou inventar) a lógica de negócio por conta própria.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>Isso é sintoma de uma mudança maior: o MCP está se consolidando como a camada de integração padrão entre "onde os dados vivem" (warehouses e lakehouses) e "onde os agentes vivem" (assistentes de terceiros), deslocando parte do trabalho de governança de pipelines de ETL para contratos de contexto que qualquer agente externo consegue consumir diretamente — um movimento que volta a aparecer na seção de ferramentas desta edição.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul><li><a href="https://www.databricks.com/blog/genie-one-mcp-give-any-ai-agent-right-business-context">Databricks Blog — "Genie One MCP: Give any AI Agent the Right Business Context"</a></li></ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Databricks corta pela metade a latência de busca "de qualidade de fronteira" ao decidir, em tempo real, quando vale a pena buscar mais</h3>
+<p>O Instructed-Retriever-1 da Databricks já incorporava esquemas de dados corporativos e instruções customizadas usando test-time scaling paralelo para melhorar a precisão de recuperação com baixa latência. O problema é que perguntas complexas de múltiplos saltos (multi-hop) se beneficiam de busca sequencial — o modelo refina a consulta iterativamente, acumulando evidência a cada passo —, o que é mais lento. A nova versão, Adaptive Instructed-Retriever, combina os dois modos: usa busca paralela por padrão e só aciona passos sequenciais adicionais de busca quando o ganho esperado de qualidade compensa o custo extra, em vez de aplicar o mesmo orçamento de computação a toda consulta. Em benchmarks internos da Databricks, o modelo atinge a qualidade de modelos de referência do mercado a uma latência média ponta a ponta de 5,8 segundos — mais do que o dobro da velocidade de modelos comparáveis.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Comparação de latência média de busca: modelos comparáveis em cerca de 11,6 segundos contra 5,8 segundos do Adaptive Instructed-Retriever">
+    <title>Latência média de busca ponta a ponta</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="24" text-anchor="middle" class="chart-val">~11,6s</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Modelos comparáveis</text>
+    <rect x="200" y="85" width="60" height="55" fill="var(--text)"/>
+    <text x="230" y="79" text-anchor="middle" class="chart-val">5,8s</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Adaptive Instructed-Retriever</text>
+  </svg>
+  <figcaption>Latência média ponta a ponta reportada pela Databricks para o Adaptive Instructed-Retriever; o valor "~11,6s" é estimado a partir da razão de "mais de 2x" divulgada pela empresa, não uma medição direta divulgada por ela.</figcaption>
+</figure>
+<span class="label">Aplicação em produção</span>
+<p>Para equipes de dados que hoje pagam o preço de latência de pipelines RAG multi-hop — comuns em assistentes corporativos que cruzam dados tabulares com documentos —, a lição de engenharia importa mais que o produto específico: alocar computação de busca de forma condicional, gastando passos extras só quando o ganho esperado compensa, é o mesmo princípio de test-time scaling adaptativo que já apareceu em modelos de raciocínio, agora replicado na camada de retrieval.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul><li><a href="https://www.databricks.com/blog/adaptive-instructed-retriever-frontier-quality-search-2x-lower-latency">Databricks Blog — "Adaptive Instructed-Retriever: Frontier-Quality Search at 2x Lower Latency"</a></li></ul>
+</div>
+</article>
+</section>
+
+<h2 class="section-title" id="sec3-pt"><span class="num">03</span>Mercado de Data Science no Brasil</h2>
+<p class="section-intro">Uma parceria institucional nova e um recorte ainda não explorado do State of Data Brazil 2025/2026: quais empresas os profissionais de dados brasileiros mais admiram.</p>
+
+<article class="item">
+<h3>Banco Inter firma parceria institucional com o Data Hackers para dados e IA</h3>
+<p>Em 30 de setembro, o Inter anunciou uma parceria institucional com o Data Hackers, a maior comunidade de dados e inteligência artificial do Brasil, com o objetivo declarado de ampliar a troca de conhecimento técnico e de estratégias de IA entre profissionais do setor. A primeira atividade da parceria já aconteceu: executivos do Data Hackers visitaram a sede do Inter em Belo Horizonte para um evento "DNA Monthly" cobrindo arquitetura, governança, engenharia, ciência e analytics de dados.</p>
+<span class="label">O que isso sinaliza no mercado</span>
+<p>O Inter se soma a uma lista crescente de instituições financeiras brasileiras — Itaú já mantém relação formal com o Data Hackers, incluindo meetups e hackathons internos de agentes — que formalizam canais abertos com a comunidade técnica. Esse tipo de parceria institucional costuma ser um proxy razoável de onde a contratação em dados e IA está se acelerando: empresas que investem em visibilidade junto à comunidade tipicamente também estão escalando times internamente.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul><li><a href="https://tiinside.com.br/30/09/2026/inter-e-data-hackers-anunciam-parceria-focada-em-ia-e-arquitetura-de-dados/">TI Inside — "Inter e Data Hackers anunciam parceria focada em IA e arquitetura de dados"</a></li></ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Google é a empresa mais admirada por profissionais de dados no Brasil pelo quarto ano seguido — mas o pódio regional muda</h3>
+<p>O State of Data Brazil 2025/2026 (Data Hackers em parceria com a Bain & Company, 6ª edição, mais de 3.200 respondentes ouvidos entre outubro e dezembro de 2025) trouxe um recorte que ainda não havia aparecido nesta coluna: o ranking de empresas mais admiradas por profissionais de dados para construir carreira. No ranking global, o Google aparece no topo pelo quarto ano consecutivo, concentrando 12% das menções espontâneas. No recorte específico de empresas da América Latina, quem lidera é o Grupo Boticário, com a Ambev Tech aparecendo no top 10 regional pelo quarto ano seguido.</p>
+<span class="label">O que isso sinaliza no mercado</span>
+<p>Para quem recruta no Brasil, "admiração espontânea" é, na prática, uma métrica de employer brand medida contra o próprio público técnico que a empresa quer atrair. O fato de companhias brasileiras tradicionais — não apenas multinacionais de tecnologia — aparecerem de forma consistente e recorrente nesse ranking local sugere que employer branding em dados deixou de ser terreno exclusivo das big techs no país.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul><li><a href="https://www.datahackers.news/podcast/s/data_hackers/top_10_empresas_mais_admiradas_no_brasil_segundo_state_of_data_brazil_2026_brasil_entra_no_centro_da_disputa_entre_eua_e_china_pela_ia_lancamento_do_chatgpt_imagens_2_0_-_data_hackers_news_108">Data Hackers News — "Top 10 empresas mais admiradas no Brasil segundo o State of Data Brazil 2026"</a></li></ul>
+</div>
+</article>
+
+<h2 class="section-title" id="sec4-pt"><span class="num">04</span>Tendências de ferramentas e soluções</h2>
+<p class="section-intro">Duas reescritas de infraestrutura que miram o mesmo alvo — reduzir o tempo morto entre "ter o dado" e "poder processá-lo" — uma na camada de transformação (dbt), outra na camada de processamento em lote (Ray Data).</p>
+
+<article class="item">
+<h3>dbt Labs lança a versão 2.0 em Rust — e abre pela primeira vez o código do motor Fusion</h3>
+<p>Depois de uma série de builds alpha ao longo do ano (corrigindo, por exemplo, um panic no motor de templates minijinja que travava em cascata, e adicionando suporte a catalog_database para Snowflake, BigQuery e Databricks), o dbt Core v2.0 chegou à disponibilidade geral no dbt Summit 2026. A mudança central é uma reescrita completa em Rust, compartilhando a mesma base de código do motor proprietário Fusion — parte desse código é open source pela primeira vez. O ganho de performance é concreto: em um projeto de 10 mil models, o parsing chega a ser 10 vezes mais rápido que na v1. O projeto passa a ser distribuído em duas versões: o núcleo aberto sob licença Apache 2.0 (dbt-core / dbt-oss) e a distribuição proprietária completa (dbt, com o Fusion). Os adaptadores para BigQuery, Databricks, DuckDB, Redshift e Snowflake já estão em disponibilidade geral; ClickHouse e Spark seguem em beta.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Tempo relativo de parsing de um projeto de 10 mil modelos: dbt Core v1 muito mais lento que o dbt Core v2">
+    <title>Tempo relativo de parsing (10 mil models)</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="24" text-anchor="middle" class="chart-val">10x</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">dbt Core v1</text>
+    <rect x="200" y="129" width="60" height="11" fill="var(--text)"/>
+    <text x="230" y="123" text-anchor="middle" class="chart-val">1x</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">dbt Core v2</text>
+  </svg>
+  <figcaption>Tempo de parsing relativo em um projeto de referência de 10 mil models, segundo a dbt Labs ("até 10x mais rápido"); valores normalizados, não segundos absolutos.</figcaption>
+</figure>
+<span class="label">Como o mercado está aplicando</span>
+<p>Projetos dbt grandes — na casa de milhares de models — historicamente sofriam com tempo de parse/compile que travava o ciclo de desenvolvimento local a cada `dbt run`. Essa reescrita ataca diretamente esse gargalo de produtividade, e abrir o código do Fusion dentro do Core sinaliza que a dbt Labs está tentando reduzir o atrito entre a versão gratuita e a paga antes que concorrentes como o SQLMesh capturem esse descontentamento específico.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul><li><a href="https://docs.getdbt.com/blog/dbt-core-v2-is-here">dbt Labs — "dbt Core v2 is here"</a></li></ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Ray Data ganha operadores nativos de GPU com a NVIDIA — e corta em até 80% o custo de deduplicação de dados</h3>
+<p>Anunciada no Ray Summit 2026 (24 a 26 de agosto, São Francisco), a versão 2.58 do Ray Data passa a integrar o cuDF da NVIDIA como backend para operações de map_batches, além de um shuffle experimental em GPU construído sobre o RapidsMPF — eliminando conversões manuais de formato entre CPU e GPU dentro do pipeline de dados. Em benchmarks de deduplicação fuzzy sobre o dataset FineWeb 10BT, a geração de assinaturas MinHash via cuDF ficou cerca de 15 vezes mais rápida que em cluster CPU equivalente; o shuffle em GPU acelerou em até 3 vezes as etapas de agrupamento e componentes conectados; e o pipeline completo rodou até 4 vezes mais rápido, com um custo total de propriedade até 3,1 vezes melhor numa GPU RTX PRO 4500 Blackwell frente a clusters apenas de CPU.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Velocidade relativa de geração de assinaturas MinHash: GPU com cuDF cerca de 15 vezes mais rápida que CPU">
+    <title>Geração de assinaturas MinHash: CPU vs. GPU (cuDF)</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="133" width="60" height="7" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="127" text-anchor="middle" class="chart-val">1x</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Cluster CPU</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">~15x</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">GPU com cuDF</text>
+  </svg>
+  <figcaption>Velocidade relativa de geração de assinaturas MinHash no benchmark FineWeb 10BT, segundo a Anyscale; valores normalizados ao desempenho do cluster CPU.</figcaption>
+</figure>
+<span class="label">Como o mercado está aplicando</span>
+<p>Isso é relevante para qualquer time que roda pré-processamento de dados em lote — deduplicação, limpeza, feature engineering — como etapa prévia a treino ou fine-tuning de modelos: a fronteira de otimização está migrando de "paralelizar mais nós de CPU" para "usar a GPU ociosa entre batches de treino para o próprio pipeline de dados", um padrão que tende a se espalhar para outros frameworks de processamento distribuído nos próximos trimestres.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul><li><a href="https://anyscale.com/blog/gpu-native-operators-in-ray-data">Anyscale Blog — "GPU-native operators in Ray Data"</a></li></ul>
+</div>
+</article>
+
+<h2 class="section-title archive-title">Relatórios anteriores</h2>
+<ul class="archive-list">
+<li><a href="archive/2026-09-25.html">25 de setembro de 2026</a></li>
+<li><a href="archive/2026-09-18.html">18 de setembro de 2026</a></li>
+<li><a href="archive/2026-09-11.html">11 de setembro de 2026</a></li>
+<li><a href="archive/2026-08-28.html">28 de agosto de 2026</a></li>
+<li><a href="archive/2026-08-21.html">21 de agosto de 2026</a></li>
+<li><a href="archive/2026-08-17.html">17 de agosto de 2026</a></li>
+<li><a href="archive/2026-08-16.html">16 de agosto de 2026</a></li>
+</ul>
+
+<div class="methodology">
+<strong>Nota metodológica.</strong> Este digest é produzido semanalmente por um agente de pesquisa que busca ativamente fontes primárias (papers acadêmicos, blogs de pesquisa/engenharia de empresas de referência, universidades, surveys de mercado) em vez de responder de memória. Toda afirmação não-trivial é acompanhada de link verificável. Nesta edição, o acesso direto (fetch de página completa) a diversos domínios — incluindo arXiv, Databricks, Google Research, docs.getdbt.com e Anyscale — foi bloqueado pela política de rede do ambiente de execução; o domínio da Anthropic foi acessível diretamente e seus números (ex.: 950 agentes, 210 milhões de tokens, 21 horas, 200 mil candidatos) foram confirmados na própria página. Para os demais, os fatos foram verificados por cruzamento entre múltiplas buscas independentes e fontes jornalísticas ou de terceiros que citam o mesmo conteúdo primário, com números conferidos entre pelo menos duas fontes sempre que possível; números marcados como estimados ou derivados (ex.: a latência "~11,6s" na seção 2) são explicitamente sinalizados como tal nas legendas. Nesta semana, nenhum conteúdo novo e relevante foi encontrado no Netflix Research, Netflix TechBlog ou Google Research dentro do escopo de streaming/recomendação/personalização — isso é sinalizado na abertura da seção 2 em vez de forçar um exemplo fora de prazo ou irrelevante.
+</div>
+
+<div class="contact">
+  <p class="name">Ri Gonçalves</p>
+  <p><a href="mailto:goncalves.r@pm.me">goncalves.r@pm.me</a> · <a href="https://github.com/GoncalvesRD">github.com/GoncalvesRD</a></p>
+</div>
+
+<footer class="report-footer">
+  <p>Publicado via GitHub Pages a partir de <a href="https://github.com/GoncalvesRD/ds-trends">github.com/GoncalvesRD/ds-trends</a>.</p>
+</footer>
+
+</div>
+
+<div class="lang-block" data-lang="en" hidden>
+
+<header class="report-header">
+  <h1>Trends in Data Science, Machine Learning and Applied AI</h1>
+  <p class="dek">Claude spends 21 hours alone on a genomic search and comes back with a candidate CRISPR-like mechanism, Databricks exposes its governance catalog as a single MCP server, and dbt rewrites its entire engine in Rust.</p>
+</header>
+
+<div class="byline">
+  <div class="avatar">RG</div>
+  <div>
+    <div class="name">Ri Gonçalves</div>
+    <div class="sub"><a href="https://goncalvesrd.github.io/ds-trends/">goncalvesrd.github.io/ds-trends</a> · October 2, 2026</div>
+  </div>
+</div>
+
+<nav class="toc">
+  <p class="toc-title">In this issue</p>
+  <ol>
+    <li><a href="#sec1-en">General trends in Data Science / ML / applied AI</a> — a contamination detector for synthetic training data, and Google flips the data-generation logic for function-calling agents.</li>
+    <li><a href="#sec2-en">Streaming and Globoplay's competitors</a> — Claude flags a candidate CRISPR-like mechanism in an autonomous genomic search; Databricks exposes its governance catalog via MCP and halves search latency.</li>
+    <li><a href="#sec3-en">Data Science job market in Brazil</a> — Inter formalizes a partnership with Data Hackers, and the State of Data Brazil report reveals which companies data professionals admire most, in Brazil and worldwide.</li>
+    <li><a href="#sec4-en">Tooling and platform trends</a> — dbt open-sources its Rust-based Fusion engine with parsing up to 10x faster, and Ray Data gets GPU-native operators that cut deduplication cost by up to 80%.</li>
+  </ol>
+</nav>
+
+<h2 class="section-title" id="sec1-en"><span class="num">01</span>General trends in Data Science, Machine Learning and applied AI</h2>
+<p class="section-intro">Two stories about the same pain point: how to guarantee the quality of the data that feeds models themselves, whether to avoid degradation from synthetic feedback loops, or to train function-calling agents without paying the price of manual annotation.</p>
+
+<article class="item">
+<h3>A "contamination detector" for synthetic data: researchers release SynthSentry against model collapse</h3>
+<p>Models increasingly train on data generated by other models — sometimes for convenience, sometimes because high-quality human data is becoming scarce in certain domains. The risk known as "model collapse" is subtle: text fluency survives, but the tails of the distribution and factual accuracy deteriorate with each recursive generation, because the generator's errors and biases accumulate and amplify instead of canceling out. A paper published in September introduces SynthSentry, an evaluation protocol built on "leave-one-generator-out" cross-validation (testing detection against generators the detector never saw during training), along with a scoring toolkit and a multi-generation labeled benchmark. The key contribution is a domain-stratified false-positive analysis that separates typical synthetic-generation artifacts from structures that are already native to legal, clinical and source-code text — areas where a naive detector tends to mistake formality or structural repetition for a contamination signal.</p>
+<span class="label">How the market is applying it</span>
+<p>Teams that use LLMs to generate synthetic training data — now routine practice in fine-tuning and in RAG pipelines — mostly have no due-diligence step on that data before shipping it to production. A tool like this points to an obvious next item on the MLOps checklist: auditing a dataset's synthetic provenance the same way bias or test-set leakage is audited today, before any retraining.</p>
+<div class="refs">
+<strong>References</strong>
+<ul><li><a href="https://arxiv.org/abs/2609.12353">arXiv 2609.12353 — "SynthSentry: Detecting Synthetic Data Contamination in Language Model Training Data"</a></li></ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Google flips the data-generation logic for agents: answer first, question second — hitting a 99.8% pass rate</h3>
+<p>The standard way to generate training data for function-calling agents is: generate a user query, then manually (or via tree search) annotate the tool-call chain that would solve it — an expensive, slow process prone to annotation failures when the chain gets complex. ToolGrad, published on the Google Research blog in September (and accepted as an ACL 2026 Findings paper), reverses that order: it first builds valid tool-use chains iteratively, guided by "textual gradients" — natural-language critiques that act as a correction signal at each step, analogous to a numerical gradient but applied to text — and only then synthesizes the user query that would naturally lead to that chain. The resulting dataset, ToolGrad-500, reaches a 99.8% pass rate at lower generation cost than the traditional method; 12-billion-parameter Gemma-3 models fine-tuned on it outperform much larger baselines on the Berkeley Function Calling Leaderboard.</p>
+<span class="label">How the market is applying it</span>
+<p>For teams training or fine-tuning function-calling agents, the result reinforces a point that keeps accumulating: the real bottleneck is usually demonstration-data quality, not model size. That means smaller teams without a frontier lab's compute budget can compete by investing in data-pipeline engineering instead of parameter scale.</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://research.google/blog/toolgrad-efficient-tool-use-dataset-generation-with-textual-gradients/">Google Research Blog — "ToolGrad: Efficient Tool-use Dataset Generation with Textual 'Gradients'"</a></li>
+<li><a href="https://arxiv.org/abs/2508.04086">arXiv 2508.04086 (ACL 2026 Findings)</a></li>
+</ul>
+</div>
+</article>
+
+<section class="globoplay">
+<h2 class="section-title" id="sec2-en"><span class="num">02</span>Streaming and Globoplay's competitors</h2>
+<p class="section-intro">This week, Netflix Research and Netflix TechBlog published nothing new that fits streaming, recommendation, personalization, data or media infrastructure — the TechBlog's two most recent posts (September 18 and 25) cover Java dependency management and cloud workload identity, outside this section's scope. Google Research also had nothing new on media recommendation or personalization since the diffusion retriever already covered in last week's edition. So this week's spotlight goes to Anthropic — a source we track regardless of topic — and to Databricks, with two updates on giving AI agents trustworthy access to enterprise data.</p>
+
+<article class="item">
+<h3>Anthropic leaves Claude alone for 21 hours on a genomic search — and it comes back with a candidate CRISPR-like mechanism</h3>
+<p>On September 23, Anthropic announced a new life-sciences research group and laboratory, and used a discovery made almost entirely by autonomous agents as its first public result. About 950 instances of Claude ran in parallel for 21 hours, consuming 210 million tokens, to screen more than 200,000 reverse transcriptases (enzymes that copy RNA into DNA) cataloged in genomic databases. The agents flagged 3,500 novel candidate systems and, from there, narrowed the funnel to the 20 most promising, producing human-readable reports for Anthropic's own scientists to validate in the lab. One of those candidates — named ART ("array-associated reverse transcriptase"), found mainly in bacteriophages — pairs a reverse transcriptase with a partner gene and an evenly spaced array of DNA repeats that, in early lab experiments, are expressed as short RNAs. That specific combination of traits has, until now, only been seen together in a handful of other systems — CRISPR among them. Anthropic is explicit about the limits of what's been proven: ART's function remains unknown, no experiment has demonstrated gene editing, and the investigation into its actual function is ongoing.</p>
+<span class="label">What it signals for people working with data</span>
+<p>From a Data Scientist's vantage point, the interesting part isn't the biology — it's the architecture of the process: Anthropic built a "batch science" pipeline where hundreds of agents run triage heuristics in parallel over a massive search space, and only then bring in humans to validate a funnel already narrowed to two dozen items. It's the same pattern of agentic search with downstream human-in-the-loop already showing up in materials discovery and fraud triage — genomics is just the most eye-catching domain where the company chose to demonstrate the concept publicly.</p>
+<div class="refs">
+<strong>References</strong>
+<ul><li><a href="https://www.anthropic.com/news/claude-discovers-novel-enzyme-system">Anthropic — "Claude discovers a novel enzyme system"</a></li></ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Databricks turns its governance catalog into a single MCP server — and any AI agent can now "speak the business's language"</h3>
+<p>General-purpose assistants like ChatGPT, Claude, Microsoft Copilot and coding agents can already query enterprise data today — but without business context, they don't know which table is the trusted source for a metric, what that metric actually means, or who's allowed to see what. Genie One MCP, which Databricks made generally available on September 22, solves this by exposing the "Genie Ontology" — approved metric definitions, data relationships, source authority and permission rules — through a single Model Context Protocol server. Any external agent connected to that server automatically inherits governed, permission-aware access to structured and unstructured data, instead of having to infer (or invent) business logic on its own.</p>
+<span class="label">How the market is applying it</span>
+<p>This is a symptom of a bigger shift: MCP is consolidating as the standard integration layer between "where data lives" (warehouses and lakehouses) and "where agents live" (third-party assistants), moving part of the governance workload from ETL pipelines to context contracts that any external agent can consume directly — a theme that resurfaces in this issue's tools section.</p>
+<div class="refs">
+<strong>References</strong>
+<ul><li><a href="https://www.databricks.com/blog/genie-one-mcp-give-any-ai-agent-right-business-context">Databricks Blog — "Genie One MCP: Give any AI Agent the Right Business Context"</a></li></ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Databricks halves "frontier-quality" search latency by deciding, in real time, when it's worth searching more</h3>
+<p>Databricks' Instructed-Retriever-1 already incorporated enterprise data schemas and custom instructions using parallel test-time scaling to improve retrieval accuracy at low latency. The catch is that complex multi-hop questions benefit from sequential search — the model refines its query iteratively, accumulating evidence step by step — which is slower. The new Adaptive Instructed-Retriever combines both modes: it uses parallel retrieval by default and only triggers additional sequential search steps when the expected quality gain justifies the extra cost, instead of applying the same compute budget to every query. In Databricks' internal benchmarks, the model matches the quality of leading market models at an average end-to-end latency of 5.8 seconds — more than twice as fast as comparable models.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Average search latency comparison: comparable models at about 11.6 seconds versus 5.8 seconds for Adaptive Instructed-Retriever">
+    <title>Average end-to-end search latency</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="24" text-anchor="middle" class="chart-val">~11.6s</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Comparable models</text>
+    <rect x="200" y="85" width="60" height="55" fill="var(--text)"/>
+    <text x="230" y="79" text-anchor="middle" class="chart-val">5.8s</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Adaptive Instructed-Retriever</text>
+  </svg>
+  <figcaption>Average end-to-end latency reported by Databricks for Adaptive Instructed-Retriever; the "~11.6s" figure is estimated from the "more than 2x" ratio the company disclosed, not a direct measurement it published.</figcaption>
+</figure>
+<span class="label">Production application</span>
+<p>For data teams currently paying the latency price of multi-hop RAG pipelines — common in enterprise assistants that cross tabular data with documents — the engineering lesson matters more than the specific product: allocating search compute conditionally, spending extra steps only when the expected gain pays off, is the same adaptive test-time scaling principle already seen in reasoning models, now replicated at the retrieval layer.</p>
+<div class="refs">
+<strong>References</strong>
+<ul><li><a href="https://www.databricks.com/blog/adaptive-instructed-retriever-frontier-quality-search-2x-lower-latency">Databricks Blog — "Adaptive Instructed-Retriever: Frontier-Quality Search at 2x Lower Latency"</a></li></ul>
+</div>
+</article>
+</section>
+
+<h2 class="section-title" id="sec3-en"><span class="num">03</span>Data Science job market in Brazil</h2>
+<p class="section-intro">A new institutional partnership, and a previously unused cut of the State of Data Brazil 2025/2026 report: which companies Brazilian data professionals admire most.</p>
+
+<article class="item">
+<h3>Banco Inter signs an institutional partnership with Data Hackers for data and AI</h3>
+<p>On September 30, Inter announced an institutional partnership with Data Hackers, Brazil's largest data and artificial intelligence community, with the stated goal of expanding the exchange of technical knowledge and AI strategies among industry professionals. The partnership's first activity has already taken place: Data Hackers executives visited Inter's headquarters in Belo Horizonte for a "DNA Monthly" event covering data architecture, governance, engineering, science and analytics.</p>
+<span class="label">What it signals for the market</span>
+<p>Inter joins a growing list of Brazilian financial institutions — Itaú already maintains a formal relationship with Data Hackers, including meetups and internal agent hackathons — formalizing open channels with the technical community. This kind of institutional partnership tends to be a reasonable proxy for where data and AI hiring is accelerating: companies that invest in visibility with the community are typically also scaling their internal teams.</p>
+<div class="refs">
+<strong>References</strong>
+<ul><li><a href="https://tiinside.com.br/30/09/2026/inter-e-data-hackers-anunciam-parceria-focada-em-ia-e-arquitetura-de-dados/">TI Inside — "Inter e Data Hackers anunciam parceria focada em IA e arquitetura de dados"</a></li></ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Google is the most admired company among data professionals in Brazil for the fourth year running — but the regional podium shifts</h3>
+<p>The State of Data Brazil 2025/2026 report (Data Hackers in partnership with Bain & Company, 6th edition, more than 3,200 respondents surveyed between October and December 2025) brought a cut that hadn't appeared in this column before: the ranking of companies data professionals most admire for building a career. In the global ranking, Google tops the list for the fourth consecutive year, drawing 12% of spontaneous mentions. In the Latin America-specific cut, Grupo Boticário leads, with Ambev Tech appearing in the regional top 10 for the fourth year in a row.</p>
+<span class="label">What it signals for the market</span>
+<p>For recruiters in Brazil, "spontaneous admiration" is, in practice, an employer-brand metric measured against the very technical audience a company wants to attract. The fact that traditional Brazilian companies — not just tech multinationals — keep showing up consistently in this local ranking suggests employer branding in data is no longer exclusive territory for big tech in the country.</p>
+<div class="refs">
+<strong>References</strong>
+<ul><li><a href="https://www.datahackers.news/podcast/s/data_hackers/top_10_empresas_mais_admiradas_no_brasil_segundo_state_of_data_brazil_2026_brasil_entra_no_centro_da_disputa_entre_eua_e_china_pela_ia_lancamento_do_chatgpt_imagens_2_0_-_data_hackers_news_108">Data Hackers News — "Top 10 empresas mais admiradas no Brasil segundo o State of Data Brazil 2026"</a></li></ul>
+</div>
+</article>
+
+<h2 class="section-title" id="sec4-en"><span class="num">04</span>Tooling and platform trends</h2>
+<p class="section-intro">Two infrastructure rewrites aiming at the same target — shrinking the dead time between "having the data" and "being able to process it" — one at the transformation layer (dbt), the other at the batch-processing layer (Ray Data).</p>
+
+<article class="item">
+<h3>dbt Labs ships version 2.0 in Rust — and open-sources the Fusion engine's code for the first time</h3>
+<p>After a series of alpha builds throughout the year (fixing, for instance, a panic in the minijinja templating engine that cascaded into lock-poisoned failures, and adding catalog_database support for Snowflake, BigQuery and Databricks), dbt Core v2.0 reached general availability at dbt Summit 2026. The central change is a full rewrite in Rust, sharing the same codebase as the proprietary Fusion engine — part of that code is open source for the first time. The performance gain is concrete: on a 10,000-model project, parsing is up to 10 times faster than on v1. The project now ships in two distributions: the open core under an Apache 2.0 license (dbt-core / dbt-oss) and the full proprietary distribution (dbt, with Fusion). BigQuery, Databricks, DuckDB, Redshift and Snowflake adapters are already generally available; ClickHouse and Spark remain in beta.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Relative parsing time for a 10,000-model project: dbt Core v1 much slower than dbt Core v2">
+    <title>Relative parsing time (10,000 models)</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="24" text-anchor="middle" class="chart-val">10x</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">dbt Core v1</text>
+    <rect x="200" y="129" width="60" height="11" fill="var(--text)"/>
+    <text x="230" y="123" text-anchor="middle" class="chart-val">1x</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">dbt Core v2</text>
+  </svg>
+  <figcaption>Relative parsing time on a reference 10,000-model project, per dbt Labs ("up to 10x faster"); normalized values, not absolute seconds.</figcaption>
+</figure>
+<span class="label">How the market is applying it</span>
+<p>Large dbt projects — in the thousands-of-models range — historically suffered from parse/compile times that stalled the local development loop on every `dbt run`. This rewrite directly attacks that productivity bottleneck, and open-sourcing Fusion's code inside Core signals that dbt Labs is trying to reduce the friction between its free and paid tiers before competitors like SQLMesh capture that specific discontent.</p>
+<div class="refs">
+<strong>References</strong>
+<ul><li><a href="https://docs.getdbt.com/blog/dbt-core-v2-is-here">dbt Labs — "dbt Core v2 is here"</a></li></ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Ray Data gets GPU-native operators with NVIDIA — cutting deduplication cost by up to 80%</h3>
+<p>Announced at Ray Summit 2026 (August 24–26, San Francisco), Ray Data 2.58 integrates NVIDIA's cuDF as a backend for map_batches operations, plus an experimental GPU shuffle built on RapidsMPF — eliminating manual CPU-to-GPU format conversions inside the data pipeline. On fuzzy-deduplication benchmarks over the FineWeb 10BT dataset, cuDF-accelerated MinHash signature generation ran about 15 times faster than an equivalent CPU cluster; GPU shuffle sped up grouping and connected-components stages by up to 3x; and the full pipeline ran up to 4 times faster, with up to 3.1x better total cost of ownership on an RTX PRO 4500 Blackwell GPU versus CPU-only clusters.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Relative speed of MinHash signature generation: GPU with cuDF about 15 times faster than CPU">
+    <title>MinHash signature generation: CPU vs. GPU (cuDF)</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="133" width="60" height="7" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="127" text-anchor="middle" class="chart-val">1x</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">CPU cluster</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">~15x</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">GPU with cuDF</text>
+  </svg>
+  <figcaption>Relative speed of MinHash signature generation in the FineWeb 10BT benchmark, per Anyscale; values normalized to CPU-cluster performance.</figcaption>
+</figure>
+<span class="label">How the market is applying it</span>
+<p>This matters for any team running batch data preprocessing — deduplication, cleaning, feature engineering — ahead of model training or fine-tuning: the optimization frontier is shifting from "parallelize across more CPU nodes" to "use the GPU sitting idle between training batches for the data pipeline itself," a pattern likely to spread to other distributed-processing frameworks over the coming quarters.</p>
+<div class="refs">
+<strong>References</strong>
+<ul><li><a href="https://anyscale.com/blog/gpu-native-operators-in-ray-data">Anyscale Blog — "GPU-native operators in Ray Data"</a></li></ul>
+</div>
+</article>
+
+<h2 class="section-title archive-title">Previous reports</h2>
+<ul class="archive-list">
+<li><a href="archive/2026-09-25.html">September 25, 2026</a></li>
+<li><a href="archive/2026-09-18.html">September 18, 2026</a></li>
+<li><a href="archive/2026-09-11.html">September 11, 2026</a></li>
+<li><a href="archive/2026-08-28.html">August 28, 2026</a></li>
+<li><a href="archive/2026-08-21.html">August 21, 2026</a></li>
+<li><a href="archive/2026-08-17.html">August 17, 2026</a></li>
+<li><a href="archive/2026-08-16.html">August 16, 2026</a></li>
+</ul>
+
+<div class="methodology">
+<strong>Methodology note.</strong> This digest is produced weekly by a research agent that actively searches for primary sources (academic papers, research/engineering blogs from reference companies, universities, market surveys) instead of answering from memory. Every non-trivial claim is accompanied by a verifiable link. In this edition, direct full-page fetches to several domains — including arXiv, Databricks, Google Research, docs.getdbt.com and Anyscale — were blocked by the execution environment's network policy; the Anthropic domain was directly accessible, and its numbers (e.g., 950 agents, 210 million tokens, 21 hours, 200,000 candidates) were confirmed on the page itself. For the rest, facts were verified by cross-referencing multiple independent searches and journalistic or third-party sources citing the same primary content, with numbers checked against at least two sources whenever possible; figures marked as estimated or derived (e.g., the "~11.6s" latency in section 2) are explicitly flagged as such in the captions. This week, no new relevant content was found from Netflix Research, Netflix TechBlog or Google Research within the streaming/recommendation/personalization scope — this is flagged at the top of section 2 rather than forcing in an outdated or irrelevant example.
+</div>
+
+<div class="contact">
+  <p class="name">Ri Gonçalves</p>
+  <p><a href="mailto:goncalves.r@pm.me">goncalves.r@pm.me</a> · <a href="https://github.com/GoncalvesRD">github.com/GoncalvesRD</a></p>
+</div>
+
+<footer class="report-footer">
+  <p>Published via GitHub Pages from <a href="https://github.com/GoncalvesRD/ds-trends">github.com/GoncalvesRD/ds-trends</a>.</p>
+</footer>
+
+</div>
+
+</main>
+<script>
+(function(){
+  var buttons = document.querySelectorAll('[data-lang-btn]');
+  var blocks = document.querySelectorAll('[data-lang]');
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var lang = btn.getAttribute('data-lang-btn');
+      buttons.forEach(function(b){ b.classList.toggle('active', b === btn); });
+      blocks.forEach(function(block){
+        if (block.getAttribute('data-lang') === lang) {
+          block.removeAttribute('hidden');
+        } else {
+          block.setAttribute('hidden', '');
+        }
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
