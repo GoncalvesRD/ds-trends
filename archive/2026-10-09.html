@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digest DS/ML/IA — 9 de outubro de 2026</title>
+<style>
+:root{--bg:#ffffff;--text:#1a1a1a;--muted:#6b6b6b;--hairline:#e6e6e6;--link:#1a1a1a;--link-hover:#1a8917;--serif:Georgia,'Iowan Old Style','Palatino Linotype','Book Antiqua',Palatino,serif;--sans:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;--globoplay-red:#FB0234;}
+*{box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:var(--serif);margin:0;padding:0 24px 100px;}
+main{max-width:700px;margin:0 auto;}
+[hidden]{display:none!important;}
+.lang-toggle{display:flex;justify-content:flex-end;gap:8px;align-items:center;padding:20px 0 0;font-family:var(--sans);font-size:.78rem;}
+.lang-toggle button{background:none;border:1px solid var(--hairline);border-radius:20px;padding:5px 14px;font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.03em;color:var(--muted);cursor:pointer;}
+.lang-toggle button.active{color:#fff;background:var(--text);border-color:var(--text);}
+header.report-header{padding:24px 0 0;}
+header.report-header h1{font-size:2.4rem;line-height:1.25;font-weight:400;margin:0 0 16px;letter-spacing:-.01em;}
+header.report-header .dek{font-size:1.15rem;color:var(--muted);font-style:italic;margin:0 0 28px;line-height:1.5;}
+.byline{display:flex;align-items:center;gap:14px;padding:20px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);margin-bottom:40px;font-family:var(--sans);}
+.avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;background:#1a1a1a;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.05rem;font-weight:600;flex-shrink:0;}
+.byline .name{font-weight:600;font-size:.98rem;color:var(--text);line-height:1.5;}
+.byline .sub{font-size:.85rem;color:var(--muted);line-height:1.5;}
+.byline .sub a{color:var(--muted);}
+nav.toc{font-family:var(--sans);background:#fafafa;border:1px solid var(--hairline);border-radius:10px;padding:22px 26px;margin-bottom:48px;}
+nav.toc .toc-title{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 14px;}
+nav.toc ol{margin:0;padding-left:22px;}
+nav.toc li{margin-bottom:12px;font-size:.92rem;line-height:1.55;color:var(--muted);}
+nav.toc li:last-child{margin-bottom:0;}
+nav.toc li a{font-weight:600;color:var(--text);text-decoration:none;}
+nav.toc li a:hover{color:var(--link-hover);}
+h2.section-title{font-family:var(--serif);font-size:1.7rem;font-weight:400;margin:64px 0 8px;scroll-margin-top:20px;}
+h2.section-title .num{color:var(--muted);font-size:1.1rem;margin-right:6px;}
+p.section-intro{font-family:var(--sans);color:var(--muted);font-size:.92rem;margin:0 0 32px;line-height:1.6;}
+article.item{margin:0 0 32px;}
+article.item+article.item{border-top:1px solid var(--hairline);padding-top:32px;}
+article.item h3{font-size:1.45rem;font-weight:400;line-height:1.35;margin:0 0 14px;}
+article.item p{font-size:1.08rem;line-height:1.8;margin:0 0 16px;color:var(--text);}
+.label{display:block;font-family:var(--sans);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:22px 0 8px;}
+.refs{margin-top:20px;font-family:var(--sans);font-size:.85rem;color:var(--muted);}
+.refs strong{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;}
+.refs ul{margin:6px 0 0;padding-left:0;list-style:none;}
+.refs li{margin-bottom:4px;}
+a{color:var(--link);text-decoration:underline;text-decoration-color:var(--hairline);text-underline-offset:2px;}
+a:hover{color:var(--link-hover);text-decoration-color:var(--link-hover);}
+.caveat{font-family:var(--sans);font-size:.85rem;color:var(--muted);font-style:italic;margin-top:6px;}
+section.globoplay h2.section-title,section.globoplay h2.section-title .num,section.globoplay .label{color:var(--globoplay-red);}
+section.globoplay article.item{border-left:3px solid var(--globoplay-red);padding-left:20px;}
+section.globoplay article.item+article.item{border-top:1px solid var(--hairline);}
+section.globoplay a{text-decoration-color:rgba(251,2,52,.3);}
+section.globoplay a:hover{color:var(--globoplay-red);text-decoration-color:var(--globoplay-red);}
+.methodology{font-family:var(--sans);background:#fafafa;border:1px solid var(--hairline);border-radius:8px;padding:18px 22px;font-size:.88rem;color:var(--muted);line-height:1.6;margin:64px 0 0;}
+.methodology strong{color:var(--text);}
+.contact{font-family:var(--sans);margin:28px 0 0;padding-top:24px;border-top:1px solid var(--hairline);font-size:.9rem;color:var(--muted);line-height:1.8;}
+.contact .name{color:var(--text);font-weight:600;}
+footer.report-footer{margin-top:24px;padding-top:20px;font-family:var(--sans);color:var(--muted);font-size:.82rem;}
+footer.report-footer a{color:var(--muted);}
+.archive-list{list-style:none;padding:0;margin:10px 0 0;font-family:var(--sans);}
+.archive-list li{padding:8px 0;border-bottom:1px solid var(--hairline);font-size:.92rem;}
+figure.chart{margin:24px 0;font-family:var(--sans);text-align:center;}
+figure.chart svg{width:100%;max-width:320px;height:auto;}
+figure.chart .chart-val{font-size:13px;font-weight:700;fill:var(--text);}
+figure.chart .chart-lbl{font-size:11px;fill:var(--muted);}
+figure.chart figcaption{font-size:.78rem;color:var(--muted);margin-top:8px;}
+h2.section-title.archive-title{margin-top:56px;}
+</style>
+</head>
+<body>
+<main>
+
+<div class="lang-toggle">
+  <button type="button" data-lang-btn="pt" class="active">PT</button>
+  <button type="button" data-lang-btn="en">EN</button>
+</div>
+
+<div class="lang-block" data-lang="pt">
+
+<header class="report-header">
+  <h1>Tendências em Data Science, Machine Learning e IA Aplicada</h1>
+  <p class="dek">O Google torna a privacidade do federated learning verificável de fora para dentro ao movê-la para hardware blindado, a Anthropic lança uma missão de segurança de longo prazo para proteger infraestrutura crítica, e Engenheiro de IA vira a profissão de tecnologia com maior salário inicial do Brasil.</p>
+</header>
+
+<div class="byline">
+  <div class="avatar">RG</div>
+  <div>
+    <div class="name">Ri Gonçalves</div>
+    <div class="sub"><a href="https://goncalvesrd.github.io/ds-trends/">goncalvesrd.github.io/ds-trends</a> · 9 de outubro de 2026</div>
+  </div>
+</div>
+
+<nav class="toc">
+  <p class="toc-title">Nesta edição</p>
+  <ol>
+    <li><a href="#sec1-pt">Tendências gerais em Data Science / ML / IA aplicada</a> — o Google move o treino de federated learning para dentro de enclaves de hardware com privacidade comprovável, e reúne mais de 50 pesquisadores para mapear os problemas abertos de privacidade e segurança em agentes.</li>
+    <li><a href="#sec2-pt">Streaming e concorrentes da Globoplay</a> — a Anthropic lança uma missão de segurança de longo prazo para infraestrutura crítica e software open source; o agente de anúncios da Meta chega ao Databricks Marketplace sob governança do Unity Catalog.</li>
+    <li><a href="#sec3-pt">Mercado de Data Science no Brasil</a> — Engenheiro de IA se torna a profissão de tecnologia com maior salário inicial do país, e bancos brasileiros preveem investir R$ 3 bilhões em IA e dados em 2026.</li>
+    <li><a href="#sec4-pt">Tendências de ferramentas e soluções</a> — o Apache Iceberg 1.12 consolida o formato de tabela aberto como padrão entre warehouses e lakehouses concorrentes, e dados reais de gasto corporativo mostram que a adoção de vector databases ainda é pequena.</li>
+  </ol>
+</nav>
+
+<h2 class="section-title" id="sec1-pt"><span class="num">01</span>Tendências gerais em Data Science, Machine Learning e IA aplicada</h2>
+<p class="section-intro">Duas peças do Google Research sobre o mesmo eixo — privacidade — vistas de ângulos opostos: uma entrega uma garantia técnica nova para um sistema já em produção, a outra é uma lista de problemas que a indústria ainda não sabe resolver.</p>
+
+<article class="item">
+<h3>Google torna o federated learning "comprovadamente privado" ao mover o treino para dentro de hardware blindado</h3>
+<p>Desde 2017, o Google usa federated learning (FL) para treinar modelos sobre dados descentralizados e privados — é a técnica por trás, por exemplo, da previsão de próxima palavra e do Smart Compose no Gboard. As gerações anteriores de privacidade nesse pipeline combinavam privacidade diferencial (via algoritmos como MF-DP-FTRL) com agregação segura, mas ainda dependiam, em algum grau, de uma promessa sobre o comportamento do software do servidor. Em 2 de outubro, o Google Research anunciou um novo sistema de FL que desloca mais computação para o servidor — melhorando velocidade de treino, acurácia e cobertura de dispositivos — mas faz isso dentro de Trusted Execution Environments (TEEs): os exemplos de treino chegam criptografados à infraestrutura do Google, e só são decifrados dentro de ambientes protegidos por hardware, rodando programas aprovados e auditáveis externamente. Isso transforma a garantia de "o servidor promete não espiar" em "qualquer parte externa pode verificar que o servidor não conseguiria espiar mesmo se quisesse". Os primeiros modelos de produção usando o sistema já estão em uso nos modelos de previsão de próxima palavra do Gboard em inglês e japonês; segundo apuração de terceiros sobre o anúncio, os modelos treinados até agora chegam a 10 milhões de parâmetros, e as garantias dependem das limitações da geração atual de TEEs e de hipóteses sobre observabilidade por canais laterais — pontos que o próprio Google qualifica no anúncio.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>Mover a fronteira de confiança de "política de software" para "hardware atestável" é a direção para onde toda a pilha de agregação federada já vinha caminhando — um paper de 2024 do próprio Google sobre computação federada confidencial já descrevia TEEs como uma das formas de tornar a agregação "oblívia" (o provedor não consegue inspecionar mensagens individuais). Para qualquer time que avalia arquiteturas de ML preservando privacidade em produtos móveis ou de borda, esse é o padrão de referência a se mirar — não porque seja fácil de replicar fora do Google, mas porque define o nível de garantia que reguladores e auditores vão passar a esperar.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://research.google/blog/toward-provably-private-learning-from-federated-data/">Google Research Blog — "Toward provably private learning from federated data"</a></li>
+<li><a href="https://arxiv.org/html/2404.10764v2">arXiv 2404.10764 — "Confidential Federated Computations" (contexto sobre TEEs em agregação federada)</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Google reúne mais de 50 pesquisadores para mapear os problemas abertos de privacidade e segurança em agentes de IA</h3>
+<p>O modelo padrão de privacidade em software corporativo é controle de acesso: definir quais dados uma entidade pode ver. Esse modelo não captura bem o que acontece quando um agente autônomo toma uma sequência de ações — cada uma aparentemente legítima isoladamente — que, combinadas, violam uma expectativa social sobre como aquela informação deveria fluir. Em 5 de outubro, o Google Research publicou "Open and Emergent Problems in Agentic Privacy and Security: A Contextual Angle", um relatório liderado por Eugene Bagdasarian (Google Research e professor assistente na UMass Amherst) e Marco Gruteser, fruto do workshop CAPS (Contextual Agent Privacy and Security) realizado em Nova York no final de 2025, com contribuições de mais de 50 pesquisadores de academia e indústria. O relatório aplica a Integridade Contextual — a teoria de que privacidade é informação fluindo de forma apropriada ao contexto social em que ela foi compartilhada — e a estende de "é apropriado compartilhar essa informação" para "é apropriado que o agente tome essa ação". O documento é explicitamente uma lista de problemas de pesquisa em aberto, não um produto ou uma defesa já implementada, e pede defesas coordenadas em quatro camadas: sistema, modelo, usuário e ecossistema.</p>
+<span class="label">O que isso significa para quem constrói agentes</span>
+<p>Para times de dados e ML que já colocam agentes em produção hoje — atendimento ao cliente, agentes de código, agentes com acesso a dados internos — esse relatório é um sinal precoce de que o modelo clássico de permissões (RBAC) está sendo reconhecido como insuficiente pelas próprias equipes que treinam os modelos de fronteira, antes que regulação ou incidentes forcem a questão. Vale acompanhar antes que isso se torne item obrigatório de checklist de auditoria.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul><li><a href="https://research.google/blog/open-and-emergent-problems-in-agentic-privacy-and-security-a-contextual-angle/">Google Research Blog — "Open and Emergent Problems in Agentic Privacy and Security: A Contextual Angle"</a></li></ul>
+</div>
+</article>
+
+<section class="globoplay">
+<h2 class="section-title" id="sec2-pt"><span class="num">02</span>Streaming e concorrentes da Globoplay</h2>
+<p class="section-intro">Pela segunda semana consecutiva, Netflix Research e Netflix TechBlog não publicaram nada novo dentro do escopo de streaming, recomendação, personalização, dados ou infraestrutura de mídia — o post mais recente localizado do TechBlog continua fora dessa janela de três meses. O Google Research também não trouxe nada novo em recomendação/personalização de mídia esta semana (seus posts de outubro, cobertos na seção 1, são sobre privacidade e sobre modelos geoespaciais de saúde pública, fora do escopo aqui). Por isso, o destaque desta semana é novamente da Anthropic — fonte acompanhada independentemente do tema — e da Databricks, com uma novidade que cruza dados de anúncios com infraestrutura de mídia.</p>
+
+<article class="item">
+<h3>Anthropic lança uma missão de segurança de longo prazo para blindar infraestrutura crítica contra riscos da era da IA</h3>
+<p>Em 8 de outubro, a Anthropic anunciou a Anthropic Cyber Mission, um esforço de longo prazo para dar a quem defende sistemas críticos as mesmas ferramentas de IA de fronteira que atacantes já começam a usar. A primeira frente é o Critical Infrastructure Defense Program (CIDP), voltado à tecnologia operacional que roda redes elétricas, sistemas de água e transporte, além de sistemas governamentais: provedores de segurança confiáveis ganham acesso a modelos Claude de fronteira, engenheiros da própria Anthropic trabalhando in loco e pesquisa de ameaças dedicada. Os onze parceiros fundadores incluem Accenture, Booz Allen, CrowdStrike, Deloitte, Dragos, Hitachi, Palo Alto Networks, PwC e Rockwell Automation, entre outros. A segunda frente é o OSS Scanner, um serviço gratuito e opcional que varre projetos de código aberto com os modelos mais capazes da Anthropic, produzindo prova de conceito, explicação e, quando possível, uma correção sugerida — os relatórios são enviados sem revisão humana, com uma taxa esperada de acerto (verdadeiro positivo) acima de 90%. A própria Anthropic é explícita sobre os limites: "infraestrutura crítica é difícil de defender de formas que a IA não consegue resolver", a empresa estima cerca de dois anos até que a IA favoreça claramente a defesa sobre o ataque, e alguns consertos em tecnologia operacional legada podem levar décadas.</p>
+<span class="label">O que isso sinaliza para quem trabalha com dados</span>
+<p>Um serviço que publica relatórios de vulnerabilidade gerados por IA sem revisão humana, com confiança esperada acima de 90%, é um novo patamar de confiança operacional em triagem autônoma — a mesma arquitetura de "centenas de agentes rodando heurísticas em paralelo, funil estreitado e só então humano valida" já vista na busca genômica da Anthropic duas semanas atrás, agora aplicada de forma contínua e em escala ao ecossistema open source inteiro, em vez de a um experimento pontual.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul><li><a href="https://www.anthropic.com/news/anthropic-cyber-mission">Anthropic — "Introducing the Anthropic Cyber Mission"</a></li></ul>
+</div>
+</article>
+
+<article class="item">
+<h3>O agente de anúncios da Meta chega ao Databricks Marketplace — e passa a conversar com dados de negócio governados pelo Unity Catalog</h3>
+<p>No início de outubro, a Databricks listou o servidor MCP de anúncios da Meta em seu Marketplace, conectando dados e modelos corporativos a fluxos de trabalho agênticos de publicidade. Ligado ao Genie, o servidor permite que times de marketing consultem em linguagem natural o desempenho de campanhas no Meta ao lado dos dados de negócio já governados pela empresa — sem exportar nada para uma ferramenta de terceiros. Segundo a própria Meta, o servidor expõe mais de 25 ferramentas, cobrindo criação de campanhas e conjuntos de anúncios, ajuste de orçamento e lances, definição de públicos, gestão de criativos e catálogos, extração de métricas de desempenho e diagnóstico de qualidade de sinal — número que não foi possível confirmar de forma independente. O controle de acesso continua dentro do Databricks: administradores gerenciam a conexão com a Meta via Unity Catalog, e o Unity Gateway governa cada chamada de ferramenta e registra uso e auditoria. O lançamento segue uma integração anterior, a Meta Conversions API, já disponível no mesmo Marketplace.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>Isso estende para dados de publicidade e monetização o mesmo padrão de "MCP como camada de governança" já comentado nesta coluna com o Genie One MCP — relevante para qualquer empresa de streaming ou mídia (a Globoplay incluída) que cruza dados de campanhas publicitárias com dados primários de audiência e assinantes, e quer que agentes consultem os dois lados sem duplicar lógica de permissão em cada ferramenta nova.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul><li><a href="https://www.databricks.com/blog/meta-ads-mcp-databricks">Databricks Blog — "Meta's ads MCP server comes to Databricks"</a></li></ul>
+</div>
+</article>
+</section>
+
+<h2 class="section-title" id="sec3-pt"><span class="num">03</span>Mercado de Data Science no Brasil</h2>
+<p class="section-intro">Em vez do âncora habitual do State of Data Brazil — já coberto nas duas últimas edições —, esta semana traz dois pontos de dado novos e verificáveis: o Guia Salarial 2026 da Robert Half e a Pesquisa Febraban de Tecnologia Bancária 2026.</p>
+
+<article class="item">
+<h3>Engenheiro de IA se torna a profissão de tecnologia com maior salário inicial no Brasil, segundo o Guia Salarial 2026 da Robert Half</h3>
+<p>A 18ª edição do Guia Salarial da Robert Half no Brasil, divulgada no início de outubro e baseada em pesquisa com 500 gestores de contratação e 1.000 profissionais em diferentes regiões do país — cruzada com dados reais de colocações feitas pela própria consultoria —, aponta o cargo de Engenheiro de Inteligência Artificial como o de maior salário inicial entre mais de 300 cargos de tecnologia mapeados: de R$ 19.500 a R$ 27.100 por mês. Para comparação, o mesmo guia lista o cargo de Especialista/Cientista de Dados numa faixa de R$ 14.700 a R$ 24.600, com mediana de R$ 19.100 — abaixo do ponto médio da faixa de Engenheiro de IA. O próprio guia é explícito sobre a natureza do número: são valores de remuneração inicial (de quem está sendo recém-contratado), sem bônus ou benefícios, apresentados por percentil de experiência.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Comparação salarial: Cientista de Dados com mediana de R$19,1 mil contra Engenheiro de IA com ponto médio de R$23,3 mil">
+    <title>Salário inicial mensal: Cientista de Dados vs. Engenheiro de IA</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="50" width="60" height="90" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="44" text-anchor="middle" class="chart-val">R$19,1k</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Cientista de Dados (mediana)</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">R$23,3k</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Engenheiro de IA (ponto médio)</text>
+  </svg>
+  <figcaption>Valores de remuneração inicial mensal (sem bônus/benefícios) segundo o Guia Salarial 2026 da Robert Half Brasil; "ponto médio" é calculado pelo digest a partir da faixa divulgada de R$19,5k–27,1k para Engenheiro de IA.</figcaption>
+</figure>
+<span class="label">O que isso sinaliza no mercado</span>
+<p>Para profissionais de dados no Brasil, este é o sinal mais claro até agora de que o título "Engenheiro de IA" — focado em colocar sistemas de LLM em produção, não necessariamente em pesquisa de ML — já paga um prêmio sobre o título clássico de "Cientista de Dados" no mercado brasileiro, espelhando o que já vinha acontecendo no mercado americano. É um dado útil para quem está negociando uma mudança de título ou uma movimentação lateral de carreira.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://canaltech.com.br/mercado/salario-de-r-19-mil-guia-mostra-as-profissoes-de-tecnologia-em-alta-em-2026/">Canaltech — "Salário de R$ 19 mil: guia mostra as profissões de tecnologia em alta em 2026"</a></li>
+<li><a href="https://abes.org.br/?p=99086">ABES — cobertura do Guia Salarial 2026 da Robert Half</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Bancos brasileiros vão investir R$ 3 bilhões em IA e dados em 2026 — mas só 20% usam IA em larga escala na experiência do cliente</h3>
+<p>A Pesquisa Febraban de Tecnologia Bancária 2026, conduzida pela Deloitte com uma amostra de 25 bancos (entre 82% e 85% dos ativos do setor), coletada entre dezembro de 2025 e abril de 2026 e noticiada nesta semana, mostra que os bancos brasileiros pretendem investir cerca de R$ 3 bilhões em IA, analytics e big data em 2026 — um crescimento de 8% sobre 2025. O ganho mais citado da IA, apontado por 92% das instituições, é a rapidez em tarefas rotineiras; mas apenas 20% dos bancos afirmam usar IA em larga escala na experiência do cliente, indicando que a adoção ampla no front-end de atendimento ainda é minoritária. Os investimentos em migração para nuvem também crescem, para R$ 3,9 bilhões (+30% sobre 2025).</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Investimento em IA, analytics e big data por bancos brasileiros: cerca de R$2,8 bilhões em 2025 contra R$3 bilhões em 2026">
+    <title>Investimento bancário em IA, analytics e big data</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="37" width="60" height="103" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="31" text-anchor="middle" class="chart-val">~R$2,8bi</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">2025 (estimado)</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">R$3bi</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">2026</text>
+  </svg>
+  <figcaption>Valor de 2026 reportado pela Pesquisa Febraban de Tecnologia Bancária 2026 (Deloitte); o valor de 2025 é estimado pelo digest a partir do crescimento de "8%" divulgado, não um número publicado diretamente pela pesquisa.</figcaption>
+</figure>
+<span class="label">O que isso sinaliza no mercado</span>
+<p>A distância entre 92% (ganho de produtividade interna) e 20% (uso em escala na experiência do cliente) é o número mais útil aqui para quem vende ou constrói produtos de dados e IA para bancos brasileiros: o orçamento claramente está migrando para IA, mas o caso de uso que os bancos já operacionalizaram em escala é produtividade interna, não personalização voltada ao cliente final — exatamente a lacuna que empresas de mídia e consumo próximas da Globoplay podem explorar se avançarem mais rápido em recomendação e personalização do que os bancos estão avançando em experiência do cliente.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul><li><a href="https://www.seudinheiro.com/2026/empresas/bancos-vao-investir-r-3-bilhoes-em-inteligencia-artificial-e-solucoes-de-dados-em-2026-o-que-eles-ja-descobriram-que-voce-ainda-nao-aplica-lbrdgm097/">Seu Dinheiro — cobertura da Pesquisa Febraban de Tecnologia Bancária 2026 (Deloitte)</a></li></ul>
+</div>
+</article>
+
+<h2 class="section-title" id="sec4-pt"><span class="num">04</span>Tendências de ferramentas e soluções</h2>
+<p class="section-intro">Duas histórias de convergência: a guerra dos formatos de tabela aberta terminando silenciosamente em torno de um padrão, e dados reais de gasto corporativo mostrando que a adoção de vector databases ainda está longe do que o hype sugere.</p>
+
+<article class="item">
+<h3>Apache Iceberg 1.12 chega com mais de 800 mudanças — e o formato de tabela aberto se consolida como o padrão que todo warehouse e lakehouse quer falar</h3>
+<p>A Apache Iceberg Foundation lançou a versão 1.12.0 no fim de setembro, após o release manager Neelesh Salian conduzir um segundo release candidate aprovado por votos de membros do projeto. Acumulando mais de 800 mudanças desde a versão 1.11 (maio de 2026), a nova versão torna mais recursos do formato de tabela v3 utilizáveis por mais engines, aperta o contrato do REST catalog, melhora a confiabilidade de streaming e já inclui trabalho inicial para a futura versão 4 do formato — ao custo de remover suporte a Spark 3.4 e Flink 2.0, e de a implementação em Java deixar de embutir valores de linhas deletadas dentro dos arquivos de position delete (reduzindo um vetor conhecido de exposição acidental de dados). No mesmo período, o ClickHouse Cloud ampliou seu suporte a catálogos Iceberg REST e Microsoft OneLake, e colocou em preview privado um recurso de computação sob demanda voltado especificamente a consultas sobre dados em Iceberg e Delta Lake — reforçando que tanto data warehouses quanto lakehouses concorrentes estão convergindo para falar o mesmo formato de tabela.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>Para quem está escolhendo uma arquitetura de lakehouse hoje, a lição prática é que a escolha de formato de tabela está se tornando menos decisiva do que era há dois anos — o Iceberg está virando a língua franca para a qual tanto warehouses (ClickHouse, Snowflake) quanto lakehouses (Databricks) constroem caminhos de leitura e escrita, deslocando a real diferenciação para cima na pilha: desempenho do motor de consulta e governança, não aprisionamento a um formato de arquivo.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://iceberg.apache.org/releases/">Apache Iceberg — página oficial de releases</a></li>
+<li><a href="https://www.dremio.com/blog/apache-iceberg-1-12-0-whats-new-breaking-changes-and-upgrade-guide">Dremio Blog — "Apache Iceberg 1.12.0: What's New, Breaking Changes and Upgrade Guide"</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Dados reais de gasto corporativo mostram que a adoção de vector databases ainda é pequena — mesmo com 67% dos engenheiros dizendo que já usam uma</h3>
+<p>Duas formas diferentes de medir "adoção" de vector databases chegam a números muito distantes. Uma pesquisa de autorrelato com 300 engenheiros nos EUA (realizada em agosto de 2025, cinco setores, margem de erro de ±3,1 pontos percentuais a 95% de confiança) encontrou 67% dos respondentes afirmando que sua organização já usa um vector database. Já os dados de gasto real da Ramp, plataforma de despesas corporativas, mostram que apenas 1,3% de todas as empresas na plataforma pagam por uma ferramenta na categoria de vector databases em agosto de 2026 — uma base de medição completamente diferente (autorrelato de uso vs. gasto efetivo verificado, em empresas de todos os portes e setores), que o digest sinaliza explicitamente como não comparável de forma direta. Entre as empresas que de fato compram uma ferramenta dedicada, a Pinecone é a mais usada, mas a Turbopuffer é a que mais cresce — por volta de +0,5 ponto percentual por mês, atraindo o maior número de empresas migrando de concorrentes —, hoje com cerca de 12% de participação entre quem já tem um fornecedor da categoria (13% entre empresas grandes, 9% entre médias).</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Comparação de adoção de vector databases: 67% dos engenheiros dizem usar uma, contra apenas 1,3% das empresas que efetivamente pagam por uma, segundo dados de gasto da Ramp">
+    <title>Uso autodeclarado vs. gasto real verificado em vector databases</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="24" text-anchor="middle" class="chart-val">67%</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Dizem usar (autorrelato, EUA)</text>
+    <rect x="200" y="137" width="60" height="3" fill="var(--text)"/>
+    <text x="230" y="131" text-anchor="middle" class="chart-val">1,3%</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Pagam por uma (gasto real, Ramp)</text>
+  </svg>
+  <figcaption>As duas barras vêm de metodologias diferentes e não são diretamente comparáveis: autorrelato de 300 engenheiros nos EUA (ago/2025) vs. participação de gasto verificado entre empresas na plataforma Ramp (ago/2026). Mostradas juntas apenas para ilustrar a distância entre uso percebido e compra efetiva.</figcaption>
+</figure>
+<span class="label">Como o mercado está aplicando</span>
+<p>A leitura prática para quem está orçando um projeto de RAG ou memória de agentes: "todo mundo já usa vector database" é verdade no nível do relato informal de engenheiros, mas ainda não no nível de gasto comprometido com um fornecedor — a maioria dos times ainda está prototipando em camada gratuita, numa extensão dentro de um banco já existente (pgvector, MongoDB Atlas) ou sem fornecedor dedicado algum, o que também explica por que um entrante rápido e barato como a Turbopuffer consegue continuar ganhando participação em vez de o mercado já estar consolidado nas mãos dos incumbentes.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://ramp.com/vendors/categories/vector-databases">Ramp — "Top ranking Vector Databases software in August 2026"</a></li>
+<li><a href="https://ramp.com/vendors/turbopuffer">Ramp — página do fornecedor Turbopuffer</a></li>
+<li><a href="https://www.hostingadvice.com/studies/vector-databases-adoption-survey/">HostingAdvice — "Vector Databases Quietly Hit Majority Adoption in AI Engineering"</a></li>
+</ul>
+</div>
+</article>
+
+<h2 class="section-title archive-title">Relatórios anteriores</h2>
+<ul class="archive-list">
+<li><a href="archive/2026-10-02.html">2 de outubro de 2026</a></li>
+<li><a href="archive/2026-09-25.html">25 de setembro de 2026</a></li>
+<li><a href="archive/2026-09-18.html">18 de setembro de 2026</a></li>
+<li><a href="archive/2026-09-11.html">11 de setembro de 2026</a></li>
+<li><a href="archive/2026-08-28.html">28 de agosto de 2026</a></li>
+<li><a href="archive/2026-08-21.html">21 de agosto de 2026</a></li>
+<li><a href="archive/2026-08-17.html">17 de agosto de 2026</a></li>
+<li><a href="archive/2026-08-16.html">16 de agosto de 2026</a></li>
+</ul>
+
+<div class="methodology">
+<strong>Nota metodológica.</strong> Este digest é produzido semanalmente por um agente de pesquisa que busca ativamente fontes primárias (papers acadêmicos, blogs de pesquisa/engenharia de empresas de referência, universidades, surveys de mercado) em vez de responder de memória. Toda afirmação não-trivial é acompanhada de link verificável. Nesta edição, como nas anteriores, o acesso direto (fetch de página completa) a diversos domínios — incluindo research.google, databricks.com, arxiv.org e datahackers.news — foi bloqueado pela política de rede do ambiente de execução; o domínio da Anthropic voltou a ser acessível diretamente, e os números do anúncio da Cyber Mission (ex.: 11 parceiros fundadores, taxa de acerto esperada acima de 90% no OSS Scanner) foram confirmados na própria página. Para os demais itens, os fatos foram verificados por cruzamento entre múltiplas buscas independentes e fontes jornalísticas ou de terceiros que citam o mesmo conteúdo primário. Números marcados como estimados ou derivados pelo digest — o tamanho de modelo "até 10 milhões de parâmetros" no sistema de federated learning do Google, o valor de investimento bancário de 2025 (~R$2,8bi, derivado do crescimento de 8% divulgado) e a contagem de mudanças/data de lançamento do Apache Iceberg 1.12 (obtidos via cobertura da Dremio, já que a página oficial de releases do projeto ainda listava a 1.11.0 como mais recente no momento da consulta) — são sinalizados como tal diretamente nos textos ou legendas. Pela segunda semana consecutiva, nenhum conteúdo novo e relevante foi encontrado no Netflix Research, Netflix TechBlog ou Google Research dentro do escopo específico de streaming/recomendação/personalização de mídia — isso é sinalizado na abertura da seção 2 em vez de forçar um exemplo fora de prazo ou irrelevante. Por isso, a seção 3 desta semana também trocou o âncora habitual do State of Data Brazil (já coberto nas duas edições anteriores) por dois pontos de dado novos e independentes.
+</div>
+
+<div class="contact">
+  <p class="name">Ri Gonçalves</p>
+  <p><a href="mailto:goncalves.r@pm.me">goncalves.r@pm.me</a> · <a href="https://github.com/GoncalvesRD">github.com/GoncalvesRD</a></p>
+</div>
+
+<footer class="report-footer">
+  <p>Publicado via GitHub Pages a partir de <a href="https://github.com/GoncalvesRD/ds-trends">github.com/GoncalvesRD/ds-trends</a>.</p>
+</footer>
+
+</div>
+
+<div class="lang-block" data-lang="en" hidden>
+
+<header class="report-header">
+  <h1>Trends in Data Science, Machine Learning and Applied AI</h1>
+  <p class="dek">Google makes federated-learning privacy externally verifiable by moving it inside hardware enclaves, Anthropic launches a long-term security mission to protect critical infrastructure, and AI Engineer becomes Brazil's highest-paying entry-level tech role.</p>
+</header>
+
+<div class="byline">
+  <div class="avatar">RG</div>
+  <div>
+    <div class="name">Ri Gonçalves</div>
+    <div class="sub"><a href="https://goncalvesrd.github.io/ds-trends/">goncalvesrd.github.io/ds-trends</a> · October 9, 2026</div>
+  </div>
+</div>
+
+<nav class="toc">
+  <p class="toc-title">In this issue</p>
+  <ol>
+    <li><a href="#sec1-en">General trends in Data Science / ML / applied AI</a> — Google moves federated-learning training inside hardware enclaves with provable privacy, and gathers 50+ researchers to map the open problems in agentic privacy and security.</li>
+    <li><a href="#sec2-en">Streaming and Globoplay's competitors</a> — Anthropic launches a long-term security mission for critical infrastructure and open-source software; Meta's ads agent lands on the Databricks Marketplace under Unity Catalog governance.</li>
+    <li><a href="#sec3-en">Data Science job market in Brazil</a> — AI Engineer becomes the highest-paying entry-level tech role in the country, and Brazilian banks project R$3 billion in AI and data spending for 2026.</li>
+    <li><a href="#sec4-en">Tooling and platform trends</a> — Apache Iceberg 1.12 consolidates the open table format as the standard across competing warehouses and lakehouses, and real corporate spend data shows vector-database adoption is still small.</li>
+  </ol>
+</nav>
+
+<h2 class="section-title" id="sec1-en"><span class="num">01</span>General trends in Data Science, Machine Learning and applied AI</h2>
+<p class="section-intro">Two Google Research pieces on the same axis — privacy — seen from opposite angles: one delivers a new technical guarantee for a system already in production, the other is a list of problems the industry still doesn't know how to solve.</p>
+
+<article class="item">
+<h3>Google makes federated learning "provably private" by moving training inside hardware enclaves</h3>
+<p>Since 2017, Google has used federated learning (FL) to train models on decentralized, private data — it's the technique behind, for instance, next-word prediction and Smart Compose on Gboard. Earlier privacy generations in this pipeline combined differential privacy (via algorithms like MF-DP-FTRL) with secure aggregation, but still relied, to some degree, on a promise about the server software's behavior. On October 2, Google Research announced a new FL system that shifts more computation to the server — improving training speed, accuracy and device coverage — but does so inside Trusted Execution Environments (TEEs): training examples reach Google's infrastructure encrypted, and are only decrypted inside hardware-protected environments running externally approved and auditable programs. That turns the guarantee from "the server promises not to peek" into "any external party can verify the server couldn't peek even if it wanted to." The first production models using the system are already live in Gboard's English and Japanese next-word-prediction models; per third-party reporting on the announcement, models trained so far reach up to 10 million parameters, and the guarantees depend on current-generation TEE limitations and assumptions about side-channel observability — caveats Google itself flags in the announcement.</p>
+<span class="label">How the market is applying it</span>
+<p>Moving the trust boundary from "software policy" to "attestable hardware" is the direction the whole federated-aggregation stack has been heading — a 2024 Google paper on confidential federated computations already described TEEs as one way to make aggregation "oblivious" (the provider can't inspect individual messages). For any team evaluating privacy-preserving ML architectures for mobile or edge products, this is the reference bar to aim for — not because it's easy to replicate outside Google, but because it defines the guarantee level regulators and auditors will come to expect.</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://research.google/blog/toward-provably-private-learning-from-federated-data/">Google Research Blog — "Toward provably private learning from federated data"</a></li>
+<li><a href="https://arxiv.org/html/2404.10764v2">arXiv 2404.10764 — "Confidential Federated Computations" (background on TEEs in federated aggregation)</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Google gathers 50+ researchers to map the open problems in agentic privacy and security</h3>
+<p>The standard privacy model in enterprise software is access control: defining which data an entity is allowed to see. That model doesn't capture well what happens when an autonomous agent takes a sequence of actions — each one apparently legitimate on its own — that, combined, violate a social expectation about how that information should flow. On October 5, Google Research published "Open and Emergent Problems in Agentic Privacy and Security: A Contextual Angle," a report led by Eugene Bagdasarian (Google Research and assistant professor at UMass Amherst) and Marco Gruteser, growing out of the CAPS (Contextual Agent Privacy and Security) workshop held in New York in late 2025, with contributions from more than 50 academic and industry researchers. The report applies Contextual Integrity — the theory that privacy is information flowing appropriately to the social context in which it was shared — and extends it from "is it appropriate to share this information" to "is it appropriate for the agent to take this action." The document is explicitly a list of open research problems, not a shipped product or defense, and calls for coordinated defenses across four layers: system, model, user and ecosystem.</p>
+<span class="label">What it means for people building agents</span>
+<p>For data and ML teams already running agents in production today — customer service, coding agents, agents with access to internal data — this report is an early signal that the classic permissions model (RBAC) is being recognized as insufficient by the very teams training frontier models, ahead of regulation or incidents forcing the issue. Worth tracking before this becomes a mandatory audit checklist item.</p>
+<div class="refs">
+<strong>References</strong>
+<ul><li><a href="https://research.google/blog/open-and-emergent-problems-in-agentic-privacy-and-security-a-contextual-angle/">Google Research Blog — "Open and Emergent Problems in Agentic Privacy and Security: A Contextual Angle"</a></li></ul>
+</div>
+</article>
+
+<section class="globoplay">
+<h2 class="section-title" id="sec2-en"><span class="num">02</span>Streaming and Globoplay's competitors</h2>
+<p class="section-intro">For the second week running, Netflix Research and Netflix TechBlog published nothing new within the scope of streaming, recommendation, personalization, data or media infrastructure — the most recent TechBlog post we could locate still falls outside this three-month window. Google Research also had nothing new in media recommendation/personalization this week (its October posts, covered in section 1, are about privacy and public-health geospatial models, outside this section's scope). So this week's spotlight again goes to Anthropic — a source we track independently of topic — and to Databricks, with news that crosses advertising data with media infrastructure.</p>
+
+<article class="item">
+<h3>Anthropic launches a long-term security mission to shield critical infrastructure from AI-era risk</h3>
+<p>On October 8, Anthropic announced the Anthropic Cyber Mission, a long-term effort to give the defenders of critical systems the same frontier AI tools attackers are already starting to use. Its first front is the Critical Infrastructure Defense Program (CIDP), aimed at the operational technology running power grids, water systems and transportation, plus government systems: trusted security providers get access to frontier Claude models, on-site Anthropic engineers and dedicated threat research. The eleven founding partners include Accenture, Booz Allen, CrowdStrike, Deloitte, Dragos, Hitachi, Palo Alto Networks, PwC and Rockwell Automation, among others. The second front is the OSS Scanner, a free, opt-in service that scans open-source projects with Anthropic's most capable models, producing a proof of concept, an explanation and, where possible, a suggested fix — reports are sent without human review, with an expected true-positive rate above 90%. Anthropic itself is explicit about the limits: "critical infrastructure is hard to defend in ways AI cannot fix," the company estimates roughly two years before AI clearly favors defense over attack, and some fixes to legacy operational technology could take decades.</p>
+<span class="label">What it signals for people working with data</span>
+<p>A service that publishes AI-generated vulnerability reports without human review, at an expected confidence above 90%, marks a new level of operational trust in autonomous triage — the same "hundreds of agents running parallel heuristics, narrowing the funnel, humans validating only at the end" architecture already seen in Anthropic's genomic search two weeks ago, now applied continuously and at the scale of the entire open-source ecosystem instead of a one-off experiment.</p>
+<div class="refs">
+<strong>References</strong>
+<ul><li><a href="https://www.anthropic.com/news/anthropic-cyber-mission">Anthropic — "Introducing the Anthropic Cyber Mission"</a></li></ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Meta's ads agent lands on the Databricks Marketplace — and now talks to business data governed by Unity Catalog</h3>
+<p>In early October, Databricks listed Meta's ads MCP server on its Marketplace, connecting enterprise data and models to agentic advertising workflows. Wired into Genie, the server lets marketing teams query Meta campaign performance in natural language alongside business data the company already governs — without exporting anything to a third-party tool. According to Meta, the server exposes more than 25 tools, covering campaign and ad-set creation, budget and bid adjustments, audience definition, creative and catalog management, performance-data extraction and signal-quality diagnosis — a figure we couldn't independently confirm. Access control stays inside Databricks: administrators manage the Meta connection through Unity Catalog, and Unity Gateway governs every tool call and logs usage and audit trails. The launch follows an earlier integration, the Meta Conversions API, already available on the same Marketplace.</p>
+<span class="label">How the market is applying it</span>
+<p>This extends the same "MCP as a governance layer" pattern covered in this column with Genie One MCP into advertising and monetization data — relevant for any streaming or media company (Globoplay included) that cross-references ad-campaign data with first-party audience and subscriber data, and wants agents querying both sides without duplicating permission logic in every new tool.</p>
+<div class="refs">
+<strong>References</strong>
+<ul><li><a href="https://www.databricks.com/blog/meta-ads-mcp-databricks">Databricks Blog — "Meta's ads MCP server comes to Databricks"</a></li></ul>
+</div>
+</article>
+</section>
+
+<h2 class="section-title" id="sec3-en"><span class="num">03</span>Data Science job market in Brazil</h2>
+<p class="section-intro">Instead of the usual State of Data Brazil anchor — already covered in the last two editions — this week brings two new, independently verifiable data points: Robert Half's 2026 salary guide and the Febraban 2026 Banking Technology Survey.</p>
+
+<article class="item">
+<h3>AI Engineer becomes Brazil's highest-paying entry-level tech role, per Robert Half's 2026 Salary Guide</h3>
+<p>The 18th edition of Robert Half's Salary Guide in Brazil, released in early October and based on a survey of 500 hiring managers and 1,000 professionals across different regions of the country — cross-checked against real placement salary data from the firm itself — names Artificial Intelligence Engineer as the highest-paying entry-level role among more than 300 tech positions tracked: R$19,500 to R$27,100 per month. For comparison, the same guide lists Data Science Specialist at a range of R$14,700 to R$24,600, with a median of R$19,100 — below the midpoint of the AI Engineer range. The guide itself is explicit about what the number represents: entry-level compensation figures (for someone newly hired into the role), excluding bonuses or benefits, presented by experience percentile.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Salary comparison: Data Scientist with a median of R$19,100 against AI Engineer with a midpoint of R$23,300">
+    <title>Monthly entry-level salary: Data Scientist vs. AI Engineer</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="50" width="60" height="90" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="44" text-anchor="middle" class="chart-val">R$19.1k</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Data Scientist (median)</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">R$23.3k</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">AI Engineer (midpoint)</text>
+  </svg>
+  <figcaption>Monthly entry-level compensation (excluding bonuses/benefits) per Robert Half Brazil's 2026 Salary Guide; the "midpoint" is calculated by the digest from the disclosed R$19.5k–27.1k range for AI Engineer.</figcaption>
+</figure>
+<span class="label">What it signals for the market</span>
+<p>For data professionals in Brazil, this is the clearest signal yet that the "AI Engineer" title — focused on shipping LLM systems to production, not necessarily ML research — already commands a premium over the classic "Data Scientist" title in the Brazilian market, mirroring what had already happened in the US market. It's a useful data point for anyone negotiating a title change or a lateral career move.</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://canaltech.com.br/mercado/salario-de-r-19-mil-guia-mostra-as-profissoes-de-tecnologia-em-alta-em-2026/">Canaltech — "Salário de R$ 19 mil: guia mostra as profissões de tecnologia em alta em 2026"</a></li>
+<li><a href="https://abes.org.br/?p=99086">ABES — coverage of Robert Half's 2026 Salary Guide</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Brazilian banks to invest R$3 billion in AI and data in 2026 — but only 20% use AI at scale in customer experience</h3>
+<p>The Febraban 2026 Banking Technology Survey, conducted by Deloitte with a sample of 25 banks (82–85% of the sector's assets), collected between December 2025 and April 2026 and reported this week, shows Brazilian banks plan to invest about R$3 billion in AI, analytics and big data in 2026 — up 8% from 2025. The most cited gain from AI, named by 92% of institutions, is speed on routine tasks; but only 20% of banks say they use AI at scale in customer experience, indicating that broad adoption on the customer-facing front is still a minority. Cloud-migration investment is also rising, to R$3.9 billion (+30% versus 2025).</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Brazilian bank investment in AI, analytics and big data: about R$2.8 billion in 2025 versus R$3 billion in 2026">
+    <title>Banking investment in AI, analytics and big data</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="37" width="60" height="103" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="31" text-anchor="middle" class="chart-val">~R$2.8bn</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">2025 (estimated)</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">R$3bn</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">2026</text>
+  </svg>
+  <figcaption>The 2026 figure is reported by the Febraban 2026 Banking Technology Survey (Deloitte); the 2025 figure is estimated by the digest from the disclosed "8%" growth rate, not a number the survey published directly.</figcaption>
+</figure>
+<span class="label">What it signals for the market</span>
+<p>The gap between 92% (internal productivity gain) and 20% (at-scale use in customer experience) is the most useful number here for anyone selling or building AI and data products for Brazilian banks: budget is clearly flowing into AI, but the use case banks have actually operationalized at scale is internal productivity, not customer-facing personalization — exactly the gap that media and consumer companies near Globoplay could exploit if they move faster on recommendation and personalization than banks are moving on CX.</p>
+<div class="refs">
+<strong>References</strong>
+<ul><li><a href="https://www.seudinheiro.com/2026/empresas/bancos-vao-investir-r-3-bilhoes-em-inteligencia-artificial-e-solucoes-de-dados-em-2026-o-que-eles-ja-descobriram-que-voce-ainda-nao-aplica-lbrdgm097/">Seu Dinheiro — coverage of the Febraban 2026 Banking Technology Survey (Deloitte)</a></li></ul>
+</div>
+</article>
+
+<h2 class="section-title" id="sec4-en"><span class="num">04</span>Tooling and platform trends</h2>
+<p class="section-intro">Two stories of convergence: the open table-format wars quietly ending around one standard, and real corporate spend data showing vector-database adoption is still far behind what the hype suggests.</p>
+
+<article class="item">
+<h3>Apache Iceberg 1.12 ships with 800+ changes — and the open table format consolidates as the standard every warehouse and lakehouse wants to speak</h3>
+<p>The Apache Iceberg project shipped version 1.12.0 in late September, after release manager Neelesh Salian ran a second release candidate approved by project member votes. Accumulating more than 800 changes since version 1.11 (May 2026), the new release makes more v3 table-format features usable across more engines, tightens the REST catalog contract, improves streaming reliability, and already includes early work toward a future format version 4 — at the cost of dropping support for Spark 3.4 and Flink 2.0, and of the Java implementation no longer embedding deleted-row values inside position delete files (closing a known accidental data-exposure vector). Over the same window, ClickHouse Cloud expanded its Iceberg REST Catalog and Microsoft OneLake support, and put a private-preview on-demand compute feature specifically aimed at queries over Iceberg and Delta Lake data — reinforcing that both competing data warehouses and lakehouses are converging on the same table format.</p>
+<span class="label">How the market is applying it</span>
+<p>For anyone choosing a lakehouse architecture today, the practical lesson is that the table-format choice is becoming less decisive than it was two years ago — Iceberg is turning into the lingua franca that both warehouses (ClickHouse, Snowflake) and lakehouses (Databricks) build read/write paths toward, pushing the real differentiation further up the stack: query-engine performance and governance, not file-format lock-in.</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://iceberg.apache.org/releases/">Apache Iceberg — official releases page</a></li>
+<li><a href="https://www.dremio.com/blog/apache-iceberg-1-12-0-whats-new-breaking-changes-and-upgrade-guide">Dremio Blog — "Apache Iceberg 1.12.0: What's New, Breaking Changes and Upgrade Guide"</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Real corporate spend data shows vector-database adoption is still small — even with 67% of engineers saying they already use one</h3>
+<p>Two different ways of measuring vector-database "adoption" land on wildly different numbers. A self-reported survey of 300 US engineers (fielded in August 2025, across five industries, with a ±3.1 percentage-point margin of error at 95% confidence) found 67% of respondents saying their organization already uses a vector database. Meanwhile, real spend data from Ramp, the corporate expense platform, shows only 1.3% of all businesses on the platform pay for a tool in the vector-database category as of August 2026 — a completely different measurement base (self-reported usage vs. verified actual spend, across companies of every size and sector), which the digest flags explicitly as not directly comparable. Among companies that do buy a dedicated tool, Pinecone is the most-used vendor, but Turbopuffer is the fastest-growing — around +0.5 percentage points per month, pulling in the most companies switching from competitors — now holding roughly 12% share among organizations that already have a category vendor (13% among enterprises, 9% among mid-market companies).</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Vector database adoption comparison: 67% of engineers say they use one, versus only 1.3% of businesses that actually pay for one, per Ramp spend data">
+    <title>Self-reported use vs. verified spend on vector databases</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="24" text-anchor="middle" class="chart-val">67%</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Say they use one (self-reported, US)</text>
+    <rect x="200" y="137" width="60" height="3" fill="var(--text)"/>
+    <text x="230" y="131" text-anchor="middle" class="chart-val">1.3%</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Pay for one (verified spend, Ramp)</text>
+  </svg>
+  <figcaption>The two bars come from different methodologies and are not directly comparable: a self-reported survey of 300 US engineers (Aug 2025) vs. verified spend share among businesses on the Ramp platform (Aug 2026). Shown together only to illustrate the gap between perceived use and actual purchase.</figcaption>
+</figure>
+<span class="label">How the market is applying it</span>
+<p>The practical read for anyone budgeting a RAG or agent-memory project: "everyone already uses a vector database" is true at the level of engineers' informal reports, but not yet true at the level of committed vendor spend — most teams are still prototyping on a free tier, an extension inside an existing database (pgvector, MongoDB Atlas), or with no dedicated vendor at all, which also explains why a fast, cheap entrant like Turbopuffer can keep gaining share instead of the market already being locked up by incumbents.</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://ramp.com/vendors/categories/vector-databases">Ramp — "Top ranking Vector Databases software in August 2026"</a></li>
+<li><a href="https://ramp.com/vendors/turbopuffer">Ramp — Turbopuffer vendor page</a></li>
+<li><a href="https://www.hostingadvice.com/studies/vector-databases-adoption-survey/">HostingAdvice — "Vector Databases Quietly Hit Majority Adoption in AI Engineering"</a></li>
+</ul>
+</div>
+</article>
+
+<h2 class="section-title archive-title">Previous reports</h2>
+<ul class="archive-list">
+<li><a href="archive/2026-10-02.html">October 2, 2026</a></li>
+<li><a href="archive/2026-09-25.html">September 25, 2026</a></li>
+<li><a href="archive/2026-09-18.html">September 18, 2026</a></li>
+<li><a href="archive/2026-09-11.html">September 11, 2026</a></li>
+<li><a href="archive/2026-08-28.html">August 28, 2026</a></li>
+<li><a href="archive/2026-08-21.html">August 21, 2026</a></li>
+<li><a href="archive/2026-08-17.html">August 17, 2026</a></li>
+<li><a href="archive/2026-08-16.html">August 16, 2026</a></li>
+</ul>
+
+<div class="methodology">
+<strong>Methodology note.</strong> This digest is produced weekly by a research agent that actively searches for primary sources (academic papers, research/engineering blogs from reference companies, universities, market surveys) instead of answering from memory. Every non-trivial claim is accompanied by a verifiable link. In this edition, as in previous ones, direct full-page fetches to several domains — including research.google, databricks.com, arxiv.org and datahackers.news — were blocked by the execution environment's network policy; the Anthropic domain was once again directly accessible, and the Cyber Mission announcement's numbers (e.g., 11 founding partners, an expected true-positive rate above 90% for the OSS Scanner) were confirmed on the page itself. For the remaining items, facts were verified by cross-referencing multiple independent searches and journalistic or third-party sources citing the same primary content. Figures marked as estimated or derived by the digest — the "up to 10 million parameters" model-size figure for Google's federated learning system, the 2025 banking-investment figure (~R$2.8bn, derived from the disclosed 8% growth rate) and the Apache Iceberg 1.12 change count/release date (sourced via Dremio's coverage, since the project's official releases page still listed 1.11.0 as latest at the time of checking) — are flagged as such directly in the text or captions. For the second week running, no new relevant content was found from Netflix Research, Netflix TechBlog or Google Research within the specific scope of streaming/recommendation/media personalization — this is flagged at the top of section 2 rather than forcing in an outdated or irrelevant example. For that reason, this week's section 3 also swapped the usual State of Data Brazil anchor (already covered in the previous two editions) for two new, independent data points.
+</div>
+
+<div class="contact">
+  <p class="name">Ri Gonçalves</p>
+  <p><a href="mailto:goncalves.r@pm.me">goncalves.r@pm.me</a> · <a href="https://github.com/GoncalvesRD">github.com/GoncalvesRD</a></p>
+</div>
+
+<footer class="report-footer">
+  <p>Published via GitHub Pages from <a href="https://github.com/GoncalvesRD/ds-trends">github.com/GoncalvesRD/ds-trends</a>.</p>
+</footer>
+
+</div>
+
+</main>
+<script>
+(function(){
+  var buttons = document.querySelectorAll('[data-lang-btn]');
+  var blocks = document.querySelectorAll('[data-lang]');
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var lang = btn.getAttribute('data-lang-btn');
+      buttons.forEach(function(b){ b.classList.toggle('active', b === btn); });
+      blocks.forEach(function(block){
+        if (block.getAttribute('data-lang') === lang) {
+          block.removeAttribute('hidden');
+        } else {
+          block.setAttribute('hidden', '');
+        }
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

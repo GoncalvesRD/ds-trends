@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Digest DS/ML/IA — 9 de outubro de 2026</title>
+<title>Digest DS/ML/IA — 16 de outubro de 2026</title>
 <style>
 :root{--bg:#ffffff;--text:#1a1a1a;--muted:#6b6b6b;--hairline:#e6e6e6;--link:#1a1a1a;--link-hover:#1a8917;--serif:Georgia,'Iowan Old Style','Palatino Linotype','Book Antiqua',Palatino,serif;--sans:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;--globoplay-red:#FB0234;}
 *{box-sizing:border-box;}
@@ -76,183 +76,223 @@ h2.section-title.archive-title{margin-top:56px;}
 
 <header class="report-header">
   <h1>Tendências em Data Science, Machine Learning e IA Aplicada</h1>
-  <p class="dek">O Google torna a privacidade do federated learning verificável de fora para dentro ao movê-la para hardware blindado, a Anthropic lança uma missão de segurança de longo prazo para proteger infraestrutura crítica, e Engenheiro de IA vira a profissão de tecnologia com maior salário inicial do Brasil.</p>
+  <p class="dek">A Netflix testa recomendação em 8,5 milhões de assinantes e desafia a tese da bolha de filtro, a Anthropic lança sua Missão Cibernética para infraestrutura crítica, e dados sintéticos "limpos demais" podem acelerar o colapso do próprio modelo que deveriam treinar.</p>
 </header>
 
 <div class="byline">
   <div class="avatar">RG</div>
   <div>
     <div class="name">Ri Gonçalves</div>
-    <div class="sub"><a href="https://goncalvesrd.github.io/ds-trends/">goncalvesrd.github.io/ds-trends</a> · 9 de outubro de 2026</div>
+    <div class="sub"><a href="https://goncalvesrd.github.io/ds-trends/">goncalvesrd.github.io/ds-trends</a> · 16 de outubro de 2026</div>
   </div>
 </div>
 
 <nav class="toc">
   <p class="toc-title">Nesta edição</p>
   <ol>
-    <li><a href="#sec1-pt">Tendências gerais em Data Science / ML / IA aplicada</a> — o Google move o treino de federated learning para dentro de enclaves de hardware com privacidade comprovável, e reúne mais de 50 pesquisadores para mapear os problemas abertos de privacidade e segurança em agentes.</li>
-    <li><a href="#sec2-pt">Streaming e concorrentes da Globoplay</a> — a Anthropic lança uma missão de segurança de longo prazo para infraestrutura crítica e software open source; o agente de anúncios da Meta chega ao Databricks Marketplace sob governança do Unity Catalog.</li>
-    <li><a href="#sec3-pt">Mercado de Data Science no Brasil</a> — Engenheiro de IA se torna a profissão de tecnologia com maior salário inicial do país, e bancos brasileiros preveem investir R$ 3 bilhões em IA e dados em 2026.</li>
-    <li><a href="#sec4-pt">Tendências de ferramentas e soluções</a> — o Apache Iceberg 1.12 consolida o formato de tabela aberto como padrão entre warehouses e lakehouses concorrentes, e dados reais de gasto corporativo mostram que a adoção de vector databases ainda é pequena.</li>
+    <li><a href="#sec1-pt">Tendências gerais em Data Science / ML / IA aplicada</a> — curar dados sintéticos pode acelerar o colapso de um modelo em vez de evitá-lo, o DeepMind já usa agentes para ajudar a treinar outros agentes, e Berkeley ensina LLMs a atualizar crenças sem resumir tudo de novo em interações longas.</li>
+    <li><a href="#sec2-pt">Streaming e concorrentes da Globoplay</a> — a Netflix testa recomendação em 8,5 milhões de assinantes e encontra o oposto da bolha de filtro, e a Anthropic lança sua Missão Cibernética de infraestrutura crítica e o modelo Haiku 5.5.</li>
+    <li><a href="#sec3-pt">Mercado de Data Science no Brasil</a> — o State of Data Brazil mostra o Google como empresa mais admirada pelo quarto ano consecutivo, e a USP cria um escritório de IA ligado à reitoria.</li>
+    <li><a href="#sec4-pt">Tendências de ferramentas e soluções</a> — a pesquisa da DataTalks.Club mostra o Airflow disparando em orquestração enquanto Prefect e Dagster se fundem, e o Stack Overflow revela que 79% dos devs já usam IA no código — mas quase nenhum confiaria nela para uma decisão importante.</li>
   </ol>
 </nav>
 
 <h2 class="section-title" id="sec1-pt"><span class="num">01</span>Tendências gerais em Data Science, Machine Learning e IA aplicada</h2>
-<p class="section-intro">Duas peças do Google Research sobre o mesmo eixo — privacidade — vistas de ângulos opostos: uma entrega uma garantia técnica nova para um sistema já em produção, a outra é uma lista de problemas que a indústria ainda não sabe resolver.</p>
+<p class="section-intro">Três pistas sobre para onde a pesquisa de ponta está indo: dados sintéticos podem sabotar o próprio modelo que deveriam alimentar, agentes já ajudam a treinar outros agentes dentro do DeepMind, e um framework de Berkeley ensina modelos a não precisar resumir tudo de novo a cada rodada de uma conversa longa.</p>
 
 <article class="item">
-<h3>Google torna o federated learning "comprovadamente privado" ao mover o treino para dentro de hardware blindado</h3>
-<p>Desde 2017, o Google usa federated learning (FL) para treinar modelos sobre dados descentralizados e privados — é a técnica por trás, por exemplo, da previsão de próxima palavra e do Smart Compose no Gboard. As gerações anteriores de privacidade nesse pipeline combinavam privacidade diferencial (via algoritmos como MF-DP-FTRL) com agregação segura, mas ainda dependiam, em algum grau, de uma promessa sobre o comportamento do software do servidor. Em 2 de outubro, o Google Research anunciou um novo sistema de FL que desloca mais computação para o servidor — melhorando velocidade de treino, acurácia e cobertura de dispositivos — mas faz isso dentro de Trusted Execution Environments (TEEs): os exemplos de treino chegam criptografados à infraestrutura do Google, e só são decifrados dentro de ambientes protegidos por hardware, rodando programas aprovados e auditáveis externamente. Isso transforma a garantia de "o servidor promete não espiar" em "qualquer parte externa pode verificar que o servidor não conseguiria espiar mesmo se quisesse". Os primeiros modelos de produção usando o sistema já estão em uso nos modelos de previsão de próxima palavra do Gboard em inglês e japonês; segundo apuração de terceiros sobre o anúncio, os modelos treinados até agora chegam a 10 milhões de parâmetros, e as garantias dependem das limitações da geração atual de TEEs e de hipóteses sobre observabilidade por canais laterais — pontos que o próprio Google qualifica no anúncio.</p>
+<h3>Curar dados sintéticos para parecerem "melhores" pode acelerar o colapso do modelo, não evitá-lo</h3>
+<p>Colapso de modelo (model collapse) é o fenômeno em que um modelo treinado repetidamente sobre dados gerados por modelos anteriores — a própria IA, ou cópias dela — perde gradualmente diversidade e qualidade, convergindo para saídas cada vez mais estreitas e menos representativas da distribuição real. A reação intuitiva da indústria tem sido "curar" os dados sintéticos: filtrar exemplos de baixa qualidade antes de usá-los para treinar a próxima geração. Um paper publicado em 11 de outubro no workshop AIES (associado à AAAI), "Curating the Collapse: How Sample-Level Auditing Accelerates Model Collapse in Synthesis of Tabular Data", testa essa intuição em dados tabulares sintéticos e encontra o oposto: diferentes níveis de curadoria por amostra podem na verdade acelerar o colapso, via dois mecanismos — "mode dropping" (o filtro elimina sistematicamente modos legítimos mas menos frequentes da distribuição, não apenas ruído) e perda de diversidade que se acumula a cada geração de retreino. Isso conecta com um paper mais robusto do ICLR 2026, "Escaping Model Collapse via Synthetic Data Verification: Near-term Improvements and Long-term Convergence", que mostra, com experimentos em regressão linear, VAEs e no modelo de linguagem SmolLM2-135M, que o que de fato evita o colapso é injetar sinal de um verificador externo confiável — humano ou um modelo mais forte — e não um filtro heurístico de qualidade aplicado pelo próprio sistema que gerou os dados; sem um verificador confiável, os ganhos iniciais de curadoria tendem a estagnar ou reverter.</p>
 <span class="label">Como o mercado está aplicando</span>
-<p>Mover a fronteira de confiança de "política de software" para "hardware atestável" é a direção para onde toda a pilha de agregação federada já vinha caminhando — um paper de 2024 do próprio Google sobre computação federada confidencial já descrevia TEEs como uma das formas de tornar a agregação "oblívia" (o provedor não consegue inspecionar mensagens individuais). Para qualquer time que avalia arquiteturas de ML preservando privacidade em produtos móveis ou de borda, esse é o padrão de referência a se mirar — não porque seja fácil de replicar fora do Google, mas porque define o nível de garantia que reguladores e auditores vão passar a esperar.</p>
+<p>Para qualquer time que usa dados sintéticos ou gerados por LLM para aumentar conjuntos de treino — comum em detecção de fraude, séries temporais esparsas e fine-tuning de modelos de linguagem em domínios de nicho —, o recado prático é desconfiar de pipelines que filtram "qualidade" usando o próprio modelo gerador ou um proxy heurístico simples como critério de corte: isso tende a estreitar a distribuição em vez de limpá-la. O ganho real vem de um verificador externo e independente — rótulo humano, modelo de referência mais forte, ou validação contra dados reais —, não de um filtro automático aplicado em cima do próprio dado sintético.</p>
 <div class="refs">
 <strong>Referências</strong>
 <ul>
-<li><a href="https://research.google/blog/toward-provably-private-learning-from-federated-data/">Google Research Blog — "Toward provably private learning from federated data"</a></li>
-<li><a href="https://arxiv.org/html/2404.10764v2">arXiv 2404.10764 — "Confidential Federated Computations" (contexto sobre TEEs em agregação federada)</a></li>
+<li><a href="https://ojs.aaai.org/index.php/AIES/article/view/43319">AAAI/AIES 2026 — "Curating the Collapse: How Sample-Level Auditing Accelerates Model Collapse in Synthesis of Tabular Data"</a></li>
+<li><a href="https://iclr.cc/virtual/2026/10017243">ICLR 2026 — "Escaping Model Collapse via Synthetic Data Verification: Near-term Improvements and Long-term Convergence"</a></li>
 </ul>
 </div>
 </article>
 
 <article class="item">
-<h3>Google reúne mais de 50 pesquisadores para mapear os problemas abertos de privacidade e segurança em agentes de IA</h3>
-<p>O modelo padrão de privacidade em software corporativo é controle de acesso: definir quais dados uma entidade pode ver. Esse modelo não captura bem o que acontece quando um agente autônomo toma uma sequência de ações — cada uma aparentemente legítima isoladamente — que, combinadas, violam uma expectativa social sobre como aquela informação deveria fluir. Em 5 de outubro, o Google Research publicou "Open and Emergent Problems in Agentic Privacy and Security: A Contextual Angle", um relatório liderado por Eugene Bagdasarian (Google Research e professor assistente na UMass Amherst) e Marco Gruteser, fruto do workshop CAPS (Contextual Agent Privacy and Security) realizado em Nova York no final de 2025, com contribuições de mais de 50 pesquisadores de academia e indústria. O relatório aplica a Integridade Contextual — a teoria de que privacidade é informação fluindo de forma apropriada ao contexto social em que ela foi compartilhada — e a estende de "é apropriado compartilhar essa informação" para "é apropriado que o agente tome essa ação". O documento é explicitamente uma lista de problemas de pesquisa em aberto, não um produto ou uma defesa já implementada, e pede defesas coordenadas em quatro camadas: sistema, modelo, usuário e ecossistema.</p>
-<span class="label">O que isso significa para quem constrói agentes</span>
-<p>Para times de dados e ML que já colocam agentes em produção hoje — atendimento ao cliente, agentes de código, agentes com acesso a dados internos — esse relatório é um sinal precoce de que o modelo clássico de permissões (RBAC) está sendo reconhecido como insuficiente pelas próprias equipes que treinam os modelos de fronteira, antes que regulação ou incidentes forcem a questão. Vale acompanhar antes que isso se torne item obrigatório de checklist de auditoria.</p>
+<h3>DeepMind diz que agentes de IA já rodam partes do treinamento de novos modelos, sob supervisão humana</h3>
+<p>Segundo reportagem da The Information de 24 de setembro de 2026 (resumida pelo agregador Digg — não tivemos acesso à matéria original para verificação direta), Koray Kavukcuoglu, diretor de tecnologia do Google DeepMind, descreveu em uma conferência que agentes de IA já desenham experimentos, analisam resultados e propõem hipóteses durante o treinamento de novos modelos, com humanos supervisionando o processo — e que isso não acontecia seis meses antes. É uma declaração pública de um executivo em um evento, não um paper ou post técnico, então deve ser lida como direção de mercado, não como especificação verificável.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>Se a descrição se sustentar, o sinal para quem lidera equipes de ML é que o próprio ciclo interno de pesquisa e experimentação — não só produtos voltados a cliente — está ganhando uma camada agêntica: um "copiloto" que itera hipóteses de treino e analisa resultados automaticamente, ainda sob controle humano. Vale observar se laboratórios menores conseguem replicar isso com ferramentas disponíveis publicamente, ou se continua sendo vantagem exclusiva de quem já opera na escala do DeepMind.</p>
 <div class="refs">
 <strong>Referências</strong>
-<ul><li><a href="https://research.google/blog/open-and-emergent-problems-in-agentic-privacy-and-security-a-contextual-angle/">Google Research Blog — "Open and Emergent Problems in Agentic Privacy and Security: A Contextual Angle"</a></li></ul>
+<ul><li><a href="https://digg.com/tech/uvj44dll">Digg — resumo da reportagem da The Information, "Google DeepMind reportedly uses AI agents to help train models under human supervision"</a></li></ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Pesquisadores de Berkeley ensinam LLMs a atualizar a crença em vez de resumir tudo de novo a cada rodada</h3>
+<p>Agentes que operam em interações longas — um assistente de pesquisa, um agente de código, um bot de suporte que acompanha um caso por dias — enfrentam um dilema conhecido: ou carregam todo o histórico da conversa a cada passo (caro e cada vez mais lento conforme a conversa cresce), ou resumem recursivamente o que já aconteceu (barato, mas qualquer erro de resumo se acumula e distorce a crença do modelo sobre o estado real da tarefa). Em 26 de julho, pesquisadores do BAIR (Berkeley Artificial Intelligence Research) publicaram "Teaching LLMs to Update Beliefs for Efficient Long-Horizon Interaction", introduzindo o ABBEL: em vez de resumir recursivamente, o framework treina o modelo para manter e atualizar um "estado de crença" escrito em linguagem natural — uma representação explícita do que o agente acredita ser verdadeiro sobre a tarefa em um dado momento — e atualizar apenas essa crença a cada novo turno, em vez de reconstruir o contexto do zero. Os autores reportam que isso evita a perda de desempenho característica da auto-sumarização recursiva, especialmente em cenários de assistência humana onde dados de treino de alta qualidade são escassos.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>Para quem constrói agentes de execução longa — atendimento que acompanha um ticket por dias, agentes de codificação em uma base grande, assistentes de pesquisa que vasculham muitas fontes —, a técnica ataca diretamente o custo e a degradação de contexto em sessões extensas, uma das queixas mais citadas em pesquisas recentes sobre o que trava agentes de IA em produção (como a própria pesquisa da LangChain já coberta aqui há duas semanas).</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul><li><a href="https://bair.berkeley.edu/blog/2026/07/26/abbel/">BAIR Blog — "Teaching LLMs to Update Beliefs for Efficient Long-Horizon Interaction"</a></li></ul>
 </div>
 </article>
 
 <section class="globoplay">
 <h2 class="section-title" id="sec2-pt"><span class="num">02</span>Streaming e concorrentes da Globoplay</h2>
-<p class="section-intro">Pela segunda semana consecutiva, Netflix Research e Netflix TechBlog não publicaram nada novo dentro do escopo de streaming, recomendação, personalização, dados ou infraestrutura de mídia — o post mais recente localizado do TechBlog continua fora dessa janela de três meses. O Google Research também não trouxe nada novo em recomendação/personalização de mídia esta semana (seus posts de outubro, cobertos na seção 1, são sobre privacidade e sobre modelos geoespaciais de saúde pública, fora do escopo aqui). Por isso, o destaque desta semana é novamente da Anthropic — fonte acompanhada independentemente do tema — e da Databricks, com uma novidade que cruza dados de anúncios com infraestrutura de mídia.</p>
+<p class="section-intro">A Netflix testa recomendação em escala real e desafia a narrativa da bolha de filtro, enquanto a Anthropic — acompanhada aqui independentemente do tema streaming — lança sua missão de defesa cibernética de infraestrutura crítica e um novo modelo Haiku para rodar agentes em volume.</p>
 
 <article class="item">
-<h3>Anthropic lança uma missão de segurança de longo prazo para blindar infraestrutura crítica contra riscos da era da IA</h3>
-<p>Em 8 de outubro, a Anthropic anunciou a Anthropic Cyber Mission, um esforço de longo prazo para dar a quem defende sistemas críticos as mesmas ferramentas de IA de fronteira que atacantes já começam a usar. A primeira frente é o Critical Infrastructure Defense Program (CIDP), voltado à tecnologia operacional que roda redes elétricas, sistemas de água e transporte, além de sistemas governamentais: provedores de segurança confiáveis ganham acesso a modelos Claude de fronteira, engenheiros da própria Anthropic trabalhando in loco e pesquisa de ameaças dedicada. Os onze parceiros fundadores incluem Accenture, Booz Allen, CrowdStrike, Deloitte, Dragos, Hitachi, Palo Alto Networks, PwC e Rockwell Automation, entre outros. A segunda frente é o OSS Scanner, um serviço gratuito e opcional que varre projetos de código aberto com os modelos mais capazes da Anthropic, produzindo prova de conceito, explicação e, quando possível, uma correção sugerida — os relatórios são enviados sem revisão humana, com uma taxa esperada de acerto (verdadeiro positivo) acima de 90%. A própria Anthropic é explícita sobre os limites: "infraestrutura crítica é difícil de defender de formas que a IA não consegue resolver", a empresa estima cerca de dois anos até que a IA favoreça claramente a defesa sobre o ataque, e alguns consertos em tecnologia operacional legada podem levar décadas.</p>
-<span class="label">O que isso sinaliza para quem trabalha com dados</span>
-<p>Um serviço que publica relatórios de vulnerabilidade gerados por IA sem revisão humana, com confiança esperada acima de 90%, é um novo patamar de confiança operacional em triagem autônoma — a mesma arquitetura de "centenas de agentes rodando heurísticas em paralelo, funil estreitado e só então humano valida" já vista na busca genômica da Anthropic duas semanas atrás, agora aplicada de forma contínua e em escala ao ecossistema open source inteiro, em vez de a um experimento pontual.</p>
+<h3>Netflix testa recomendação em 8,5 milhões de assinantes — e encontra o oposto da bolha de filtro</h3>
+<p>A crítica padrão a sistemas de recomendação é que a personalização algorítmica prende o usuário nas próprias preferências, promovendo demasiadamente o que já é popular e sufocando a cauda longa — a chamada "bolha de filtro". Um novo experimento randomizado de pesquisadores da Netflix testa isso diretamente, em vez de inferir a partir de dados observacionais. Em "Recommendation Quality and the Concentration of Consumption: Experimental Evidence from Netflix" (arXiv:2608.21274, publicado em agosto de 2026), Guy Aridor, Winston Chou, Nathan Kallus, Antoine Scheid, Allen Tran e Kevin Zielnicki rodaram um experimento de contenção (holdback) de 60 dias com 8.559.252 assinantes entre fevereiro e abril de 2025: um braço manteve o recomendador de produção congelado, o outro recebeu as melhorias algorítmicas que a Netflix lançou nesse período. Recomendações melhores aumentaram o consumo total e o quanto os usuários dependeram das recomendações para decidir o que assistir — mas, de forma crucial, esse aumento não se concentrou nos títulos mais populares. Em vez disso, tanto as recomendações quanto o consumo se deslocaram para títulos moderadamente populares, de "cauda média", com pouco efeito sobre o conteúdo mais nichado. Os autores argumentam que isso contradiz a preocupação padrão de que melhorar a qualidade do recomendador polariza o consumo em torno de poucos títulos-fenômeno.</p>
+<p>Isso complementa um working paper anterior, também com autores ligados à Netflix ("The Value of Personalized Recommendations: Evidence from Netflix", publicado no arXiv em novembro de 2025 — fora da janela de três meses deste digest, mas ainda a quantificação mais clara desse mecanismo), que usou um modelo de escolha discreta para estimar o que aconteceria se a Netflix trocasse seu recomendador por algo mais simples: o engajamento cairia 4% com uma abordagem de fatoração de matriz e 12% com um ranking puro por popularidade, com a maior parte do ganho vindo de segmentação precisa, não apenas de exposição, concentrada em títulos de popularidade intermediária.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Queda estimada de engajamento se a Netflix substituísse seu recomendador: 4% com fatoração de matriz contra 12% com ranking por popularidade">
+    <title>Queda de engajamento ao substituir o recomendador da Netflix</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="103" width="60" height="37" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="97" text-anchor="middle" class="chart-val">-4%</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Fatoração de matriz</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">-12%</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Ranking por popularidade</text>
+  </svg>
+  <figcaption>Queda estimada de engajamento se a Netflix substituísse seu recomendador atual por alternativas mais simples (Zielnicki et al., arXiv 2511.07280, nov/2025).</figcaption>
+</figure>
+<span class="label">Como o mercado está aplicando</span>
+<p>Para a Globoplay e qualquer concorrente de streaming que compete por orçamento de conteúdo contra plataformas com bolso mais profundo, a implicação prática dos dois papers juntos é que investir em qualidade de recomendação não é só uma palanca de engajamento — é também uma palanca de economia de catálogo: ela aumenta o retorno de investir no "meio da cauda" em vez de apostar tudo em poucos títulos-fenômeno, e o efeito cresce conforme catálogo e algoritmo melhoram juntos. É o argumento mais forte até agora, vindo de dentro da própria Netflix, contra a ideia de que a personalização algorítmica empobrece a diversidade do que as pessoas assistem.</p>
 <div class="refs">
 <strong>Referências</strong>
-<ul><li><a href="https://www.anthropic.com/news/anthropic-cyber-mission">Anthropic — "Introducing the Anthropic Cyber Mission"</a></li></ul>
+<ul>
+<li><a href="https://arxiv.org/abs/2608.21274">arXiv:2608.21274 — "Recommendation Quality and the Concentration of Consumption: Experimental Evidence from Netflix" (Aridor, Chou, Kallus, Scheid, Tran, Zielnicki — ago/2026)</a></li>
+<li><a href="https://arxiv.org/abs/2511.07280">arXiv:2511.07280 — "The Value of Personalized Recommendations: Evidence from Netflix" (Zielnicki, Aridor, Bibaut, Tran, Chou, Kallus — nov/2025; citado aqui como contexto quantitativo, fora da janela de três meses)</a></li>
+</ul>
 </div>
 </article>
 
 <article class="item">
-<h3>O agente de anúncios da Meta chega ao Databricks Marketplace — e passa a conversar com dados de negócio governados pelo Unity Catalog</h3>
-<p>No início de outubro, a Databricks listou o servidor MCP de anúncios da Meta em seu Marketplace, conectando dados e modelos corporativos a fluxos de trabalho agênticos de publicidade. Ligado ao Genie, o servidor permite que times de marketing consultem em linguagem natural o desempenho de campanhas no Meta ao lado dos dados de negócio já governados pela empresa — sem exportar nada para uma ferramenta de terceiros. Segundo a própria Meta, o servidor expõe mais de 25 ferramentas, cobrindo criação de campanhas e conjuntos de anúncios, ajuste de orçamento e lances, definição de públicos, gestão de criativos e catálogos, extração de métricas de desempenho e diagnóstico de qualidade de sinal — número que não foi possível confirmar de forma independente. O controle de acesso continua dentro do Databricks: administradores gerenciam a conexão com a Meta via Unity Catalog, e o Unity Gateway governa cada chamada de ferramenta e registra uso e auditoria. O lançamento segue uma integração anterior, a Meta Conversions API, já disponível no mesmo Marketplace.</p>
+<h3>Anthropic lança a Missão Cibernética de longo prazo — e revela que parceiros já encontraram ao menos 129 mil vulnerabilidades reais com ajuda da Claude</h3>
+<p>Em 8 de outubro, a Anthropic lançou a Anthropic Cyber Mission, um esforço de longo prazo — apoiado por talento de engenharia e financiamento próprios — para equipar quem defende sistemas críticos com as mesmas capacidades de IA de fronteira que atacantes já exploram, nas palavras da própria empresa: "explorar vulnerabilidades ficou mais barato, enquanto verificar, divulgar e corrigi-las continua lento". A Missão parte de duas frentes: infraestrutura crítica e software de código aberto. A primeira, o Critical Infrastructure Defense Program (CIDP), foca na tecnologia operacional (OT) que roda redes elétricas, sistemas de água, transporte e sistemas governamentais, oferecendo aos provedores de segurança que esses operadores já contratam acesso a modelos Claude de fronteira, engenheiros da Anthropic atuando in loco e pesquisa de ameaças dedicada — com 11 parceiros fundadores: Accenture, Booz Allen, CrowdStrike, Deloitte, Dragos, Hitachi, Insane Cyber, Nozomi Networks, Palo Alto Networks, PwC e Rockwell Automation. A segunda é o OSS Scanner, um serviço gratuito que varre periodicamente projetos de código aberto inscritos com os modelos mais capazes da empresa, devolvendo prova de conceito, explicação e, quando possível, uma correção — sem revisão humana, com taxa de acerto esperada acima de 90%.</p>
+<p>Dois dias antes, em 6 de outubro, a Anthropic já havia expandido o Cyber Verification Program (CVP), fundindo-o com o antigo Project Glasswing e criando três níveis de acesso — Defense, Red Team e Specialized — que liberam gradualmente as salvaguardas dos modelos Opus 5.5, Sonnet 5.5 e Mythos 5.1 conforme o grau de verificação da organização solicitante. Em um teste interno com o benchmark CyScenarioBench, o Opus 5.5 sem acesso ao CVP teve toda tentativa bloqueada já na primeira instrução; com acesso de Red Team (sem bloqueios em tempo real), ele completou 34 das 50 tarefas — o mesmo índice de 67,6% do modelo sem nenhuma salvaguarda. Os números de impacto divulgados: os parceiros do programa Glasswing encontraram ao menos 129 mil vulnerabilidades verificadas entre abril e julho de 2026, mais 5.500 encontradas pelo próprio scanner open source da Anthropic entre abril e outubro; mais de 33 mil delas foram classificadas como críticas ou de alta severidade. A própria empresa estima que o impacto real seja ao menos cinco vezes maior, já que menos da metade dos parceiros revelou taxas de correção.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="129 mil vulnerabilidades verificadas encontradas, das quais mais de 33 mil classificadas como críticas ou de alta severidade">
+    <title>Vulnerabilidades encontradas via Cyber Verification Program</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="90" y="24" text-anchor="middle" class="chart-val">129.000</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Vulnerabilidades encontradas</text>
+    <rect x="200" y="112" width="60" height="28" fill="var(--muted)" opacity="0.4"/>
+    <text x="230" y="106" text-anchor="middle" class="chart-val">33.000+</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Críticas ou de alta severidade</text>
+  </svg>
+  <figcaption>Parceiros do programa Glasswing + scanner próprio da Anthropic, abr–out/2026. A própria Anthropic estima que o impacto real seja ao menos cinco vezes maior.</figcaption>
+</figure>
 <span class="label">Como o mercado está aplicando</span>
-<p>Isso estende para dados de publicidade e monetização o mesmo padrão de "MCP como camada de governança" já comentado nesta coluna com o Genie One MCP — relevante para qualquer empresa de streaming ou mídia (a Globoplay incluída) que cruza dados de campanhas publicitárias com dados primários de audiência e assinantes, e quer que agentes consultem os dois lados sem duplicar lógica de permissão em cada ferramenta nova.</p>
+<p>Para quem lida com dados sensíveis em infraestrutura de mídia — sistemas de pagamento, DRM, dados de assinantes —, o programa sinaliza dois pontos práticos: primeiro, que o OSS Scanner é hoje uma forma gratuita de varredura contínua de vulnerabilidades em projetos open source usados na própria stack; segundo, que laboratórios de fronteira estão criando um modelo de confiança em camadas — acesso a "menos freios" do modelo conforme a organização é verificada — que deve se espalhar para outros domínios sensíveis (biossegurança, finanças) antes de se tornar padrão de mercado.</p>
 <div class="refs">
 <strong>Referências</strong>
-<ul><li><a href="https://www.databricks.com/blog/meta-ads-mcp-databricks">Databricks Blog — "Meta's ads MCP server comes to Databricks"</a></li></ul>
+<ul>
+<li><a href="https://www.anthropic.com/news/anthropic-cyber-mission">Anthropic — "Introducing the Anthropic Cyber Mission"</a></li>
+<li><a href="https://www.anthropic.com/news/cyber-verification-program">Anthropic — "Expanding the Cyber Verification Program"</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Claude Haiku 5.5: a Anthropic lança seu modelo mais barato e rápido para dar escala a agentes</h3>
+<p>Em 7 de outubro, a Anthropic lançou o Claude Haiku 5.5, posicionado como o Haiku mais rápido e capaz até hoje, cerca de 75% mais barato em média que o Haiku 4.5 — US$ 0,10 por milhão de tokens de entrada e US$ 0,50 por milhão de saída para prompts de até 100 mil tokens. A empresa recomenda o modelo para trabalho de alto volume e sensível a custo — resumo, classificação, consultas a banco de dados — e como subagente de codificação ao lado dos modelos maiores Opus 5.5 e Sonnet 5.5, numa arquitetura em que o modelo caro só entra quando a tarefa de fato exige. O lançamento é mais um ponto na curva de custo-capacidade que a destilação de modelos vem empurrando para baixo a cada geração: tarefas que exigiam um modelo de fronteira há um ano hoje rodam numa fração do custo num modelo pequeno.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>Para operações de streaming e mídia, é exatamente esse tipo de modelo pequeno e barato que hoje sustenta moderação de conteúdo em volume, etiquetagem de metadados de catálogo, controle de qualidade de legendas e a primeira camada de atendimento ao assinante — reservando os modelos de fronteira para a fração de decisões que realmente precisa deles, o que muda diretamente a conta de unit economics de qualquer produto agêntico.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul><li><a href="https://www.anthropic.com/claude-haiku-5-5">Anthropic — página do Claude Haiku 5.5</a></li></ul>
 </div>
 </article>
 </section>
 
 <h2 class="section-title" id="sec3-pt"><span class="num">03</span>Mercado de Data Science no Brasil</h2>
-<p class="section-intro">Em vez do âncora habitual do State of Data Brazil — já coberto nas duas últimas edições —, esta semana traz dois pontos de dado novos e verificáveis: o Guia Salarial 2026 da Robert Half e a Pesquisa Febraban de Tecnologia Bancária 2026.</p>
+<p class="section-intro">O âncora da semana é a quebra mais recente do State of Data Brazil por empresa admirada, complementada por uma mudança institucional na USP — ambas um pouco mais antigas que os três meses de janela preferencial deste digest, mas as atualizações mais relevantes e verificáveis disponíveis sobre o tema até a data desta edição.</p>
 
 <article class="item">
-<h3>Engenheiro de IA se torna a profissão de tecnologia com maior salário inicial no Brasil, segundo o Guia Salarial 2026 da Robert Half</h3>
-<p>A 18ª edição do Guia Salarial da Robert Half no Brasil, divulgada no início de outubro e baseada em pesquisa com 500 gestores de contratação e 1.000 profissionais em diferentes regiões do país — cruzada com dados reais de colocações feitas pela própria consultoria —, aponta o cargo de Engenheiro de Inteligência Artificial como o de maior salário inicial entre mais de 300 cargos de tecnologia mapeados: de R$ 19.500 a R$ 27.100 por mês. Para comparação, o mesmo guia lista o cargo de Especialista/Cientista de Dados numa faixa de R$ 14.700 a R$ 24.600, com mediana de R$ 19.100 — abaixo do ponto médio da faixa de Engenheiro de IA. O próprio guia é explícito sobre a natureza do número: são valores de remuneração inicial (de quem está sendo recém-contratado), sem bônus ou benefícios, apresentados por percentil de experiência.</p>
-<figure class="chart">
-  <svg viewBox="0 0 320 170" role="img" aria-label="Comparação salarial: Cientista de Dados com mediana de R$19,1 mil contra Engenheiro de IA com ponto médio de R$23,3 mil">
-    <title>Salário inicial mensal: Cientista de Dados vs. Engenheiro de IA</title>
-    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
-    <rect x="60" y="50" width="60" height="90" fill="var(--muted)" opacity="0.4"/>
-    <text x="90" y="44" text-anchor="middle" class="chart-val">R$19,1k</text>
-    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Cientista de Dados (mediana)</text>
-    <rect x="200" y="30" width="60" height="110" fill="var(--text)"/>
-    <text x="230" y="24" text-anchor="middle" class="chart-val">R$23,3k</text>
-    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Engenheiro de IA (ponto médio)</text>
-  </svg>
-  <figcaption>Valores de remuneração inicial mensal (sem bônus/benefícios) segundo o Guia Salarial 2026 da Robert Half Brasil; "ponto médio" é calculado pelo digest a partir da faixa divulgada de R$19,5k–27,1k para Engenheiro de IA.</figcaption>
-</figure>
-<span class="label">O que isso sinaliza no mercado</span>
-<p>Para profissionais de dados no Brasil, este é o sinal mais claro até agora de que o título "Engenheiro de IA" — focado em colocar sistemas de LLM em produção, não necessariamente em pesquisa de ML — já paga um prêmio sobre o título clássico de "Cientista de Dados" no mercado brasileiro, espelhando o que já vinha acontecendo no mercado americano. É um dado útil para quem está negociando uma mudança de título ou uma movimentação lateral de carreira.</p>
+<h3>State of Data Brazil 2025/2026: Google é a empresa mais admirada por profissionais de dados e IA pelo quarto ano consecutivo</h3>
+<p>O State of Data Brazil, pesquisa anual do Data Hackers em parceria com a Bain & Company (na sua quinta edição conjunta), coletou respostas de mais de 3.200 profissionais de dados no Brasil entre 14 de outubro e 18 de dezembro de 2025; o relatório completo foi liberado para download gratuito em abril de 2026, e o recorte sobre "empresas mais admiradas" saiu em maio de 2026 — ambos mais antigos que a janela de três meses deste digest, mas ainda a referência mais atual e substancial sobre o mercado brasileiro de dados disponível nesta data. O recorte mostra o Google novamente como a empresa mais admirada por profissionais de dados no Brasil — quarto ano consecutivo no topo do ranking, concentrando cerca de 12% das menções. A Ambev aparece entre as dez empresas mais admiradas da América Latina em dados e IA pelo quarto ano seguido, segundo divulgação da própria empresa.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>Esse ranking de "empresa mais admirada" funciona, na prática, como um proxy informal de marca empregadora dentro da comunidade de dados brasileira — recrutadores e gestores de contratação já citam a posição no State of Data Brazil em processos seletivos e em benchmarking de remuneração, e a permanência do Google no topo por quatro anos seguidos indica que a percepção de maturidade de dados de uma empresa pesa tanto quanto salário na decisão de carreira de profissionais seniores.</p>
 <div class="refs">
 <strong>Referências</strong>
 <ul>
-<li><a href="https://canaltech.com.br/mercado/salario-de-r-19-mil-guia-mostra-as-profissoes-de-tecnologia-em-alta-em-2026/">Canaltech — "Salário de R$ 19 mil: guia mostra as profissões de tecnologia em alta em 2026"</a></li>
-<li><a href="https://abes.org.br/?p=99086">ABES — cobertura do Guia Salarial 2026 da Robert Half</a></li>
+<li><a href="https://www.datahackers.news/p/essas-sao-as-empresas-mais-admiradas-por-profissionais-de-dados-e-ia-no-brasil-em-2026">Data Hackers Newsletter — "Essas são as empresas mais admiradas por profissionais de Dados e Inteligência Artificial em 2026"</a></li>
+<li><a href="https://www.datahackers.news/p/state-of-data-brazil-2026-confira-o-relato-rio-em-primeira-ma-o">Data Hackers Newsletter — "State of Data Brazil 2025/2026: confira o relatório em primeira mão"</a></li>
 </ul>
 </div>
 </article>
 
 <article class="item">
-<h3>Bancos brasileiros vão investir R$ 3 bilhões em IA e dados em 2026 — mas só 20% usam IA em larga escala na experiência do cliente</h3>
-<p>A Pesquisa Febraban de Tecnologia Bancária 2026, conduzida pela Deloitte com uma amostra de 25 bancos (entre 82% e 85% dos ativos do setor), coletada entre dezembro de 2025 e abril de 2026 e noticiada nesta semana, mostra que os bancos brasileiros pretendem investir cerca de R$ 3 bilhões em IA, analytics e big data em 2026 — um crescimento de 8% sobre 2025. O ganho mais citado da IA, apontado por 92% das instituições, é a rapidez em tarefas rotineiras; mas apenas 20% dos bancos afirmam usar IA em larga escala na experiência do cliente, indicando que a adoção ampla no front-end de atendimento ainda é minoritária. Os investimentos em migração para nuvem também crescem, para R$ 3,9 bilhões (+30% sobre 2025).</p>
-<figure class="chart">
-  <svg viewBox="0 0 320 170" role="img" aria-label="Investimento em IA, analytics e big data por bancos brasileiros: cerca de R$2,8 bilhões em 2025 contra R$3 bilhões em 2026">
-    <title>Investimento bancário em IA, analytics e big data</title>
-    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
-    <rect x="60" y="37" width="60" height="103" fill="var(--muted)" opacity="0.4"/>
-    <text x="90" y="31" text-anchor="middle" class="chart-val">~R$2,8bi</text>
-    <text x="90" y="158" text-anchor="middle" class="chart-lbl">2025 (estimado)</text>
-    <rect x="200" y="30" width="60" height="110" fill="var(--text)"/>
-    <text x="230" y="24" text-anchor="middle" class="chart-val">R$3bi</text>
-    <text x="230" y="158" text-anchor="middle" class="chart-lbl">2026</text>
-  </svg>
-  <figcaption>Valor de 2026 reportado pela Pesquisa Febraban de Tecnologia Bancária 2026 (Deloitte); o valor de 2025 é estimado pelo digest a partir do crescimento de "8%" divulgado, não um número publicado diretamente pela pesquisa.</figcaption>
-</figure>
-<span class="label">O que isso sinaliza no mercado</span>
-<p>A distância entre 92% (ganho de produtividade interna) e 20% (uso em escala na experiência do cliente) é o número mais útil aqui para quem vende ou constrói produtos de dados e IA para bancos brasileiros: o orçamento claramente está migrando para IA, mas o caso de uso que os bancos já operacionalizaram em escala é produtividade interna, não personalização voltada ao cliente final — exatamente a lacuna que empresas de mídia e consumo próximas da Globoplay podem explorar se avançarem mais rápido em recomendação e personalização do que os bancos estão avançando em experiência do cliente.</p>
+<h3>USP cria escritório de Transformação Digital e Inteligência Artificial ligado diretamente à reitoria</h3>
+<p>Em 23 de janeiro de 2026, ao tomar posse, o reitor Aluísio Segurado e a vice-reitora Liedi Bernucci listaram entre as prioridades da gestão 2026–2030 "incorporar, de forma crítica e responsável, as tecnologias digitais disruptivas de Inteligência Artificial às atividades acadêmicas e de gestão" da USP. Segundo entrevista à Revista Pesquisa FAPESP, essa prioridade já se traduziu na criação de um Escritório de Transformação Digital e Inteligência Artificial ligado diretamente à reitoria, com o papel de orientar o uso ético e pedagógico de ferramentas de IA por alunos, docentes e funcionários e de definir diretrizes institucionais — incluindo uma disciplina optativa introdutória de IA para graduação e pós-graduação. É uma notícia de janeiro de 2026, portanto fora da janela de três meses preferencial deste digest; não encontramos atualização mais recente e verificável especificamente sobre a USP nesta semana, então trazemos esta como a mais substancial disponível, com a data explícita. É um movimento institucional diferente do já coberto aqui sobre a Unicamp (o bacharelado em IA e Ciência de Dados e o hub de IA em saúde financiado pela FAPESP): a USP está regulando o uso da IA dentro de casa, em vez de criar um curso ou centro de pesquisa aplicada novo.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>Para quem recruta em São Paulo ou colabora em pesquisa com a USP, o escritório sinaliza que a maior universidade do Brasil está formalizando política de uso de IA generativa antes de qualquer exigência regulatória externa — o que deve se traduzir, nos próximos meses, em diretrizes de compliance mais claras para parcerias de pesquisa aplicada e para o uso de ferramentas de IA em projetos conjuntos com a universidade.</p>
 <div class="refs">
 <strong>Referências</strong>
-<ul><li><a href="https://www.seudinheiro.com/2026/empresas/bancos-vao-investir-r-3-bilhoes-em-inteligencia-artificial-e-solucoes-de-dados-em-2026-o-que-eles-ja-descobriram-que-voce-ainda-nao-aplica-lbrdgm097/">Seu Dinheiro — cobertura da Pesquisa Febraban de Tecnologia Bancária 2026 (Deloitte)</a></li></ul>
+<ul>
+<li><a href="https://revistapesquisa.fapesp.br/novo-reitor-da-usp-expoe-planos-para-ampliar-o-dialogo-com-a-sociedade/">Revista Pesquisa FAPESP — "Novo reitor da USP expõe planos para ampliar o diálogo com a sociedade"</a></li>
+<li><a href="https://jornal.usp.br/wp-content/uploads/2026/01/discurso-reitor.pdf">Jornal da USP — discurso de posse do reitor (PDF)</a></li>
+</ul>
 </div>
 </article>
 
 <h2 class="section-title" id="sec4-pt"><span class="num">04</span>Tendências de ferramentas e soluções</h2>
-<p class="section-intro">Duas histórias de convergência: a guerra dos formatos de tabela aberta terminando silenciosamente em torno de um padrão, e dados reais de gasto corporativo mostrando que a adoção de vector databases ainda está longe do que o hype sugere.</p>
+<p class="section-intro">Duas pesquisas, dois ângulos do mesmo fenômeno: ferramentas de orquestração e de codificação assistida por IA continuam crescendo em adoção declarada — mas a composição do mercado de orquestradores está convergindo, e a confiança dos próprios usuários na IA de código continua baixa.</p>
 
 <article class="item">
-<h3>Apache Iceberg 1.12 chega com mais de 800 mudanças — e o formato de tabela aberto se consolida como o padrão que todo warehouse e lakehouse quer falar</h3>
-<p>A Apache Iceberg Foundation lançou a versão 1.12.0 no fim de setembro, após o release manager Neelesh Salian conduzir um segundo release candidate aprovado por votos de membros do projeto. Acumulando mais de 800 mudanças desde a versão 1.11 (maio de 2026), a nova versão torna mais recursos do formato de tabela v3 utilizáveis por mais engines, aperta o contrato do REST catalog, melhora a confiabilidade de streaming e já inclui trabalho inicial para a futura versão 4 do formato — ao custo de remover suporte a Spark 3.4 e Flink 2.0, e de a implementação em Java deixar de embutir valores de linhas deletadas dentro dos arquivos de position delete (reduzindo um vetor conhecido de exposição acidental de dados). No mesmo período, o ClickHouse Cloud ampliou seu suporte a catálogos Iceberg REST e Microsoft OneLake, e colocou em preview privado um recurso de computação sob demanda voltado especificamente a consultas sobre dados em Iceberg e Delta Lake — reforçando que tanto data warehouses quanto lakehouses concorrentes estão convergindo para falar o mesmo formato de tabela.</p>
+<h3>Pesquisa da DataTalks.Club mostra o Airflow disparando em orquestração — logo depois da fusão entre Prefect e Dagster</h3>
+<p>A pesquisa AI, Data Engineering & MLOps Survey 2025–2026, da comunidade DataTalks.Club, perguntou a profissionais de dados quais ferramentas usam em cada etapa do ciclo de vida de ML. Em orquestração, o Airflow segue disparado na frente, com 58% de participação — um salto em relação aos 34% da edição 2024–2025 —, enquanto a fração de respondentes que não usa nenhuma ferramenta de orquestração caiu de 54% para 23%. Prefect (15%) e Dagster (12%) vêm a seguir. O contexto por trás da consolidação dos dois concorrentes: em julho de 2026, a Prefect anunciou a aquisição da Dagster Labs, unificando sob uma única empresa os dois sucessores mais citados do Airflow (já coberto nesta coluna semanas atrás) — o que ajuda a explicar por que, somados, Prefect e Dagster ainda cobrem menos times do que o Airflow isolado. Em outras etapas do pipeline, o MLflow lidera treino/rastreamento de experimentos (61%) e versionamento (65%), e na camada de deploy o Azure ML (34%) e Kubernetes (31%) vêm na frente do SageMaker (28%), com 17% dos respondentes não fazendo deploy de modelo algum.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Participação do Airflow em orquestração: 58% na pesquisa 2025-2026 contra 34% na pesquisa 2024-2025">
+    <title>Adoção do Airflow entre times com orquestrador</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="90" y="24" text-anchor="middle" class="chart-val">58%</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">2025–26</text>
+    <rect x="200" y="76" width="60" height="64" fill="var(--muted)" opacity="0.4"/>
+    <text x="230" y="70" text-anchor="middle" class="chart-val">34%</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">2024–25</text>
+  </svg>
+  <figcaption>Participação do Airflow entre times com algum orquestrador — pesquisa AI, Data Engineering & MLOps da DataTalks.Club.</figcaption>
+</figure>
 <span class="label">Como o mercado está aplicando</span>
-<p>Para quem está escolhendo uma arquitetura de lakehouse hoje, a lição prática é que a escolha de formato de tabela está se tornando menos decisiva do que era há dois anos — o Iceberg está virando a língua franca para a qual tanto warehouses (ClickHouse, Snowflake) quanto lakehouses (Databricks) constroem caminhos de leitura e escrita, deslocando a real diferenciação para cima na pilha: desempenho do motor de consulta e governança, não aprisionamento a um formato de arquivo.</p>
+<p>Para quem está escolhendo um orquestrador hoje, os números sugerem que "padrão de mercado e ecossistema maduro" está vencendo "melhor ferramenta de nicho" para a maioria dos times de produção — mesmo com a fusão Prefect-Dagster reduzindo a fragmentação do lado desafiante, o Airflow cresceu participação em vez de perder terreno, o que pesa a favor de manter ou migrar para ele, a não ser que o caso de uso específico (lineage, testabilidade, Python nativo) justifique claramente o custo de nadar contra a maré.</p>
 <div class="refs">
 <strong>Referências</strong>
-<ul>
-<li><a href="https://iceberg.apache.org/releases/">Apache Iceberg — página oficial de releases</a></li>
-<li><a href="https://www.dremio.com/blog/apache-iceberg-1-12-0-whats-new-breaking-changes-and-upgrade-guide">Dremio Blog — "Apache Iceberg 1.12.0: What's New, Breaking Changes and Upgrade Guide"</a></li>
-</ul>
+<ul><li><a href="https://datatalks.club/surveys/2025-2026/ml-mlops">DataTalks.Club — "AI, Data Engineering & MLOps Survey 2025–2026"</a></li></ul>
 </div>
 </article>
 
 <article class="item">
-<h3>Dados reais de gasto corporativo mostram que a adoção de vector databases ainda é pequena — mesmo com 67% dos engenheiros dizendo que já usam uma</h3>
-<p>Duas formas diferentes de medir "adoção" de vector databases chegam a números muito distantes. Uma pesquisa de autorrelato com 300 engenheiros nos EUA (realizada em agosto de 2025, cinco setores, margem de erro de ±3,1 pontos percentuais a 95% de confiança) encontrou 67% dos respondentes afirmando que sua organização já usa um vector database. Já os dados de gasto real da Ramp, plataforma de despesas corporativas, mostram que apenas 1,3% de todas as empresas na plataforma pagam por uma ferramenta na categoria de vector databases em agosto de 2026 — uma base de medição completamente diferente (autorrelato de uso vs. gasto efetivo verificado, em empresas de todos os portes e setores), que o digest sinaliza explicitamente como não comparável de forma direta. Entre as empresas que de fato compram uma ferramenta dedicada, a Pinecone é a mais usada, mas a Turbopuffer é a que mais cresce — por volta de +0,5 ponto percentual por mês, atraindo o maior número de empresas migrando de concorrentes —, hoje com cerca de 12% de participação entre quem já tem um fornecedor da categoria (13% entre empresas grandes, 9% entre médias).</p>
+<h3>Stack Overflow 2026: 79% dos devs já usam IA no código, mas só 6,6% confiariam nela para uma decisão importante</h3>
+<p>A pesquisa anual Stack Overflow Developer Survey 2026, com mais de 30 mil respondentes em 169 países e resultados divulgados em 6 de outubro, mostra a trajetória de adoção de ferramentas de IA para código subindo de 44% em 2023 para 62% em 2024 e 79% em 2025 — e uma pesquisa-pulso de abril de 2026 da própria Stack Overflow encontrou o uso de agentes de IA quase dobrando, para 59%, num intervalo muito mais curto. Entre quem já usa assistentes ou agentes de IA no código, 73% relata uso diário. Mas confiança não acompanha adoção: apenas 6,6% confiariam na saída da IA para uma decisão importante, cerca de metade confia nela quando consegue verificar o resultado por conta própria, e 78,7% dizem que a atribuição de fonte importa ao julgar uma resposta ou trecho de código gerado por IA.</p>
 <figure class="chart">
-  <svg viewBox="0 0 320 170" role="img" aria-label="Comparação de adoção de vector databases: 67% dos engenheiros dizem usar uma, contra apenas 1,3% das empresas que efetivamente pagam por uma, segundo dados de gasto da Ramp">
-    <title>Uso autodeclarado vs. gasto real verificado em vector databases</title>
+  <svg viewBox="0 0 320 170" role="img" aria-label="79% dos desenvolvedores já usam IA no código em 2025, mas apenas 6,6% confiariam nela para uma decisão importante">
+    <title>Uso de IA no código vs. confiança para decisões importantes</title>
     <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
-    <rect x="60" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
-    <text x="90" y="24" text-anchor="middle" class="chart-val">67%</text>
-    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Dizem usar (autorrelato, EUA)</text>
-    <rect x="200" y="137" width="60" height="3" fill="var(--text)"/>
-    <text x="230" y="131" text-anchor="middle" class="chart-val">1,3%</text>
-    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Pagam por uma (gasto real, Ramp)</text>
+    <rect x="60" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="90" y="24" text-anchor="middle" class="chart-val">79%</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Usam IA no código (2025)</text>
+    <rect x="200" y="131" width="60" height="9" fill="var(--muted)" opacity="0.4"/>
+    <text x="230" y="125" text-anchor="middle" class="chart-val">6,6%</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Confiariam numa decisão importante</text>
   </svg>
-  <figcaption>As duas barras vêm de metodologias diferentes e não são diretamente comparáveis: autorrelato de 300 engenheiros nos EUA (ago/2025) vs. participação de gasto verificado entre empresas na plataforma Ramp (ago/2026). Mostradas juntas apenas para ilustrar a distância entre uso percebido e compra efetiva.</figcaption>
+  <figcaption>Stack Overflow Developer Survey 2026 — mais de 30 mil respondentes em 169 países.</figcaption>
 </figure>
 <span class="label">Como o mercado está aplicando</span>
-<p>A leitura prática para quem está orçando um projeto de RAG ou memória de agentes: "todo mundo já usa vector database" é verdade no nível do relato informal de engenheiros, mas ainda não no nível de gasto comprometido com um fornecedor — a maioria dos times ainda está prototipando em camada gratuita, numa extensão dentro de um banco já existente (pgvector, MongoDB Atlas) ou sem fornecedor dedicado algum, o que também explica por que um entrante rápido e barato como a Turbopuffer consegue continuar ganhando participação em vez de o mercado já estar consolidado nas mãos dos incumbentes.</p>
+<p>Para times de dados e ML que constroem ferramentas internas com IA — copilotos de notebook, geração automática de SQL, pipelines gerados por agente —, a distância entre 79% de uso e 6,6% de confiança para decisões importantes é o argumento mais direto para manter revisão de código, cobertura de teste e rastreabilidade de origem como parte obrigatória de qualquer fluxo assistido por IA: a adoção já venceu a resistência inicial, mas o "gate" humano em qualquer coisa consequente continua sendo o padrão esperado pelos próprios usuários.</p>
 <div class="refs">
 <strong>Referências</strong>
-<ul>
-<li><a href="https://ramp.com/vendors/categories/vector-databases">Ramp — "Top ranking Vector Databases software in August 2026"</a></li>
-<li><a href="https://ramp.com/vendors/turbopuffer">Ramp — página do fornecedor Turbopuffer</a></li>
-<li><a href="https://www.hostingadvice.com/studies/vector-databases-adoption-survey/">HostingAdvice — "Vector Databases Quietly Hit Majority Adoption in AI Engineering"</a></li>
-</ul>
+<ul><li><a href="https://stackoverflow.blog/2026/10/06/the-results-of-the-2026-developer-survey-are-here/">Stack Overflow Blog — "The results of the 2026 Developer Survey are here"</a></li></ul>
 </div>
 </article>
 
 <h2 class="section-title archive-title">Relatórios anteriores</h2>
 <ul class="archive-list">
+<li><a href="archive/2026-10-09.html">9 de outubro de 2026</a></li>
 <li><a href="archive/2026-10-02.html">2 de outubro de 2026</a></li>
 <li><a href="archive/2026-09-25.html">25 de setembro de 2026</a></li>
 <li><a href="archive/2026-09-18.html">18 de setembro de 2026</a></li>
@@ -264,7 +304,7 @@ h2.section-title.archive-title{margin-top:56px;}
 </ul>
 
 <div class="methodology">
-<strong>Nota metodológica.</strong> Este digest é produzido semanalmente por um agente de pesquisa que busca ativamente fontes primárias (papers acadêmicos, blogs de pesquisa/engenharia de empresas de referência, universidades, surveys de mercado) em vez de responder de memória. Toda afirmação não-trivial é acompanhada de link verificável. Nesta edição, como nas anteriores, o acesso direto (fetch de página completa) a diversos domínios — incluindo research.google, databricks.com, arxiv.org e datahackers.news — foi bloqueado pela política de rede do ambiente de execução; o domínio da Anthropic voltou a ser acessível diretamente, e os números do anúncio da Cyber Mission (ex.: 11 parceiros fundadores, taxa de acerto esperada acima de 90% no OSS Scanner) foram confirmados na própria página. Para os demais itens, os fatos foram verificados por cruzamento entre múltiplas buscas independentes e fontes jornalísticas ou de terceiros que citam o mesmo conteúdo primário. Números marcados como estimados ou derivados pelo digest — o tamanho de modelo "até 10 milhões de parâmetros" no sistema de federated learning do Google, o valor de investimento bancário de 2025 (~R$2,8bi, derivado do crescimento de 8% divulgado) e a contagem de mudanças/data de lançamento do Apache Iceberg 1.12 (obtidos via cobertura da Dremio, já que a página oficial de releases do projeto ainda listava a 1.11.0 como mais recente no momento da consulta) — são sinalizados como tal diretamente nos textos ou legendas. Pela segunda semana consecutiva, nenhum conteúdo novo e relevante foi encontrado no Netflix Research, Netflix TechBlog ou Google Research dentro do escopo específico de streaming/recomendação/personalização de mídia — isso é sinalizado na abertura da seção 2 em vez de forçar um exemplo fora de prazo ou irrelevante. Por isso, a seção 3 desta semana também trocou o âncora habitual do State of Data Brazil (já coberto nas duas edições anteriores) por dois pontos de dado novos e independentes.
+<strong>Nota metodológica.</strong> Este digest é produzido semanalmente por um agente de pesquisa que busca ativamente fontes primárias — papers acadêmicos (arXiv, workshops AAAI/ICLR), blogs de pesquisa e engenharia de empresas de referência, universidades e surveys de mercado — em vez de responder de memória. Toda afirmação não trivial é acompanhada de um link verificável. Nesta edição, o acesso direto (fetch de página completa) funcionou para o domínio da Anthropic — de onde vêm os números confirmados sobre a Cyber Mission e o Cyber Verification Program —, mas falhou, por restrição de rede do ambiente de execução, para arxiv.org, bair.berkeley.edu, datatalks.club e stackoverflow.blog; para esses, os fatos foram verificados por cruzamento entre múltiplas buscas independentes que citam o mesmo conteúdo primário, com qualquer número ou detalhe que não pôde ser confirmado diretamente sinalizado como tal no texto. Dois pontos de dado usados nesta edição são mais antigos que a janela preferencial de três meses — o paper de recomendação da Netflix de novembro de 2025 (citado como contexto complementar ao paper mais recente de agosto de 2026) e as notícias sobre a USP e o State of Data Brazil, de janeiro, abril e maio de 2026 — e isso é sinalizado explicitamente nos respectivos textos, por serem, segundo nossa pesquisa, as referências mais atuais e substanciais disponíveis sobre os temas nesta data.
 </div>
 
 <div class="contact">
@@ -282,183 +322,223 @@ h2.section-title.archive-title{margin-top:56px;}
 
 <header class="report-header">
   <h1>Trends in Data Science, Machine Learning and Applied AI</h1>
-  <p class="dek">Google makes federated-learning privacy externally verifiable by moving it inside hardware enclaves, Anthropic launches a long-term security mission to protect critical infrastructure, and AI Engineer becomes Brazil's highest-paying entry-level tech role.</p>
+  <p class="dek">Netflix tests recommendations on 8.5 million subscribers and challenges the filter-bubble thesis, Anthropic launches its Cyber Mission for critical infrastructure, and synthetic data that looks "too clean" can accelerate the collapse of the very model it's meant to train.</p>
 </header>
 
 <div class="byline">
   <div class="avatar">RG</div>
   <div>
     <div class="name">Ri Gonçalves</div>
-    <div class="sub"><a href="https://goncalvesrd.github.io/ds-trends/">goncalvesrd.github.io/ds-trends</a> · October 9, 2026</div>
+    <div class="sub"><a href="https://goncalvesrd.github.io/ds-trends/">goncalvesrd.github.io/ds-trends</a> · October 16, 2026</div>
   </div>
 </div>
 
 <nav class="toc">
   <p class="toc-title">In this issue</p>
   <ol>
-    <li><a href="#sec1-en">General trends in Data Science / ML / applied AI</a> — Google moves federated-learning training inside hardware enclaves with provable privacy, and gathers 50+ researchers to map the open problems in agentic privacy and security.</li>
-    <li><a href="#sec2-en">Streaming and Globoplay's competitors</a> — Anthropic launches a long-term security mission for critical infrastructure and open-source software; Meta's ads agent lands on the Databricks Marketplace under Unity Catalog governance.</li>
-    <li><a href="#sec3-en">Data Science job market in Brazil</a> — AI Engineer becomes the highest-paying entry-level tech role in the country, and Brazilian banks project R$3 billion in AI and data spending for 2026.</li>
-    <li><a href="#sec4-en">Tooling and platform trends</a> — Apache Iceberg 1.12 consolidates the open table format as the standard across competing warehouses and lakehouses, and real corporate spend data shows vector-database adoption is still small.</li>
+    <li><a href="#sec1-en">General trends in Data Science / ML / applied AI</a> — curating synthetic data can accelerate a model's collapse instead of preventing it, DeepMind already uses agents to help train other agents, and Berkeley teaches LLMs to update beliefs instead of re-summarizing everything in long interactions.</li>
+    <li><a href="#sec2-en">Streaming and Globoplay's competitors</a> — Netflix tests recommendations on 8.5 million subscribers and finds the opposite of a filter bubble, and Anthropic launches its critical-infrastructure Cyber Mission and the Haiku 5.5 model.</li>
+    <li><a href="#sec3-en">The Data Science market in Brazil</a> — State of Data Brazil shows Google as the most admired company for the fourth consecutive year, and USP creates an AI office tied to the rectory.</li>
+    <li><a href="#sec4-en">Trends in tools and solutions</a> — DataTalks.Club's survey shows Airflow surging in orchestration while Prefect and Dagster merge, and Stack Overflow finds 79% of developers already use AI in their code — but almost none would trust it for an important decision.</li>
   </ol>
 </nav>
 
 <h2 class="section-title" id="sec1-en"><span class="num">01</span>General trends in Data Science, Machine Learning and applied AI</h2>
-<p class="section-intro">Two Google Research pieces on the same axis — privacy — seen from opposite angles: one delivers a new technical guarantee for a system already in production, the other is a list of problems the industry still doesn't know how to solve.</p>
+<p class="section-intro">Three clues to where frontier research is heading: synthetic data can sabotage the very model it's meant to feed, agents are already helping train other agents inside DeepMind, and a Berkeley framework teaches models to stop re-summarizing everything from scratch each round of a long conversation.</p>
 
 <article class="item">
-<h3>Google makes federated learning "provably private" by moving training inside hardware enclaves</h3>
-<p>Since 2017, Google has used federated learning (FL) to train models on decentralized, private data — it's the technique behind, for instance, next-word prediction and Smart Compose on Gboard. Earlier privacy generations in this pipeline combined differential privacy (via algorithms like MF-DP-FTRL) with secure aggregation, but still relied, to some degree, on a promise about the server software's behavior. On October 2, Google Research announced a new FL system that shifts more computation to the server — improving training speed, accuracy and device coverage — but does so inside Trusted Execution Environments (TEEs): training examples reach Google's infrastructure encrypted, and are only decrypted inside hardware-protected environments running externally approved and auditable programs. That turns the guarantee from "the server promises not to peek" into "any external party can verify the server couldn't peek even if it wanted to." The first production models using the system are already live in Gboard's English and Japanese next-word-prediction models; per third-party reporting on the announcement, models trained so far reach up to 10 million parameters, and the guarantees depend on current-generation TEE limitations and assumptions about side-channel observability — caveats Google itself flags in the announcement.</p>
-<span class="label">How the market is applying it</span>
-<p>Moving the trust boundary from "software policy" to "attestable hardware" is the direction the whole federated-aggregation stack has been heading — a 2024 Google paper on confidential federated computations already described TEEs as one way to make aggregation "oblivious" (the provider can't inspect individual messages). For any team evaluating privacy-preserving ML architectures for mobile or edge products, this is the reference bar to aim for — not because it's easy to replicate outside Google, but because it defines the guarantee level regulators and auditors will come to expect.</p>
+<h3>Curating synthetic data to look "cleaner" can accelerate model collapse, not prevent it</h3>
+<p>Model collapse is the phenomenon where a model trained repeatedly on data generated by earlier models — the AI itself, or copies of it — gradually loses diversity and quality, converging toward narrower outputs that are less representative of the real distribution. The industry's intuitive response has been to "curate" synthetic data: filter out low-quality examples before using them to train the next generation. A paper published October 11 at the AIES workshop (affiliated with AAAI), "Curating the Collapse: How Sample-Level Auditing Accelerates Model Collapse in Synthesis of Tabular Data," tests that intuition on synthetic tabular data and finds the opposite: different levels of sample-level curation can actually accelerate collapse, through two mechanisms — "mode dropping" (the filter systematically removes legitimate but less frequent modes of the distribution, not just noise) and diversity loss that compounds with each retraining generation. This connects to a more robust ICLR 2026 paper, "Escaping Model Collapse via Synthetic Data Verification: Near-term Improvements and Long-term Convergence," which shows, through experiments on linear regression, VAEs, and the SmolLM2-135M language model, that what actually prevents collapse is injecting signal from a trusted external verifier — a human or a stronger model — not a heuristic quality filter applied by the same system that generated the data; without a reliable verifier, early curation gains tend to plateau or reverse.</p>
+<span class="label">How the market is applying this</span>
+<p>For any team using synthetic or LLM-generated data to augment training sets — common in fraud detection, sparse time series, and fine-tuning language models for niche domains — the practical takeaway is to distrust pipelines that filter for "quality" using the same generator model or a simple heuristic proxy as the cutoff: that tends to narrow the distribution rather than clean it. The real gain comes from an external, independent verifier — human labeling, a stronger reference model, or validation against real data — not from an automatic filter applied on top of the synthetic data itself.</p>
 <div class="refs">
 <strong>References</strong>
 <ul>
-<li><a href="https://research.google/blog/toward-provably-private-learning-from-federated-data/">Google Research Blog — "Toward provably private learning from federated data"</a></li>
-<li><a href="https://arxiv.org/html/2404.10764v2">arXiv 2404.10764 — "Confidential Federated Computations" (background on TEEs in federated aggregation)</a></li>
+<li><a href="https://ojs.aaai.org/index.php/AIES/article/view/43319">AAAI/AIES 2026 — "Curating the Collapse: How Sample-Level Auditing Accelerates Model Collapse in Synthesis of Tabular Data"</a></li>
+<li><a href="https://iclr.cc/virtual/2026/10017243">ICLR 2026 — "Escaping Model Collapse via Synthetic Data Verification: Near-term Improvements and Long-term Convergence"</a></li>
 </ul>
 </div>
 </article>
 
 <article class="item">
-<h3>Google gathers 50+ researchers to map the open problems in agentic privacy and security</h3>
-<p>The standard privacy model in enterprise software is access control: defining which data an entity is allowed to see. That model doesn't capture well what happens when an autonomous agent takes a sequence of actions — each one apparently legitimate on its own — that, combined, violate a social expectation about how that information should flow. On October 5, Google Research published "Open and Emergent Problems in Agentic Privacy and Security: A Contextual Angle," a report led by Eugene Bagdasarian (Google Research and assistant professor at UMass Amherst) and Marco Gruteser, growing out of the CAPS (Contextual Agent Privacy and Security) workshop held in New York in late 2025, with contributions from more than 50 academic and industry researchers. The report applies Contextual Integrity — the theory that privacy is information flowing appropriately to the social context in which it was shared — and extends it from "is it appropriate to share this information" to "is it appropriate for the agent to take this action." The document is explicitly a list of open research problems, not a shipped product or defense, and calls for coordinated defenses across four layers: system, model, user and ecosystem.</p>
-<span class="label">What it means for people building agents</span>
-<p>For data and ML teams already running agents in production today — customer service, coding agents, agents with access to internal data — this report is an early signal that the classic permissions model (RBAC) is being recognized as insufficient by the very teams training frontier models, ahead of regulation or incidents forcing the issue. Worth tracking before this becomes a mandatory audit checklist item.</p>
+<h3>DeepMind says AI agents already run parts of new-model training, under human supervision</h3>
+<p>According to a September 24, 2026 report by The Information (summarized by the aggregator Digg — we did not have direct access to the original article to verify it independently), Google DeepMind CTO Koray Kavukcuoglu described at a conference how AI agents already design experiments, analyze results, and propose hypotheses during the training of new models, with humans supervising the process — and that this wasn't happening six months earlier. This is a public remark by an executive at an event, not a paper or technical post, so it should be read as a market signal rather than a verifiable specification.</p>
+<span class="label">How the market is applying this</span>
+<p>If the description holds up, the signal for ML team leads is that the internal research and experimentation loop itself — not just customer-facing products — is gaining an agentic layer: a "copilot" that iterates training hypotheses and analyzes results automatically, still under human control. Worth watching whether smaller labs can replicate this with publicly available tooling, or whether it stays an exclusive advantage of operating at DeepMind's scale.</p>
 <div class="refs">
 <strong>References</strong>
-<ul><li><a href="https://research.google/blog/open-and-emergent-problems-in-agentic-privacy-and-security-a-contextual-angle/">Google Research Blog — "Open and Emergent Problems in Agentic Privacy and Security: A Contextual Angle"</a></li></ul>
+<ul><li><a href="https://digg.com/tech/uvj44dll">Digg — summary of The Information's report, "Google DeepMind reportedly uses AI agents to help train models under human supervision"</a></li></ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Berkeley researchers teach LLMs to update beliefs instead of re-summarizing everything each round</h3>
+<p>Agents operating over long interactions — a research assistant, a coding agent, a support bot tracking a case over days — face a familiar dilemma: either carry the full conversation history at every step (expensive, and increasingly slow as the conversation grows), or recursively summarize what has happened so far (cheap, but any summarization error compounds and distorts the model's belief about the task's real state). On July 26, researchers at BAIR (Berkeley Artificial Intelligence Research) published "Teaching LLMs to Update Beliefs for Efficient Long-Horizon Interaction," introducing ABBEL: instead of recursive summarization, the framework trains the model to maintain and update a "belief state" written in natural language — an explicit representation of what the agent believes to be true about the task at a given moment — and to update only that belief at each new turn, rather than rebuilding context from scratch. The authors report this avoids the performance loss characteristic of recursive self-summarization, especially in human-assistance settings where high-quality training data is scarce.</p>
+<span class="label">How the market is applying this</span>
+<p>For anyone building long-running agents — support that tracks a ticket over days, coding agents working in a large codebase, research assistants combing through many sources — the technique directly tackles the cost and context degradation of extended sessions, one of the most cited complaints in recent research on what blocks AI agents in production (as in the LangChain survey already covered here two weeks ago).</p>
+<div class="refs">
+<strong>References</strong>
+<ul><li><a href="https://bair.berkeley.edu/blog/2026/07/26/abbel/">BAIR Blog — "Teaching LLMs to Update Beliefs for Efficient Long-Horizon Interaction"</a></li></ul>
 </div>
 </article>
 
 <section class="globoplay">
 <h2 class="section-title" id="sec2-en"><span class="num">02</span>Streaming and Globoplay's competitors</h2>
-<p class="section-intro">For the second week running, Netflix Research and Netflix TechBlog published nothing new within the scope of streaming, recommendation, personalization, data or media infrastructure — the most recent TechBlog post we could locate still falls outside this three-month window. Google Research also had nothing new in media recommendation/personalization this week (its October posts, covered in section 1, are about privacy and public-health geospatial models, outside this section's scope). So this week's spotlight again goes to Anthropic — a source we track independently of topic — and to Databricks, with news that crosses advertising data with media infrastructure.</p>
+<p class="section-intro">Netflix tests recommendations at real scale and challenges the filter-bubble narrative, while Anthropic — tracked here independently of the streaming theme — launches its critical-infrastructure Cyber Mission and a new Haiku model built to run agents at volume.</p>
 
 <article class="item">
-<h3>Anthropic launches a long-term security mission to shield critical infrastructure from AI-era risk</h3>
-<p>On October 8, Anthropic announced the Anthropic Cyber Mission, a long-term effort to give the defenders of critical systems the same frontier AI tools attackers are already starting to use. Its first front is the Critical Infrastructure Defense Program (CIDP), aimed at the operational technology running power grids, water systems and transportation, plus government systems: trusted security providers get access to frontier Claude models, on-site Anthropic engineers and dedicated threat research. The eleven founding partners include Accenture, Booz Allen, CrowdStrike, Deloitte, Dragos, Hitachi, Palo Alto Networks, PwC and Rockwell Automation, among others. The second front is the OSS Scanner, a free, opt-in service that scans open-source projects with Anthropic's most capable models, producing a proof of concept, an explanation and, where possible, a suggested fix — reports are sent without human review, with an expected true-positive rate above 90%. Anthropic itself is explicit about the limits: "critical infrastructure is hard to defend in ways AI cannot fix," the company estimates roughly two years before AI clearly favors defense over attack, and some fixes to legacy operational technology could take decades.</p>
-<span class="label">What it signals for people working with data</span>
-<p>A service that publishes AI-generated vulnerability reports without human review, at an expected confidence above 90%, marks a new level of operational trust in autonomous triage — the same "hundreds of agents running parallel heuristics, narrowing the funnel, humans validating only at the end" architecture already seen in Anthropic's genomic search two weeks ago, now applied continuously and at the scale of the entire open-source ecosystem instead of a one-off experiment.</p>
+<h3>Netflix tests recommendations on 8.5 million subscribers — and finds the opposite of a filter bubble</h3>
+<p>The standard critique of recommender systems is that algorithmic personalization locks users into their own preferences, over-promoting what's already popular and starving the long tail — the so-called "filter bubble." A new randomized experiment from Netflix researchers tests this directly, instead of inferring it from observational data. In "Recommendation Quality and the Concentration of Consumption: Experimental Evidence from Netflix" (arXiv:2608.21274, posted in August 2026), Guy Aridor, Winston Chou, Nathan Kallus, Antoine Scheid, Allen Tran, and Kevin Zielnicki ran a 60-day holdback experiment on 8,559,252 subscribers between February and April 2025: one arm kept the production recommender frozen, the other received the algorithmic improvements Netflix shipped during that window. Better recommendations increased total consumption and how much users relied on recommendations to decide what to watch — but, crucially, that increase was not concentrated on the most popular titles. Instead, both recommendations and viewing shifted toward moderately popular, "middle-tail" titles, with little effect on the most niche content. The authors argue this contradicts the standard worry that improving recommender quality polarizes consumption around a handful of blockbuster titles.</p>
+<p>This complements an earlier working paper, also with Netflix-affiliated authors ("The Value of Personalized Recommendations: Evidence from Netflix," posted to arXiv in November 2025 — outside this digest's three-month window, but still the clearest quantification of this mechanism), which used a discrete-choice model to estimate what would happen if Netflix swapped its recommender for something simpler: engagement would fall 4% under a matrix-factorization approach and 12% under pure popularity ranking, with most of the gain coming from precise targeting rather than mere exposure, concentrated on mid-popularity titles.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Estimated engagement drop if Netflix replaced its recommender: 4% with matrix factorization versus 12% with popularity ranking">
+    <title>Engagement drop from replacing Netflix's recommender</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="103" width="60" height="37" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="97" text-anchor="middle" class="chart-val">-4%</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Matrix factorization</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">-12%</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Popularity ranking</text>
+  </svg>
+  <figcaption>Estimated engagement drop if Netflix replaced its current recommender with simpler alternatives (Zielnicki et al., arXiv 2511.07280, Nov/2025).</figcaption>
+</figure>
+<span class="label">How the market is applying this</span>
+<p>For Globoplay and any streaming competitor fighting for content budget against deeper-pocketed platforms, the practical implication of both papers together is that investing in recommendation quality isn't just an engagement lever — it's also a catalog-economics lever: it raises the return on investing in the "middle tail" instead of betting everything on a handful of blockbuster titles, and the effect grows as catalog and algorithm improve together. It's the strongest argument yet, coming from inside Netflix itself, against the idea that algorithmic personalization impoverishes the diversity of what people watch.</p>
 <div class="refs">
 <strong>References</strong>
-<ul><li><a href="https://www.anthropic.com/news/anthropic-cyber-mission">Anthropic — "Introducing the Anthropic Cyber Mission"</a></li></ul>
+<ul>
+<li><a href="https://arxiv.org/abs/2608.21274">arXiv:2608.21274 — "Recommendation Quality and the Concentration of Consumption: Experimental Evidence from Netflix" (Aridor, Chou, Kallus, Scheid, Tran, Zielnicki — Aug/2026)</a></li>
+<li><a href="https://arxiv.org/abs/2511.07280">arXiv:2511.07280 — "The Value of Personalized Recommendations: Evidence from Netflix" (Zielnicki, Aridor, Bibaut, Tran, Chou, Kallus — Nov/2025; cited here as quantitative context, outside the three-month window)</a></li>
+</ul>
 </div>
 </article>
 
 <article class="item">
-<h3>Meta's ads agent lands on the Databricks Marketplace — and now talks to business data governed by Unity Catalog</h3>
-<p>In early October, Databricks listed Meta's ads MCP server on its Marketplace, connecting enterprise data and models to agentic advertising workflows. Wired into Genie, the server lets marketing teams query Meta campaign performance in natural language alongside business data the company already governs — without exporting anything to a third-party tool. According to Meta, the server exposes more than 25 tools, covering campaign and ad-set creation, budget and bid adjustments, audience definition, creative and catalog management, performance-data extraction and signal-quality diagnosis — a figure we couldn't independently confirm. Access control stays inside Databricks: administrators manage the Meta connection through Unity Catalog, and Unity Gateway governs every tool call and logs usage and audit trails. The launch follows an earlier integration, the Meta Conversions API, already available on the same Marketplace.</p>
-<span class="label">How the market is applying it</span>
-<p>This extends the same "MCP as a governance layer" pattern covered in this column with Genie One MCP into advertising and monetization data — relevant for any streaming or media company (Globoplay included) that cross-references ad-campaign data with first-party audience and subscriber data, and wants agents querying both sides without duplicating permission logic in every new tool.</p>
+<h3>Anthropic launches its long-term Cyber Mission — and reveals partners have already found at least 129,000 real vulnerabilities with Claude's help</h3>
+<p>On October 8, Anthropic launched the Anthropic Cyber Mission, a long-term effort — backed by its own engineering talent and funding — to equip defenders of critical systems with the same frontier AI capabilities attackers are already exploiting, in the company's own words: "exploiting vulnerabilities has become cheaper, while verifying, disclosing, and fixing them remains slow." The Mission starts on two fronts: critical infrastructure and open-source software. The first, the Critical Infrastructure Defense Program (CIDP), focuses on the operational technology (OT) running power grids, water systems, transportation, and government systems, giving the security providers these operators already hire access to frontier Claude models, on-site Anthropic engineers, and dedicated threat research — with 11 founding partners: Accenture, Booz Allen, CrowdStrike, Deloitte, Dragos, Hitachi, Insane Cyber, Nozomi Networks, Palo Alto Networks, PwC, and Rockwell Automation. The second is the OSS Scanner, a free service that periodically scans enrolled open-source projects with the company's most capable models, returning a proof of concept, an explanation, and, where possible, a suggested fix — without human review, with an expected true-positive rate above 90%.</p>
+<p>Two days earlier, on October 6, Anthropic had already expanded the Cyber Verification Program (CVP), merging it with the earlier Project Glasswing and creating three access tiers — Defense, Red Team, and Specialized — that progressively lift safeguards on the Opus 5.5, Sonnet 5.5, and Mythos 5.1 models depending on how verified the requesting organization is. In an internal test with the CyScenarioBench benchmark, Opus 5.5 with no CVP access had every attempt blocked on the very first prompt; with Red Team access (no real-time blocks), it completed 34 of 50 tasks — matching the 67.6% rate of the model with no safeguards at all. The disclosed impact numbers: Glasswing program partners found at least 129,000 verified vulnerabilities between April and July 2026, plus 5,500 more found by Anthropic's own open-source scanner between April and October; more than 33,000 of these were rated critical or high severity. The company itself estimates the true impact is at least five times higher, since fewer than half of partners disclosed patch rates.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="129,000 verified vulnerabilities found, of which more than 33,000 rated critical or high severity">
+    <title>Vulnerabilities found via the Cyber Verification Program</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="90" y="24" text-anchor="middle" class="chart-val">129,000</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Vulnerabilities found</text>
+    <rect x="200" y="112" width="60" height="28" fill="var(--muted)" opacity="0.4"/>
+    <text x="230" y="106" text-anchor="middle" class="chart-val">33,000+</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Critical or high severity</text>
+  </svg>
+  <figcaption>Glasswing program partners + Anthropic's own scanner, Apr–Oct 2026. Anthropic itself estimates the true impact is at least five times higher.</figcaption>
+</figure>
+<span class="label">How the market is applying this</span>
+<p>For anyone handling sensitive data in media infrastructure — payment systems, DRM, subscriber data — the program signals two practical points: first, that the OSS Scanner is now a free way to get continuous vulnerability scanning on open-source projects used in your own stack; second, that frontier labs are building a tiered trust model — access to "fewer guardrails" as the organization gets verified — that should spread to other sensitive domains (biosecurity, finance) before it becomes standard market practice.</p>
 <div class="refs">
 <strong>References</strong>
-<ul><li><a href="https://www.databricks.com/blog/meta-ads-mcp-databricks">Databricks Blog — "Meta's ads MCP server comes to Databricks"</a></li></ul>
+<ul>
+<li><a href="https://www.anthropic.com/news/anthropic-cyber-mission">Anthropic — "Introducing the Anthropic Cyber Mission"</a></li>
+<li><a href="https://www.anthropic.com/news/cyber-verification-program">Anthropic — "Expanding the Cyber Verification Program"</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Claude Haiku 5.5: Anthropic launches its cheapest, fastest model to scale agents</h3>
+<p>On October 7, Anthropic launched Claude Haiku 5.5, positioned as the fastest and most capable Haiku to date, about 75% cheaper on average than Haiku 4.5 — $0.10 per million input tokens and $0.50 per million output tokens for prompts up to 100,000 tokens. The company recommends it for high-volume, cost-sensitive work — summarization, classification, database queries — and as a coding subagent alongside the larger Opus 5.5 and Sonnet 5.5 models, in an architecture where the expensive model only steps in when the task genuinely needs it. The release is another point on the cost-capability curve that model distillation keeps pushing down each generation: tasks that required a frontier model a year ago now run at a fraction of the cost on a small model.</p>
+<span class="label">How the market is applying this</span>
+<p>For streaming and media operations, this is exactly the kind of small, cheap model that today powers high-volume content moderation, catalog metadata tagging, subtitle quality control, and the first layer of subscriber support — reserving frontier models for the fraction of decisions that genuinely need them, which directly changes the unit economics of any agentic product.</p>
+<div class="refs">
+<strong>References</strong>
+<ul><li><a href="https://www.anthropic.com/claude-haiku-5-5">Anthropic — Claude Haiku 5.5 page</a></li></ul>
 </div>
 </article>
 </section>
 
-<h2 class="section-title" id="sec3-en"><span class="num">03</span>Data Science job market in Brazil</h2>
-<p class="section-intro">Instead of the usual State of Data Brazil anchor — already covered in the last two editions — this week brings two new, independently verifiable data points: Robert Half's 2026 salary guide and the Febraban 2026 Banking Technology Survey.</p>
+<h2 class="section-title" id="sec3-en"><span class="num">03</span>The Data Science market in Brazil</h2>
+<p class="section-intro">This week's anchor is the latest State of Data Brazil breakdown by most-admired company, paired with an institutional change at USP — both a bit older than this digest's preferred three-month window, but the most relevant and verifiable updates available on the topic as of this edition.</p>
 
 <article class="item">
-<h3>AI Engineer becomes Brazil's highest-paying entry-level tech role, per Robert Half's 2026 Salary Guide</h3>
-<p>The 18th edition of Robert Half's Salary Guide in Brazil, released in early October and based on a survey of 500 hiring managers and 1,000 professionals across different regions of the country — cross-checked against real placement salary data from the firm itself — names Artificial Intelligence Engineer as the highest-paying entry-level role among more than 300 tech positions tracked: R$19,500 to R$27,100 per month. For comparison, the same guide lists Data Science Specialist at a range of R$14,700 to R$24,600, with a median of R$19,100 — below the midpoint of the AI Engineer range. The guide itself is explicit about what the number represents: entry-level compensation figures (for someone newly hired into the role), excluding bonuses or benefits, presented by experience percentile.</p>
-<figure class="chart">
-  <svg viewBox="0 0 320 170" role="img" aria-label="Salary comparison: Data Scientist with a median of R$19,100 against AI Engineer with a midpoint of R$23,300">
-    <title>Monthly entry-level salary: Data Scientist vs. AI Engineer</title>
-    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
-    <rect x="60" y="50" width="60" height="90" fill="var(--muted)" opacity="0.4"/>
-    <text x="90" y="44" text-anchor="middle" class="chart-val">R$19.1k</text>
-    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Data Scientist (median)</text>
-    <rect x="200" y="30" width="60" height="110" fill="var(--text)"/>
-    <text x="230" y="24" text-anchor="middle" class="chart-val">R$23.3k</text>
-    <text x="230" y="158" text-anchor="middle" class="chart-lbl">AI Engineer (midpoint)</text>
-  </svg>
-  <figcaption>Monthly entry-level compensation (excluding bonuses/benefits) per Robert Half Brazil's 2026 Salary Guide; the "midpoint" is calculated by the digest from the disclosed R$19.5k–27.1k range for AI Engineer.</figcaption>
-</figure>
-<span class="label">What it signals for the market</span>
-<p>For data professionals in Brazil, this is the clearest signal yet that the "AI Engineer" title — focused on shipping LLM systems to production, not necessarily ML research — already commands a premium over the classic "Data Scientist" title in the Brazilian market, mirroring what had already happened in the US market. It's a useful data point for anyone negotiating a title change or a lateral career move.</p>
+<h3>State of Data Brazil 2025/2026: Google is the most admired company among data and AI professionals for the fourth consecutive year</h3>
+<p>State of Data Brazil, the annual survey from Data Hackers in partnership with Bain & Company (now in its fifth joint edition), collected responses from more than 3,200 data professionals in Brazil between October 14 and December 18, 2025; the full report was released as a free download in April 2026, and the "most admired companies" breakdown came out in May 2026 — both older than this digest's three-month window, but still the most current and substantial reference available on the Brazilian data market as of this date. The breakdown shows Google again as the most admired company among data professionals in Brazil — its fourth consecutive year at the top, holding about 12% of mentions. Ambev appears among the ten most admired companies in Latin America for data and AI for the fourth year running, according to the company's own announcement.</p>
+<span class="label">How the market is applying this</span>
+<p>This "most admired company" ranking functions, in practice, as an informal employer-brand proxy within Brazil's data community — recruiters and hiring managers already cite State of Data Brazil rankings in job postings and compensation benchmarking, and Google's four straight years at the top suggest a company's perceived data maturity weighs as much as salary in senior professionals' career decisions.</p>
 <div class="refs">
 <strong>References</strong>
 <ul>
-<li><a href="https://canaltech.com.br/mercado/salario-de-r-19-mil-guia-mostra-as-profissoes-de-tecnologia-em-alta-em-2026/">Canaltech — "Salário de R$ 19 mil: guia mostra as profissões de tecnologia em alta em 2026"</a></li>
-<li><a href="https://abes.org.br/?p=99086">ABES — coverage of Robert Half's 2026 Salary Guide</a></li>
+<li><a href="https://www.datahackers.news/p/essas-sao-as-empresas-mais-admiradas-por-profissionais-de-dados-e-ia-no-brasil-em-2026">Data Hackers Newsletter — "These are the companies most admired by Data and AI professionals in 2026" (in Portuguese)</a></li>
+<li><a href="https://www.datahackers.news/p/state-of-data-brazil-2026-confira-o-relato-rio-em-primeira-ma-o">Data Hackers Newsletter — "State of Data Brazil 2025/2026: get the report first-hand" (in Portuguese)</a></li>
 </ul>
 </div>
 </article>
 
 <article class="item">
-<h3>Brazilian banks to invest R$3 billion in AI and data in 2026 — but only 20% use AI at scale in customer experience</h3>
-<p>The Febraban 2026 Banking Technology Survey, conducted by Deloitte with a sample of 25 banks (82–85% of the sector's assets), collected between December 2025 and April 2026 and reported this week, shows Brazilian banks plan to invest about R$3 billion in AI, analytics and big data in 2026 — up 8% from 2025. The most cited gain from AI, named by 92% of institutions, is speed on routine tasks; but only 20% of banks say they use AI at scale in customer experience, indicating that broad adoption on the customer-facing front is still a minority. Cloud-migration investment is also rising, to R$3.9 billion (+30% versus 2025).</p>
-<figure class="chart">
-  <svg viewBox="0 0 320 170" role="img" aria-label="Brazilian bank investment in AI, analytics and big data: about R$2.8 billion in 2025 versus R$3 billion in 2026">
-    <title>Banking investment in AI, analytics and big data</title>
-    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
-    <rect x="60" y="37" width="60" height="103" fill="var(--muted)" opacity="0.4"/>
-    <text x="90" y="31" text-anchor="middle" class="chart-val">~R$2.8bn</text>
-    <text x="90" y="158" text-anchor="middle" class="chart-lbl">2025 (estimated)</text>
-    <rect x="200" y="30" width="60" height="110" fill="var(--text)"/>
-    <text x="230" y="24" text-anchor="middle" class="chart-val">R$3bn</text>
-    <text x="230" y="158" text-anchor="middle" class="chart-lbl">2026</text>
-  </svg>
-  <figcaption>The 2026 figure is reported by the Febraban 2026 Banking Technology Survey (Deloitte); the 2025 figure is estimated by the digest from the disclosed "8%" growth rate, not a number the survey published directly.</figcaption>
-</figure>
-<span class="label">What it signals for the market</span>
-<p>The gap between 92% (internal productivity gain) and 20% (at-scale use in customer experience) is the most useful number here for anyone selling or building AI and data products for Brazilian banks: budget is clearly flowing into AI, but the use case banks have actually operationalized at scale is internal productivity, not customer-facing personalization — exactly the gap that media and consumer companies near Globoplay could exploit if they move faster on recommendation and personalization than banks are moving on CX.</p>
-<div class="refs">
-<strong>References</strong>
-<ul><li><a href="https://www.seudinheiro.com/2026/empresas/bancos-vao-investir-r-3-bilhoes-em-inteligencia-artificial-e-solucoes-de-dados-em-2026-o-que-eles-ja-descobriram-que-voce-ainda-nao-aplica-lbrdgm097/">Seu Dinheiro — coverage of the Febraban 2026 Banking Technology Survey (Deloitte)</a></li></ul>
-</div>
-</article>
-
-<h2 class="section-title" id="sec4-en"><span class="num">04</span>Tooling and platform trends</h2>
-<p class="section-intro">Two stories of convergence: the open table-format wars quietly ending around one standard, and real corporate spend data showing vector-database adoption is still far behind what the hype suggests.</p>
-
-<article class="item">
-<h3>Apache Iceberg 1.12 ships with 800+ changes — and the open table format consolidates as the standard every warehouse and lakehouse wants to speak</h3>
-<p>The Apache Iceberg project shipped version 1.12.0 in late September, after release manager Neelesh Salian ran a second release candidate approved by project member votes. Accumulating more than 800 changes since version 1.11 (May 2026), the new release makes more v3 table-format features usable across more engines, tightens the REST catalog contract, improves streaming reliability, and already includes early work toward a future format version 4 — at the cost of dropping support for Spark 3.4 and Flink 2.0, and of the Java implementation no longer embedding deleted-row values inside position delete files (closing a known accidental data-exposure vector). Over the same window, ClickHouse Cloud expanded its Iceberg REST Catalog and Microsoft OneLake support, and put a private-preview on-demand compute feature specifically aimed at queries over Iceberg and Delta Lake data — reinforcing that both competing data warehouses and lakehouses are converging on the same table format.</p>
-<span class="label">How the market is applying it</span>
-<p>For anyone choosing a lakehouse architecture today, the practical lesson is that the table-format choice is becoming less decisive than it was two years ago — Iceberg is turning into the lingua franca that both warehouses (ClickHouse, Snowflake) and lakehouses (Databricks) build read/write paths toward, pushing the real differentiation further up the stack: query-engine performance and governance, not file-format lock-in.</p>
+<h3>USP creates a Digital Transformation and Artificial Intelligence office reporting directly to the rectory</h3>
+<p>On January 23, 2026, at his inauguration, rector Aluísio Segurado and vice-rector Liedi Bernucci listed among the 2026–2030 administration's priorities "critically and responsibly incorporating disruptive AI digital technologies into academic and administrative activities" at USP. According to an interview with Revista Pesquisa FAPESP, that priority has already translated into a Digital Transformation and Artificial Intelligence Office reporting directly to the rectory, tasked with guiding the ethical and pedagogical use of AI tools by students, faculty, and staff and with setting institutional guidelines — including an introductory elective AI course for undergraduate and graduate students. This is January 2026 news, so it falls outside this digest's preferred three-month window; we found no more recent, verifiable update specifically on USP this week, so we bring this as the most substantial one available, with the date made explicit. It's a different kind of institutional move from what we've already covered here on Unicamp (its AI and Data Science bachelor's degree and its FAPESP-funded health-AI hub): USP is regulating AI use in-house rather than creating a new course or applied-research center.</p>
+<span class="label">How the market is applying this</span>
+<p>For anyone hiring in São Paulo or collaborating on research with USP, the office signals that Brazil's largest university is formalizing generative-AI usage policy ahead of any external regulatory requirement — which should translate, in coming months, into clearer compliance guidelines for applied research partnerships and for AI tool use in joint projects with the university.</p>
 <div class="refs">
 <strong>References</strong>
 <ul>
-<li><a href="https://iceberg.apache.org/releases/">Apache Iceberg — official releases page</a></li>
-<li><a href="https://www.dremio.com/blog/apache-iceberg-1-12-0-whats-new-breaking-changes-and-upgrade-guide">Dremio Blog — "Apache Iceberg 1.12.0: What's New, Breaking Changes and Upgrade Guide"</a></li>
+<li><a href="https://revistapesquisa.fapesp.br/novo-reitor-da-usp-expoe-planos-para-ampliar-o-dialogo-com-a-sociedade/">Revista Pesquisa FAPESP — "USP's new rector lays out plans to broaden dialogue with society" (in Portuguese)</a></li>
+<li><a href="https://jornal.usp.br/wp-content/uploads/2026/01/discurso-reitor.pdf">Jornal da USP — rector's inauguration speech (PDF, in Portuguese)</a></li>
 </ul>
 </div>
 </article>
 
+<h2 class="section-title" id="sec4-en"><span class="num">04</span>Trends in tools and solutions</h2>
+<p class="section-intro">Two surveys, two angles on the same phenomenon: declared adoption of orchestration tools and AI-assisted coding keeps growing — but the orchestrator market is consolidating, and users' own trust in AI-generated code remains low.</p>
+
 <article class="item">
-<h3>Real corporate spend data shows vector-database adoption is still small — even with 67% of engineers saying they already use one</h3>
-<p>Two different ways of measuring vector-database "adoption" land on wildly different numbers. A self-reported survey of 300 US engineers (fielded in August 2025, across five industries, with a ±3.1 percentage-point margin of error at 95% confidence) found 67% of respondents saying their organization already uses a vector database. Meanwhile, real spend data from Ramp, the corporate expense platform, shows only 1.3% of all businesses on the platform pay for a tool in the vector-database category as of August 2026 — a completely different measurement base (self-reported usage vs. verified actual spend, across companies of every size and sector), which the digest flags explicitly as not directly comparable. Among companies that do buy a dedicated tool, Pinecone is the most-used vendor, but Turbopuffer is the fastest-growing — around +0.5 percentage points per month, pulling in the most companies switching from competitors — now holding roughly 12% share among organizations that already have a category vendor (13% among enterprises, 9% among mid-market companies).</p>
+<h3>DataTalks.Club survey shows Airflow surging in orchestration — right after Prefect and Dagster's merger</h3>
+<p>The AI, Data Engineering & MLOps Survey 2025–2026, from the DataTalks.Club community, asked data professionals which tools they use at each stage of the ML lifecycle. In orchestration, Airflow remains far ahead, at 58% — a jump from 34% in the 2024–2025 edition — while the share of respondents using no orchestration tool at all fell from 54% to 23%. Prefect (15%) and Dagster (12%) come next. The backdrop to that consolidation: in July 2026, Prefect announced its acquisition of Dagster Labs, unifying under one company the two most-cited Airflow successors (already covered in this column weeks ago) — which helps explain why, combined, Prefect and Dagster still cover fewer teams than Airflow alone. Elsewhere in the pipeline, MLflow leads training/experiment tracking (61%) and versioning (65%), and on the deployment side Azure ML (34%) and Kubernetes (31%) lead SageMaker (28%), with 17% of respondents not deploying models at all.</p>
 <figure class="chart">
-  <svg viewBox="0 0 320 170" role="img" aria-label="Vector database adoption comparison: 67% of engineers say they use one, versus only 1.3% of businesses that actually pay for one, per Ramp spend data">
-    <title>Self-reported use vs. verified spend on vector databases</title>
+  <svg viewBox="0 0 320 170" role="img" aria-label="Airflow's share in orchestration: 58% in the 2025-2026 survey versus 34% in the 2024-2025 survey">
+    <title>Airflow adoption among teams with an orchestrator</title>
     <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
-    <rect x="60" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
-    <text x="90" y="24" text-anchor="middle" class="chart-val">67%</text>
-    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Say they use one (self-reported, US)</text>
-    <rect x="200" y="137" width="60" height="3" fill="var(--text)"/>
-    <text x="230" y="131" text-anchor="middle" class="chart-val">1.3%</text>
-    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Pay for one (verified spend, Ramp)</text>
+    <rect x="60" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="90" y="24" text-anchor="middle" class="chart-val">58%</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">2025–26</text>
+    <rect x="200" y="76" width="60" height="64" fill="var(--muted)" opacity="0.4"/>
+    <text x="230" y="70" text-anchor="middle" class="chart-val">34%</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">2024–25</text>
   </svg>
-  <figcaption>The two bars come from different methodologies and are not directly comparable: a self-reported survey of 300 US engineers (Aug 2025) vs. verified spend share among businesses on the Ramp platform (Aug 2026). Shown together only to illustrate the gap between perceived use and actual purchase.</figcaption>
+  <figcaption>Airflow's share among teams with an orchestrator — DataTalks.Club's AI, Data Engineering & MLOps survey.</figcaption>
 </figure>
-<span class="label">How the market is applying it</span>
-<p>The practical read for anyone budgeting a RAG or agent-memory project: "everyone already uses a vector database" is true at the level of engineers' informal reports, but not yet true at the level of committed vendor spend — most teams are still prototyping on a free tier, an extension inside an existing database (pgvector, MongoDB Atlas), or with no dedicated vendor at all, which also explains why a fast, cheap entrant like Turbopuffer can keep gaining share instead of the market already being locked up by incumbents.</p>
+<span class="label">How the market is applying this</span>
+<p>For anyone choosing an orchestrator today, the numbers suggest "mature market standard with a big ecosystem" is beating "best-in-class niche tool" for most production teams — even with the Prefect-Dagster merger reducing fragmentation on the challenger side, Airflow grew its share rather than losing ground, which argues for keeping or migrating to it unless your specific use case (lineage, testability, native Python) clearly justifies swimming against the current.</p>
 <div class="refs">
 <strong>References</strong>
-<ul>
-<li><a href="https://ramp.com/vendors/categories/vector-databases">Ramp — "Top ranking Vector Databases software in August 2026"</a></li>
-<li><a href="https://ramp.com/vendors/turbopuffer">Ramp — Turbopuffer vendor page</a></li>
-<li><a href="https://www.hostingadvice.com/studies/vector-databases-adoption-survey/">HostingAdvice — "Vector Databases Quietly Hit Majority Adoption in AI Engineering"</a></li>
-</ul>
+<ul><li><a href="https://datatalks.club/surveys/2025-2026/ml-mlops">DataTalks.Club — "AI, Data Engineering & MLOps Survey 2025–2026"</a></li></ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Stack Overflow 2026: 79% of developers already use AI in their code, but only 6.6% would trust it for an important decision</h3>
+<p>The annual Stack Overflow Developer Survey 2026, with more than 30,000 respondents across 169 countries and results published October 6, shows AI coding tool adoption climbing from 44% in 2023 to 62% in 2024 and 79% in 2025 — and an April 2026 pulse survey from Stack Overflow itself found AI agent usage nearly doubling, to 59%, over a much shorter window. Among those who already use AI assistants or agents in their code, 73% report daily use. But trust hasn't kept pace with adoption: only 6.6% would trust AI's output for an important decision, about half trust it when they can verify the result themselves, and 78.7% say source attribution matters when judging an AI-generated answer or code snippet.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="79% of developers already use AI in their code in 2025, but only 6.6% would trust it for an important decision">
+    <title>AI use in code vs. trust for important decisions</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="90" y="24" text-anchor="middle" class="chart-val">79%</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Use AI in code (2025)</text>
+    <rect x="200" y="131" width="60" height="9" fill="var(--muted)" opacity="0.4"/>
+    <text x="230" y="125" text-anchor="middle" class="chart-val">6.6%</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Would trust it for an important decision</text>
+  </svg>
+  <figcaption>Stack Overflow Developer Survey 2026 — more than 30,000 respondents across 169 countries.</figcaption>
+</figure>
+<span class="label">How the market is applying this</span>
+<p>For data and ML teams building internal AI-powered tools — notebook copilots, automatic SQL generation, agent-generated pipelines — the gap between 79% usage and 6.6% trust for important decisions is the most direct argument for keeping code review, test coverage, and source traceability mandatory in any AI-assisted workflow: adoption has already won over initial resistance, but the human gate on anything consequential remains the standard users themselves expect.</p>
+<div class="refs">
+<strong>References</strong>
+<ul><li><a href="https://stackoverflow.blog/2026/10/06/the-results-of-the-2026-developer-survey-are-here/">Stack Overflow Blog — "The results of the 2026 Developer Survey are here"</a></li></ul>
 </div>
 </article>
 
 <h2 class="section-title archive-title">Previous reports</h2>
 <ul class="archive-list">
+<li><a href="archive/2026-10-09.html">October 9, 2026</a></li>
 <li><a href="archive/2026-10-02.html">October 2, 2026</a></li>
 <li><a href="archive/2026-09-25.html">September 25, 2026</a></li>
 <li><a href="archive/2026-09-18.html">September 18, 2026</a></li>
@@ -470,7 +550,7 @@ h2.section-title.archive-title{margin-top:56px;}
 </ul>
 
 <div class="methodology">
-<strong>Methodology note.</strong> This digest is produced weekly by a research agent that actively searches for primary sources (academic papers, research/engineering blogs from reference companies, universities, market surveys) instead of answering from memory. Every non-trivial claim is accompanied by a verifiable link. In this edition, as in previous ones, direct full-page fetches to several domains — including research.google, databricks.com, arxiv.org and datahackers.news — were blocked by the execution environment's network policy; the Anthropic domain was once again directly accessible, and the Cyber Mission announcement's numbers (e.g., 11 founding partners, an expected true-positive rate above 90% for the OSS Scanner) were confirmed on the page itself. For the remaining items, facts were verified by cross-referencing multiple independent searches and journalistic or third-party sources citing the same primary content. Figures marked as estimated or derived by the digest — the "up to 10 million parameters" model-size figure for Google's federated learning system, the 2025 banking-investment figure (~R$2.8bn, derived from the disclosed 8% growth rate) and the Apache Iceberg 1.12 change count/release date (sourced via Dremio's coverage, since the project's official releases page still listed 1.11.0 as latest at the time of checking) — are flagged as such directly in the text or captions. For the second week running, no new relevant content was found from Netflix Research, Netflix TechBlog or Google Research within the specific scope of streaming/recommendation/media personalization — this is flagged at the top of section 2 rather than forcing in an outdated or irrelevant example. For that reason, this week's section 3 also swapped the usual State of Data Brazil anchor (already covered in the previous two editions) for two new, independent data points.
+<strong>Methodological note.</strong> This digest is produced weekly by a research agent that actively searches for primary sources — academic papers (arXiv, AAAI/ICLR workshops), research and engineering blogs from reference companies, universities, and market surveys — instead of answering from memory. Every non-trivial claim carries a verifiable link. In this edition, direct full-page fetch worked for Anthropic's own domain — the source of the confirmed numbers on the Cyber Mission and the Cyber Verification Program — but failed, due to the execution environment's network restrictions, for arxiv.org, bair.berkeley.edu, datatalks.club and stackoverflow.blog; for those, facts were verified by cross-referencing multiple independent searches citing the same primary content, with any number or detail that could not be directly confirmed flagged as such in the text. Two data points in this edition are older than the digest's preferred three-month window — Netflix's November 2025 recommendation paper (cited as complementary context to the more recent August 2026 paper) and the USP and State of Data Brazil items, from January, April, and May 2026 — and this is flagged explicitly in the respective text, since, per our research, these are the most current and substantial references available on these topics as of this date.
 </div>
 
 <div class="contact">
@@ -488,11 +568,11 @@ h2.section-title.archive-title{margin-top:56px;}
 <script>
 (function(){
   var buttons = document.querySelectorAll('[data-lang-btn]');
-  var blocks = document.querySelectorAll('[data-lang]');
+  var blocks = document.querySelectorAll('.lang-block');
   buttons.forEach(function(btn){
     btn.addEventListener('click', function(){
       var lang = btn.getAttribute('data-lang-btn');
-      buttons.forEach(function(b){ b.classList.toggle('active', b === btn); });
+      buttons.forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-lang-btn') === lang); });
       blocks.forEach(function(block){
         if (block.getAttribute('data-lang') === lang) {
           block.removeAttribute('hidden');
