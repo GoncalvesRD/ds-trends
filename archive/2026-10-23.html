@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digest DS/ML/IA — 23 de outubro de 2026</title>
+<style>
+:root{--bg:#ffffff;--text:#1a1a1a;--muted:#6b6b6b;--hairline:#e6e6e6;--link:#1a1a1a;--link-hover:#1a8917;--serif:Georgia,'Iowan Old Style','Palatino Linotype','Book Antiqua',Palatino,serif;--sans:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;--globoplay-red:#FB0234;}
+*{box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:var(--serif);margin:0;padding:0 24px 100px;}
+main{max-width:700px;margin:0 auto;}
+[hidden]{display:none!important;}
+.lang-toggle{display:flex;justify-content:flex-end;gap:8px;align-items:center;padding:20px 0 0;font-family:var(--sans);font-size:.78rem;}
+.lang-toggle button{background:none;border:1px solid var(--hairline);border-radius:20px;padding:5px 14px;font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.03em;color:var(--muted);cursor:pointer;}
+.lang-toggle button.active{color:#fff;background:var(--text);border-color:var(--text);}
+header.report-header{padding:24px 0 0;}
+header.report-header h1{font-size:2.4rem;line-height:1.25;font-weight:400;margin:0 0 16px;letter-spacing:-.01em;}
+header.report-header .dek{font-size:1.15rem;color:var(--muted);font-style:italic;margin:0 0 28px;line-height:1.5;}
+.byline{display:flex;align-items:center;gap:14px;padding:20px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);margin-bottom:40px;font-family:var(--sans);}
+.avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;background:#1a1a1a;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.05rem;font-weight:600;flex-shrink:0;}
+.byline .name{font-weight:600;font-size:.98rem;color:var(--text);line-height:1.5;}
+.byline .sub{font-size:.85rem;color:var(--muted);line-height:1.5;}
+.byline .sub a{color:var(--muted);}
+nav.toc{font-family:var(--sans);background:#fafafa;border:1px solid var(--hairline);border-radius:10px;padding:22px 26px;margin-bottom:48px;}
+nav.toc .toc-title{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 14px;}
+nav.toc ol{margin:0;padding-left:22px;}
+nav.toc li{margin-bottom:12px;font-size:.92rem;line-height:1.55;color:var(--muted);}
+nav.toc li:last-child{margin-bottom:0;}
+nav.toc li a{font-weight:600;color:var(--text);text-decoration:none;}
+nav.toc li a:hover{color:var(--link-hover);}
+h2.section-title{font-family:var(--serif);font-size:1.7rem;font-weight:400;margin:64px 0 8px;scroll-margin-top:20px;}
+h2.section-title .num{color:var(--muted);font-size:1.1rem;margin-right:6px;}
+p.section-intro{font-family:var(--sans);color:var(--muted);font-size:.92rem;margin:0 0 32px;line-height:1.6;}
+article.item{margin:0 0 32px;}
+article.item+article.item{border-top:1px solid var(--hairline);padding-top:32px;}
+article.item h3{font-size:1.45rem;font-weight:400;line-height:1.35;margin:0 0 14px;}
+article.item p{font-size:1.08rem;line-height:1.8;margin:0 0 16px;color:var(--text);}
+.label{display:block;font-family:var(--sans);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:22px 0 8px;}
+.refs{margin-top:20px;font-family:var(--sans);font-size:.85rem;color:var(--muted);}
+.refs strong{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;}
+.refs ul{margin:6px 0 0;padding-left:0;list-style:none;}
+.refs li{margin-bottom:4px;}
+a{color:var(--link);text-decoration:underline;text-decoration-color:var(--hairline);text-underline-offset:2px;}
+a:hover{color:var(--link-hover);text-decoration-color:var(--link-hover);}
+.caveat{font-family:var(--sans);font-size:.85rem;color:var(--muted);font-style:italic;margin-top:6px;}
+section.globoplay h2.section-title,section.globoplay h2.section-title .num,section.globoplay .label{color:var(--globoplay-red);}
+section.globoplay article.item{border-left:3px solid var(--globoplay-red);padding-left:20px;}
+section.globoplay article.item+article.item{border-top:1px solid var(--hairline);}
+section.globoplay a{text-decoration-color:rgba(251,2,52,.3);}
+section.globoplay a:hover{color:var(--globoplay-red);text-decoration-color:var(--globoplay-red);}
+.methodology{font-family:var(--sans);background:#fafafa;border:1px solid var(--hairline);border-radius:8px;padding:18px 22px;font-size:.88rem;color:var(--muted);line-height:1.6;margin:64px 0 0;}
+.methodology strong{color:var(--text);}
+.contact{font-family:var(--sans);margin:28px 0 0;padding-top:24px;border-top:1px solid var(--hairline);font-size:.9rem;color:var(--muted);line-height:1.8;}
+.contact .name{color:var(--text);font-weight:600;}
+footer.report-footer{margin-top:24px;padding-top:20px;font-family:var(--sans);color:var(--muted);font-size:.82rem;}
+footer.report-footer a{color:var(--muted);}
+.archive-list{list-style:none;padding:0;margin:10px 0 0;font-family:var(--sans);}
+.archive-list li{padding:8px 0;border-bottom:1px solid var(--hairline);font-size:.92rem;}
+figure.chart{margin:24px 0;font-family:var(--sans);text-align:center;}
+figure.chart svg{width:100%;max-width:320px;height:auto;}
+figure.chart .chart-val{font-size:13px;font-weight:700;fill:var(--text);}
+figure.chart .chart-lbl{font-size:11px;fill:var(--muted);}
+figure.chart figcaption{font-size:.78rem;color:var(--muted);margin-top:8px;}
+h2.section-title.archive-title{margin-top:56px;}
+</style>
+</head>
+<body>
+<main>
+
+<div class="lang-toggle">
+  <button type="button" data-lang-btn="pt" class="active">PT</button>
+  <button type="button" data-lang-btn="en">EN</button>
+</div>
+
+<div class="lang-block" data-lang="pt">
+
+<header class="report-header">
+  <h1>Tendências em Data Science, Machine Learning e IA Aplicada</h1>
+  <p class="dek">Agentes do MIT passam 30 horas "brincando" sozinhos numa ilha virtual e saem mais capazes depois, a Databricks triplica a taxa de conclusão de tarefas de agentes dando a eles memória de longo prazo, e o salário real dos cientistas de dados juniores no Brasil caiu 14% desde 2021 enquanto a mediana do mercado subiu 20%.</p>
+</header>
+
+<div class="byline">
+  <div class="avatar">RG</div>
+  <div>
+    <div class="name">Ri Gonçalves</div>
+    <div class="sub"><a href="https://goncalvesrd.github.io/ds-trends/">goncalvesrd.github.io/ds-trends</a> · 23 de outubro de 2026</div>
+  </div>
+</div>
+
+<nav class="toc">
+  <p class="toc-title">Nesta edição</p>
+  <ol>
+    <li><a href="#sec1-pt">Tendências gerais em Data Science / ML / IA aplicada</a> — pesquisadores do MIT deixam 13 agentes Claude brincando livremente numa ilha virtual por 30 horas e eles saem mais capazes depois, o Harness² ensina agentes a evoluir a própria infraestrutura de execução sem gabarito de verificação, e o CausalSmith, de Stanford, prova teoremas de inferência causal com verificação formal em Lean.</li>
+    <li><a href="#sec2-pt">Streaming e concorrentes da Globoplay</a> — a Databricks triplica a taxa de conclusão de tarefas de agentes dando memória de longo prazo, a Netflix automatiza o dimensionamento de containers no pipeline de processamento de mídia, e a Anthropic doa o padrão Agent Skills para a Agentic AI Foundation.</li>
+    <li><a href="#sec3-pt">Mercado de Data Science no Brasil</a> — o State of Data Brazil mostra que o salário real dos cientistas de dados juniores caiu 14% desde 2021 enquanto a mediana geral do mercado subiu 20%, e a USP promove um debate público sobre IA e o futuro do trabalho.</li>
+    <li><a href="#sec4-pt">Tendências de ferramentas e soluções</a> — Iceberg e Delta Lake passam a operar sobre os mesmos arquivos Parquet dentro do Unity Catalog, e a AWS compra a DuckLabs, a empresa por trás do DuckDB.</li>
+  </ol>
+</nav>
+
+<h2 class="section-title" id="sec1-pt"><span class="num">01</span>Tendências gerais em Data Science, Machine Learning e IA aplicada</h2>
+<p class="section-intro">Três sinais de para onde a pesquisa de agentes está indo: dar a agentes tempo livre sem tarefa pode funcionar como uma forma de pré-treino disfarçada, a camada de "harness" em torno de um modelo já é tão otimizável quanto os pesos dele, e provar teoremas automaticamente só vale alguma coisa se a verificação formal vier emparelhada com uma auditoria do que o enunciado realmente diz.</p>
+
+<article class="item">
+<h3>Pesquisadores do MIT deixam agentes de IA "brincarem" sozinhos numa ilha virtual — e isso melhora o desempenho deles depois</h3>
+<p>Nathan Cloos, Antonio Norelli, Daniel Durbin, Jacob Andreas, Daniela Rus e Phillip Isola, do MIT CSAIL, publicaram em 5 de outubro de 2026 o paper "Is this machine playing?" (arXiv:2610.07130, ainda sem revisão por pares). O experimento rodou 13 instâncias de um agente de código incorporado batizado "Eko" — construído sobre o Claude Opus 4.7, com execução autônoma e memória de longo prazo persistida em arquivos de texto — numa ilha virtual simulada chamada Clawblox, por 30 horas de tempo real, sem receber tarefa, objetivo ou função de recompensa de qualquer tipo.</p>
+<p>Sem uma meta externa, os agentes passaram a construir estruturas, inventar jogos e rodar pequenos experimentos de física dentro do próprio simulador. Os autores argumentam que esse comportamento satisfaz quatro assinaturas comportamentais que a etologia usa para definir "brincadeira" — não é apenas ruído ou ação aleatória. O achado mais concreto: 6 dos 13 agentes descobriram, por conta própria, que um bloco lançado durante um salto herda a velocidade do salto e voa muito mais alto — uma mecânica de física que, segundo os próprios pesquisadores, o simulador não deveria permitir de forma intencional. É exploração emergente de um espaço de estados não documentado, sem qualquer instrução para procurá-lo.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>Depois da fase livre, os mesmos agentes foram testados em tarefas novas e tiveram desempenho melhor do que cópias que não passaram pela ilha — com uma exceção notável: na meta de construir a torre mais alta, os dois grupos tiveram desempenho parecido, então o ganho não é universal. Isso é evidência prática a favor de incluir tempo livre não-dirigido como parte do pipeline de desenvolvimento de agentes autônomos — uma espécie de currículo auto-gerado — em vez de otimizar exclusivamente para a tarefa-alvo em todo momento de treino ou ajuste fino. Ainda é pesquisa muito recente e sem revisão por pares; não há adoção conhecida em produto, e a cientista cognitiva Eunice Yiu, da UC Berkeley, elogiou o trabalho mas apontou que o paper não estabelece se os modelos estão genuinamente "brincando" no sentido pleno do termo.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://arxiv.org/abs/2610.07130">arXiv:2610.07130 — "Is this machine playing?"</a></li>
+<li><a href="https://techcrunch.com/2026/10/22/left-alone-with-nothing-to-do-ai-agents-started-playing/">TechCrunch, 22 de outubro de 2026 — "Left alone with nothing to do, AI agents started playing"</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Harness²: agentes que evoluem a própria infraestrutura de execução, não só os pesos do modelo</h3>
+<p>A maior parte do ganho de desempenho de agentes de IA em produção hoje não vem de trocar o modelo base, mas de engenharia artesanal do "harness" — a camada de prompts, ferramentas, lógica de retry e verificação construída em torno de um LLM. Pesquisadores da Northwestern University e do Google Cloud AI Research propuseram o Harness² (arXiv:2610.14224, outubro de 2026), um framework plug-and-play que automatiza justamente essa parte: evoluir o harness para tarefas de mundo aberto em que não existe, no momento do teste, um verificador de corretude — o cenário comum em automação de tarefas de negócio reais, bem diferente de benchmarks com resposta certa conhecida.</p>
+<p>O mecanismo tem duas camadas de recursão. No nível da tarefa, um passo contrastivo chamado "Propose–Probe–Compose" gera variações do harness atual, testa-as e recompõe a melhor versão. No nível do harness, as edições que funcionaram são destiladas em experiência reutilizável, armazenada e reaproveitada em tarefas futuras — ou seja, o próprio sistema aprende a melhorar sua infraestrutura de execução ao longo do tempo, de forma cumulativa, em vez de recomeçar o ajuste de prompt do zero a cada nova tarefa.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>Aplicado sobre os modelos GLM-5 e Gemini 3.5 Flash — mantidos congelados, sem qualquer re-treino —, o Harness² reportou ganhos de até 11,5 pontos no benchmark WorkBuddy-Bench e 11,8 pontos percentuais no benchmark LAB, ambos focados em tarefas de agente de mundo aberto sem gabarito de verificação.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Harness² ganha 11,5 pontos no WorkBuddy-Bench e 11,8 pontos no benchmark LAB, sobre modelos congelados">
+    <title>Ganho de desempenho do Harness² sobre harness estático</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="33" width="60" height="107" fill="var(--text)"/>
+    <text x="90" y="27" text-anchor="middle" class="chart-val">+11,5 pts</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">WorkBuddy-Bench</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">+11,8 pts</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">LAB</text>
+  </svg>
+  <figcaption>Ganho do Harness² sobre harness estático, em dois benchmarks de agente sem gabarito (GLM-5 e Gemini 3.5 Flash, resultados auto-reportados, out/2026).</figcaption>
+</figure>
+<p>Vindo de uma equipe de produto do Google Cloud (não apenas acadêmica), o resultado sugere intenção de uso em produtos de agente do Google Cloud, mas não há, até agora, anúncio de disponibilização comercial do método — e os números acima são auto-reportados pelos autores, ainda sem validação independente.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul><li><a href="https://hyper.ai/en/papers/2610.14224">arXiv:2610.14224 — "Harness²" (via hyper.ai)</a></li></ul>
+</div>
+</article>
+
+<article class="item">
+<h3>CausalSmith: um pipeline agêntico prova teoremas de inferência causal — e verifica cada prova mecanicamente em Lean 4</h3>
+<p>Jiyuan Tan e Vasilis Syrgkanis — que lidera o Stanford Causal AI Lab e é Associate Director do Stanford Causal Science Center — publicaram em 24 de julho de 2026 o CausalSmith (arXiv:2607.22511), um framework agêntico de três estágios — seleção de tópico, formalização e apresentação — que gera candidatos a teoremas de inferência causal e os verifica mecanicamente contra o Causalean, uma biblioteca própria em Lean 4 com milhares de declarações matemáticas já verificadas (7.035, segundo a versão documentada no paper) cobrindo modelos causais, cálculo-do, outcomes potenciais e métodos de identificação.</p>
+<p>O ponto central não é "LLM que escreve matemática" — isso já existe em várias formas. É o mecanismo de auditoria: a verificação do kernel do Lean garante que uma prova é logicamente válida a partir de suas premissas, mas não garante que o enunciado formal captura de fato a afirmação informal em linguagem natural que motivou a busca — então o pipeline adiciona uma etapa separada, comparando cada teorema formal contra a reivindicação original. Isso ataca diretamente o principal risco de "alucinação matemática formalizada": provar algo verdadeiro, porém irrelevante para a pergunta de pesquisa real. Lemas reutilizáveis gerados numa rodada são promovidos de volta à biblioteca Causalean, criando um ciclo de acúmulo de conhecimento formal entre execuções sucessivas.</p>
+<p class="caveat">O paper é de julho de 2026 — pouco antes da nossa janela preferencial de três meses — mas segue sendo, segundo nossa pesquisa, a referência mais atual e substancial sobre o sistema, sem atualização desde então.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>Não há, até o momento, nenhum case de empresa usando CausalSmith em produção — isso é pesquisa básica em metodologia causal, não uma ferramenta adotada pela indústria, e vale dizer isso explicitamente em vez de forçar um exemplo. O interesse prático para quem trabalha com inferência causal aplicada (precificação, experimentos online, econometria de produto) é de médio prazo: um pipeline que acumula uma biblioteca verificada de resultados de identificação pode, eventualmente, servir de base de conhecimento curada para ferramentas de inferência causal — mas isso ainda não existe como produto.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul><li><a href="https://arxiv.org/abs/2607.22511">arXiv:2607.22511 — "CausalSmith: A Formally Grounded, Self-Improving Agentic Framework for Automated Research in Causal Inference"</a></li>
+<li><a href="https://github.com/Jiyuan-Tan/CausalForge">github.com/Jiyuan-Tan/CausalForge — código, biblioteca Causalean e registros de execução</a></li></ul>
+</div>
+</article>
+
+<section class="globoplay">
+<h2 class="section-title" id="sec2-pt"><span class="num">02</span>Streaming e concorrentes da Globoplay</h2>
+<p class="section-intro">Três atualizações desta semana: a Databricks dá memória de longo prazo a agentes e triplica a taxa de conclusão de tarefas corporativas, a Netflix ataca o desperdício de capacidade computacional no próprio pipeline de processamento de vídeo, e a Anthropic — fonte que acompanhamos independentemente do tema de streaming — doa seu padrão de "skills" para agentes a uma fundação neutra.</p>
+
+<article class="item">
+<h3>Databricks dá memória de longo prazo a agentes e triplica a taxa de conclusão de tarefas corporativas</h3>
+<p>A Databricks lançou em beta, por volta de 20 de outubro de 2026, o Agent Memory dentro do Agent Bricks (sua plataforma de criação de agentes), construído sobre o Lakebase e uma arquitetura de pesquisa interna chamada MemCurrent. A motivação é um problema conhecido de quem opera agentes de LLM em produção: sem memória persistente entre sessões, cada nova conversa ou execução reconstrói o contexto do zero — reinjetando informação repetida, aumentando custo de token e perdendo continuidade sobre decisões e preferências já estabelecidas em interações anteriores.</p>
+<p>O mecanismo combina três padrões de acesso à memória: plugins que capturam e carregam contexto automaticamente a cada interação, tools que o próprio agente pode chamar sob demanda quando decide que precisa de uma informação específica, e um pipeline de consolidação em background (que a equipe chama de "offline dreaming") que processa o que aconteceu, distinguindo entre memória episódica (eventos específicos) e memória derivada (padrões e preferências inferidos ao longo do tempo).</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>Em benchmark interno com 114 tarefas corporativas (derivadas de 2.233 sessões históricas de 29 usuários), a taxa de conclusão subiu de 22,3% sem memória para 68,4% com o MemCurrent — um ganho de cerca de 3x numa métrica de negócio direta, não um benchmark acadêmico abstrato —, usando 31% menos tokens e terminando as tarefas 26% mais rápido. Em benchmarks públicos de conversação sintética, o MemCurrent chegou a 88,1% contra 87,8% de usar o contexto completo, mas consumindo cerca de 12 vezes menos tokens de entrada; como referência de concorrência, o framework de memória open-source Mem0 pontuou 43,9% no mesmo teste interno da Databricks.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Taxa de conclusão de tarefas sobe de 22,3% sem memória para 68,4% com MemCurrent">
+    <title>Conclusão de tarefas corporativas, com e sem memória de longo prazo</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="104" width="60" height="36" fill="var(--text)"/>
+    <text x="90" y="98" text-anchor="middle" class="chart-val">22,3%</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Sem memória</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">68,4%</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Com MemCurrent</text>
+  </svg>
+  <figcaption>Taxa de conclusão em 114 tarefas corporativas, benchmark interno Databricks (out/2026) — ainda sem validação independente.</figcaption>
+</figure>
+<p>Para operações de streaming e mídia que já usam agentes para automação interna (atendimento, curadoria de catálogo, triagem de conteúdo), o resultado é um argumento concreto para dar memória persistente a agentes de produção em vez de reinjetar contexto do zero em cada chamada — com a ressalva de que os números vêm de um benchmark interno da própria Databricks, construído sobre suas próprias conversas do Genie, ainda sem reprodução independente.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://www.databricks.com/blog/introducing-agent-memory-databricks">Databricks Blog — "Introducing Agent Memory on Databricks"</a></li>
+<li><a href="https://www.databricks.com/blog/memcurrent-designing-persistent-memory-production-agents">Databricks Blog — "MemCurrent: Designing Persistent Memory for Production Agents"</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Netflix automatiza o dimensionamento de containers no próprio pipeline de processamento de mídia</h3>
+<p>Stratum é a plataforma interna "serverless" de processamento de mídia da Netflix — encoding, empacotamento, inspeção de qualidade e scoring —, com cada workload rodando como container agendado em batch sobre o Titus, a plataforma de orquestração de containers da empresa. Num post do Netflix TechBlog publicado em 14 de outubro de 2026, Violetta Pidvolotska e Naveen Mareddy descrevem um problema clássico de qualquer pipeline de dados em escala: donos de workload declaram limites de CPU, memória, disco e rede manualmente, e esses valores raramente continuam corretos por muito tempo — superdimensionamento inicial por precaução, ou drift lento conforme código e dados mudam, sem que ninguém revisite a configuração.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>O Stratum Resource Tuner (SRT) automatiza esse ajuste a partir de telemetria real de uso, com o objetivo declarado de que donos de workload nunca precisem especificar manualmente a configuração de recursos. O rollout começou por um pequeno número de workloads de alto throughput e latência flexível, que já respondem por 70% a 80% do uso total de recursos da plataforma — ou seja, a Netflix priorizou onde o ganho de eficiência é maior antes de expandir para o resto do catálogo de workloads. Não encontramos, nas fontes disponíveis, um número final de economia de custo ou de capacidade liberada — a Netflix não publicou (ou não conseguimos confirmar) esse dado, e é mais honesto dizer isso do que estimar um percentual. Ainda assim, é exatamente o tipo de problema que qualquer operação de streaming com processamento de vídeo em escala — incluindo concorrentes da Globoplay — enfrenta: capacidade computacional alocada "por segurança" é custo direto de nuvem, e ajuste automático por telemetria em vez de configuração manual é um padrão que deve se espalhar por outras plataformas de mídia.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul><li><a href="https://noise.getoto.net/2026/10/14/netflix-stratum-media-processing-automated-container-right-sizing/">Netflix TechBlog, 14 de outubro de 2026 — "Netflix Stratum Media Processing: Automated Container Right-Sizing" (cópia sindicada; netflixtechblog.com não pôde ser acessado diretamente do nosso ambiente de execução)</a></li></ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Anthropic doa o padrão Agent Skills para a Agentic AI Foundation</h3>
+<p>Agent Skills é o padrão aberto que a Anthropic criou para empacotar conhecimento e workflow específico de tarefa que um agente de IA pode carregar — uma pasta com um arquivo SKILL.md, podendo incluir scripts e material de referência. Em 22 de outubro de 2026, a Anthropic anunciou a doação desse padrão para a Agentic AI Foundation (AAIF), fundação sob a Linux Foundation que a própria Anthropic cofundou com Block e OpenAI em 2025 — e para onde já havia doado o Model Context Protocol (MCP) antes. É o mesmo padrão de governança do MCP: tirar um protocolo de agente das mãos de um único fornecedor e colocar sob uma fundação neutra, com manutenção por engenheiros de Anthropic, Google, OpenAI e outras empresas atuando a título individual — David Soria Parra e Mahesh Murag são os Lead Maintainers nomeados.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>Desde a publicação original do padrão, mais de 70 plataformas de agentes já o integraram — incluindo ChatGPT, Cursor, GitHub Copilot e VS Code —, com 1 milhão de skills publicadas e quase 280 milhões de instalações, segundo o próprio anúncio. Para quem constrói agentes de produção, a lição é de interoperabilidade: não ficar presa a um formato proprietário de "skill" ou definição de ferramenta por fornecedor, já que o ecossistema está convergindo, como já aconteceu com o MCP para conexão de ferramentas. O roteiro futuro inclui releases versionados, processo formal de proposta e diretrizes de segurança para autores e instaladores de skills — ponto relevante dado que skills de terceiros são, essencialmente, código e instruções que um agente carrega e executa.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul><li><a href="https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation">Anthropic Newsroom, 22 de outubro de 2026 — "Donating Agent Skills to the Agentic AI Foundation"</a></li></ul>
+</div>
+</article>
+
+</section>
+
+<h2 class="section-title" id="sec3-pt"><span class="num">03</span>Mercado de Data Science no Brasil</h2>
+<p class="section-intro">O retrato mais recente do mercado brasileiro de dados mostra uma divergência que não aparece nas médias: o mercado como um todo ganhou poder de compra desde 2021, mas quem está entrando na carreira agora ganha menos, em termos reais, do que quem entrou há cinco anos.</p>
+
+<article class="item">
+<h3>State of Data Brazil: salário real da mediana sobe 20% desde 2021, mas o do nível júnior cai 14%</h3>
+<p>A edição 2025–2026 do State of Data Brazil (Data Hackers, em parceria com a Bain &amp; Company) foi a campo entre 20 de outubro e 22 de dezembro de 2025, com 3.495 respondentes. Segundo o relatório, o salário médio nominal cresceu 6,7% entre 2024 e 2025, contra uma inflação de 4,26% no período — ou seja, ganho real positivo na média do mercado. Uma análise aberta que cruza as seis edições já realizadas da pesquisa (2019–2026), disponível no repositório público do Data Hackers no GitHub, aprofunda esse número e encontra uma divergência por nível de senioridade: enquanto a mediana salarial real do mercado está cerca de 20% acima do nível de 2021, o salário real do nível júnior caiu aproximadamente 14% no mesmo período.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Salário real da mediana do mercado sobe 20% desde 2021, enquanto o salário real do nível júnior cai 14% no mesmo período">
+    <title>Variação do salário real desde 2021, por nível</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="63" width="60" height="77" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="57" text-anchor="middle" class="chart-val">−14%</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Nível júnior</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">+20%</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Mediana do mercado</text>
+  </svg>
+  <figcaption>Variação do salário real desde 2021, por nível de senioridade (análise aberta sobre 6 edições do State of Data Brazil, Data Hackers).</figcaption>
+</figure>
+<p class="caveat">O próprio repositório que cruza as seis edições alerta que elas usaram questionários e faixas salariais diferentes entre si — a edição de 2019, por exemplo, não tinha a segmentação júnior/pleno/sênior —, então a comparação entre anos deve ser lida como uma tendência direcional, não como um número de precisão absoluta.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>Essa divergência ajuda a explicar outro dado da mesma pesquisa: remuneração já é o fator nº 1 na decisão de troca de emprego para 83,4% dos respondentes (contra 75,0% na edição anterior), e 51,3% disseram ter sido entrevistados por outra empresa nos últimos seis meses — um sinal de alta mobilidade e insatisfação salarial, concentrado justamente em quem está mais perto da entrada na carreira. Sobre IA generativa, 90% dos respondentes afirmam que é uma iniciativa da empresa onde trabalham, mas a adoção é majoritariamente descentralizada (58,4% sem plataforma ou governança central); entre quem ainda não adotou, as principais barreiras citadas são dados despreparados (34%) e falta de expertise ou recursos (33,5%). Para quem lidera contratação em times de dados, o recado é dividir a leitura do mercado por nível: o "aquecimento" do mercado de dados no Brasil não está distribuído igualmente entre quem já tem experiência e quem está entrando agora.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://www.bain.com/pt-br/insights/state-of-data-2025/">Bain &amp; Company — "State of Data 2025-2026"</a></li>
+<li><a href="https://github.com/data-hackers-br/state-of-data-brazil">github.com/data-hackers-br/state-of-data-brazil — dados abertos das 6 edições do State of Data Brazil</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>USP promove debate público sobre IA e o futuro do trabalho</h3>
+<p>Não encontramos, nesta semana, um novo dado quantitativo e verificável sobre o mercado brasileiro de dados além do State of Data Brazil acima — mas vale registrar um evento de calendário: a USP (IME), através do Jornal da USP, anunciou um debate público entre Marcelo Finger (cientista da computação do IME-USP, pesquisador em IA e lógica) e Paulo Silveira (fundador da Alura, uma das maiores edtechs do país) sobre "A IA vai roubar os empregos?", marcado para 29 de outubro de 2026, no Auditório István Jancsó da Biblioteca Brasiliana, com inscrição gratuita.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>É um sinal de que o diálogo entre academia e mercado sobre automação e deslocamento de empregos por IA está ganhando espaço público no Brasil, para além de relatórios e surveys — vale acompanhar se sai algum material público (gravação, resumo) depois do evento.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul><li><a href="https://jornal.usp.br/universidade/inteligencia-artificial-e-futuro-do-trabalho-sao-temas-de-encontro-promovido-na-usp/">Jornal da USP — "Inteligência artificial e futuro do trabalho são temas de encontro promovido na USP"</a></li></ul>
+</div>
+</article>
+
+<h2 class="section-title" id="sec4-pt"><span class="num">04</span>Tendências de ferramentas e soluções</h2>
+<p class="section-intro">Duas movimentações estruturais na camada de armazenamento de dados: a guerra de formatos de tabela está se dissolvendo em interoperabilidade, e o motor analítico embarcado que começou como ferramenta de notebook virou alvo de aquisição por um hyperscaler.</p>
+
+<article class="item">
+<h3>Iceberg e Delta Lake deixam de ser uma escolha binária — e passam a operar sobre os mesmos arquivos</h3>
+<p>Depois de anos de disputa entre Apache Iceberg e Delta Lake, 2026 é o ano em que as duas camadas de metadados passam a operar sobre os mesmos arquivos Parquet, tornando o formato uma configuração de metadado, e não mais uma decisão de arquitetura irreversível. No Data+AI Summit de junho de 2026, a Databricks anunciou que tabelas Delta e Iceberg gerenciadas pelo Unity Catalog compartilham o mesmo armazenamento físico: a feature UniForm publica metadados Iceberg a partir de tabelas Delta automaticamente, e o Unity Catalog passou a expor uma Iceberg REST Catalog API para que engines externas (Spark, Trino, Snowflake, Flink) leiam e escrevam nessas tabelas sem cópia de dados. Em paralelo, a Snowflake colocou em disponibilidade geral, em fevereiro de 2026, suporte a leitura de tabelas Iceberg gerenciadas no Unity Catalog, e ampliou isso para escrita no Azure em abril de 2026.</p>
+<p class="caveat">O anúncio-chave (Data+AI Summit da Databricks) é de junho de 2026 — fora da nossa janela preferencial de três meses —, mas segue sendo o desenvolvimento mais substancial e ainda vigente sobre esse tema; não houve anúncio mais recente que o supere.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>O mecanismo por trás disso é a maturação da especificação Iceberg v3 (ratificada em 2025, com releases estáveis ao longo de 2026), que adicionou deletion vectors, tipo VARIANT para dados semiestruturados e row lineage — justamente as lacunas que levavam equipes a escolher Delta por performance em updates e deletes. Com essas lacunas fechadas, o custo de interoperabilidade cai: uma equipe de dados pode escrever com Spark ou Databricks e consultar a mesma tabela física pelo Snowflake ou por um motor open-source como Trino ou DuckDB, sem pipelines de replicação. Isso reduz o incentivo para lakehouses monolíticos de um único fornecedor e empurra a competição para catálogo, governança e otimização de manutenção de tabela (compaction, clustering) — não mais para "qual formato você escolheu".</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://www.databricks.com/blog/unity-catalog-and-next-era-apache-icebergtm">Databricks Blog — "Unity Catalog and the next era of Apache Iceberg"</a></li>
+<li><a href="https://docs.snowflake.com/release-notes/2026/other/2026-04-06-iceberg-write-support-azure-unity-catalog">Snowflake Release Notes, 06/04/2026 — suporte a escrita em tabelas Iceberg do Unity Catalog no Azure (GA)</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>A AWS compra a DuckLabs — e o motor embutido que "cabe num notebook" entra para dentro da nuvem</h3>
+<p>Em 26 de agosto de 2026, a DuckLabs — empresa de Amsterdã por trás do DuckDB — anunciou um acordo definitivo para ser incorporada pela Amazon Web Services. É um evento relevante para quem acompanha a ascensão de motores analíticos embarcados (in-process, colunar, sem necessidade de cluster): o DuckDB passou de curiosidade acadêmica a peça de infraestrutura cobiçada por um hyperscaler. A AWS foi explícita em dizer que não está comprando o projeto DuckDB em si — DuckDB, DuckLake e o modo servidor em preview "Quack" continuam sob licença MIT, governados pela DuckDB Foundation, sem fins lucrativos — apenas contratando os cerca de 30 engenheiros da DuckLabs, incluindo os criadores Hannes Mühleisen e Mark Raasveldt, que permanecem em Amsterdã.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>O mecanismo de fundo é a mesma dinâmica que já motivou crítica pública de concorrentes como a MotherDuck (que constrói um data warehouse serverless sobre o DuckDB): hyperscalers esperam um projeto open-source atingir escala suficiente e então o absorvem como serviço gerenciado — a colaboração entre AWS e DuckLabs já existia desde 2024–2025, quando o DuckDB ganhou suporte nativo em Amazon S3 Tables e Amazon SageMaker Lakehouse. Como contexto de tração: o projeto atingiu 40 mil estrelas no GitHub em agosto de 2026 e soma mais de 671 milhões de downloads acumulados no PyPI (62,3 milhões apenas nos últimos 30 dias, número que inclui tráfego de CI). Espera-se aprofundamento da integração DuckDB em serviços AWS (S3 Tables, SageMaker, Athena), o que deve baratear consultas ad hoc sobre dados no lake sem exigir warehouses sempre ativos — um padrão que equipes de dados já vêm adotando para notebooks de exploração e pipelines batch de menor escala.</p>
+<p class="caveat">Não encontramos declaração pública direta de Mühleisen ou Raasveldt sobre a aquisição nas fontes consultadas — apenas a nota oficial da DuckLabs e a reação crítica de terceiros —, então evitamos atribuir citações não verificadas a eles. Também não encontramos, nesta semana, survey recente e verificável sobre adoção de bancos de dados vetoriais ou participação de mercado entre frameworks de ML (PyTorch, JAX, TensorFlow) — os números disponíveis vinham de blogs de fornecedores ou conteúdo otimizado para SEO com valores conflitantes, o que não atende ao nosso critério de fonte verificável; preferimos registrar essa lacuna a forçar um dado.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://duckdb.org/2026/08/26/ducklabs-to-join-aws">duckdb.org, 26/08/2026 — "DuckLabs to Join AWS, Projects to Remain Open Source"</a></li>
+<li><a href="https://duckdb.org/2026/08/05/github-40k-stars">duckdb.org, 05/08/2026 — "Thank You for 40,000 Stars on GitHub"</a></li>
+</ul>
+</div>
+</article>
+
+<h2 class="section-title archive-title">Relatórios anteriores</h2>
+<ul class="archive-list">
+<li><a href="archive/2026-10-16.html">16 de outubro de 2026</a></li>
+<li><a href="archive/2026-10-09.html">9 de outubro de 2026</a></li>
+<li><a href="archive/2026-10-02.html">2 de outubro de 2026</a></li>
+<li><a href="archive/2026-09-25.html">25 de setembro de 2026</a></li>
+<li><a href="archive/2026-09-18.html">18 de setembro de 2026</a></li>
+<li><a href="archive/2026-09-11.html">11 de setembro de 2026</a></li>
+<li><a href="archive/2026-08-28.html">28 de agosto de 2026</a></li>
+<li><a href="archive/2026-08-21.html">21 de agosto de 2026</a></li>
+<li><a href="archive/2026-08-17.html">17 de agosto de 2026</a></li>
+<li><a href="archive/2026-08-16.html">16 de agosto de 2026</a></li>
+</ul>
+
+<div class="methodology">
+<strong>Nota metodológica.</strong> Este digest é produzido semanalmente por um agente de pesquisa que busca ativamente fontes primárias — papers acadêmicos no arXiv, blogs de pesquisa e engenharia de empresas de referência, universidades e surveys de mercado — em vez de responder de memória. Toda afirmação não trivial é acompanhada de um link verificável. Nesta edição, o acesso direto (fetch de página completa) funcionou para anthropic.com, arxiv.org e para a busca cruzada de múltiplas fontes independentes, mas falhou, por restrição de rede do ambiente de execução, para netflixtechblog.com, databricks.com e bain.com; para esses domínios, os números foram confirmados por cruzamento entre buscas independentes que citam o mesmo conteúdo primário, com qualquer detalhe que não pôde ser confirmado diretamente sinalizado como tal no texto. Três pontos de dado usados nesta edição são mais antigos que a janela preferencial de três meses — o paper CausalSmith, de julho de 2026, e os anúncios de convergência entre Iceberg e Delta Lake no Data+AI Summit da Databricks, de junho de 2026 — e isso é sinalizado explicitamente nos respectivos textos, por serem, segundo nossa pesquisa, as referências mais atuais e substanciais disponíveis sobre os temas nesta data. Quando não encontramos um dado novo e verificável para um tópico (surveys de adoção de bancos de dados vetoriais e frameworks de ML, nesta edição), preferimos dizer isso explicitamente a forçar uma generalização.
+</div>
+
+<div class="contact">
+  <p class="name">Ri Gonçalves</p>
+  <p><a href="mailto:goncalves.r@pm.me">goncalves.r@pm.me</a> · <a href="https://github.com/GoncalvesRD">github.com/GoncalvesRD</a></p>
+</div>
+
+<footer class="report-footer">
+  <p>Publicado via GitHub Pages a partir de <a href="https://github.com/GoncalvesRD/ds-trends">github.com/GoncalvesRD/ds-trends</a>.</p>
+</footer>
+
+</div>
+
+<div class="lang-block" data-lang="en" hidden>
+
+<header class="report-header">
+  <h1>Trends in Data Science, Machine Learning and Applied AI</h1>
+  <p class="dek">MIT agents spend 30 hours "playing" alone on a virtual island and come back more capable, Databricks triples agent task-completion rates by giving agents long-term memory, and junior data scientists' real wages in Brazil have fallen 14% since 2021 while the market median rose 20%.</p>
+</header>
+
+<div class="byline">
+  <div class="avatar">RG</div>
+  <div>
+    <div class="name">Ri Gonçalves</div>
+    <div class="sub"><a href="https://goncalvesrd.github.io/ds-trends/">goncalvesrd.github.io/ds-trends</a> · October 23, 2026</div>
+  </div>
+</div>
+
+<nav class="toc">
+  <p class="toc-title">In this issue</p>
+  <ol>
+    <li><a href="#sec1-en">General trends in Data Science / ML / applied AI</a> — MIT researchers leave 13 Claude agents to play freely on a virtual island for 30 hours and they come back more capable, Harness² teaches agents to evolve their own execution infrastructure without a ground-truth verifier, and Stanford's CausalSmith proves causal-inference theorems with formal Lean verification.</li>
+    <li><a href="#sec2-en">Streaming and Globoplay's competitors</a> — Databricks triples agent task-completion rates by giving agents long-term memory, Netflix automates container right-sizing in its media processing pipeline, and Anthropic donates the Agent Skills standard to the Agentic AI Foundation.</li>
+    <li><a href="#sec3-en">The Data Science market in Brazil</a> — State of Data Brazil shows junior data scientists' real wages down 14% since 2021 while the market's overall median rose 20%, and USP hosts a public debate on AI and the future of work.</li>
+    <li><a href="#sec4-en">Trends in tools and solutions</a> — Iceberg and Delta Lake start operating on the same Parquet files inside Unity Catalog, and AWS acquires DuckLabs, the company behind DuckDB.</li>
+  </ol>
+</nav>
+
+<h2 class="section-title" id="sec1-en"><span class="num">01</span>General trends in Data Science, Machine Learning and applied AI</h2>
+<p class="section-intro">Three signals of where agent research is heading: giving agents unstructured free time may work as a disguised form of pre-training, the "harness" layer wrapped around a model is now as optimizable as its weights, and automated theorem-proving only matters if formal verification is paired with an audit of what the statement actually says.</p>
+
+<article class="item">
+<h3>MIT researchers leave AI agents to "play" alone on a virtual island — and it improves their performance afterward</h3>
+<p>Nathan Cloos, Antonio Norelli, Daniel Durbin, Jacob Andreas, Daniela Rus and Phillip Isola, of MIT CSAIL, published "Is this machine playing?" on October 5, 2026 (arXiv:2610.07130, still unpublished and not peer-reviewed). The experiment ran 13 instances of an embodied coding agent nicknamed "Eko" — built on Claude Opus 4.7, with autonomous execution and long-term memory persisted to text files — on a simulated virtual island called Clawblox, for 30 real-time hours, with no task, goal, or reward function of any kind.</p>
+<p>With no external goal, the agents started building structures, inventing games, and running small physics experiments inside the simulator itself. The authors argue this behavior satisfies four behavioral signatures that ethology uses to define "play" — it's not just noise or random action. The most concrete finding: 6 of the 13 agents independently discovered that a block thrown mid-jump inherits the jump's velocity and flies much higher — a physics mechanic that, according to the researchers themselves, the simulator was not meant to allow. That's emergent exploration of an undocumented state space, with no instruction to look for it.</p>
+<span class="label">How the market is applying this</span>
+<p>After the free-play phase, the same agents were tested on new tasks and outperformed copies that hadn't gone through the island — with one notable exception: on the goal of building the tallest tower, the two groups performed similarly, so the benefit isn't universal. This is practical evidence in favor of including undirected free time as part of the autonomous-agent development pipeline — a kind of self-generated curriculum — instead of optimizing exclusively for the target task at every point of training or fine-tuning. This is still very recent, non-peer-reviewed research; there is no known product adoption, and UC Berkeley cognitive scientist Eunice Yiu praised the work but noted the paper doesn't establish whether the models are genuinely "playing" in the full sense of the term.</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://arxiv.org/abs/2610.07130">arXiv:2610.07130 — "Is this machine playing?"</a></li>
+<li><a href="https://techcrunch.com/2026/10/22/left-alone-with-nothing-to-do-ai-agents-started-playing/">TechCrunch, October 22, 2026 — "Left alone with nothing to do, AI agents started playing"</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Harness²: agents that evolve their own execution infrastructure, not just the model's weights</h3>
+<p>Most of the performance gain from AI agents in production today doesn't come from swapping the base model, but from hand-crafted "harness" engineering — the layer of prompts, tools, retry logic and verification built around an LLM. Researchers at Northwestern University and Google Cloud AI Research proposed Harness² (arXiv:2610.14224, October 2026), a plug-and-play framework that automates exactly that part: evolving the harness for open-world tasks where, at test time, there is no correctness verifier — the common scenario in real business-task automation, quite different from benchmarks with a known right answer.</p>
+<p>The mechanism has two layers of recursion. At the task level, a contrastive step called "Propose–Probe–Compose" generates variations of the current harness, tests them, and recomposes the best version. At the harness level, edits that worked are distilled into reusable experience, stored and reused on future tasks — meaning the system itself learns to improve its own execution infrastructure over time, cumulatively, instead of restarting prompt tuning from scratch on every new task.</p>
+<span class="label">How the market is applying this</span>
+<p>Applied on top of GLM-5 and Gemini 3.5 Flash — kept frozen, with no retraining at all — Harness² reported gains of up to 11.5 points on the WorkBuddy-Bench benchmark and 11.8 percentage points on the LAB benchmark, both focused on open-world agent tasks with no ground-truth verifier.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Harness² gains 11.5 points on WorkBuddy-Bench and 11.8 points on the LAB benchmark, on frozen models">
+    <title>Harness² performance gain over a static harness</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="33" width="60" height="107" fill="var(--text)"/>
+    <text x="90" y="27" text-anchor="middle" class="chart-val">+11.5 pts</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">WorkBuddy-Bench</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">+11.8 pts</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">LAB</text>
+  </svg>
+  <figcaption>Harness² gain over a static harness, on two no-ground-truth agent benchmarks (GLM-5 and Gemini 3.5 Flash, self-reported, Oct/2026).</figcaption>
+</figure>
+<p>Coming from a Google Cloud product team (not purely academic), the result suggests intent to use this in Google Cloud agent products, but there's no announcement yet of commercial availability for the method — and the numbers above are self-reported by the authors, still without independent validation.</p>
+<div class="refs">
+<strong>References</strong>
+<ul><li><a href="https://hyper.ai/en/papers/2610.14224">arXiv:2610.14224 — "Harness²" (via hyper.ai)</a></li></ul>
+</div>
+</article>
+
+<article class="item">
+<h3>CausalSmith: an agentic pipeline proves causal-inference theorems — and mechanically verifies every proof in Lean 4</h3>
+<p>Jiyuan Tan and Vasilis Syrgkanis — who leads the Stanford Causal AI Lab and is Associate Director of the Stanford Causal Science Center — published CausalSmith on July 24, 2026 (arXiv:2607.22511), a three-stage agentic framework — topic selection, formalization and presentation — that generates candidate causal-inference theorems and mechanically verifies them against Causalean, a purpose-built Lean 4 library with thousands of already-verified mathematical statements (7,035, per the paper's documented version) covering causal models, do-calculus, potential outcomes and identification methods.</p>
+<p>The central point isn't "an LLM that writes math" — that already exists in various forms. It's the audit mechanism: Lean's kernel verification guarantees a proof is logically valid given its assumptions, but doesn't guarantee the formal statement actually captures the informal natural-language claim that motivated the search — so the pipeline adds a separate step, comparing every formal theorem against the original claim. This directly attacks the main risk of "formalized mathematical hallucination": proving something true but irrelevant to the real research question. Reusable lemmas generated in one run are promoted back into the Causalean library, creating a cycle of accumulating formal knowledge across successive runs.</p>
+<p class="caveat">The paper is from July 2026 — just outside our preferred three-month window — but it remains, per our research, the most current and substantial reference on the system, with no update since then.</p>
+<span class="label">How the market is applying this</span>
+<p>There is, so far, no case of a company using CausalSmith in production — this is basic research in causal methodology, not an industry-adopted tool, and it's worth saying that explicitly rather than forcing an example. The practical interest for anyone working in applied causal inference (pricing, online experiments, product econometrics) is medium-term: a pipeline that accumulates a verified library of identification results could eventually serve as a curated knowledge base for causal-inference tools — but that doesn't exist as a product yet.</p>
+<div class="refs">
+<strong>References</strong>
+<ul><li><a href="https://arxiv.org/abs/2607.22511">arXiv:2607.22511 — "CausalSmith: A Formally Grounded, Self-Improving Agentic Framework for Automated Research in Causal Inference"</a></li>
+<li><a href="https://github.com/Jiyuan-Tan/CausalForge">github.com/Jiyuan-Tan/CausalForge — code, the Causalean library and run records</a></li></ul>
+</div>
+</article>
+
+<section class="globoplay">
+<h2 class="section-title" id="sec2-en"><span class="num">02</span>Streaming and Globoplay's competitors</h2>
+<p class="section-intro">Three updates this week: Databricks gives agents long-term memory and triples enterprise task-completion rates, Netflix tackles wasted compute capacity in its own video processing pipeline, and Anthropic — a source we track independently of streaming relevance — donates its agent "skills" standard to a neutral foundation.</p>
+
+<article class="item">
+<h3>Databricks gives agents long-term memory and triples enterprise task-completion rates</h3>
+<p>Databricks launched Agent Memory in beta around October 20, 2026, inside Agent Bricks (its agent-building platform), built on Lakebase and an internal research architecture called MemCurrent. The motivation is a familiar problem for anyone running LLM agents in production: without persistent memory across sessions, every new conversation or run rebuilds context from scratch — re-injecting repeated information, driving up token cost, and losing continuity on decisions and preferences already established in earlier interactions.</p>
+<p>The mechanism combines three memory access patterns: plugins that automatically capture and load context on every interaction, tools the agent itself can call on demand when it decides it needs a specific piece of information, and a background consolidation pipeline (which the team calls "offline dreaming") that processes what happened, distinguishing between episodic memory (specific events) and derived memory (patterns and preferences inferred over time).</p>
+<span class="label">How the market is applying this</span>
+<p>In an internal benchmark of 114 enterprise tasks (derived from 2,233 historical sessions across 29 users), the completion rate rose from 22.3% without memory to 68.4% with MemCurrent — a roughly 3x gain on a direct business metric, not an abstract academic benchmark — while using 31% fewer tokens and finishing tasks 26% faster. On public synthetic-conversation benchmarks, MemCurrent reached 88.1% versus 87.8% for using the full context, while consuming about 12 times fewer input tokens; as a competitive reference, the open-source memory framework Mem0 scored 43.9% on the same internal Databricks test.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Task completion rate rises from 22.3% without memory to 68.4% with MemCurrent">
+    <title>Enterprise task completion, with and without long-term memory</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="104" width="60" height="36" fill="var(--text)"/>
+    <text x="90" y="98" text-anchor="middle" class="chart-val">22.3%</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">No memory</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">68.4%</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">With MemCurrent</text>
+  </svg>
+  <figcaption>Completion rate across 114 enterprise tasks, internal Databricks benchmark (Oct/2026) — still without independent validation.</figcaption>
+</figure>
+<p>For streaming and media operations already using agents for internal automation (support, catalog curation, content triage), the result is a concrete argument for giving production agents persistent memory instead of re-injecting context from scratch on every call — with the caveat that the numbers come from an internal Databricks benchmark, built on its own Genie conversations, still without independent reproduction.</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://www.databricks.com/blog/introducing-agent-memory-databricks">Databricks Blog — "Introducing Agent Memory on Databricks"</a></li>
+<li><a href="https://www.databricks.com/blog/memcurrent-designing-persistent-memory-production-agents">Databricks Blog — "MemCurrent: Designing Persistent Memory for Production Agents"</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Netflix automates container right-sizing in its own media processing pipeline</h3>
+<p>Stratum is Netflix's internal "serverless" media processing platform — encoding, packaging, quality inspection and scoring — with each workload running as a container scheduled in batch on Titus, the company's container orchestration platform. In a Netflix TechBlog post published October 14, 2026, Violetta Pidvolotska and Naveen Mareddy describe a classic problem of any data pipeline at scale: workload owners declare CPU, memory, disk and network limits by hand, and those values rarely stay correct for long — initial over-provisioning out of caution, or slow drift as code and data change, with nobody revisiting the configuration.</p>
+<span class="label">How the market is applying this</span>
+<p>The Stratum Resource Tuner (SRT) automates that adjustment from real usage telemetry, with the stated goal that workload owners never need to manually specify resource configuration. The rollout started with a small number of high-throughput, latency-flexible workloads, which already account for 70% to 80% of the platform's total resource usage — meaning Netflix prioritized where the efficiency gain is largest before expanding to the rest of the workload catalog. We did not find, in the available sources, a final cost-savings or freed-capacity number — Netflix hasn't published it (or we couldn't confirm it), and it's more honest to say so than to estimate a percentage. Still, this is exactly the kind of problem any streaming operation with video processing at scale — including Globoplay's competitors — faces: compute capacity allocated "just in case" is direct cloud cost, and automatic, telemetry-driven tuning instead of manual configuration is a pattern likely to spread to other media platforms.</p>
+<div class="refs">
+<strong>References</strong>
+<ul><li><a href="https://noise.getoto.net/2026/10/14/netflix-stratum-media-processing-automated-container-right-sizing/">Netflix TechBlog, October 14, 2026 — "Netflix Stratum Media Processing: Automated Container Right-Sizing" (syndicated copy; netflixtechblog.com could not be reached directly from our execution environment)</a></li></ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Anthropic donates the Agent Skills standard to the Agentic AI Foundation</h3>
+<p>Agent Skills is the open standard Anthropic created to package task-specific knowledge and workflow that an AI agent can load — a folder with a SKILL.md file, optionally including scripts and reference material. On October 22, 2026, Anthropic announced it is donating the standard to the Agentic AI Foundation (AAIF), a foundation under the Linux Foundation that Anthropic itself co-founded with Block and OpenAI in 2025 — and to which it had already donated the Model Context Protocol (MCP). It's the same governance pattern as MCP: taking an agent protocol out of a single vendor's hands and putting it under a neutral foundation, maintained by engineers from Anthropic, Google, OpenAI and other companies acting as individuals — David Soria Parra and Mahesh Murag are the named Lead Maintainers.</p>
+<span class="label">How the market is applying this</span>
+<p>Since the standard's original publication, more than 70 agent platforms have already integrated it — including ChatGPT, Cursor, GitHub Copilot and VS Code — with 1 million skills published and nearly 280 million installations, according to the announcement itself. For anyone building production agents, the lesson is interoperability: don't get locked into a vendor-proprietary "skill" or tool-definition format, since the ecosystem is converging, as already happened with MCP for tool connections. The roadmap ahead includes versioned releases, a formal proposal process, and security guidelines for skill authors and installers — a relevant point given that third-party skills are, essentially, code and instructions an agent loads and executes.</p>
+<div class="refs">
+<strong>References</strong>
+<ul><li><a href="https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation">Anthropic Newsroom, October 22, 2026 — "Donating Agent Skills to the Agentic AI Foundation"</a></li></ul>
+</div>
+</article>
+
+</section>
+
+<h2 class="section-title" id="sec3-en"><span class="num">03</span>The Data Science market in Brazil</h2>
+<p class="section-intro">The most recent picture of Brazil's data market shows a divergence that doesn't show up in the averages: the market as a whole gained purchasing power since 2021, but whoever is entering the career now earns less, in real terms, than whoever entered five years ago.</p>
+
+<article class="item">
+<h3>State of Data Brazil: median real pay up 20% since 2021, but junior-level real pay down 14%</h3>
+<p>The 2025–2026 edition of State of Data Brazil (Data Hackers, in partnership with Bain &amp; Company) was fielded between October 20 and December 22, 2025, with 3,495 respondents. According to the report, average nominal pay grew 6.7% between 2024 and 2025, against inflation of 4.26% over the same period — a positive real gain for the market on average. An open analysis cross-referencing all six editions of the survey run so far (2019–2026), available in Data Hackers' public GitHub repository, digs deeper into that number and finds a divergence by seniority level: while the market's median real salary is about 20% above its 2021 level, junior-level real pay fell approximately 14% over the same period.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Market median real pay rises 20% since 2021, while junior-level real pay falls 14% over the same period">
+    <title>Real salary change since 2021, by level</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="63" width="60" height="77" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="57" text-anchor="middle" class="chart-val">−14%</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Junior level</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">+20%</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Market median</text>
+  </svg>
+  <figcaption>Real salary change since 2021, by seniority level (open analysis across 6 editions of State of Data Brazil, Data Hackers).</figcaption>
+</figure>
+<p class="caveat">The repository that cross-references all six editions itself warns that they used different questionnaires and salary bands — the 2019 edition, for example, had no junior/mid/senior segmentation — so the year-over-year comparison should be read as a directional trend, not an absolute-precision figure.</p>
+<span class="label">How the market is applying this</span>
+<p>This divergence helps explain another finding from the same survey: compensation is already the #1 factor in job-switching decisions for 83.4% of respondents (up from 75.0% in the previous edition), and 51.3% said they'd interviewed with another company in the last six months — a sign of high mobility and salary dissatisfaction, concentrated precisely among those closer to career entry. On generative AI, 90% of respondents say it's a company initiative where they work, but adoption is mostly decentralized (58.4% with no central platform or governance); among those who haven't adopted it, the top cited barriers are unprepared data (34%) and lack of expertise or resources (33.5%). For anyone leading hiring in data teams, the takeaway is to read the market by level: the "heating up" of Brazil's data market isn't distributed equally between those who already have experience and those entering now.</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://www.bain.com/pt-br/insights/state-of-data-2025/">Bain &amp; Company — "State of Data 2025-2026"</a></li>
+<li><a href="https://github.com/data-hackers-br/state-of-data-brazil">github.com/data-hackers-br/state-of-data-brazil — open data from the 6 editions of State of Data Brazil</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>USP hosts public debate on AI and the future of work</h3>
+<p>We did not find, this week, a new quantitative and verifiable data point on the Brazilian data market beyond the State of Data Brazil item above — but it's worth noting a calendar event: USP (IME), via Jornal da USP, announced a public debate between Marcelo Finger (computer scientist at IME-USP, AI and logic researcher) and Paulo Silveira (founder of Alura, one of the country's largest edtechs) on "Will AI steal jobs?", scheduled for October 29, 2026, at the István Jancsó Auditorium of the Biblioteca Brasiliana, with free registration.</p>
+<span class="label">How the market is applying this</span>
+<p>It's a sign that the dialogue between academia and industry on automation and AI-driven job displacement is gaining public space in Brazil, beyond reports and surveys — worth watching whether any public material (recording, summary) comes out after the event.</p>
+<div class="refs">
+<strong>References</strong>
+<ul><li><a href="https://jornal.usp.br/universidade/inteligencia-artificial-e-futuro-do-trabalho-sao-temas-de-encontro-promovido-na-usp/">Jornal da USP — "Inteligência artificial e futuro do trabalho são temas de encontro promovido na USP"</a></li></ul>
+</div>
+</article>
+
+<h2 class="section-title" id="sec4-en"><span class="num">04</span>Trends in tools and solutions</h2>
+<p class="section-intro">Two structural shifts in the data storage layer: the table-format war is dissolving into interoperability, and the embedded analytical engine that started as a notebook tool has become an acquisition target for a hyperscaler.</p>
+
+<article class="item">
+<h3>Iceberg and Delta Lake stop being a binary choice — and start operating on the same files</h3>
+<p>After years of rivalry between Apache Iceberg and Delta Lake, 2026 is the year the two metadata layers start operating on the same Parquet files, turning the table format into a metadata setting rather than an irreversible architecture decision. At the June 2026 Data+AI Summit, Databricks announced that Delta and Iceberg tables managed by Unity Catalog share the same physical storage: the UniForm feature automatically publishes Iceberg metadata from Delta tables, and Unity Catalog now exposes an Iceberg REST Catalog API so external engines (Spark, Trino, Snowflake, Flink) can read and write those tables without copying data. In parallel, Snowflake made read support for Iceberg tables managed in Unity Catalog generally available in February 2026, and extended it to writes on Azure in April 2026.</p>
+<p class="caveat">The key announcement (Databricks' Data+AI Summit) is from June 2026 — outside our preferred three-month window — but it remains the most substantial and still-current development on this topic; no more recent announcement has superseded it.</p>
+<span class="label">How the market is applying this</span>
+<p>The underlying mechanism is the maturing of the Iceberg v3 spec (ratified in 2025, with stable releases through 2026), which added deletion vectors, a VARIANT type for semi-structured data, and row lineage — precisely the gaps that used to make teams pick Delta for update/delete performance. With those gaps closed, interoperability cost drops: a data team can write with Spark or Databricks and query the same physical table through Snowflake or an open-source engine like Trino or DuckDB, with no replication pipelines. This reduces the incentive for single-vendor monolithic lakehouses and pushes competition toward catalog, governance, and table-maintenance optimization (compaction, clustering) — no longer toward "which format did you pick."</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://www.databricks.com/blog/unity-catalog-and-next-era-apache-icebergtm">Databricks Blog — "Unity Catalog and the next era of Apache Iceberg"</a></li>
+<li><a href="https://docs.snowflake.com/release-notes/2026/other/2026-04-06-iceberg-write-support-azure-unity-catalog">Snowflake Release Notes, 04/06/2026 — write support for Unity Catalog Iceberg tables on Azure (GA)</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>AWS acquires DuckLabs — the embedded engine that "fits in a notebook" moves into the cloud</h3>
+<p>On August 26, 2026, DuckLabs — the Amsterdam-based company behind DuckDB — announced a definitive agreement to be acquired by Amazon Web Services. It's a notable event for anyone tracking the rise of embedded analytical engines (in-process, columnar, no cluster required): DuckDB went from academic curiosity to infrastructure piece coveted by a hyperscaler. AWS was explicit that it is not buying the DuckDB project itself — DuckDB, DuckLake and the preview server mode "Quack" remain under the MIT license, governed by the nonprofit DuckDB Foundation — only hiring DuckLabs' roughly 30 engineers, including creators Hannes Mühleisen and Mark Raasveldt, who stay in Amsterdam.</p>
+<span class="label">How the market is applying this</span>
+<p>The underlying dynamic is the same one that already drew public criticism from competitors like MotherDuck (which builds a serverless data warehouse on top of DuckDB): hyperscalers wait for an open-source project to reach sufficient scale and then absorb it as a managed service — the AWS–DuckLabs collaboration already existed since 2024–2025, when DuckDB gained native support in Amazon S3 Tables and Amazon SageMaker Lakehouse. As traction context: the project hit 40,000 GitHub stars in August 2026 and has accumulated more than 671 million cumulative PyPI downloads (62.3 million in the last 30 days alone, a figure that includes CI traffic). Deeper DuckDB integration into AWS services (S3 Tables, SageMaker, Athena) is expected, which should lower the cost of ad hoc queries over lake data without requiring always-on warehouses — a pattern data teams are already adopting for exploration notebooks and smaller-scale batch pipelines.</p>
+<p class="caveat">We found no direct public statement from Mühleisen or Raasveldt about the acquisition in the sources consulted — only DuckLabs' official note and critical reactions from third parties — so we avoided attributing unverified quotes to them. We also did not find, this week, a recent and verifiable survey on vector database adoption or market share among ML frameworks (PyTorch, JAX, TensorFlow) — the available numbers came from vendor blogs or SEO-optimized content with conflicting values, which doesn't meet our verifiable-source bar; we'd rather flag that gap than force a data point.</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://duckdb.org/2026/08/26/ducklabs-to-join-aws">duckdb.org, 08/26/2026 — "DuckLabs to Join AWS, Projects to Remain Open Source"</a></li>
+<li><a href="https://duckdb.org/2026/08/05/github-40k-stars">duckdb.org, 08/05/2026 — "Thank You for 40,000 Stars on GitHub"</a></li>
+</ul>
+</div>
+</article>
+
+<h2 class="section-title archive-title">Previous reports</h2>
+<ul class="archive-list">
+<li><a href="archive/2026-10-16.html">October 16, 2026</a></li>
+<li><a href="archive/2026-10-09.html">October 9, 2026</a></li>
+<li><a href="archive/2026-10-02.html">October 2, 2026</a></li>
+<li><a href="archive/2026-09-25.html">September 25, 2026</a></li>
+<li><a href="archive/2026-09-18.html">September 18, 2026</a></li>
+<li><a href="archive/2026-09-11.html">September 11, 2026</a></li>
+<li><a href="archive/2026-08-28.html">August 28, 2026</a></li>
+<li><a href="archive/2026-08-21.html">August 21, 2026</a></li>
+<li><a href="archive/2026-08-17.html">August 17, 2026</a></li>
+<li><a href="archive/2026-08-16.html">August 16, 2026</a></li>
+</ul>
+
+<div class="methodology">
+<strong>Methodological note.</strong> This digest is produced weekly by a research agent that actively searches primary sources — academic papers on arXiv, research and engineering blogs from reference companies, universities, and market surveys — instead of answering from memory. Every non-trivial claim is accompanied by a verifiable link. In this edition, direct full-page fetch worked for anthropic.com, arxiv.org and cross-referenced independent searches, but failed, due to the execution environment's network restrictions, for netflixtechblog.com, databricks.com and bain.com; for those domains, facts were verified by cross-referencing multiple independent searches citing the same primary content, with any detail that couldn't be directly confirmed flagged as such in the text. Three data points used in this edition are older than our preferred three-month window — the CausalSmith paper, from July 2026, and the Iceberg/Delta Lake convergence announcements from Databricks' Data+AI Summit, from June 2026 — and this is explicitly flagged in the respective texts, as they remain, per our research, the most current and substantial references available on these topics as of this date. When we couldn't find a new, verifiable data point for a topic (vector database and ML framework adoption surveys, in this edition), we preferred to say so explicitly rather than force a generalization.
+</div>
+
+<div class="contact">
+  <p class="name">Ri Gonçalves</p>
+  <p><a href="mailto:goncalves.r@pm.me">goncalves.r@pm.me</a> · <a href="https://github.com/GoncalvesRD">github.com/GoncalvesRD</a></p>
+</div>
+
+<footer class="report-footer">
+  <p>Published via GitHub Pages from <a href="https://github.com/GoncalvesRD/ds-trends">github.com/GoncalvesRD/ds-trends</a>.</p>
+</footer>
+
+</div>
+
+</main>
+<script>
+(function(){
+  var buttons = document.querySelectorAll('[data-lang-btn]');
+  var blocks = document.querySelectorAll('.lang-block');
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var lang = btn.getAttribute('data-lang-btn');
+      buttons.forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-lang-btn') === lang); });
+      blocks.forEach(function(block){
+        if (block.getAttribute('data-lang') === lang) {
+          block.removeAttribute('hidden');
+        } else {
+          block.setAttribute('hidden', '');
+        }
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
