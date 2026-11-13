@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digest DS/ML/IA — 6 de novembro de 2026</title>
+<style>
+:root{--bg:#ffffff;--text:#1a1a1a;--muted:#6b6b6b;--hairline:#e6e6e6;--link:#1a1a1a;--link-hover:#1a8917;--serif:Georgia,'Iowan Old Style','Palatino Linotype','Book Antiqua',Palatino,serif;--sans:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;--globoplay-red:#FB0234;}
+*{box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:var(--serif);margin:0;padding:0 24px 100px;}
+main{max-width:700px;margin:0 auto;}
+[hidden]{display:none!important;}
+.lang-toggle{display:flex;justify-content:flex-end;gap:8px;align-items:center;padding:20px 0 0;font-family:var(--sans);font-size:.78rem;}
+.lang-toggle button{background:none;border:1px solid var(--hairline);border-radius:20px;padding:5px 14px;font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.03em;color:var(--muted);cursor:pointer;}
+.lang-toggle button.active{color:#fff;background:var(--text);border-color:var(--text);}
+header.report-header{padding:24px 0 0;}
+header.report-header h1{font-size:2.4rem;line-height:1.25;font-weight:400;margin:0 0 16px;letter-spacing:-.01em;}
+header.report-header .dek{font-size:1.15rem;color:var(--muted);font-style:italic;margin:0 0 28px;line-height:1.5;}
+.byline{display:flex;align-items:center;gap:14px;padding:20px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);margin-bottom:40px;font-family:var(--sans);}
+.avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;background:#1a1a1a;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.05rem;font-weight:600;flex-shrink:0;}
+.byline .name{font-weight:600;font-size:.98rem;color:var(--text);line-height:1.5;}
+.byline .sub{font-size:.85rem;color:var(--muted);line-height:1.5;}
+.byline .sub a{color:var(--muted);}
+nav.toc{font-family:var(--sans);background:#fafafa;border:1px solid var(--hairline);border-radius:10px;padding:22px 26px;margin-bottom:48px;}
+nav.toc .toc-title{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 14px;}
+nav.toc ol{margin:0;padding-left:22px;}
+nav.toc li{margin-bottom:12px;font-size:.92rem;line-height:1.55;color:var(--muted);}
+nav.toc li:last-child{margin-bottom:0;}
+nav.toc li a{font-weight:600;color:var(--text);text-decoration:none;}
+nav.toc li a:hover{color:var(--link-hover);}
+h2.section-title{font-family:var(--serif);font-size:1.7rem;font-weight:400;margin:64px 0 8px;scroll-margin-top:20px;}
+h2.section-title .num{color:var(--muted);font-size:1.1rem;margin-right:6px;}
+p.section-intro{font-family:var(--sans);color:var(--muted);font-size:.92rem;margin:0 0 32px;line-height:1.6;}
+article.item{margin:0 0 32px;}
+article.item+article.item{border-top:1px solid var(--hairline);padding-top:32px;}
+article.item h3{font-size:1.45rem;font-weight:400;line-height:1.35;margin:0 0 14px;}
+article.item p{font-size:1.08rem;line-height:1.8;margin:0 0 16px;color:var(--text);}
+.label{display:block;font-family:var(--sans);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:22px 0 8px;}
+.refs{margin-top:20px;font-family:var(--sans);font-size:.85rem;color:var(--muted);}
+.refs strong{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;}
+.refs ul{margin:6px 0 0;padding-left:0;list-style:none;}
+.refs li{margin-bottom:4px;}
+a{color:var(--link);text-decoration:underline;text-decoration-color:var(--hairline);text-underline-offset:2px;}
+a:hover{color:var(--link-hover);text-decoration-color:var(--link-hover);}
+.caveat{font-family:var(--sans);font-size:.85rem;color:var(--muted);font-style:italic;margin-top:6px;}
+section.globoplay h2.section-title,section.globoplay h2.section-title .num,section.globoplay .label{color:var(--globoplay-red);}
+section.globoplay article.item{border-left:3px solid var(--globoplay-red);padding-left:20px;}
+section.globoplay article.item+article.item{border-top:1px solid var(--hairline);}
+section.globoplay a{text-decoration-color:rgba(251,2,52,.3);}
+section.globoplay a:hover{color:var(--globoplay-red);text-decoration-color:var(--globoplay-red);}
+.methodology{font-family:var(--sans);background:#fafafa;border:1px solid var(--hairline);border-radius:8px;padding:18px 22px;font-size:.88rem;color:var(--muted);line-height:1.6;margin:64px 0 0;}
+.methodology strong{color:var(--text);}
+.contact{font-family:var(--sans);margin:28px 0 0;padding-top:24px;border-top:1px solid var(--hairline);font-size:.9rem;color:var(--muted);line-height:1.8;}
+.contact .name{color:var(--text);font-weight:600;}
+footer.report-footer{margin-top:24px;padding-top:20px;font-family:var(--sans);color:var(--muted);font-size:.82rem;}
+footer.report-footer a{color:var(--muted);}
+.archive-list{list-style:none;padding:0;margin:10px 0 0;font-family:var(--sans);}
+.archive-list li{padding:8px 0;border-bottom:1px solid var(--hairline);font-size:.92rem;}
+figure.chart{margin:24px 0;font-family:var(--sans);text-align:center;}
+figure.chart svg{width:100%;max-width:320px;height:auto;}
+figure.chart .chart-val{font-size:13px;font-weight:700;fill:var(--text);}
+figure.chart .chart-lbl{font-size:11px;fill:var(--muted);}
+figure.chart figcaption{font-size:.78rem;color:var(--muted);margin-top:8px;}
+h2.section-title.archive-title{margin-top:56px;}
+</style>
+</head>
+<body>
+<main>
+
+<div class="lang-toggle">
+  <button type="button" data-lang-btn="pt" class="active">PT</button>
+  <button type="button" data-lang-btn="en">EN</button>
+</div>
+
+<div class="lang-block" data-lang="pt">
+
+<header class="report-header">
+  <h1>Tendências em Data Science, Machine Learning e IA Aplicada</h1>
+  <p class="dek">A própria Anthropic mede quanto da sua pesquisa em IA já é feita por IA: 26% em agosto, contra menos de 1% em fevereiro. Na Netflix, um segundo agente que audita a análise causal de um primeiro agente corrige uma estimativa de retenção para 25% do valor original. E a Pinecone, pioneira do banco de vetores como serviço, abre o código do seu motor de busca para rodar dentro do Postgres — o banco que ela ajudou a tornar irrelevante.</p>
+</header>
+
+<div class="byline">
+  <div class="avatar">RG</div>
+  <div>
+    <div class="name">Ri Gonçalves</div>
+    <div class="sub"><a href="https://goncalvesrd.github.io/ds-trends/">goncalvesrd.github.io/ds-trends</a> · 6 de novembro de 2026</div>
+  </div>
+</div>
+
+<nav class="toc">
+  <p class="toc-title">Nesta edição</p>
+  <ol>
+    <li><a href="#sec1-pt">Tendências gerais em Data Science / ML / IA aplicada</a> — a Anthropic publica sua própria régua de quanto da pesquisa em IA já é automatizada por IA, o State of AI Report 2026 mostra a corrida se estreitando para três laboratórios enquanto a receita de OpenAI e Anthropic quase triplica, e um estudo de escala mostra que busca lexical simples (BM25) ainda vence agentes e RAG denso em corpora muito grandes.</li>
+    <li><a href="#sec2-pt">Streaming e concorrentes da Globoplay</a> — a Netflix Research mostra que decodificar recomendações token a token ainda vence a predição paralela em qualidade, a Netflix TechBlog abre o código de um agente crítico que corrige estimativas causais enviesadas, a Databricks leva vídeo e imagem para dentro de tabelas governadas, e a Anthropic expande seu programa de crédito de pesquisa para mais 20 instituições científicas.</li>
+    <li><a href="#sec3-pt">Mercado de Data Science no Brasil</a> — o Barômetro de Empregos de IA da PwC mostra vagas que exigem IA saltando de 1,1% para 3,6% do total de anúncios no país, crescendo 69% contra 9% do mercado geral.</li>
+    <li><a href="#sec4-pt">Tendências de ferramentas e soluções</a> — a Pinecone abre o código do seu motor de busca para rodar nativamente dentro do Postgres, a Temporal mais que dobra de valuation em sete meses puxada por demanda de orquestração de agentes de IA, e a Snowflake remove a fricção de migrar tabelas Iceberg para a v3 sem reescrevê-las.</li>
+  </ol>
+</nav>
+
+<h2 class="section-title" id="sec1-pt"><span class="num">01</span>Tendências gerais em Data Science, Machine Learning e IA Aplicada</h2>
+<p class="section-intro">Três sinais que se cruzam: os próprios laboratórios de ponta começam a medir, com metodologia própria e auditável, o quanto da sua pesquisa já é feita por IA; o relatório mais citado do setor documenta uma corrida que se estreitou para três competidores enquanto a receita dispara; e um estudo de escala rigoroso desafia a suposição de que RAG denso e agentes de busca são sempre superiores a um ranqueador lexical de décadas atrás.</p>
+
+<article class="item">
+<h3>A Anthropic mede quanto da sua própria pesquisa em IA já é feita por IA — e o número salta de menos de 1% para 26% em seis meses</h3>
+<p>Em 17 de setembro de 2026, a Anthropic publicou um conjunto de métricas para medir o ritmo de desenvolvimento de IA dentro de laboratórios de fronteira, construído de baixo para cima: cerca de 20% da equipe de pesquisa de modelos foi amostrada semanalmente, gerando uma base de aproximadamente 15 mil tarefas granulares organizadas numa taxonomia congelada (542 nós, 378 tarefas-folha), ponderada por tempo de pessoa. Cada tarefa é classificada numa escala de automação de cinco níveis da Epoch AI (AL1, "sem IA", a AL5, "totalmente autônomo") por um modelo Claude atuando como juiz, com checagem cruzada contra avaliadores humanos — a concordância exata entre juiz e humano foi de 59%, contra uma base de 35% de concordância humano-humano, e dentro de um nível de diferença em 97% dos casos.</p>
+<p>O resultado central: em agosto de 2026, o Claude já "lidera" (nível AL4 — completa a maior parte de uma tarefa de ponta a ponta, sob supervisão humana) 26% das tarefas de P&D em IA medidas, contra menos de 1% em fevereiro de 2026. O trabalho em nível AL3 ou acima (IA pelo menos colabora ativamente) já passa de 90%. Nenhuma tarefa atingiu AL5 (autonomia total) até o momento da publicação.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>A própria Anthropic é explícita sobre os limites do método: é uma métrica autorreportada, julgada por um modelo da própria empresa sobre o trabalho da própria empresa, com apenas dois pontos reais no tempo (fevereiro e agosto) — "tendência" aqui é uma linha entre dois pontos, não uma série longa. Ainda assim, é um dos primeiros esforços de um laboratório para quantificar autoaperfeiçoamento recursivo com uma taxonomia auditável em vez de anedota, e a métrica de supervisão de agentes que a acompanha (checada no passado pela METR) é o tipo de framework que equipes de dados em qualquer empresa podem adaptar para medir, internamente, o quanto de um pipeline de ML já roda sem revisão humana linha a linha — útil tanto para orçar headcount quanto para decidir onde a auditoria humana ainda é obrigatória.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://www.anthropic.com/institute/measuring-pace-of-ai-development">Anthropic, 17 de setembro de 2026 — "Measuring the pace of AI development inside frontier labs"</a></li>
+<li><a href="https://www.businesstoday.in/technology/story/anthropic-says-claude-now-leads-26-of-its-ai-rd-work-how-fast-is-ai-development-accelerating-556597-2026-09-19">Business Today, 19 de setembro de 2026 — cobertura com o detalhamento por nível AL4</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>State of AI Report 2026: a corrida de fronteira se estreita para três laboratórios enquanto a receita de OpenAI e Anthropic quase triplica</h3>
+<p>Publicado em 8 de outubro de 2026 por Nathan Benaich (Air Street Capital), o State of AI Report chega à sua nona edição anual e é hoje a síntese independente mais citada do setor, com revisão por especialistas externos antes do lançamento. O eixo central de 2026 é que a liderança em benchmark importa cada vez menos: o que decide a corrida agora é receita de inferência, acesso a infraestrutura de computação, e a capacidade de supervisionar frotas de agentes em produção com confiabilidade — ou seja, o eixo competitivo está migrando de "melhor modelo" para "quem consegue operar a frota de agentes mais lucrativa e mais confiável".</p>
+<p>A receita anualizada combinada de OpenAI e Anthropic chegou a cerca de US$ 105 bilhões no fim do verão (hemisfério norte) de 2026, partindo de aproximadamente US$ 30 bilhões no início do ano — um salto de cerca de 3,5x em oito meses. O relatório também documenta uma mudança geopolítica relevante para quem escolhe modelo aberto: entre 2024 e 2026, a participação de modelos chineses de peso aberto nas menções em papers do arXiv subiu de 9% para 31%, enquanto a dos modelos americanos caiu de 31% para 23% — a família Qwen já ultrapassou a Llama em menções.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Receita anualizada combinada de OpenAI e Anthropic sobe de cerca de US$ 30 bilhões no início de 2026 para cerca de US$ 105 bilhões no fim do verão de 2026">
+    <title>Receita anualizada combinada: OpenAI + Anthropic, 2026</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="108" width="60" height="32" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="102" text-anchor="middle" class="chart-val">~US$ 30 bi</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Início de 2026</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">~US$ 105 bi</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Fim do verão de 2026</text>
+  </svg>
+  <figcaption>Receita anualizada combinada (ARR) de OpenAI e Anthropic, segundo o State of AI Report 2026.</figcaption>
+</figure>
+<span class="label">Como o mercado está aplicando</span>
+<p>Para quem decide orçamento de inferência ou negocia contrato com provedor de modelo, o dado relevante não é só "a receita cresceu" — é que ela cresceu junto com uma concentração de poder de mercado em só três laboratórios, o que historicamente precede menos pressão de preço, não mais. Para quem avalia modelos abertos como alternativa de custo, a virada chinesa na participação de menções acadêmicas é um sinal de que vale a pena testar Qwen e pares chineses em benchmarks internos antes de assumir que Llama continua sendo a opção aberta padrão.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://www.stateof.ai/">Air Street Capital / Nathan Benaich, 8 de outubro de 2026 — "State of AI Report 2026"</a></li>
+<li><a href="https://fourweekmba.com/ai-state-of-ai-2026-openai-anthropic-run-rates-hit-105b/">FourWeekMBA, outubro de 2026 — cobertura dos números de receita do relatório</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>"BM25 Wins at Scale": busca lexical de décadas atrás ainda vence RAG denso e agentes de busca em corpora muito grandes</h3>
+<p class="caveat">Nota de atualidade: este paper foi publicado em 29 de julho de 2026, cerca de cinco semanas antes da janela de três meses preferida nesta edição. Usamos mesmo assim porque não encontramos nenhum estudo de escala igualmente rigoroso e mais recente sobre esta questão específica, e ela é diretamente relevante para qualquer equipe decidindo arquitetura de recuperação hoje.</p>
+<p>O estudo (arXiv:2607.26497) compara, de forma controlada, quatro paradigmas de recuperação — BM25 lexical, RAG denso por embeddings, RAG baseado em grafo, e um agente que navega o sistema de arquivos como um humano faria — variando o tamanho do corpus numa faixa de cerca de 450x, no benchmark sintético EnterpriseRAG-Bench (~500 mil documentos), mantendo fixos o modelo leitor e o protocolo de avaliação. O mecanismo por trás do resultado: agentes e RAG denso parecem fortes em corpus pequeno porque o agente consegue forçar bruta um pequeno espaço de busca e embeddings capturam semântica bem quando o conjunto de candidatos é pequeno — mas ambos degradam com a escala, o agente porque seu custo em chamadas de ferramenta cresce com o corpus sem que a acurácia acompanhe, e o RAG denso porque a similaridade de embedding fica mais ruidosa em coleções grandes e heterogêneas. BM25, por fazer correspondência exata de termos, é invariante à escala de um jeito que nenhuma das alternativas é.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>Por volta de 10 milhões de tokens de corpus, BM25 ultrapassa o agente de busca e lidera em acurácia em toda escala maior testada, com uma margem que se aproxima de 20 pontos na escala máxima. No menor patamar testado, o agente de busca por sistema de arquivos usa 39 vezes mais tokens de consulta por resposta do que BM25 para um ganho de acurácia que nem chega a ser estatisticamente significativo.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Na escala máxima do benchmark, BM25 atinge cerca de 50 pontos de acurácia, contra cerca de 31 do agente de busca por sistema de arquivos">
+    <title>Acurácia na escala máxima: BM25 vs. agente de busca</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="90" y="24" text-anchor="middle" class="chart-val">~50 pts</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">BM25</text>
+    <rect x="200" y="72" width="60" height="68" fill="var(--muted)" opacity="0.4"/>
+    <text x="230" y="66" text-anchor="middle" class="chart-val">~31 pts</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Agente de busca</text>
+  </svg>
+  <figcaption>EnterpriseRAG-Bench, corpus na escala máxima testada (~450x o menor patamar), arXiv:2607.26497.</figcaption>
+</figure>
+<p>Para quem está decidindo entre dar a um agente acesso de leitura livre a um repositório documental grande ou manter um índice BM25/híbrido na frente dele, este é um argumento concreto para não descartar o índice lexical como "tecnologia antiga" — ele continua sendo o ponto de menor custo e, a partir de uma certa escala, também o de maior acurácia. Os próprios autores advertem que a conclusão vale "nessas condições, a partir de uma certa escala" — não "BM25 sempre vence".</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul><li><a href="https://arxiv.org/abs/2607.26497">arXiv:2607.26497 — "BM25 Wins at Scale: A Scaling Study of Retrieval-Augmented Generation Paradigms"</a></li></ul>
+</div>
+</article>
+
+<section class="globoplay">
+<h2 class="section-title" id="sec2-pt"><span class="num">02</span>Streaming e concorrentes da Globoplay</h2>
+<p class="section-intro">Quatro movimentos: a Netflix Research questiona a suposição de que decodificação paralela é sempre melhor para recomendação generativa, a Netflix TechBlog abre o código de um agente crítico que corrige análises causais enviesadas, a Databricks estende governança de dados para vídeo e imagem dentro da própria tabela, e a Anthropic expande seu programa de crédito de pesquisa científica — sem nada de novo do Google Research especificamente sobre streaming ou recomendação nesta janela, o que registramos explicitamente em vez de forçar uma notícia que não existe.</p>
+
+<article class="item">
+<h3>Netflix Research: gerar recomendações token a token ainda vence a predição paralela em qualidade — e custa menos de treinar</h3>
+<p>Sistemas de recomendação generativa representam cada título como uma sequência curta de tokens discretos ("Semantic IDs") e usam um LLM para gerar essa sequência e produzir uma lista ranqueada — a mesma arquitetura por trás do GenRec, que a Netflix colocou em produção e que cobrimos na edição anterior. A pergunta em aberto era de decodificação: um único cabeçote que gera um token por vez, com busca em feixe (beam search) restrita a IDs válidos, é mais preciso porém sequencial e lento; múltiplos cabeçotes de predição paralela (MTP) geram todos os tokens de uma vez, muito mais rápido na inferência, mas cada cabeçote decide de forma independente, com risco de combinações de ID inválidas ou incoerentes.</p>
+<p>Pesquisadores da Netflix (Sejoon Oh, Qiuling Xu e colegas) publicaram em outubro de 2026 uma comparação direta das duas estratégias em escala industrial, usando o modelo Qwen3-8B como base. O resultado: o cabeçote único com busca em feixe vence a predição paralela na maioria das métricas de ranqueamento e de qualidade de conteúdo que importam para o produto, e ainda treina a um custo cerca de 2,6 vezes menor em dólares — a predição paralela só ganha em throughput bruto de inferência. Numa das métricas reportadas, a geração sequencial melhorou o nMRR de descoberta em 7,3% em termos relativos frente à predição paralela.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Custo de treinamento relativo: decodificação sequencial custa cerca de 1x, contra cerca de 2,6x da predição paralela, em escala Qwen3-8B">
+    <title>Custo de treinamento relativo (menor é melhor)</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="97" width="60" height="43" fill="var(--text)"/>
+    <text x="90" y="91" text-anchor="middle" class="chart-val">~1x</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Cabeçote único</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">~2,6x</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Predição paralela</text>
+  </svg>
+  <figcaption>Custo de treinamento relativo em dólares, escala Qwen3-8B, Netflix Research, out/2026.</figcaption>
+</figure>
+<span class="label">Como o mercado está aplicando</span>
+<p>Os autores são claros que o resultado pode mudar com o tamanho do código de ID, o tamanho do catálogo ou a mistura de tarefas — mas para qualquer equipe construindo um reranqueador generativo que hoje assume que decodificação paralela é automaticamente a escolha certa por ser mais rápida, este é um contraponto direto e com dados de produção: vale medir qualidade, não só latência, antes de trocar arquitetura.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul><li><a href="https://arxiv.org/abs/2610.15864">arXiv:2610.15864 — "Personalized LLM Recommendation with Semantic IDs: Autoregressive Beam Search vs. Multi-Token Prediction at Industry Scale"</a> (Netflix Research; aceito no NeurIPS 2026, workshop PALM)</li></ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Netflix abre o código de um agente que audita outro agente — e corrige uma estimativa causal enviesada para um quarto do valor original</h3>
+<p>Inferência causal observacional em escala (medir o efeito real de uma mudança de produto na retenção, não só correlação) é um processo lento e sujeito a erro silencioso: verificação de balanço de covariáveis, corte de propensão, testes de sobreposição e testes de placebo são passos tediosos onde uma regressão ingênua — feita por um analista apressado ou por um LLM genérico sem esses cuidados — produz uma estimativa enviesada sem dar sinal de que está errada. A Netflix TechBlog abriu o código do "oci-agent", um fluxo com dois agentes de LLM: um "ator" executa a análise num notebook Jupyter com modelo predefinido (balanço de covariáveis, corte de propensão, testes de sensibilidade e placebo), e um segundo agente "crítico" audita esse resultado contra boas práticas de inferência causal, classificando-o como insatisfatório, satisfatório com ressalvas, ou plenamente satisfatório, e recomendando correções de especificação quando necessário.</p>
+<p>Num estudo de caso divulgado pela própria Netflix, uma estimativa inicial gerada por um Claude genérico — regressão linear simples da retenção sobre dias de exposição a um novo tipo de conteúdo, com controles básicos — foi revisada pelo oci-agent, cujo crítico identificou viés de adoção precoce (early-adopter bias) e uma falha num teste de placebo. A estimativa final do fluxo com crítico ficou em cerca de 25% do valor da estimativa ingênua original.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="A estimativa causal ingênua inicial, normalizada em 100, cai para cerca de 25 depois da auditoria do agente crítico"><title>Estimativa de efeito causal antes e depois do agente crítico</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="24" text-anchor="middle" class="chart-val">100</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Estimativa ingênua</text>
+    <rect x="200" y="112" width="60" height="28" fill="var(--text)"/>
+    <text x="230" y="106" text-anchor="middle" class="chart-val">~25</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Após agente crítico</text>
+  </svg>
+  <figcaption>Estimativa normalizada (base 100 = estimativa ingênua), estudo de caso Netflix TechBlog, 2026.</figcaption>
+</figure>
+<span class="label">Como o mercado está aplicando</span>
+<p>Sem um padrão-ouro conhecido, a Netflix valida o oci-agent batendo-o contra iterações de um único passo em vários processos geradores de dados do benchmark ACIC 2016 — e não por acurácia abstrata. O padrão que vale levar para qualquer pipeline agentic de ciência de dados é a separação explícita entre "fazer a análise" e "auditar a análise" com um segundo agente dedicado só a procurar o motivo específico pelo qual a primeira estimativa pode estar errada, em vez de confiar na saída de um único passe de LLM como se fosse definitiva.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://netflixtechblog.com/a-human-augmenting-agentic-workflow-for-causal-inference-4623f0a9c5af">Netflix TechBlog — "A Human-Augmenting Agentic Workflow for Causal Inference"</a></li>
+<li><a href="https://arxiv.org/abs/2607.22443">arXiv:2607.22443 — preprint de julho de 2026 com a descrição técnica completa do método</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Databricks leva vídeo, áudio e imagem para dentro de tabelas governadas com um novo tipo de coluna FILE</h3>
+<p>O problema estrutural de qualquer empresa de mídia é que metadados estruturados (títulos, eventos de visualização, atributos de catálogo) vivem no data warehouse, enquanto os próprios arquivos de mídia (vídeo, thumbnails, trilhas de áudio) vivem num armazenamento de blob separado, sem governança, linhagem ou controle de acesso unificados — forçando código de integração sob medida em todo pipeline de ML que precisa dos dois ao mesmo tempo, como treinar um modelo de personalização de thumbnail. A Databricks anunciou um tipo de coluna FILE nativo: uma coluna FILE guarda uma referência gerenciada pelo Unity Catalog (com limpeza automática de cópias quando a linha é apagada) ou um ponteiro externo para um volume já existente — e, de forma crucial, herda as mesmas regras de filtro de linha, mascaramento de coluna e controle de acesso baseado em atributos (ABAC) do Unity Catalog, ou seja, governança passa a valer sobre os próprios bytes de mídia, não só sobre strings de caminho numa tabela de metadados.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>Este é o tipo de infraestrutura de base sobre a qual recursos de compreensão multimodal de conteúdo — análogos ao MediaFM da própria Netflix — ficam mais simples de construir e auditar. Para equipes de dados de streaming no Brasil, é um sinal de que a próxima geração de modelos de personalização por thumbnail, cena ou trilha sonora vai exigir decidir, desde já, se o catálogo de mídia bruto vive dentro ou fora do limite de governança do lakehouse.</p>
+<p class="caveat">Nota de atualidade: o recurso foi originalmente anunciado no Data + AI Summit de junho de 2026, fora da janela de três meses. Usamos aqui a análise técnica mais aprofundada e substancial que encontramos sobre o tema, publicada em 9 de agosto de 2026, dentro da janela.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://www.databricks.com/blog/introducing-file-type-native-column-type-multimodal-data">Databricks Blog — "Introducing FILE type: a native column type for multimodal data"</a></li>
+<li><a href="https://www.pvcodes.in/blog/2026-08-09-unstructured-data-becomes-a-first-class-citizen-databricks-file-type-and-the-multimodal-lakehouse">Análise técnica, 9 de agosto de 2026 — "Unstructured Data Becomes a First-Class Citizen: Databricks FILE Type and the Multimodal Lakehouse"</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Anthropic expande o programa "IA para a Ciência" para mais 20 fundações e instituições de pesquisa</h3>
+<p>Na edição anterior cobrimos a Claude cortando 89% do tempo de revisão regulatória numa parceria de biotecnologia específica. Em 28 de outubro de 2026, a Anthropic ampliou o mesmo modelo de concessão de créditos — mas saindo de parcerias pontuais de indústria para infraestrutura científica acadêmica e sem fins lucrativos: 20 novos parceiros, entre eles a NSF, a Simons Foundation, o Wellcome Sanger Institute, o EMBL e o Space Telescope Science Institute, passam a ter acesso facilitado ao Claude para seus próprios projetos — incluindo bases como o gnomAD (banco de genômica populacional do Broad Institute, com dados de mais de 800 mil pessoas) e o FlyWire (mapeamento de conectoma neural de Princeton).</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>O anúncio também menciona, como prévia de pesquisa em conjunto com o HHMI Janelia, um "padrão de hardware de modelo" que permitiria a agentes de IA operar instrumentos físicos de laboratório — uma extensão do conceito de agente de software para automação de bancada que vale acompanhar nas próximas edições. Para quem lidera parcerias de dados com o mundo acadêmico, o programa é um canal concreto de acesso a crédito de modelo de fronteira fora do ciclo comercial padrão de vendas.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul><li><a href="https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions">Anthropic News, 28 de outubro de 2026 — "AI for Science expands to foundations and research institutions"</a></li></ul>
+</div>
+</article>
+</section>
+
+<h2 class="section-title" id="sec3-pt"><span class="num">03</span>Mercado de Data Science no Brasil</h2>
+<p class="section-intro">Não encontramos dado primário novo do State of Data Brazil nesta semana — a edição 2025/2026 (coleta entre outubro e dezembro de 2025, lançada em abril de 2026) é a mesma já esgotada nas edições de 23/10 e 30/10, e preferimos dizer isso explicitamente a repetir o mesmo número como se fosse novidade. Em vez disso, trazemos o dado mais atual e verificável que encontramos sobre contratação de IA no país nesta janela, complementado por um ponto de referência salarial sinalizado como mais antigo.</p>
+
+<article class="item">
+<h3>Barômetro de Empregos de IA da PwC: vagas que exigem competência em IA saltam de 1,1% para 3,6% do total de anúncios no Brasil</h3>
+<p>O "Barômetro de Empregos de IA 2026" da PwC Brasil, publicado em 6 de agosto de 2026, usa dados da Lightcast cobrindo mais de 1 bilhão de anúncios de vagas em seis continentes, com o Brasil entre os 27 países e territórios analisados. A fatia de anúncios de emprego no país que exige competências em IA passou de 1,1% em 2024 para 3,6% em 2025 — o equivalente a cerca de 119 mil novas vagas ligadas a IA abertas em um único ano. O setor de tecnologia, mídia e telecomunicações concentra a maior parcela dessas vagas.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Vagas que exigem competência em IA passam de 1,1% do total de anúncios em 2024 para 3,6% em 2025, no Brasil"><title>Vagas com exigência de IA, % do total de anúncios, Brasil</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="107" width="60" height="33" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="101" text-anchor="middle" class="chart-val">1,1%</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">2024</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">3,6%</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">2025</text>
+  </svg>
+  <figcaption>Fatia de anúncios de vaga exigindo competências em IA, Brasil. PwC, Barômetro de Empregos de IA 2026.</figcaption>
+</figure>
+<span class="label">Como o mercado está aplicando</span>
+<p>O relatório também mostra que vagas de IA no Brasil cresceram 69% entre 2024 e 2025, contra apenas 9% do mercado de vagas em geral — ou seja, a demanda por competência em IA está crescendo mesmo num mercado de contratação tecnológica, no todo, mais fraco. Outro dado do mesmo estudo, relevante para quem planeja requalificação de equipe: ocupações mais expostas à automação por IA acumularam, entre 2021 e 2025, uma média de 314 novas habilidades exigidas por ocupação, contra apenas 88 nas ocupações menos expostas — um ritmo de renovação de competências cerca de 3,5 vezes mais rápido, um argumento concreto para orçar treinamento contínuo, não só contratação, como resposta à IA.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://www.pwc.com.br/pt/estudos/servicos/consultoria-negocios/2026/barometro-de-empregos-de-ia-2026.html">PwC Brasil, 6 de agosto de 2026 — "Barômetro de Empregos de IA 2026"</a></li>
+<li><a href="https://www.correio24horas.com.br/economia/a-corrida-das-empresas-para-contratar-quem-domina-a-ia-vagas-saltam-de-63-mil-para-182-mil-segundo-a-pwc-0826">Correio 24 Horas, 26 de agosto de 2026 — cobertura com o detalhamento de 63 mil para 182 mil vagas</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Guia Salarial da Robert Half: Engenheiro de IA já é a função de tecnologia não-gerencial mais bem paga do Brasil</h3>
+<p class="caveat">Nota de atualidade: este dado é de aproximadamente novembro de 2025 — mais antigo que a janela de três meses preferida nesta edição. Incluímos porque é o benchmark salarial brasileiro de IA/dados mais substancial que encontramos; nenhuma pesquisa salarial brasileira mais recente para essas funções específicas surgiu nesta semana.</p>
+<p>Segundo o Guia Salarial 2026 da Robert Half, Engenheiro de IA tem salário mediano de cerca de R$ 25.000/mês (faixa de R$ 19.500 a R$ 27.100), Cientista de Dados/Especialista em Big Data fica em torno de R$ 19.100 (faixa de R$ 14.700 a R$ 24.600), e Especialista em IA/ML em cerca de R$ 20.200 (faixa de R$ 17.900 a R$ 23.500) — todos entre os percentis 25 e 75. O guia classifica Data Science e administração de banco de dados como categorias de competência "difíceis de encontrar" no mercado brasileiro como um todo.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Salário mediano mensal: Engenheiro de IA, cerca de R$ 25 mil, contra Cientista de Dados, cerca de R$ 19,1 mil"><title>Salário mediano mensal: Engenheiro de IA vs. Cientista de Dados</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="90" y="24" text-anchor="middle" class="chart-val">R$ 25,0k</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Engenheiro de IA</text>
+    <rect x="200" y="54" width="60" height="86" fill="var(--muted)" opacity="0.4"/>
+    <text x="230" y="48" text-anchor="middle" class="chart-val">R$ 19,1k</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Cientista de Dados</text>
+  </svg>
+  <figcaption>Salário mediano mensal (percentil 50), Guia Salarial Robert Half 2026, Brasil.</figcaption>
+</figure>
+<span class="label">Como o mercado está aplicando</span>
+<p>Para quem está do lado de dentro negociando retenção ou do lado de fora negociando proposta, o ponto mais útil não é o número isolado, mas a faixa: a diferença entre o percentil 25 e o 75 em cada função já é de vários milhares de reais, o que sugere que experiência prática com IA generativa aplicada — não só o título do cargo — continua sendo o que separa a ponta de baixo da ponta de cima da faixa.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul><li><a href="https://www.roberthalf.com/br/pt/insights/guia-salarial">Robert Half — Guia Salarial 2026 (Brasil)</a></li></ul>
+</div>
+</article>
+
+<h2 class="section-title" id="sec4-pt"><span class="num">04</span>Tendências de ferramentas e soluções</h2>
+<p class="section-intro">Três movimentos de convergência: um banco de vetores pioneiro capitula e leva seu próprio motor de busca para dentro do Postgres, o mercado de orquestração de workflows recebe uma rodada de investimento gigantesca puxada especificamente por demanda de agentes de IA, e os dois maiores data warehouses/lakehouses competem agora na ergonomia de migração do Iceberg, não só no formato em si. Não encontramos, nesta janela, nenhum survey verificável e novo sobre adoção de frameworks de ML (PyTorch/JAX/vLLM) nem sobre participação de mercado de bancos vetoriais com metodologia transparente — e preferimos registrar essa lacuna a forçar um número de fonte não confiável.</p>
+
+<article class="item">
+<h3>A Pinecone, pioneira do banco de vetores como serviço, abre o código do seu motor de busca para rodar nativamente dentro do Postgres</h3>
+<p>Em 27 de outubro de 2026, a Pinecone lançou o pg_pinecone, uma extensão de código aberto (Apache 2.0) para PostgreSQL 17/18 que roda o próprio motor de busca de vetores da Pinecone — baseado em codificação RaBitQ e busca em blocos — dentro do banco Postgres que o time já opera, em vez de pedir que os dados saiam de lá. A extensão tem três modos: um motor "nativo" que roda localmente sem nenhuma chamada à nuvem da Pinecone; um motor "pgvector", compatível com o índice HNSW já existente; e um motor "remoto", que delega para a nuvem serverless da Pinecone quando a tabela cresce além da capacidade de um único servidor. É o sinal mais concreto até agora de que a pressão do "Postgres como banco de vetores padrão" — que vínhamos registrando de forma genérica nas últimas edições — já é forte o bastante para fazer um fornecedor dedicado de banco vetorial ir ao encontro do Postgres, em vez do contrário.</p>
+<p>Um benchmark de terceiros reproduzindo os scripts publicados pela própria Pinecone (não auditado de forma independente) mediu, para 1 milhão de vetores de 768 dimensões, um índice nativo de 136 MB contra 2,0 GB do pgvector HNSW em modo halfvec e 4,1 GB em vetores completos — uma redução de armazenamento superior a 10 vezes. Tratamos esse número como um benchmark de fornecedor, não como estudo independente auditado, e por isso não o transformamos em gráfico aqui.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>Movimentos paralelos no mesmo trimestre reforçam a leitura: o Milvus lançou seis versões entre julho e outubro de 2026 endurecendo "coleções externas" que indexam Parquet/Iceberg/Lance diretamente, sem copiar os dados para dentro do banco vetorial; e o Qdrant, no release 1.20 (22 de outubro de 2026), passou a embutir pontuação BM25 nativa no próprio motor, reduzindo a necessidade de manter um segundo sistema (como Elasticsearch) só para busca híbrida. A camada de "banco de vetores dedicado" está, nos três casos, se dissolvendo para dentro de infraestrutura que a equipe de dados já mantém — o que muda a pergunta de arquitetura de "qual banco de vetores escolher" para "o que meu banco atual já faz bem o suficiente".</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://docs.pinecone.io/guides/pg-pinecone/overview">Pinecone Docs — "pg_pinecone overview"</a></li>
+<li><a href="https://github.com/pinecone-io/pg_pinecone/releases">GitHub — releases do pg_pinecone</a></li>
+<li><a href="https://github.com/qdrant/qdrant/releases">GitHub — releases do Qdrant (v1.20.0, 22/10/2026)</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Temporal mais que dobra de valuation em sete meses, puxada por demanda de orquestração para agentes de IA</h3>
+<p>A Temporal — plataforma de execução durável/orquestração de workflows, de código aberto — levantou uma rodada Série E de US$ 550 milhões em 14 de setembro de 2026, avaliada em US$ 12,55 bilhões, liderada pela Lightspeed com participação de Wellington Management, Goldman Sachs Alternatives e Tiger Global. O valuation mais que dobrou frente aos US$ 5 bilhões de apenas sete meses antes (rodada Série D de US$ 300 milhões, liderada pela Andreessen Horowitz, em fevereiro de 2026).</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Valuation da Temporal sobe de US$ 5 bilhões em fevereiro de 2026 para US$ 12,55 bilhões em setembro de 2026"><title>Valuation da Temporal, fev. vs. set. de 2026</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="96" width="60" height="44" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="90" text-anchor="middle" class="chart-val">US$ 5 bi</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Fevereiro de 2026</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">US$ 12,55 bi</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Setembro de 2026</text>
+  </svg>
+  <figcaption>Valuation da Temporal Technologies em rodadas sucessivas, 2026.</figcaption>
+</figure>
+<span class="label">Como o mercado está aplicando</span>
+<p>O mecanismo por trás do salto: orquestradores de DAG tradicionais, como o Airflow, foram desenhados para pipelines batch com início e fim previsíveis, não para workflows de agente de IA que podem pausar por dias esperando uma aprovação humana, retentar chamadas de ferramenta que falham de forma não determinística, ou manter estado por semanas num processo multi-etapa. Execução durável — que persiste o estado do workflow de forma a sobreviver a reinícios, falhas e pausas longas — é a categoria de infraestrutura que esse tipo de agente exige, e o mercado está precificando isso como infraestrutura padrão emergente para sistemas agentic, não só como uma ferramenta de nicho para ETL complexo.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul><li><a href="https://techfundingnews.com/temporal-raises-550m-led-by-lightspeed-at-12-55b-valuation-why-ai-agents-need-infrastructure-that-can-survive-failure/">Tech Funding News, 14 de setembro de 2026 — "Temporal raises $550M led by Lightspeed at $12.55B valuation"</a></li></ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Snowflake remove a principal fricção de adoção do Iceberg v3: upgrade de tabela sem reescrever os dados</h3>
+<p>Em 16 de outubro de 2026, a Snowflake tornou geralmente disponível o comando <code>ALTER ICEBERG TABLE … UPGRADE TO ICEBERG VERSION 3</code>, que faz o upgrade de uma tabela Iceberg v2 existente para v3 no próprio lugar — preservando nome e privilégios — em vez de exigir reescrever a tabela inteira. O Iceberg v3 (GA na Snowflake desde maio de 2026) adiciona vetores de deleção, linhagem de linha e tipos variant/geo, recursos que antes só podiam ser adotados reconstruindo a tabela do zero — um custo proibitivo em tabelas na escala de petabytes. Remover essa fricção de migração é exatamente o tipo de corrida de ergonomia que a Databricks também vem travando desde a aquisição da Tabular: a disputa pela camada "aberta" do lakehouse está deixando de ser sobre o formato de arquivo em si e passando a ser sobre quem torna mais barato migrar para a versão mais nova dele.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>Para equipes de dados com tabelas Iceberg v2 em produção, isso remove o principal argumento contra adotar v3 agora — o custo e o tempo de inatividade de reescrever dados em escala —, o que deve acelerar a adoção de recursos como vetores de deleção (deletes mais eficientes em tabelas grandes) sem exigir uma janela de migração dedicada.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul><li><a href="https://docs.snowflake.com/en/release-notes/2026/other/2026-10-16-iceberg-v3-upgrade-expression-defaults-ga">Snowflake Release Notes, 16 de outubro de 2026 — "Apache Iceberg v3 table upgrades and expression defaults (GA)"</a></li></ul>
+</div>
+</article>
+
+<h2 class="section-title archive-title">Relatórios anteriores</h2>
+<ul class="archive-list">
+<li><a href="archive/2026-10-30.html">30 de outubro de 2026</a></li>
+<li><a href="archive/2026-10-23.html">23 de outubro de 2026</a></li>
+<li><a href="archive/2026-10-16.html">16 de outubro de 2026</a></li>
+<li><a href="archive/2026-10-09.html">9 de outubro de 2026</a></li>
+<li><a href="archive/2026-10-02.html">2 de outubro de 2026</a></li>
+<li><a href="archive/2026-09-25.html">25 de setembro de 2026</a></li>
+<li><a href="archive/2026-09-18.html">18 de setembro de 2026</a></li>
+<li><a href="archive/2026-09-11.html">11 de setembro de 2026</a></li>
+<li><a href="archive/2026-08-28.html">28 de agosto de 2026</a></li>
+<li><a href="archive/2026-08-21.html">21 de agosto de 2026</a></li>
+<li><a href="archive/2026-08-17.html">17 de agosto de 2026</a></li>
+<li><a href="archive/2026-08-16.html">16 de agosto de 2026</a></li>
+</ul>
+
+<div class="methodology">
+<strong>Nota metodológica.</strong> Este digest é produzido semanalmente por um agente de pesquisa que busca ativamente fontes primárias — papers acadêmicos no arXiv, blogs de pesquisa e engenharia de empresas de referência, universidades e surveys de mercado — em vez de responder de memória. Toda afirmação não trivial é acompanhada de um link verificável. Nesta edição, o acesso direto por fetch de página completa funcionou de forma consistente apenas para anthropic.com; para arxiv.org, netflixtechblog.com, research.netflix.com, databricks.com, stateof.ai, pwc.com.br, datahackers.news, bain.com, canaltech.com.br e movimentoeconomico.com.br, o acesso direto foi bloqueado pela rede do ambiente de execução, e os números citados desses domínios foram confirmados por cruzamento entre buscas independentes que citam o mesmo conteúdo primário, com qualquer detalhe que não pôde ser confirmado diretamente sinalizado como tal no texto (ex.: os benchmarks de armazenamento do pg_pinecone, citados como benchmark de fornecedor reproduzido por terceiros, não como estudo independente auditado). Três pontos de dado usados nesta edição são mais antigos que a janela preferencial de três meses — o paper "BM25 Wins at Scale" (29/07/2026), o anúncio original do tipo de coluna FILE da Databricks no Data + AI Summit (junho/2026, com análise técnica de 09/08/2026 usada como referência dentro da janela) e o Guia Salarial 2026 da Robert Half (~novembro/2025) — e isso é sinalizado explicitamente nos respectivos textos, por serem, segundo nossa pesquisa, as referências mais atuais e substanciais disponíveis sobre os temas nesta data. Não encontramos dado primário novo do State of Data Brazil nesta semana além do já coberto nas edições de 23/10 e 30/10/2026, nenhum survey verificável de adoção de frameworks de ML (PyTorch/JAX/vLLM) nesta janela, e nenhuma classificação de participação de mercado de bancos vetoriais com metodologia transparente e fonte primária acessível — preferimos registrar essas lacunas explicitamente a forçar um número de fonte não confiável. Não encontramos, nesta semana, nenhuma publicação do Google Research/AI Blog sobre streaming, recomendação, personalização ou infraestrutura de mídia dentro da janela de três meses.
+</div>
+
+<div class="contact">
+  <p class="name">Ri Gonçalves</p>
+  <p><a href="mailto:goncalves.r@pm.me">goncalves.r@pm.me</a> · <a href="https://github.com/GoncalvesRD">github.com/GoncalvesRD</a></p>
+</div>
+
+<footer class="report-footer">
+  <p>Publicado via GitHub Pages a partir de <a href="https://github.com/GoncalvesRD/ds-trends">github.com/GoncalvesRD/ds-trends</a>.</p>
+</footer>
+
+</div>
+
+<div class="lang-block" data-lang="en" hidden>
+
+<header class="report-header">
+  <h1>Trends in Data Science, Machine Learning and Applied AI</h1>
+  <p class="dek">Anthropic now measures how much of its own AI research is done by AI: 26% in August, up from under 1% in February. At Netflix, a second agent that audits a first agent's causal analysis corrects a retention estimate down to 25% of its original value. And Pinecone, the pioneer of vector-database-as-a-service, open-sources its own search engine to run inside Postgres — the database it helped make irrelevant.</p>
+</header>
+
+<div class="byline">
+  <div class="avatar">RG</div>
+  <div>
+    <div class="name">Ri Gonçalves</div>
+    <div class="sub"><a href="https://goncalvesrd.github.io/ds-trends/">goncalvesrd.github.io/ds-trends</a> · November 6, 2026</div>
+  </div>
+</div>
+
+<nav class="toc">
+  <p class="toc-title">In this issue</p>
+  <ol>
+    <li><a href="#sec1-en">General trends in Data Science / ML / applied AI</a> — Anthropic publishes its own yardstick for how much AI research is already automated by AI, the State of AI Report 2026 shows the race narrowing to three labs while OpenAI and Anthropic's revenue nearly triples, and a scaling study shows plain lexical search (BM25) still beats agents and dense RAG on very large corpora.</li>
+    <li><a href="#sec2-en">Streaming and Globoplay's competitors</a> — Netflix Research shows decoding recommendations token-by-token still beats parallel prediction on quality, Netflix TechBlog open-sources a critic agent that corrects biased causal estimates, Databricks brings video and images inside governed tables, and Anthropic expands its research-credits program to 20 more scientific institutions.</li>
+    <li><a href="#sec3-en">The Data Science market in Brazil</a> — PwC's AI Jobs Barometer shows AI-skill job postings jumping from 1.1% to 3.6% of all listings in the country, growing 69% against 9% for the overall market.</li>
+    <li><a href="#sec4-en">Trends in tools and solutions</a> — Pinecone open-sources its own search engine to run natively inside Postgres, Temporal more than doubles its valuation in seven months on AI-agent orchestration demand, and Snowflake removes the friction of migrating Iceberg tables to v3 without rewriting them.</li>
+  </ol>
+</nav>
+
+<h2 class="section-title" id="sec1-en"><span class="num">01</span>General trends in Data Science, Machine Learning and applied AI</h2>
+<p class="section-intro">Three intersecting signals: frontier labs themselves are starting to measure, with their own auditable methodology, how much of their research is already done by AI; the industry's most-cited report documents a race that has narrowed to three competitors while revenue explodes; and a rigorous scaling study challenges the assumption that dense RAG and search agents are always superior to a decades-old lexical ranker.</p>
+
+<article class="item">
+<h3>Anthropic measures how much of its own AI research is already done by AI — the number jumps from under 1% to 26% in six months</h3>
+<p>On September 17, 2026, Anthropic published a set of metrics for measuring the pace of AI development inside frontier labs, built bottom-up: roughly 20% of model-research staff were sampled weekly, producing a base of about 15,000 granular tasks organized into a frozen taxonomy (542 nodes, 378 leaf tasks), weighted by person-time. Each task is scored on a five-level automation scale from Epoch AI (AL1, "no AI," through AL5, "fully autonomous") by a Claude model acting as judge, cross-checked against human raters — exact judge-human agreement was 59%, against a 35% human-human agreement baseline, and within one level of difference 97% of the time.</p>
+<p>The headline result: as of August 2026, Claude already "leads" (AL4 — completes most of a task end-to-end under human supervision) 26% of measured AI R&D tasks, up from under 1% in February 2026. Work at AL3 or above (AI at least actively collaborates) already exceeds 90%. No task has reached AL5 (full autonomy) as of publication.</p>
+<span class="label">How the market is applying this</span>
+<p>Anthropic itself is explicit about the method's limits: it's a self-reported metric, judged by the company's own model on the company's own work, with only two real points in time (February and August) — "trend" here is a line between two points, not a long series. Even so, it's one of the first attempts by a lab to quantify recursive self-improvement with an auditable taxonomy instead of anecdote, and the accompanying agent-oversight metric (checked in the past by METR) is the kind of framework data teams at any company can adapt to measure, internally, how much of an ML pipeline already runs without line-by-line human review — useful both for budgeting headcount and for deciding where human audit is still mandatory.</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://www.anthropic.com/institute/measuring-pace-of-ai-development">Anthropic, September 17, 2026 — "Measuring the pace of AI development inside frontier labs"</a></li>
+<li><a href="https://www.businesstoday.in/technology/story/anthropic-says-claude-now-leads-26-of-its-ai-rd-work-how-fast-is-ai-development-accelerating-556597-2026-09-19">Business Today, September 19, 2026 — coverage with the AL4-level breakdown</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>State of AI Report 2026: the frontier race narrows to three labs as OpenAI and Anthropic's revenue nearly triples</h3>
+<p>Published October 8, 2026 by Nathan Benaich (Air Street Capital), the State of AI Report reaches its ninth annual edition and remains the industry's most-cited independent synthesis, peer-reviewed by outside experts before release. The central framing for 2026 is that benchmark leadership matters less and less: what now decides the race is inference revenue, access to compute infrastructure, and the ability to reliably supervise agent fleets in production — the competitive axis is shifting from "best model" to "who can run the most profitable, most reliable agent fleet."</p>
+<p>OpenAI and Anthropic's combined annualized revenue reached roughly $105 billion by late summer 2026, up from about $30 billion at the start of the year — roughly a 3.5x jump in eight months. The report also documents a geopolitical shift relevant to anyone choosing an open model: between 2024 and 2026, Chinese open-weight models' share of arXiv paper mentions rose from 9% to 31%, while US models' share fell from 31% to 23% — the Qwen family has already overtaken Llama in mentions.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="OpenAI and Anthropic's combined annualized revenue rises from about $30 billion in early 2026 to about $105 billion by late summer 2026">
+    <title>Combined annualized revenue: OpenAI + Anthropic, 2026</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="108" width="60" height="32" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="102" text-anchor="middle" class="chart-val">~$30B</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Early 2026</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">~$105B</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Late summer 2026</text>
+  </svg>
+  <figcaption>Combined annualized revenue (ARR) of OpenAI and Anthropic, per the State of AI Report 2026.</figcaption>
+</figure>
+<span class="label">How the market is applying this</span>
+<p>For anyone budgeting inference spend or negotiating a model-provider contract, the relevant point isn't just "revenue grew" — it grew alongside market-power concentration in just three labs, which historically precedes less pricing pressure, not more. For anyone evaluating open models as a cost alternative, the Chinese swing in academic-mention share is a signal it's worth benchmarking Qwen and peers internally before assuming Llama remains the default open option.</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://www.stateof.ai/">Air Street Capital / Nathan Benaich, October 8, 2026 — "State of AI Report 2026"</a></li>
+<li><a href="https://fourweekmba.com/ai-state-of-ai-2026-openai-anthropic-run-rates-hit-105b/">FourWeekMBA, October 2026 — coverage of the report's revenue figures</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>"BM25 Wins at Scale": decades-old lexical search still beats dense RAG and search agents on very large corpora</h3>
+<p class="caveat">Recency note: this paper was published July 29, 2026, about five weeks before this edition's preferred three-month window. We used it anyway because we found no equally rigorous and more recent scaling study on this exact question, and it's directly relevant to any team deciding on retrieval architecture today.</p>
+<p>The study (arXiv:2607.26497) runs a controlled comparison of four retrieval paradigms — lexical BM25, dense embedding RAG, graph-based RAG, and a file-system-browsing search agent — varying corpus size across roughly a 450x range on the synthetic EnterpriseRAG-Bench benchmark (~500K documents), holding the reader model and evaluation protocol fixed. The mechanism behind the result: agents and dense RAG look strong on small corpora because the agent can brute-force a small search space and embeddings capture semantics well when the candidate set is small — but both degrade with scale, the agent because its tool-call cost grows with corpus size without a matching accuracy gain, and dense RAG because embedding similarity gets noisier in large, heterogeneous collections. BM25's exact term-matching is scale-invariant in a way neither alternative is.</p>
+<span class="label">How the market is applying this</span>
+<p>Around 10 million corpus tokens, BM25 overtakes the search agent and leads on accuracy at every larger scale tested, with a margin approaching 20 points at the maximum scale. At the smallest tier tested, the file-system search agent uses 39 times more query tokens per answer than BM25 for an accuracy gain that isn't even statistically significant.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="At the benchmark's maximum scale, BM25 reaches about 50 accuracy points, versus about 31 for the file-system search agent"><title>Accuracy at maximum scale: BM25 vs. search agent</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="90" y="24" text-anchor="middle" class="chart-val">~50 pts</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">BM25</text>
+    <rect x="200" y="72" width="60" height="68" fill="var(--muted)" opacity="0.4"/>
+    <text x="230" y="66" text-anchor="middle" class="chart-val">~31 pts</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Search agent</text>
+  </svg>
+  <figcaption>EnterpriseRAG-Bench, maximum scale tested (~450x the smallest tier), arXiv:2607.26497.</figcaption>
+</figure>
+<p>For anyone deciding between giving an agent free read access to a large document repository or keeping a BM25/hybrid index in front of it, this is concrete evidence not to dismiss the lexical index as "old technology" — it remains the lowest-cost option and, past a certain scale, also the most accurate one. The authors themselves caution the conclusion holds "under these conditions, past a certain scale" — not "BM25 always wins."</p>
+<div class="refs">
+<strong>References</strong>
+<ul><li><a href="https://arxiv.org/abs/2607.26497">arXiv:2607.26497 — "BM25 Wins at Scale: A Scaling Study of Retrieval-Augmented Generation Paradigms"</a></li></ul>
+</div>
+</article>
+
+<section class="globoplay">
+<h2 class="section-title" id="sec2-en"><span class="num">02</span>Streaming and Globoplay's competitors</h2>
+<p class="section-intro">Four developments: Netflix Research questions the assumption that parallel decoding is always better for generative recommendation, Netflix TechBlog open-sources a critic agent that corrects biased causal analyses, Databricks extends data governance to video and images inside the table itself, and Anthropic expands its scientific research-credits program — with nothing new from Google Research specifically on streaming or recommendation in this window, which we're noting explicitly rather than forcing a story that doesn't exist.</p>
+
+<article class="item">
+<h3>Netflix Research: generating recommendations token-by-token still beats parallel prediction on quality — and costs less to train</h3>
+<p>Generative recommendation systems represent each title as a short sequence of discrete tokens ("Semantic IDs") and use an LLM to generate that sequence to produce a ranked slate — the same architecture behind GenRec, which Netflix put into production and which we covered in the previous edition. The open question was about decoding: a single head that generates one token at a time, constrained via beam search to valid IDs, is more accurate but sequential and slow; multiple parallel prediction heads (MTP) generate all tokens at once, much faster at inference, but each head decides independently, risking invalid or incoherent ID combinations.</p>
+<p>Netflix researchers (Sejoon Oh, Qiuling Xu and colleagues) published a direct comparison of the two strategies at industry scale in October 2026, using Qwen3-8B as the base model. The result: the single head with beam search beats parallel prediction on most of the ranking and content-quality metrics that matter for the product, and still trains at roughly 2.6x lower dollar cost — parallel prediction only wins on raw inference throughput. On one reported metric, sequential generation improved discovery nMRR by 7.3% in relative terms versus parallel prediction.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Relative training cost: sequential decoding costs about 1x, versus about 2.6x for parallel prediction, at Qwen3-8B scale">
+    <title>Relative training cost (lower is better)</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="97" width="60" height="43" fill="var(--text)"/>
+    <text x="90" y="91" text-anchor="middle" class="chart-val">~1x</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Single head</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">~2.6x</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Parallel prediction</text>
+  </svg>
+  <figcaption>Relative training cost in dollars, Qwen3-8B scale, Netflix Research, Oct/2026.</figcaption>
+</figure>
+<span class="label">How the market is applying this</span>
+<p>The authors are clear the result may shift with ID code length, catalog size, or task mix — but for any team building a generative reranker that today assumes parallel decoding is automatically the right choice because it's faster, this is a direct, production-data counterpoint: worth measuring quality, not just latency, before switching architectures.</p>
+<div class="refs">
+<strong>References</strong>
+<ul><li><a href="https://arxiv.org/abs/2610.15864">arXiv:2610.15864 — "Personalized LLM Recommendation with Semantic IDs: Autoregressive Beam Search vs. Multi-Token Prediction at Industry Scale"</a> (Netflix Research; accepted at NeurIPS 2026, PALM workshop)</li></ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Netflix open-sources an agent that audits another agent — and corrects a biased causal estimate to a quarter of its original value</h3>
+<p>Observational causal inference at scale (measuring a product change's real effect on retention, not just correlation) is a slow process prone to silent error: covariate-balance checks, propensity trimming, overlap and placebo tests are tedious steps where a naive regression — run by a rushed analyst or a generic LLM without those safeguards — produces a biased estimate without signaling it's wrong. Netflix TechBlog open-sourced "oci-agent," a two-LLM-agent workflow: an "actor" agent executes the analysis in a templated Jupyter notebook (covariate balance, propensity trimming, sensitivity and placebo tests), and a second "critic" agent audits that output against causal-inference best practices, rating it not_satisfactory, satisfactory_with_caveats, or fully_satisfactory, and recommending respecification when needed.</p>
+<p>In a case study Netflix published, an initial estimate generated by a generic Claude model — a simple linear regression of retention on exposure days to a new content type, with basic controls — was reviewed by oci-agent, whose critic flagged early-adopter bias and a failed placebo test. The critic-reviewed workflow's final estimate landed at roughly 25% of the original naive estimate's value.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="The initial naive causal estimate, normalized to 100, drops to about 25 after the critic agent's audit"><title>Causal effect estimate before and after the critic agent</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="24" text-anchor="middle" class="chart-val">100</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Naive estimate</text>
+    <rect x="200" y="112" width="60" height="28" fill="var(--text)"/>
+    <text x="230" y="106" text-anchor="middle" class="chart-val">~25</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">After critic agent</text>
+  </svg>
+  <figcaption>Normalized estimate (base 100 = naive estimate), Netflix TechBlog case study, 2026.</figcaption>
+</figure>
+<span class="label">How the market is applying this</span>
+<p>With no known ground truth, Netflix validates oci-agent by comparing it against single-pass iterations across multiple data-generating processes from the ACIC 2016 benchmark — not against abstract accuracy. The pattern worth carrying into any agentic data-science pipeline is the explicit separation between "do the analysis" and "audit the analysis" with a second agent dedicated solely to hunting for the specific reason the first estimate might be wrong, instead of trusting a single LLM pass's output as final.</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://netflixtechblog.com/a-human-augmenting-agentic-workflow-for-causal-inference-4623f0a9c5af">Netflix TechBlog — "A Human-Augmenting Agentic Workflow for Causal Inference"</a></li>
+<li><a href="https://arxiv.org/abs/2607.22443">arXiv:2607.22443 — July 2026 preprint with the full technical method</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Databricks brings video, audio and images inside governed tables with a new FILE column type</h3>
+<p>Every media company's structural problem is that structured metadata (titles, viewing events, catalog attributes) lives in the data warehouse, while the actual media files (video, thumbnails, audio tracks) live in separate blob storage with no unified governance, lineage, or access control — forcing custom glue code into every ML pipeline that needs both at once, such as training a thumbnail-personalization model. Databricks announced a native FILE column type: a FILE column stores either a Unity-Catalog-managed reference (with automatic cleanup of copies when a row is deleted) or an external pointer into an existing volume — and, crucially, inherits Unity Catalog's same row-filter, column-mask, and attribute-based access control (ABAC) rules, meaning governance now applies to the media bytes themselves, not just to path strings in a metadata table.</p>
+<span class="label">How the market is applying this</span>
+<p>This is the kind of foundational plumbing that makes multimodal content-understanding features — analogous to Netflix's own MediaFM — simpler to build and audit. For streaming data teams in Brazil, it's a signal that the next generation of thumbnail, scene, or soundtrack personalization models will require deciding now whether the raw media catalog lives inside or outside the lakehouse's governance boundary.</p>
+<p class="caveat">Recency note: the feature was originally announced at the June 2026 Data + AI Summit, outside the three-month window. We're using the most substantial technical deep-dive we found on the topic, published August 9, 2026, which falls within the window.</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://www.databricks.com/blog/introducing-file-type-native-column-type-multimodal-data">Databricks Blog — "Introducing FILE type: a native column type for multimodal data"</a></li>
+<li><a href="https://www.pvcodes.in/blog/2026-08-09-unstructured-data-becomes-a-first-class-citizen-databricks-file-type-and-the-multimodal-lakehouse">Technical deep-dive, August 9, 2026 — "Unstructured Data Becomes a First-Class Citizen: Databricks FILE Type and the Multimodal Lakehouse"</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Anthropic expands its "AI for Science" program to 20 more foundations and research institutions</h3>
+<p>In the previous edition we covered Claude cutting 89% of regulatory review time in a specific biotech partnership. On October 28, 2026, Anthropic expanded the same credits-grant model — but moved from one-off industry partnerships to academic and nonprofit science infrastructure: 20 new partners, including the NSF, the Simons Foundation, the Wellcome Sanger Institute, EMBL, and the Space Telescope Science Institute, now get easier Claude access for their own projects — including resources like gnomAD (the Broad Institute's population-genomics database spanning 800,000+ people's DNA) and FlyWire (Princeton's neural-connectome mapping project).</p>
+<span class="label">How the market is applying this</span>
+<p>The announcement also mentions, as a research preview with HHMI Janelia, a "model hardware standard" that would let AI agents operate physical lab instruments — an extension of the software-agent concept into bench automation worth watching in future editions. For anyone leading data partnerships with academia, the program is a concrete channel for frontier-model credit access outside the standard commercial sales cycle.</p>
+<div class="refs">
+<strong>References</strong>
+<ul><li><a href="https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions">Anthropic News, October 28, 2026 — "AI for Science expands to foundations and research institutions"</a></li></ul>
+</div>
+</article>
+</section>
+
+<h2 class="section-title" id="sec3-en"><span class="num">03</span>The Data Science market in Brazil</h2>
+<p class="section-intro">We found no new primary State of Data Brazil data this week — the 2025/2026 edition (fieldwork October–December 2025, released April 2026) is the same edition already exhausted in the October 23 and October 30 issues, and we'd rather say so explicitly than repeat the same number as if it were news. Instead, we bring the most current and verifiable data point we found on AI hiring in the country within this window, complemented by a salary benchmark explicitly flagged as older.</p>
+
+<article class="item">
+<h3>PwC's AI Jobs Barometer: AI-skill job postings jump from 1.1% to 3.6% of all listings in Brazil</h3>
+<p>PwC Brazil's "AI Jobs Barometer 2026," published August 6, 2026, uses Lightcast data covering over a billion job postings across six continents, with Brazil among the 27 countries and territories analyzed. The share of job postings in the country requiring AI competencies rose from 1.1% in 2024 to 3.6% in 2025 — equivalent to roughly 119,000 new AI-related job openings added in a single year. The technology, media, and telecom sector holds the largest share of those postings.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Job postings requiring AI competencies rise from 1.1% of all listings in 2024 to 3.6% in 2025, in Brazil"><title>AI-skill job postings, % of all listings, Brazil</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="107" width="60" height="33" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="101" text-anchor="middle" class="chart-val">1.1%</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">2024</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">3.6%</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">2025</text>
+  </svg>
+  <figcaption>Share of job postings requiring AI competencies, Brazil. PwC, AI Jobs Barometer 2026.</figcaption>
+</figure>
+<span class="label">How the market is applying this</span>
+<p>The report also shows AI-related job postings in Brazil grew 69% between 2024 and 2025, against just 9% for the job market overall — meaning AI-skill demand is growing even as overall tech hiring, in aggregate, is weaker. Another data point from the same study, relevant to anyone planning team reskilling: occupations most exposed to AI automation accumulated an average of 314 newly required skills per occupation between 2021 and 2025, versus just 88 for less-exposed occupations — a skill-renewal pace roughly 3.5x faster, a concrete argument for budgeting continuous training, not just hiring, as a response to AI.</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://www.pwc.com.br/pt/estudos/servicos/consultoria-negocios/2026/barometro-de-empregos-de-ia-2026.html">PwC Brazil, August 6, 2026 — "AI Jobs Barometer 2026"</a></li>
+<li><a href="https://www.correio24horas.com.br/economia/a-corrida-das-empresas-para-contratar-quem-domina-a-ia-vagas-saltam-de-63-mil-para-182-mil-segundo-a-pwc-0826">Correio 24 Horas, August 26, 2026 — coverage with the 63,000-to-182,000-postings breakdown</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Robert Half Salary Guide: AI Engineer is now Brazil's best-paid non-managerial tech role</h3>
+<p class="caveat">Recency note: this data point is from approximately November 2025 — older than this edition's preferred three-month window. We're including it because it's the most substantial Brazilian AI/data salary benchmark we found; no more recent Brazilian salary survey for these specific roles surfaced this week.</p>
+<p>Per Robert Half's 2026 Salary Guide, AI Engineer has a median salary of about R$25,000/month (range R$19,500–27,100), Data Scientist/Big Data Specialist sits around R$19,100 (range R$14,700–24,600), and AI/ML Specialist around R$20,200 (range R$17,900–23,500) — all between the 25th and 75th percentiles. The guide classifies Data Science and database administration as nationally "hard to find" skill categories.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Median monthly salary: AI Engineer, about R$25,000, versus Data Scientist, about R$19,100"><title>Median monthly salary: AI Engineer vs. Data Scientist</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="90" y="24" text-anchor="middle" class="chart-val">R$25.0k</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">AI Engineer</text>
+    <rect x="200" y="54" width="60" height="86" fill="var(--muted)" opacity="0.4"/>
+    <text x="230" y="48" text-anchor="middle" class="chart-val">R$19.1k</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Data Scientist</text>
+  </svg>
+  <figcaption>Median monthly salary (50th percentile), Robert Half Salary Guide 2026, Brazil.</figcaption>
+</figure>
+<span class="label">How the market is applying this</span>
+<p>For anyone negotiating retention from the inside or an offer from the outside, the most useful point isn't the single number but the range: the gap between the 25th and 75th percentile in each role already spans several thousand reais, suggesting hands-on experience with applied generative AI — not just job title — is still what separates the low end from the high end of the band.</p>
+<div class="refs">
+<strong>References</strong>
+<ul><li><a href="https://www.roberthalf.com/br/pt/insights/guia-salarial">Robert Half — 2026 Salary Guide (Brazil)</a></li></ul>
+</div>
+</article>
+
+<h2 class="section-title" id="sec4-en"><span class="num">04</span>Trends in tools and solutions</h2>
+<p class="section-intro">Three convergence moves: a pioneering vector database vendor capitulates and brings its own search engine inside Postgres, the workflow-orchestration market gets a massive funding round driven specifically by AI-agent demand, and the two largest data warehouses/lakehouses now compete on Iceberg migration ergonomics, not just on the format itself. We found no new, verifiable survey on ML framework adoption (PyTorch/JAX/vLLM) nor on vector-database market share with transparent methodology in this window — and we'd rather flag that gap than force a number from an unreliable source.</p>
+
+<article class="item">
+<h3>Pinecone, the pioneer of vector-database-as-a-service, open-sources its own search engine to run natively inside Postgres</h3>
+<p>On October 27, 2026, Pinecone released pg_pinecone, an open-source (Apache 2.0) extension for PostgreSQL 17/18 that runs Pinecone's own vector-search engine — based on RaBitQ coding and blocked scan — inside the Postgres database the team already operates, instead of asking data to leave it. The extension has three modes: a "native" engine that runs locally with zero calls to Pinecone's cloud; a "pgvector" engine, compatible with the existing HNSW index; and a "remote" engine that offloads to Pinecone's serverless cloud once a table outgrows a single server. It's the sharpest concrete signal yet that "Postgres as the default vector store" pressure — which we'd been noting generically in recent editions — is now strong enough to make a dedicated vector-database vendor meet Postgres halfway, instead of the other way around.</p>
+<p>A third-party benchmark reproducing scripts Pinecone itself published (not independently audited) measured, for 1 million 768-dimension vectors, a 136 MB native index against 2.0 GB for pgvector HNSW in halfvec mode and 4.1 GB for full vectors — a storage reduction of more than 10x. We're treating this as a vendor benchmark, not an independently audited study, which is why we're not turning it into a chart here.</p>
+<span class="label">How the market is applying this</span>
+<p>Parallel moves in the same quarter reinforce the reading: Milvus shipped six releases between July and October 2026 hardening "external collections" that index Parquet/Iceberg/Lance directly without copying data into the vector store; and Qdrant, in release 1.20 (October 22, 2026), built native BM25 scoring directly into the engine, reducing the need to maintain a second system (like Elasticsearch) just for hybrid search. In all three cases, the "dedicated vector database" layer is dissolving into infrastructure the data team already maintains — which shifts the architecture question from "which vector database to pick" to "what does my existing database already do well enough."</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://docs.pinecone.io/guides/pg-pinecone/overview">Pinecone Docs — "pg_pinecone overview"</a></li>
+<li><a href="https://github.com/pinecone-io/pg_pinecone/releases">GitHub — pg_pinecone releases</a></li>
+<li><a href="https://github.com/qdrant/qdrant/releases">GitHub — Qdrant releases (v1.20.0, 10/22/2026)</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Temporal more than doubles its valuation in seven months, driven by AI-agent orchestration demand</h3>
+<p>Temporal — the open-source durable-execution/workflow-orchestration platform — raised a $550 million Series E on September 14, 2026, valued at $12.55 billion, led by Lightspeed with participation from Wellington Management, Goldman Sachs Alternatives, and Tiger Global. The valuation more than doubled from $5 billion just seven months earlier (a $300 million Series D led by Andreessen Horowitz, in February 2026).</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Temporal's valuation rises from $5 billion in February 2026 to $12.55 billion in September 2026"><title>Temporal's valuation, Feb. vs. Sep. 2026</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="96" width="60" height="44" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="90" text-anchor="middle" class="chart-val">$5B</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">February 2026</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">$12.55B</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">September 2026</text>
+  </svg>
+  <figcaption>Temporal Technologies' valuation across successive funding rounds, 2026.</figcaption>
+</figure>
+<span class="label">How the market is applying this</span>
+<p>The mechanism behind the jump: traditional DAG orchestrators like Airflow were designed for batch pipelines with predictable start and end points, not for AI-agent workflows that might pause for days awaiting human approval, retry tool calls that fail non-deterministically, or hold state for weeks across a multi-step process. Durable execution — which persists workflow state so it survives restarts, failures, and long pauses — is the infrastructure category this kind of agent requires, and the market is pricing it as emerging default infrastructure for agentic systems, not just a niche tool for complex ETL.</p>
+<div class="refs">
+<strong>References</strong>
+<ul><li><a href="https://techfundingnews.com/temporal-raises-550m-led-by-lightspeed-at-12-55b-valuation-why-ai-agents-need-infrastructure-that-can-survive-failure/">Tech Funding News, September 14, 2026 — "Temporal raises $550M led by Lightspeed at $12.55B valuation"</a></li></ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Snowflake removes the main adoption friction for Iceberg v3: table upgrade without rewriting the data</h3>
+<p>On October 16, 2026, Snowflake made generally available the <code>ALTER ICEBERG TABLE … UPGRADE TO ICEBERG VERSION 3</code> command, which upgrades an existing Iceberg v2 table to v3 in place — preserving name and privileges — instead of requiring a full table rewrite. Iceberg v3 (GA on Snowflake since May 2026) adds deletion vectors, row lineage, and variant/geo types, features that previously could only be adopted by rebuilding the table from scratch — a prohibitive cost on petabyte-scale tables. Removing this migration friction is exactly the kind of ergonomics race Databricks has also been running since its Tabular acquisition: the fight over the lakehouse's "open" layer is shifting from being about the file format itself to being about who makes it cheaper to migrate to its newest version.</p>
+<span class="label">How the market is applying this</span>
+<p>For data teams running Iceberg v2 tables in production, this removes the main argument against adopting v3 now — the cost and downtime of rewriting data at scale — which should accelerate adoption of features like deletion vectors (more efficient deletes on large tables) without requiring a dedicated migration window.</p>
+<div class="refs">
+<strong>References</strong>
+<ul><li><a href="https://docs.snowflake.com/en/release-notes/2026/other/2026-10-16-iceberg-v3-upgrade-expression-defaults-ga">Snowflake Release Notes, October 16, 2026 — "Apache Iceberg v3 table upgrades and expression defaults (GA)"</a></li></ul>
+</div>
+</article>
+
+<h2 class="section-title archive-title">Previous reports</h2>
+<ul class="archive-list">
+<li><a href="archive/2026-10-30.html">October 30, 2026</a></li>
+<li><a href="archive/2026-10-23.html">October 23, 2026</a></li>
+<li><a href="archive/2026-10-16.html">October 16, 2026</a></li>
+<li><a href="archive/2026-10-09.html">October 9, 2026</a></li>
+<li><a href="archive/2026-10-02.html">October 2, 2026</a></li>
+<li><a href="archive/2026-09-25.html">September 25, 2026</a></li>
+<li><a href="archive/2026-09-18.html">September 18, 2026</a></li>
+<li><a href="archive/2026-09-11.html">September 11, 2026</a></li>
+<li><a href="archive/2026-08-28.html">August 28, 2026</a></li>
+<li><a href="archive/2026-08-21.html">August 21, 2026</a></li>
+<li><a href="archive/2026-08-17.html">August 17, 2026</a></li>
+<li><a href="archive/2026-08-16.html">August 16, 2026</a></li>
+</ul>
+
+<div class="methodology">
+<strong>Methodology note.</strong> This digest is produced weekly by a research agent that actively seeks out primary sources — academic papers on arXiv, research and engineering blogs from reference companies, universities, and market surveys — rather than answering from memory. Every non-trivial claim is accompanied by a verifiable link. In this edition, direct full-page fetch access worked consistently only for anthropic.com; for arxiv.org, netflixtechblog.com, research.netflix.com, databricks.com, stateof.ai, pwc.com.br, datahackers.news, bain.com, canaltech.com.br, and movimentoeconomico.com.br, direct access was blocked by the execution environment's network, and figures cited from those domains were confirmed by cross-referencing independent searches citing the same primary content, with any detail that couldn't be directly confirmed flagged as such in the text (e.g., pg_pinecone's storage benchmarks, cited as a vendor benchmark reproduced by a third party, not as an independently audited study). Three data points used in this edition are older than the preferred three-month window — the "BM25 Wins at Scale" paper (07/29/2026), Databricks' original FILE column type announcement at Data + AI Summit (June 2026, with an 08/09/2026 technical deep-dive used as the in-window reference), and Robert Half's 2026 Salary Guide (~November 2025) — and this is flagged explicitly in the respective texts, as these are, per our research, the most current and substantial references available on these topics as of this date. We found no new primary State of Data Brazil data this week beyond what was already covered in the October 23 and October 30, 2026 editions, no verifiable ML framework (PyTorch/JAX/vLLM) adoption survey in this window, and no vector-database market-share ranking with transparent methodology and accessible primary source — we'd rather flag these gaps explicitly than force a number from an unreliable source. We found no Google Research/AI Blog publication this week on streaming, recommendation, personalization, or media infrastructure within the three-month window.
+</div>
+
+<div class="contact">
+  <p class="name">Ri Gonçalves</p>
+  <p><a href="mailto:goncalves.r@pm.me">goncalves.r@pm.me</a> · <a href="https://github.com/GoncalvesRD">github.com/GoncalvesRD</a></p>
+</div>
+
+<footer class="report-footer">
+  <p>Published via GitHub Pages from <a href="https://github.com/GoncalvesRD/ds-trends">github.com/GoncalvesRD/ds-trends</a>.</p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var buttons = document.querySelectorAll('[data-lang-btn]');
+  var blocks = document.querySelectorAll('.lang-block');
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var lang = btn.getAttribute('data-lang-btn');
+      buttons.forEach(function(b){ b.classList.toggle('active', b === btn); });
+      blocks.forEach(function(block){
+        if (block.getAttribute('data-lang') === lang) {
+          block.removeAttribute('hidden');
+        } else {
+          block.setAttribute('hidden', '');
+        }
+      });
+    });
+  });
+})();
+</script>
+
+</main>
+</body>
+</html>
