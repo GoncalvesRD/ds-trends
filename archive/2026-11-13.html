@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digest DS/ML/IA — 13 de novembro de 2026</title>
+<style>
+:root{--bg:#ffffff;--text:#1a1a1a;--muted:#6b6b6b;--hairline:#e6e6e6;--link:#1a1a1a;--link-hover:#1a8917;--serif:Georgia,'Iowan Old Style','Palatino Linotype','Book Antiqua',Palatino,serif;--sans:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;--globoplay-red:#FB0234;}
+*{box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:var(--serif);margin:0;padding:0 24px 100px;}
+main{max-width:700px;margin:0 auto;}
+[hidden]{display:none!important;}
+.lang-toggle{display:flex;justify-content:flex-end;gap:8px;align-items:center;padding:20px 0 0;font-family:var(--sans);font-size:.78rem;}
+.lang-toggle button{background:none;border:1px solid var(--hairline);border-radius:20px;padding:5px 14px;font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.03em;color:var(--muted);cursor:pointer;}
+.lang-toggle button.active{color:#fff;background:var(--text);border-color:var(--text);}
+header.report-header{padding:24px 0 0;}
+header.report-header h1{font-size:2.4rem;line-height:1.25;font-weight:400;margin:0 0 16px;letter-spacing:-.01em;}
+header.report-header .dek{font-size:1.15rem;color:var(--muted);font-style:italic;margin:0 0 28px;line-height:1.5;}
+.byline{display:flex;align-items:center;gap:14px;padding:20px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);margin-bottom:40px;font-family:var(--sans);}
+.avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;background:#1a1a1a;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.05rem;font-weight:600;flex-shrink:0;}
+.byline .name{font-weight:600;font-size:.98rem;color:var(--text);line-height:1.5;}
+.byline .sub{font-size:.85rem;color:var(--muted);line-height:1.5;}
+.byline .sub a{color:var(--muted);}
+nav.toc{font-family:var(--sans);background:#fafafa;border:1px solid var(--hairline);border-radius:10px;padding:22px 26px;margin-bottom:48px;}
+nav.toc .toc-title{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 14px;}
+nav.toc ol{margin:0;padding-left:22px;}
+nav.toc li{margin-bottom:12px;font-size:.92rem;line-height:1.55;color:var(--muted);}
+nav.toc li:last-child{margin-bottom:0;}
+nav.toc li a{font-weight:600;color:var(--text);text-decoration:none;}
+nav.toc li a:hover{color:var(--link-hover);}
+h2.section-title{font-family:var(--serif);font-size:1.7rem;font-weight:400;margin:64px 0 8px;scroll-margin-top:20px;}
+h2.section-title .num{color:var(--muted);font-size:1.1rem;margin-right:6px;}
+p.section-intro{font-family:var(--sans);color:var(--muted);font-size:.92rem;margin:0 0 32px;line-height:1.6;}
+article.item{margin:0 0 32px;}
+article.item+article.item{border-top:1px solid var(--hairline);padding-top:32px;}
+article.item h3{font-size:1.45rem;font-weight:400;line-height:1.35;margin:0 0 14px;}
+article.item p{font-size:1.08rem;line-height:1.8;margin:0 0 16px;color:var(--text);}
+.label{display:block;font-family:var(--sans);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:22px 0 8px;}
+.refs{margin-top:20px;font-family:var(--sans);font-size:.85rem;color:var(--muted);}
+.refs strong{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;}
+.refs ul{margin:6px 0 0;padding-left:0;list-style:none;}
+.refs li{margin-bottom:4px;}
+a{color:var(--link);text-decoration:underline;text-decoration-color:var(--hairline);text-underline-offset:2px;}
+a:hover{color:var(--link-hover);text-decoration-color:var(--link-hover);}
+.caveat{font-family:var(--sans);font-size:.85rem;color:var(--muted);font-style:italic;margin-top:6px;}
+section.globoplay h2.section-title,section.globoplay h2.section-title .num,section.globoplay .label{color:var(--globoplay-red);}
+section.globoplay article.item{border-left:3px solid var(--globoplay-red);padding-left:20px;}
+section.globoplay article.item+article.item{border-top:1px solid var(--hairline);}
+section.globoplay a{text-decoration-color:rgba(251,2,52,.3);}
+section.globoplay a:hover{color:var(--globoplay-red);text-decoration-color:var(--globoplay-red);}
+.methodology{font-family:var(--sans);background:#fafafa;border:1px solid var(--hairline);border-radius:8px;padding:18px 22px;font-size:.88rem;color:var(--muted);line-height:1.6;margin:64px 0 0;}
+.methodology strong{color:var(--text);}
+.contact{font-family:var(--sans);margin:28px 0 0;padding-top:24px;border-top:1px solid var(--hairline);font-size:.9rem;color:var(--muted);line-height:1.8;}
+.contact .name{color:var(--text);font-weight:600;}
+footer.report-footer{margin-top:24px;padding-top:20px;font-family:var(--sans);color:var(--muted);font-size:.82rem;}
+footer.report-footer a{color:var(--muted);}
+.archive-list{list-style:none;padding:0;margin:10px 0 0;font-family:var(--sans);}
+.archive-list li{padding:8px 0;border-bottom:1px solid var(--hairline);font-size:.92rem;}
+figure.chart{margin:24px 0;font-family:var(--sans);text-align:center;}
+figure.chart svg{width:100%;max-width:320px;height:auto;}
+figure.chart .chart-val{font-size:13px;font-weight:700;fill:var(--text);}
+figure.chart .chart-lbl{font-size:11px;fill:var(--muted);}
+figure.chart figcaption{font-size:.78rem;color:var(--muted);margin-top:8px;}
+h2.section-title.archive-title{margin-top:56px;}
+</style>
+</head>
+<body>
+<main>
+
+<div class="lang-toggle">
+  <button type="button" data-lang-btn="pt" class="active">PT</button>
+  <button type="button" data-lang-btn="en">EN</button>
+</div>
+
+<div class="lang-block" data-lang="pt">
+
+<header class="report-header">
+  <h1>Tendências em Data Science, Machine Learning e IA Aplicada</h1>
+  <p class="dek">O custo de atingir um mesmo nível de desempenho em IA caiu cerca de 725 vezes em menos de 18 meses, segundo a Epoch AI — mas o próprio laboratório que mede isso avisa que a métrica é ambígua. Na Netflix, a nova aba "AI Discover" recomenda o que ver por humor, deliberadamente sem nenhum chat. E o iFood anuncia R$ 24 bilhões de investimento no Brasil, 41% mais que no ciclo anterior, para construir seus próprios agentes de IA.</p>
+</header>
+
+<div class="byline">
+  <div class="avatar">RG</div>
+  <div>
+    <div class="name">Ri Gonçalves</div>
+    <div class="sub"><a href="https://goncalvesrd.github.io/ds-trends/">goncalvesrd.github.io/ds-trends</a> · 13 de novembro de 2026</div>
+  </div>
+</div>
+
+<nav class="toc">
+  <p class="toc-title">Nesta edição</p>
+  <ol>
+    <li><a href="#sec1-pt">Tendências gerais em Data Science / ML / IA aplicada</a> — a Epoch AI documenta uma queda de custo de inteligência sem precedente entre tecnologias comparáveis, a Meta abre os pesos de um modelo de 816 bilhões de parâmetros para disputar a corrida de modelos abertos com a China, e um benchmark da própria Meta mostra que agentes de IA ainda superam pesquisadores humanos em apenas 4 de 20 tarefas reais de pesquisa em ML.</li>
+    <li><a href="#sec2-pt">Streaming e concorrentes da Globoplay</a> — a Netflix lança a aba "AI Discover" para descoberta de conteúdo por humor, sem chat, e a Anthropic lança Claude Fable 5.2 e Mythos 5.2 — sem nenhuma publicação nova do Netflix Research, Netflix TechBlog, Google Research ou Databricks Blog sobre streaming, recomendação ou mídia nesta janela.</li>
+    <li><a href="#sec3-pt">Mercado de Data Science no Brasil</a> — o iFood anuncia R$ 24 bilhões em investimento no país com foco em agentes de IA próprios, e a Brasscom projeta 33 mil novas vagas formais em TIC até o fim de 2026, depois de ter errado a projeção do ano anterior por um fator de até cinco vezes.</li>
+    <li><a href="#sec4-pt">Tendências de ferramentas e soluções</a> — a LangChain mostra agentes de IA em produção subindo de 51% para 57% das empresas pesquisadas, com qualidade (não custo) como principal freio, e a Amazon compra a DuckLabs, a empresa por trás do DuckDB, abrindo uma nova frente na disputa de bancos analíticos.</li>
+  </ol>
+</nav>
+
+<h2 class="section-title" id="sec1-pt"><span class="num">01</span>Tendências gerais em Data Science, Machine Learning e IA Aplicada</h2>
+<p class="section-intro">Três sinais que se completam: um laboratório independente de pesquisa quantifica a queda de custo de inteligência artificial com um rigor pouco comum no setor, a Meta reage à ascensão de modelos abertos chineses com seu próprio modelo aberto de peso pesado, e um benchmark rigoroso de pesquisa em ML mostra o quão longe agentes de IA ainda estão de substituir pesquisadores humanos — um contraponto direto ao otimismo sobre automação de P&D que cobrimos na edição anterior.</p>
+
+<article class="item">
+<h3>Epoch AI: o custo de um mesmo nível de inteligência em IA cai cerca de 725 vezes em menos de 18 meses — mas o próprio laboratório diz que a métrica é ambígua</h3>
+<p>Publicado em 22 de setembro de 2026, o relatório "The Plunging Price of Thought" da Epoch AI mede algo diferente do que a maioria dos índices de preço de IA: não o preço por token de um único modelo, mas o custo mínimo necessário para atingir um nível fixo de desempenho em benchmarks difíceis, ano após ano — rastreando, para cada score-alvo, qual é a opção mais barata disponível naquele momento (às vezes um modelo de API, às vezes um modelo de peso aberto rodando em hardware alugado, com estimativa de custo que os autores dizem ficar a até 30% do preço de API equivalente). O resultado, segundo os autores, é a medida mais rigorosa já publicada do quanto a "inteligência" está de fato ficando mais barata, em vez de apenas mais rápida ou mais acessível por outras vias.</p>
+<p>A conclusão central: nos últimos três anos, o custo de um nível fixo de desempenho caiu cerca de 47% por trimestre — um ritmo de aproximadamente 13 vezes ao ano. O exemplo mais citado do relatório: em janeiro de 2025, o modelo o3 da OpenAI atingiu 75% no benchmark GPQA Diamond a um custo de US$ 0,30 por pergunta; um modelo mais recente, lançado cerca de 18 meses depois, atingiu o mesmo score por aproximadamente US$ 0,0004 por pergunta — uma queda de cerca de 725 vezes. Os autores comparam esse ritmo ao de outras tecnologias historicamente associadas a quedas de custo rápidas, como sequenciamento de DNA e baterias de lítio, e afirmam que a queda de custo de inteligência os supera com folga.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>A própria Epoch AI é explícita sobre os limites da métrica: desempenho em benchmark não é o mesmo que trabalho útil entregue, e o conceito de "preço de uma tarefa fixa" é ambíguo, porque a gama de serviços que um modelo de linguagem vende é ampla, muda constantemente e não tem a uniformidade de um quilowatt-hora. Ainda assim, para quem modela a curva de custo de IA para orçamento de longo prazo, esse é o dado de referência mais rigoroso disponível até agora — e um contraponto útil a relatos de mercado (como o de que gastos corporativos totais com IA sobem mesmo com o preço por token caindo, por conta do volume de uso crescer mais rápido) que medem gasto agregado, não custo por unidade de capacidade.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul><li><a href="https://epoch.ai/publications/the-plunging-price-of-thought">Epoch AI, 22 de setembro de 2026 — "The Plunging Price of Thought"</a></li></ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Meta abre os pesos de um modelo de 816 bilhões de parâmetros — o mais capaz "open-weight" americano até agora, segundo a empresa</h3>
+<p>Em outubro de 2026, a Meta lançou o Muse Spark Open, uma versão de pesos abertos do seu modelo Muse Spark (lançado em versão fechada em abril de 2026 pela Meta Superintelligence Labs). É um modelo de mistura de especialistas (MoE) com 816 bilhões de parâmetros totais mas apenas 42 bilhões ativos por token — o mecanismo que permite a um modelo desse tamanho rodar com custo de inferência comparável a um modelo muito menor, porque só uma fração da rede é computada a cada passo. O modelo é nativamente multimodal, tem janela de contexto de 1 milhão de tokens, e a Meta diz que ele é capaz de rodar localmente em dois Mac Studios M5 Ultra via o framework MLX da Apple — um detalhe de acesso que poucos modelos dessa escala oferecem.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="O Muse Spark Open tem 816 bilhões de parâmetros totais, mas apenas 42 bilhões são ativados por token processado">
+    <title>Parâmetros totais vs. ativos por token, Muse Spark Open</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="90" y="24" text-anchor="middle" class="chart-val">816 bi</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Parâmetros totais</text>
+    <rect x="200" y="134" width="60" height="6" fill="var(--muted)" opacity="0.4"/>
+    <text x="230" y="128" text-anchor="middle" class="chart-val">42 bi</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Ativos por token</text>
+  </svg>
+  <figcaption>Arquitetura de mistura de especialistas (MoE) do Muse Spark Open, Meta, outubro de 2026.</figcaption>
+</figure>
+<span class="label">Como o mercado está aplicando</span>
+<p>O lançamento é uma resposta direta ao dado que destacamos na edição anterior, do State of AI Report 2026: a participação de modelos chineses de peso aberto nas menções em papers do arXiv subiu de 9% para 31% entre 2024 e 2026, enquanto a dos modelos americanos caiu de 31% para 23%. O Muse Spark Open é, até agora, a resposta mais substancial de um laboratório americano a essa virada — mas a cobertura é dividida sobre o quão "aberto" ele de fato é: a Meta libera os pesos no Hugging Face sob uma licença própria (Muse Model License) com restrições de uso no estilo da licença Llama, não uma licença permissiva irrestrita. Para equipes avaliando alternativas abertas a Qwen ou DeepSeek, isso significa checar os termos de licença antes de assumir uso comercial irrestrito, exatamente como já é prática comum com a família Llama.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://research.meta.ai/blog/muse-spark-open">Meta AI Research — "Muse Spark Open: The Most Capable US Open-Weight Model to Date"</a></li>
+<li><a href="https://about.fb.com/news/2026/04/introducing-muse-spark-meta-superintelligence-labs-first-model-built-to-prioritize-people/">About Meta, abril de 2026 — anúncio original do Muse Spark (versão fechada)</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>AIRS-Bench: agentes de IA superam pesquisadores humanos em apenas 4 de 20 tarefas reais de pesquisa em machine learning</h3>
+<p class="caveat">Nota de atualidade: este benchmark da Meta foi publicado em fevereiro de 2026, fora da janela de três meses preferida nesta edição. Usamos mesmo assim porque não encontramos nenhum estudo igualmente rigoroso e mais recente sobre a questão específica de agentes superando pesquisadores humanos em tarefas de pesquisa real, e o resultado é um contraponto direto ao otimismo sobre automação de P&D que cobrimos na edição de 6 de novembro.</p>
+<p>O AIRS-Bench reúne 20 tarefas extraídas de papers recentes de machine learning, cada uma com um resultado de estado da arte humano já publicado como alvo a ser batido — não uma tarefa sintética, mas a reprodução de um problema de pesquisa real sob as mesmas restrições de recursos do paper original. Os agentes testados batem o estado da arte humano em apenas 4 das 20 tarefas, e mesmo nesses casos não atingem o teto teórico da tarefa. A taxa média de submissão válida (ou seja, o agente produzir qualquer solução que de fato funcione, independente da qualidade) foi de 58,8% — abaixo de 6 em cada 10 tentativas. Em média, os agentes avançam apenas 23,4% do caminho entre a linha de base e o estado da arte humano.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Agentes de IA superam o estado da arte humano em 4 das 20 tarefas do AIRS-Bench, e ficam abaixo dele nas outras 16">
+    <title>Tarefas superadas vs. não superadas, AIRS-Bench</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="118" width="60" height="22" fill="var(--text)"/>
+    <text x="90" y="112" text-anchor="middle" class="chart-val">4</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Superaram humanos</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">16</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Ficaram abaixo</text>
+  </svg>
+  <figcaption>Resultado dos agentes testados nas 20 tarefas do AIRS-Bench (Meta, fevereiro de 2026).</figcaption>
+</figure>
+<span class="label">Como o mercado está aplicando</span>
+<p>Onde os agentes de fato superam o humano, o mecanismo quase nunca é um insight genuinamente novo — é predominantemente ensemble de modelos ou busca paralela de código em larga escala, estratégias de força bruta mais do que de raciocínio científico original. Isso é um contraponto direto ao dado da Anthropic que cobrimos na semana passada, de que o Claude já "lidera" 26% das tarefas de P&D em IA da própria empresa: essa métrica usa uma régua de automação muito mais permissiva — completar a maior parte de uma tarefa ponta a ponta sob supervisão humana — do que a régua do AIRS-Bench, que exige superar de forma independente o melhor resultado humano já publicado. Para qualquer equipe que está comparando seus próprios agentes a "nível humano", a escolha da régua muda o número final por uma ordem de magnitude.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://huggingface.co/papers/2602.06855">arXiv:2602.06855 — "AIRS-Bench: a Suite of Tasks for Frontier AI Research Science Agents"</a> (Meta, fevereiro de 2026)</li>
+</ul>
+</div>
+</article>
+
+<section class="globoplay">
+<h2 class="section-title" id="sec2-pt"><span class="num">02</span>Streaming e concorrentes da Globoplay</h2>
+<p class="section-intro">Duas novidades concretas nesta janela — um novo recurso de produto da Netflix e um novo par de modelos da Anthropic — e três lacunas que preferimos registrar explicitamente a forçar: nenhuma publicação nova do Netflix Research ou do Netflix TechBlog sobre recomendação, personalização ou infraestrutura de ML apareceu nesta busca, nenhuma postagem do Google Research sobre streaming ou mídia, e nenhum anúncio do Databricks Blog ligado especificamente a mídia ou streaming (o Databricks teve apenas uma nota de release de recurso de MLOps genérico em novembro, sem relação com o tema desta seção).</p>
+
+<article class="item">
+<h3>Netflix lança a aba "AI Discover": descoberta de conteúdo por humor, numa primeira versão deliberadamente sem chat</h3>
+<p>Em 3 de novembro de 2026, a Netflix começou a liberar o "AI Discover", uma nova aba no aplicativo de TV, inicialmente para um grupo de teste de assinantes nos EUA com perfis em inglês em TVs conectadas suportadas (fora de perfis infantis). O usuário escolhe entre temas organizados por humor, cada um com um clipe de prévia, e as recomendações dentro de cada tema se adaptam conforme o usuário navega. A Netflix é explícita: não há capacidade de chat nesta primeira versão — uma escolha deliberada que distingue o recurso da busca generativa que a empresa testou em 2025 com tecnologia da OpenAI, uma funcionalidade diferente que não deve ser confundida com esta.</p>
+<p>A própria Netflix descreve o recurso como sua "cozinha-teste": uma camada de inteligência nova, construída para responder ao que o usuário sinaliza em tempo real durante a sessão — e não só ao perfil histórico de gosto — que a empresa usa para decidir o que manter, melhorar ou descartar antes de eventualmente levar para o produto principal.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>O ângulo mais interessante para quem acompanha a engenharia por trás disso é o contraste com o GenRec, o ranqueador generativo baseado em LLM que a Netflix testou em cerca de 10% do tráfego por quatro semanas (coberto em edições anteriores) e que registrou um ganho relativo de apenas 0,006% na métrica central de produto — estatisticamente significativo, mas marginal. Se a adaptação em tempo real do "AI Discover" se mostrar mais valiosa para o usuário do que ajustes finos num ranqueador de tokens, isso sugere que o próximo salto de personalização em streaming pode vir menos de "gerar a lista certa" e mais de "reagir ao sinal da sessão atual" — uma hipótese de produto, não ainda um resultado medido publicamente.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://about.netflix.com/news/introducing-ai-discover">Netflix, 3 de novembro de 2026 — "Introducing AI Discover: A New Place to Find Your Next Great Watch"</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Anthropic lança Claude Fable 5.2 e Mythos 5.2: mesmo modelo, dois níveis de acesso, para o trabalho técnico mais ambicioso</h3>
+<p>Em 9 de novembro de 2026, a Anthropic lançou Claude Fable 5.2 e Claude Mythos 5.2 — segundo a própria empresa, o mesmo modelo subjacente distribuído sob dois regimes de acesso diferentes. Fable 5.2 é liberado a todos os usuários, com salvaguardas de cibersegurança e biologia embutidas; Mythos 5.2 fica restrito a organizações verificadas pelos programas de verificação de Cibersegurança e Ciências da Vida da Anthropic, e encontrou cerca de 10,2% mais vulnerabilidades do que o Opus 5.5 num teste interno de redescoberta de CVEs. Ambos geram saída até 30% mais rápido que as versões 5.1, e a Anthropic reporta cerca de 55% menos bloqueios de segurança desnecessários — relevante para qualquer pipeline agentic que hoje precisa contornar recusas excessivamente cautelosas do modelo.</p>
+<p>Nos benchmarks divulgados pela própria Anthropic, o salto mais expressivo frente ao Opus 5.5 aparece no Remote Labor Index, que mede conclusão ponta a ponta de tarefas de trabalho remoto reais: 41,3% para o Fable 5.2 contra 21,3% para o Opus 5.5 — quase o dobro.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="No Remote Labor Index, Fable 5.2 atinge 41,3%, quase o dobro dos 21,3% do Opus 5.5">
+    <title>Remote Labor Index: Fable 5.2 vs. Opus 5.5</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="23" width="60" height="117" fill="var(--text)"/>
+    <text x="90" y="17" text-anchor="middle" class="chart-val">41,3%</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Fable 5.2</text>
+    <rect x="200" y="83" width="60" height="57" fill="var(--muted)" opacity="0.4"/>
+    <text x="230" y="77" text-anchor="middle" class="chart-val">21,3%</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Opus 5.5</text>
+  </svg>
+  <figcaption>Remote Labor Index, benchmarks divulgados pela Anthropic, novembro de 2026.</figcaption>
+</figure>
+<span class="label">Como o mercado está aplicando</span>
+<p>A própria Anthropic recomenda que a maioria das equipes continue usando o Opus 5.5 como padrão para codificação e tarefas de conhecimento do dia a dia, reservando Fable e Mythos para "o trabalho técnico mais ambicioso e aberto" — uma orientação explícita contra fazer upgrade automático de toda carga de trabalho para o modelo mais caro só porque ele existe. Para quem acompanha a Anthropic de forma recorrente (como este digest faz), o padrão de lançamento — mesmo peso, acesso diferenciado por verificação de risco — é o mesmo usado para o programa "AI for Science" coberto na semana passada, e parece estar se tornando a forma padrão da empresa de liberar capacidade de ponta sem liberar irrestritamente o uso dela.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://www.anthropic.com/news/claude-fable-and-mythos-5-2">Anthropic, 9 de novembro de 2026 — "Introducing Claude Fable 5.2 and Claude Mythos 5.2"</a></li>
+</ul>
+</div>
+</article>
+</section>
+
+<h2 class="section-title" id="sec3-pt"><span class="num">03</span>Mercado de Data Science no Brasil</h2>
+<p class="section-intro">Não encontramos nenhum dado primário novo do State of Data Brazil nesta semana — a pesquisa da edição 2026/2027 do Data Hackers já está em campo, mas sem resultados publicados ainda. Em vez disso, trazemos um case concreto de investimento em IA de uma das maiores plataformas de tecnologia do país, e um retrato do mercado de trabalho formal em TIC que vem com uma lição de humildade estatística sobre projeções de contratação.</p>
+
+<article class="item">
+<h3>iFood anuncia R$ 24 bilhões em investimento no Brasil — 41% mais que no ciclo anterior — para construir agentes de IA próprios</h3>
+<p>Em 16 de setembro de 2026, o iFood anunciou um investimento de R$ 24 bilhões no Brasil para o ciclo fiscal de abril de 2026 a março de 2027 — 41% mais que os R$ 17 bilhões do ciclo anterior. Do total, R$ 2 bilhões são destinados especificamente a tecnologia e inovação, incluindo o desenvolvimento de agentes de inteligência artificial próprios e o avanço do que a empresa chama de "Large Commerce Model" (LCM) — um modelo de fundação proprietário treinado sobre dados de comércio e logística da própria plataforma, em vez de depender só de modelos de propósito geral de terceiros. O anúncio ocorreu em meio a um escrutínio mais aprofundado do Cade sobre práticas competitivas no mercado de delivery.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Investimento do iFood no Brasil sobe de R$ 17 bilhões no ciclo anterior para R$ 24 bilhões no ciclo 2026/2027, alta de 41%">
+    <title>Investimento do iFood no Brasil, ciclo anterior vs. 2026/2027</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="62" width="60" height="78" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="56" text-anchor="middle" class="chart-val">R$ 17 bi</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Ciclo anterior</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">R$ 24 bi</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Ciclo 2026/2027</text>
+  </svg>
+  <figcaption>Investimento anunciado do iFood no Brasil, por ciclo fiscal. iFood, 16 de setembro de 2026.</figcaption>
+</figure>
+<p class="caveat">Nota sobre um número específico: uma reportagem cita o iFood operando cerca de 25 bilhões de decisões preditivas por mês com base em dados e IA desde 2018; uma reportagem anterior, de outubro de 2025, citava um patamar de 14 bilhões de decisões por mês. Não encontramos confirmação direta do iFood para nenhum dos dois números nesta semana, então tratamos ambos como estimativas de imprensa, não como dado oficial da empresa.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>Para equipes de dados brasileiras, o LCM do iFood é um exemplo concreto de "construir vs. comprar" pendendo para construir na escala de uma grande plataforma: em vez de depender inteiramente de modelos de propósito geral via API, a empresa está investindo em capacidade de fundação própria, treinada sobre seus próprios dados verticais de comércio e logística — um ponto de referência útil para qualquer equipe que esteja hoje decidindo até que ponto vale a pena construir modelos proprietários especializados em vez de apenas ajustar modelos de terceiros.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://www.meioemensagem.com.br/marketing/ifood-investira-r-24-bilhoes-no-brasil-ate-2027">Meio & Mensagem, 16 de setembro de 2026 — "iFood investirá R$ 24 bilhões no Brasil até 2027"</a></li>
+<li><a href="https://mercadoeconsumo.com.br/16/09/2026/foodservice/ifood-anuncia-investimento-recorde-de-r-24-bi-em-meio-a-disputas-na-justica-e-no-cade/">Mercado&Consumo, 16 de setembro de 2026 — cobertura do investimento em meio ao escrutínio do Cade</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Brasscom projeta 33 mil novas vagas formais em TIC até o fim de 2026 — depois de errar a projeção do ano anterior por até cinco vezes</h3>
+<p class="caveat">Nota de atualidade: o relatório da Brasscom usado aqui é de julho de 2026, pouco antes da janela de três meses preferida nesta edição. Usamos porque é a projeção mais atual e substancial disponível especificamente sobre emprego formal em TIC no Brasil; complementamos com dados de CAGED de setembro de 2026 (divulgados em 4-5 de novembro de 2026), dentro da janela, para o contexto macroeconômico mais recente.</p>
+<p>O relatório "Perspectivas do Mercado de Trabalho do Macrossetor TIC" da Brasscom usa um modelo estatístico de machine learning com horizonte de doze meses (dezembro de 2025 a dezembro de 2026) para projetar uma alta de 2,126 milhões para 2,159 milhões de profissionais CLT no setor — cerca de 33 mil novas vagas formais, com margem de erro de ±1,1%. O dado que vale mais atenção, porém, é metodológico: a mesma abordagem, aplicada ao ano anterior, projetou entre 30 mil e 147 mil novas vagas CLT para 2025 — e o resultado real foi de apenas 23,7 mil, um erro de até cerca de cinco vezes em relação ao limite superior da faixa projetada. O motivo, segundo a própria Brasscom: boa parte do crescimento real de contratação em 2025 não apareceu como CLT, e sim como 88,5 mil novos contratos MEI/PJ e 13,3 mil vínculos informais — formas de contratação que a métrica de "vagas CLT" simplesmente não captura.</p>
+<p>Para contexto macroeconômico mais amplo: o CAGED de setembro de 2026, divulgado entre 4 e 5 de novembro de 2026, registrou cerca de 121,3 mil novos postos de trabalho formais líquidos no país — uma queda de 43,5% frente ao mesmo mês de 2025 (o que implica algo em torno de 215 mil postos em setembro de 2025). A criação de emprego formal acumulada em 2026 (até setembro) caiu 27,9% frente ao mesmo período de 2025.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Criação líquida de postos de trabalho formais em setembro cai de cerca de 215 mil em 2025 para 121,3 mil em 2026, queda de 43,5%">
+    <title>Saldo de empregos formais em setembro, 2025 vs. 2026</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="24" text-anchor="middle" class="chart-val">~215 mil</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Setembro de 2025</text>
+    <rect x="200" y="78" width="60" height="62" fill="var(--text)"/>
+    <text x="230" y="72" text-anchor="middle" class="chart-val">121,3 mil</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Setembro de 2026</text>
+  </svg>
+  <figcaption>Saldo nacional de empregos formais (CAGED), setembro de cada ano. Divulgado em novembro de 2026.</figcaption>
+</figure>
+<span class="label">Como o mercado está aplicando</span>
+<p>Para quem lê relatórios de contratação em tecnologia e dados no Brasil pelo número de vagas CLT, o episódio de 2025 é um alerta direto: parte considerável da contratação real em tech pode estar migrando para PJ/MEI de um jeito que as métricas de "vagas formais" não enxergam — o que sugere acompanhar as duas séries (CLT e PJ/MEI) antes de concluir que o mercado está esfriando ou esquentando com base só numa delas.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://brasscom.org.br/wp-content/uploads/2026/07/Relatorio-Pespectivas-do-Mercado-de-Trabalho-Apresentacao-v9.pdf">Brasscom, julho de 2026 — "Perspectivas do Mercado de Trabalho do Macrossetor TIC"</a></li>
+<li><a href="https://mercadoeconsumo.com.br/05/11/2026/economia/brasil-cria-1213-mil-postos-de-trabalho-em-setembro-aponta-caged/">Mercado&Consumo, 5 de novembro de 2026 — CAGED de setembro de 2026</a></li>
+</ul>
+</div>
+</article>
+
+<h2 class="section-title" id="sec4-pt"><span class="num">04</span>Tendências de ferramentas e soluções</h2>
+<p class="section-intro">Dois movimentos: um survey de prática mostra adoção de agentes de IA em produção subindo, com o freio migrando de custo para confiabilidade — o mesmo padrão que o AIRS-Bench (Seção 1) encontra na fronteira de pesquisa — e a Amazon absorve o time por trás do DuckDB, abrindo uma nova frente na disputa entre bancos analíticos embarcados e data warehouses/lakehouses geridos.</p>
+
+<article class="item">
+<h3>Agentes de IA em produção sobem de 51% para 57% das empresas — mas qualidade, não custo, é o principal freio</h3>
+<p class="caveat">Nota sobre a fonte: a cobertura secundária deste levantamento da LangChain diverge sobre a janela exata de coleta de dados (uma fonte cita novembro de 2025, outra cita meados de 2026). Não conseguimos confirmar a data exata de campo e por isso evitamos fixar um mês específico — tratamos os números abaixo como a posição mais recente divulgada do relatório em 2026.</p>
+<p>O relatório "State of Agent Engineering" da LangChain, com mais de 1.300 profissionais respondentes, mostra 57,3% das organizações já com agentes de IA em produção, contra 51% no levantamento anterior — e esse número sobe para 67% entre empresas com mais de 10 mil funcionários. Atendimento ao cliente lidera os casos de uso em produção, com 26,5%. O dado mais relevante para quem decide prioridade de investimento, porém, é sobre o que está travando a adoção: apenas 32% dos respondentes apontam custo como principal barreira — qualidade, latência e segurança dominam a lista de obstáculos. Observabilidade também avançou: 89% reportam algum nível de rastreamento (tracing) de agentes, e 62% já fazem rastreamento detalhado.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Organizações com agentes de IA em produção sobem de 51% no levantamento anterior para 57,3% no levantamento mais recente"><title>Agentes de IA em produção, levantamento anterior vs. atual</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="41" width="60" height="99" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="35" text-anchor="middle" class="chart-val">51%</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Levantamento anterior</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">57,3%</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Levantamento atual</text>
+  </svg>
+  <figcaption>Participação de organizações com agentes de IA em produção. LangChain, "State of Agent Engineering", 2026.</figcaption>
+</figure>
+<span class="label">Como o mercado está aplicando</span>
+<p>A migração do freio de "é caro" para "não é confiável o bastante" espelha exatamente o que o AIRS-Bench encontrou na fronteira de pesquisa (Seção 1): times de produção e benchmarks acadêmicos estão convergindo para a mesma conclusão — a confiabilidade do agente, não a capacidade bruta ou o custo por token, é hoje o fator que mais limita adoção. Para quem está decidindo onde investir em engenharia de agentes, isso é um argumento direto para priorizar avaliação e observabilidade antes de otimização de custo.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul><li><a href="https://www.langchain.com/stateofaiagents">LangChain — "State of Agent Engineering" (2026)</a></li></ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Amazon compra a DuckLabs, a empresa por trás do DuckDB, abrindo uma nova frente contra Snowflake e Databricks</h3>
+<p>Em 26 de agosto de 2026, a DuckLabs — a empresa fundada pelos criadores do DuckDB, mantenedora também do DuckLake e do projeto Quack — anunciou que está se juntando à AWS. O time de engenharia permanece em Amsterdã. A AWS é explícita em um ponto: não está adquirindo o projeto de código aberto DuckDB em si, que continua sob sua governança própria — uma distinção que parte da cobertura do setor considera menos relevante do que o fato de que o núcleo da equipe de engenharia do motor passa a responder à Amazon. A MotherDuck, principal veículo comercial em torno do DuckDB e que mantém uma parceria de quatro anos com os engenheiros da DuckLabs, permanece como empresa independente — mas, como a DuckLabs detém participação na MotherDuck, a AWS se torna indiretamente uma acionista minoritária da MotherDuck quando o negócio for concluído.</p>
+<span class="label">Como o mercado está aplicando</span>
+<p>O mecanismo por trás do interesse da AWS: o DuckDB resolve um problema estruturalmente diferente do que Snowflake e Databricks resolvem — é um motor analítico embarcado, de nó único, sem infraestrutura dedicada, pensado para análise local e pipelines leves, enquanto os dois concorrentes vendem warehouses geridos, distribuídos e multi-tenant. Absorver o time central sugere que a AWS quer presença própria em análise embarcada/in-process — provavelmente para integração com Redshift, Athena, ou para casos de uso de pipelines agentic que rodam localmente — sem precisar apostar numa narrativa única de warehouse distribuído. Para equipes que já rodam DuckDB ou MotherDuck em produção, o motor de código aberto continua, por ora, explicitamente intocado; vale acompanhar se o roadmap muda de direção conforme a AWS integra o time.</p>
+<div class="refs">
+<strong>Referências</strong>
+<ul>
+<li><a href="https://www.geekwire.com/2026/amazon-acquires-ducklabs-adding-the-team-behind-duckdb-amid-broader-shakeup-in-cloud-data/">GeekWire, 26 de agosto de 2026 — "Amazon acquires DuckLabs, adding the team behind open-source database DuckDB"</a></li>
+</ul>
+</div>
+</article>
+
+<h2 class="section-title archive-title">Relatórios anteriores</h2>
+<ul class="archive-list">
+<li><a href="archive/2026-11-06.html">6 de novembro de 2026</a></li>
+<li><a href="archive/2026-10-30.html">30 de outubro de 2026</a></li>
+<li><a href="archive/2026-10-23.html">23 de outubro de 2026</a></li>
+<li><a href="archive/2026-10-16.html">16 de outubro de 2026</a></li>
+<li><a href="archive/2026-10-09.html">9 de outubro de 2026</a></li>
+<li><a href="archive/2026-10-02.html">2 de outubro de 2026</a></li>
+<li><a href="archive/2026-09-25.html">25 de setembro de 2026</a></li>
+<li><a href="archive/2026-09-18.html">18 de setembro de 2026</a></li>
+<li><a href="archive/2026-09-11.html">11 de setembro de 2026</a></li>
+<li><a href="archive/2026-08-28.html">28 de agosto de 2026</a></li>
+<li><a href="archive/2026-08-21.html">21 de agosto de 2026</a></li>
+<li><a href="archive/2026-08-17.html">17 de agosto de 2026</a></li>
+<li><a href="archive/2026-08-16.html">16 de agosto de 2026</a></li>
+</ul>
+
+<div class="methodology">
+<strong>Nota metodológica.</strong> Este digest é produzido semanalmente por um agente de pesquisa que busca ativamente fontes primárias — papers acadêmicos no arXiv, blogs de pesquisa e engenharia de empresas de referência, universidades e surveys de mercado — em vez de responder de memória. Toda afirmação não trivial é acompanhada de um link verificável. Nesta edição, o acesso direto por fetch de página completa funcionou apenas para anthropic.com; para arxiv.org, techblog.netflix.com e techcrunch.com, o acesso direto foi bloqueado pela rede do ambiente de execução, e os números citados desses domínios e de research.meta.ai, epoch.ai, about.netflix.com, brasscom.org.br e veículos de imprensa brasileiros foram confirmados por cruzamento entre buscas independentes que citam o mesmo conteúdo primário. Dois pontos de dado usados nesta edição são mais antigos que a janela preferencial de três meses — o benchmark AIRS-Bench da Meta (fevereiro de 2026) e o relatório da Brasscom sobre emprego em TIC (julho de 2026) — e isso é sinalizado explicitamente nos respectivos textos, por serem, segundo nossa pesquisa, as referências mais atuais e substanciais disponíveis sobre os temas nesta data. Dois números específicos têm fontes conflitantes e foram sinalizados como tal: o volume mensal de decisões preditivas do iFood (25 bilhões segundo uma fonte, 14 bilhões segundo outra, nenhum confirmado diretamente pela empresa) e a janela exata de coleta do survey "State of Agent Engineering" da LangChain. A data exata do anúncio do Muse Spark Open da Meta (outubro de 2026) também não pôde ser confirmada em uma fonte primária datada. Não encontramos, nesta semana, nenhum dado primário novo do State of Data Brazil, nenhuma publicação do Netflix Research ou do Netflix TechBlog sobre recomendação ou personalização, nenhuma postagem do Google Research sobre streaming ou mídia, e nenhum anúncio do Databricks Blog especificamente sobre mídia ou streaming — preferimos registrar essas lacunas explicitamente a forçar uma notícia que não existe.
+</div>
+
+<div class="contact">
+  <p class="name">Ri Gonçalves</p>
+  <p><a href="mailto:goncalves.r@pm.me">goncalves.r@pm.me</a> · <a href="https://github.com/GoncalvesRD">github.com/GoncalvesRD</a></p>
+</div>
+
+<footer class="report-footer">
+  <p>Publicado via GitHub Pages a partir de <a href="https://github.com/GoncalvesRD/ds-trends">github.com/GoncalvesRD/ds-trends</a>.</p>
+</footer>
+
+</div>
+
+<div class="lang-block" data-lang="en" hidden>
+
+<header class="report-header">
+  <h1>Trends in Data Science, Machine Learning and Applied AI</h1>
+  <p class="dek">The cost of reaching a fixed level of AI performance fell roughly 725-fold in under 18 months, according to Epoch AI — though the lab measuring it warns the metric is ambiguous. At Netflix, the new "AI Discover" tab recommends what to watch by mood, deliberately with no chat at all. And iFood announces R$24 billion in investment in Brazil, 41% more than its previous cycle, to build its own AI agents.</p>
+</header>
+
+<div class="byline">
+  <div class="avatar">RG</div>
+  <div>
+    <div class="name">Ri Gonçalves</div>
+    <div class="sub"><a href="https://goncalvesrd.github.io/ds-trends/">goncalvesrd.github.io/ds-trends</a> · November 13, 2026</div>
+  </div>
+</div>
+
+<nav class="toc">
+  <p class="toc-title">In this issue</p>
+  <ol>
+    <li><a href="#sec1-en">General trends in Data Science / ML / applied AI</a> — Epoch AI documents a drop in the cost of intelligence with no precedent among comparable technologies, Meta open-sources the weights of an 816-billion-parameter model to contest the open-model race with China, and a Meta benchmark shows AI agents still beat human researchers on only 4 of 20 real ML research tasks.</li>
+    <li><a href="#sec2-en">Streaming and Globoplay's competitors</a> — Netflix launches the "AI Discover" tab for mood-based content discovery with no chat, and Anthropic launches Claude Fable 5.2 and Mythos 5.2 — with no new publication from Netflix Research, Netflix TechBlog, Google Research or the Databricks Blog on streaming, recommendation or media in this window.</li>
+    <li><a href="#sec3-en">The Data Science market in Brazil</a> — iFood announces R$24 billion in investment in the country focused on its own AI agents, and Brasscom projects 33,000 new formal ICT jobs by the end of 2026, after missing last year's projection by up to five-fold.</li>
+    <li><a href="#sec4-en">Trends in tools and solutions</a> — LangChain shows AI agents in production climbing from 51% to 57% of surveyed companies, with quality (not cost) as the main brake, and Amazon acquires DuckLabs, the company behind DuckDB, opening a new front in the analytics-database race.</li>
+  </ol>
+</nav>
+
+<h2 class="section-title" id="sec1-en"><span class="num">01</span>General trends in Data Science, Machine Learning and applied AI</h2>
+<p class="section-intro">Three signals that complete each other: an independent research lab quantifies the fall in AI's cost of intelligence with unusual rigor for the industry, Meta responds to the rise of Chinese open models with its own heavyweight open model, and a rigorous ML-research benchmark shows just how far AI agents still are from replacing human researchers — a direct counterpoint to the optimism about R&D automation we covered in the previous edition.</p>
+
+<article class="item">
+<h3>Epoch AI: the cost of a fixed level of AI intelligence falls roughly 725-fold in under 18 months — but the lab itself says the metric is ambiguous</h3>
+<p>Published on September 22, 2026, Epoch AI's report "The Plunging Price of Thought" measures something different from most AI pricing indices: not the per-token price of a single model, but the minimum cost required to reach a fixed performance level on hard benchmarks, year over year — tracking, for each target score, whichever option is cheapest at that moment (sometimes an API model, sometimes an open-weight model run on rented hardware, with a cost estimate the authors say lands within 30% of the equivalent API price). The result, per the authors, is the most rigorous measure yet published of how much "intelligence" is actually getting cheaper, rather than merely faster or more accessible through other means.</p>
+<p>The central finding: over the past three years, the cost of a fixed performance level has fallen by about 47% per quarter — a pace of roughly 13-fold per year. The report's most-cited example: in January 2025, OpenAI's o3 model reached 75% on the GPQA Diamond benchmark at a cost of $0.30 per question; a more recent model, released about 18 months later, hit the same score for roughly $0.0004 per question — a drop of about 725-fold. The authors compare this pace to other technologies historically associated with rapid cost declines, such as DNA sequencing and lithium batteries, and say the decline in the cost of intelligence outpaces them by a wide margin.</p>
+<span class="label">How the market is applying this</span>
+<p>Epoch AI itself is explicit about the metric's limits: benchmark performance isn't the same as useful work delivered, and the concept of "the price of a fixed task" is ambiguous, because the range of services a language model sells is broad, constantly changing, and lacks the uniformity of a kilowatt-hour. Even so, for anyone modeling the AI cost curve for long-term budgeting, this is the most rigorous reference point available so far — and a useful counterpoint to market reports (such as the one noting total enterprise AI spend keeps rising even as per-token price falls, because usage volume grows faster) that measure aggregate spend, not cost per unit of capability.</p>
+<div class="refs">
+<strong>References</strong>
+<ul><li><a href="https://epoch.ai/publications/the-plunging-price-of-thought">Epoch AI, September 22, 2026 — "The Plunging Price of Thought"</a></li></ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Meta open-sources the weights of an 816-billion-parameter model — the most capable US "open-weight" model to date, per the company</h3>
+<p>In October 2026, Meta released Muse Spark Open, an open-weight version of its Muse Spark model (originally launched as a closed model in April 2026 by Meta Superintelligence Labs). It's a mixture-of-experts (MoE) model with 816 billion total parameters but only 42 billion active per token — the mechanism that lets a model this size run at an inference cost comparable to a much smaller one, because only a fraction of the network is computed at each step. The model is natively multimodal, has a 1-million-token context window, and Meta says it can run locally on two Mac Studio M5 Ultra machines via Apple's MLX framework — an access detail few models at this scale offer.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Muse Spark Open has 816 billion total parameters, but only 42 billion are activated per token processed">
+    <title>Total vs. active parameters per token, Muse Spark Open</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="90" y="24" text-anchor="middle" class="chart-val">816B</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Total parameters</text>
+    <rect x="200" y="134" width="60" height="6" fill="var(--muted)" opacity="0.4"/>
+    <text x="230" y="128" text-anchor="middle" class="chart-val">42B</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Active per token</text>
+  </svg>
+  <figcaption>Muse Spark Open's mixture-of-experts (MoE) architecture, Meta, October 2026.</figcaption>
+</figure>
+<span class="label">How the market is applying this</span>
+<p>The release is a direct response to a figure we highlighted in the previous edition's State of AI Report 2026 coverage: the share of Chinese open-weight models in arXiv paper citations rose from 9% to 31% between 2024 and 2026, while American models fell from 31% to 23%. Muse Spark Open is, so far, the most substantial response from a US lab to that shift — but coverage is split on how "open" it truly is: Meta releases the weights on Hugging Face under its own license (the Muse Model License) with Llama-style usage restrictions, not an unrestricted permissive license. For teams evaluating open alternatives to Qwen or DeepSeek, that means checking license terms before assuming unrestricted commercial use, exactly as is already common practice with the Llama family.</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://research.meta.ai/blog/muse-spark-open">Meta AI Research — "Muse Spark Open: The Most Capable US Open-Weight Model to Date"</a></li>
+<li><a href="https://about.fb.com/news/2026/04/introducing-muse-spark-meta-superintelligence-labs-first-model-built-to-prioritize-people/">About Meta, April 2026 — original Muse Spark announcement (closed version)</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>AIRS-Bench: AI agents beat human researchers on only 4 of 20 real machine-learning research tasks</h3>
+<p class="caveat">Timeliness note: this Meta benchmark was published in February 2026, outside this edition's preferred three-month window. We use it anyway because we found no equally rigorous and more recent study on the specific question of agents outperforming human researchers on real research tasks, and the result is a direct counterpoint to the optimism about R&D automation we covered in the November 6 edition.</p>
+<p>AIRS-Bench gathers 20 tasks drawn from recent machine-learning papers, each with an already-published human state-of-the-art result as the target to beat — not a synthetic task, but the reproduction of a real research problem under the same resource constraints as the original paper. The agents tested beat the human state of the art on only 4 of the 20 tasks, and even in those cases don't reach the task's theoretical ceiling. The mean valid-submission rate (i.e., the agent producing any solution that actually works, regardless of quality) was 58.8% — below 6 in 10 attempts. On average, agents advance only 23.4% of the way from the baseline to the human state of the art.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="AI agents beat the human state of the art on 4 of the 20 AIRS-Bench tasks, and fall short on the other 16">
+    <title>Tasks beaten vs. not beaten, AIRS-Bench</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="118" width="60" height="22" fill="var(--text)"/>
+    <text x="90" y="112" text-anchor="middle" class="chart-val">4</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Beat humans</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">16</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Fell short</text>
+  </svg>
+  <figcaption>Results of the tested agents across AIRS-Bench's 20 tasks (Meta, February 2026).</figcaption>
+</figure>
+<span class="label">How the market is applying this</span>
+<p>Where agents do beat humans, the mechanism is almost never a genuinely novel insight — it's predominantly model ensembling or large-scale parallel code search, brute-force strategies more than original scientific reasoning. This is a direct counterpoint to the Anthropic figure we covered last week, that Claude already "leads" 26% of the company's own AI R&D tasks: that metric uses a far more permissive automation yardstick — completing most of a task end-to-end under human supervision — than AIRS-Bench's bar, which requires independently beating the best published human result. For any team benchmarking its own agents against "human level," the choice of yardstick changes the headline number by an order of magnitude.</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://huggingface.co/papers/2602.06855">arXiv:2602.06855 — "AIRS-Bench: a Suite of Tasks for Frontier AI Research Science Agents"</a> (Meta, February 2026)</li>
+</ul>
+</div>
+</article>
+
+<section class="globoplay">
+<h2 class="section-title" id="sec2-en"><span class="num">02</span>Streaming and Globoplay's competitors</h2>
+<p class="section-intro">Two concrete developments in this window — a new Netflix product feature and a new pair of Anthropic models — and three gaps we'd rather state explicitly than force: no new publication from Netflix Research or the Netflix TechBlog on recommendation, personalization or ML infrastructure turned up in this search, no Google Research post on streaming or media, and no Databricks Blog announcement specifically about media or streaming (Databricks had only a generic MLOps feature release note in November, unrelated to this section's theme).</p>
+
+<article class="item">
+<h3>Netflix launches the "AI Discover" tab: mood-based content discovery, deliberately with no chat in its first version</h3>
+<p>On November 3, 2026, Netflix began rolling out "AI Discover," a new tab in its TV app, initially to a test group of US subscribers with English-language profiles on supported connected TVs (excluding kids' profiles). Users pick from themes organized by mood, each with a preview clip, and recommendations within each theme adapt as the user browses. Netflix is explicit: there's no chat capability in this first version — a deliberate choice that distinguishes the feature from the generative search the company tested in 2025 with OpenAI's technology, a different feature that shouldn't be confused with this one.</p>
+<p>Netflix itself describes the feature as its "test kitchen": a new intelligence layer, built to respond to what the user signals in real time during the session — not just the historical taste profile — which the company uses to decide what to keep, improve or drop before eventually bringing it into the main product.</p>
+<span class="label">How the market is applying this</span>
+<p>The most interesting angle for anyone following the engineering behind this is the contrast with GenRec, the LLM-based generative ranker Netflix tested on about 10% of traffic for four weeks (covered in previous editions), which logged a relative gain of just 0.006% on the core product metric — statistically significant, but marginal. If AI Discover's real-time session adaptation proves more valuable to users than fine-tuning a token-based ranker, that suggests the next leap in streaming personalization may come less from "generating the right list" and more from "reacting to the current session's signal" — a product hypothesis, not yet a publicly measured result.</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://about.netflix.com/news/introducing-ai-discover">Netflix, November 3, 2026 — "Introducing AI Discover: A New Place to Find Your Next Great Watch"</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Anthropic launches Claude Fable 5.2 and Mythos 5.2: same model, two access tiers, for the most ambitious technical work</h3>
+<p>On November 9, 2026, Anthropic launched Claude Fable 5.2 and Claude Mythos 5.2 — per the company, the same underlying model distributed under two different access regimes. Fable 5.2 is released to all users, with built-in cybersecurity and biology safeguards; Mythos 5.2 is restricted to organizations vetted through Anthropic's Cyber and Life Sciences Verification Programs, and found about 10.2% more vulnerabilities than Opus 5.5 on an internal CVE-rediscovery test. Both generate output up to 30% faster than the 5.1 versions, and Anthropic reports roughly 55% fewer unnecessary safety blocks — relevant for any agentic pipeline that today has to work around overly cautious model refusals.</p>
+<p>In benchmarks Anthropic itself released, the largest jump over Opus 5.5 appears on the Remote Labor Index, which measures end-to-end completion of real remote-work tasks: 41.3% for Fable 5.2 against 21.3% for Opus 5.5 — nearly double.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="On the Remote Labor Index, Fable 5.2 reaches 41.3%, nearly double Opus 5.5's 21.3%">
+    <title>Remote Labor Index: Fable 5.2 vs. Opus 5.5</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="23" width="60" height="117" fill="var(--text)"/>
+    <text x="90" y="17" text-anchor="middle" class="chart-val">41.3%</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Fable 5.2</text>
+    <rect x="200" y="83" width="60" height="57" fill="var(--muted)" opacity="0.4"/>
+    <text x="230" y="77" text-anchor="middle" class="chart-val">21.3%</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Opus 5.5</text>
+  </svg>
+  <figcaption>Remote Labor Index, benchmarks released by Anthropic, November 2026.</figcaption>
+</figure>
+<span class="label">How the market is applying this</span>
+<p>Anthropic itself recommends most teams keep using Opus 5.5 as the default for everyday coding and knowledge tasks, reserving Fable and Mythos for "the most ambitious, open-ended technical work" — an explicit instruction against auto-upgrading every workload to the pricier model simply because it exists. For anyone tracking Anthropic as a recurring beat (as this digest does), the release pattern — same weights, access gated by risk verification — is the same one used for the "AI for Science" program covered last week, and appears to be becoming the company's standard way of shipping frontier capability without unrestricted release of its use.</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://www.anthropic.com/news/claude-fable-and-mythos-5-2">Anthropic, November 9, 2026 — "Introducing Claude Fable 5.2 and Claude Mythos 5.2"</a></li>
+</ul>
+</div>
+</article>
+</section>
+
+<h2 class="section-title" id="sec3-en"><span class="num">03</span>The Data Science market in Brazil</h2>
+<p class="section-intro">We found no new primary data from State of Data Brazil this week — the Data Hackers 2026/2027 edition survey is already in the field, but with no results published yet. Instead, we bring a concrete AI investment case from one of the country's largest tech platforms, and a snapshot of the formal ICT labor market that comes with a statistical lesson in humility about hiring projections.</p>
+
+<article class="item">
+<h3>iFood announces R$24 billion in investment in Brazil — 41% more than its previous cycle — to build its own AI agents</h3>
+<p>On September 16, 2026, iFood announced R$24 billion in investment in Brazil for the fiscal cycle running April 2026 through March 2027 — 41% more than the R$17 billion of the previous cycle. Of the total, R$2 billion is earmarked specifically for technology and innovation, including developing its own AI agents and advancing what the company calls a "Large Commerce Model" (LCM) — a proprietary foundation model trained on the platform's own commerce and logistics data, rather than relying solely on third-party general-purpose models. The announcement came amid deepening antitrust scrutiny from Brazil's Cade over competitive practices in the delivery market.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="iFood's investment in Brazil rises from R$17 billion in the previous cycle to R$24 billion in the 2026/2027 cycle, a 41% increase">
+    <title>iFood investment in Brazil, previous vs. 2026/2027 cycle</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="62" width="60" height="78" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="56" text-anchor="middle" class="chart-val">R$17B</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Previous cycle</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">R$24B</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">2026/2027 cycle</text>
+  </svg>
+  <figcaption>iFood's announced investment in Brazil, by fiscal cycle. iFood, September 16, 2026.</figcaption>
+</figure>
+<p class="caveat">Note on one specific figure: one report cites iFood running about 25 billion predictive decisions per month based on data and AI since 2018; an earlier report, from October 2025, cited a level of 14 billion decisions per month. We found no direct confirmation from iFood for either number this week, so we treat both as press estimates, not official company data.</p>
+<span class="label">How the market is applying this</span>
+<p>For Brazilian data teams, iFood's LCM is a concrete example of "build vs. buy" tilting toward build at a large platform's scale: rather than relying entirely on general-purpose models via API, the company is investing in its own foundation capability, trained on its own vertical commerce and logistics data — a useful reference point for any team currently deciding how far it's worth building specialized proprietary models instead of just fine-tuning third-party ones.</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://www.meioemensagem.com.br/marketing/ifood-investira-r-24-bilhoes-no-brasil-ate-2027">Meio & Mensagem, September 16, 2026 — "iFood will invest R$24 billion in Brazil through 2027"</a></li>
+<li><a href="https://mercadoeconsumo.com.br/16/09/2026/foodservice/ifood-anuncia-investimento-recorde-de-r-24-bi-em-meio-a-disputas-na-justica-e-no-cade/">Mercado&Consumo, September 16, 2026 — coverage of the investment amid Cade scrutiny</a></li>
+</ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Brasscom projects 33,000 new formal ICT jobs by the end of 2026 — after missing last year's projection by up to five-fold</h3>
+<p class="caveat">Timeliness note: the Brasscom report used here is from July 2026, just before this edition's preferred three-month window. We use it because it's the most current and substantial projection available specifically on formal ICT employment in Brazil; we supplement it with September 2026 CAGED data (released November 4-5, 2026), within the window, for the most recent macroeconomic context.</p>
+<p>Brasscom's "ICT Macrosector Labor Market Outlook" report uses a twelve-month-horizon machine-learning statistical model (December 2025 to December 2026) to project a rise from 2.126 million to 2.159 million formally employed (CLT) professionals in the sector — about 33,000 new formal jobs, with a margin of error of ±1.1%. The figure that deserves more attention, though, is methodological: the same approach, applied to the prior year, projected between 30,000 and 147,000 new CLT jobs for 2025 — and the actual result was only 23,700, an error of up to roughly five-fold relative to the upper bound of the projected range. The reason, per Brasscom itself: much of the real hiring growth in 2025 didn't show up as CLT at all, but rather as 88,500 new MEI/PJ (self-employed/contractor) agreements and 13,300 informal positions — forms of employment the "CLT jobs" metric simply doesn't capture.</p>
+<p>For broader macroeconomic context: September 2026 CAGED data, released November 4-5, 2026, recorded about 121,300 net new formal jobs nationally — a 43.5% drop from the same month in 2025 (implying roughly 215,000 positions in September 2025). Cumulative formal job creation in 2026 (through September) fell 27.9% versus the same period in 2025.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Net formal job creation in September falls from about 215,000 in 2025 to 121,300 in 2026, a 43.5% drop">
+    <title>Net formal jobs in September, 2025 vs. 2026</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="30" width="60" height="110" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="24" text-anchor="middle" class="chart-val">~215K</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">September 2025</text>
+    <rect x="200" y="78" width="60" height="62" fill="var(--text)"/>
+    <text x="230" y="72" text-anchor="middle" class="chart-val">121.3K</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">September 2026</text>
+  </svg>
+  <figcaption>National net formal job balance (CAGED), September of each year. Released November 2026.</figcaption>
+</figure>
+<span class="label">How the market is applying this</span>
+<p>For anyone reading Brazilian tech and data hiring reports by CLT job-posting counts, the 2025 episode is a direct warning: a significant share of real tech hiring may be migrating to PJ/MEI contracts in a way "formal job" metrics simply don't see — which argues for tracking both series (CLT and PJ/MEI) before concluding the market is cooling or heating based on just one of them.</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://brasscom.org.br/wp-content/uploads/2026/07/Relatorio-Pespectivas-do-Mercado-de-Trabalho-Apresentacao-v9.pdf">Brasscom, July 2026 — "ICT Macrosector Labor Market Outlook"</a></li>
+<li><a href="https://mercadoeconsumo.com.br/05/11/2026/economia/brasil-cria-1213-mil-postos-de-trabalho-em-setembro-aponta-caged/">Mercado&Consumo, November 5, 2026 — September 2026 CAGED data</a></li>
+</ul>
+</div>
+</article>
+
+<h2 class="section-title" id="sec4-en"><span class="num">04</span>Trends in tools and solutions</h2>
+<p class="section-intro">Two movements: a practitioner survey shows AI agent adoption in production rising, with the brake shifting from cost to reliability — the same pattern AIRS-Bench (Section 1) finds at the research frontier — and Amazon absorbs the team behind DuckDB, opening a new front in the contest between embedded analytics engines and managed data warehouses/lakehouses.</p>
+
+<article class="item">
+<h3>AI agents in production climb from 51% to 57% of companies — but quality, not cost, is the main brake</h3>
+<p class="caveat">Source note: secondary coverage of this LangChain survey disagrees on the exact data-collection window (one source cites November 2025, another mid-2026). We couldn't confirm the exact fieldwork date and so avoid pinning a specific month — we treat the figures below as the report's most recently published position in 2026.</p>
+<p>LangChain's "State of Agent Engineering" report, with more than 1,300 practitioner respondents, shows 57.3% of organizations already running AI agents in production, up from 51% in the prior survey — and that figure rises to 67% among companies with more than 10,000 employees. Customer service leads production use cases, at 26.5%. The figure most relevant to anyone deciding investment priority, though, is what's actually holding adoption back: only 32% of respondents cite cost as the top barrier — quality, latency and security dominate the list of obstacles instead. Observability has also matured: 89% report some level of agent tracing, and 62% already do detailed tracing.</p>
+<figure class="chart">
+  <svg viewBox="0 0 320 170" role="img" aria-label="Organizations with AI agents in production rise from 51% in the prior survey to 57.3% in the most recent one"><title>AI agents in production, prior vs. current survey</title>
+    <line x1="30" y1="140" x2="290" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+    <rect x="60" y="41" width="60" height="99" fill="var(--muted)" opacity="0.4"/>
+    <text x="90" y="35" text-anchor="middle" class="chart-val">51%</text>
+    <text x="90" y="158" text-anchor="middle" class="chart-lbl">Prior survey</text>
+    <rect x="200" y="30" width="60" height="110" fill="var(--text)"/>
+    <text x="230" y="24" text-anchor="middle" class="chart-val">57.3%</text>
+    <text x="230" y="158" text-anchor="middle" class="chart-lbl">Current survey</text>
+  </svg>
+  <figcaption>Share of organizations with AI agents in production. LangChain, "State of Agent Engineering," 2026.</figcaption>
+</figure>
+<span class="label">How the market is applying this</span>
+<p>The shift in brake from "it's expensive" to "it's not reliable enough" exactly mirrors what AIRS-Bench finds at the research frontier (Section 1): production teams and academic benchmarks are converging on the same conclusion — agent reliability, not raw capability or per-token cost, is now the factor most limiting adoption. For anyone deciding where to invest in agent engineering, that's a direct argument for prioritizing evaluation and observability ahead of cost optimization.</p>
+<div class="refs">
+<strong>References</strong>
+<ul><li><a href="https://www.langchain.com/stateofaiagents">LangChain — "State of Agent Engineering" (2026)</a></li></ul>
+</div>
+</article>
+
+<article class="item">
+<h3>Amazon acquires DuckLabs, the company behind DuckDB, opening a new front against Snowflake and Databricks</h3>
+<p>On August 26, 2026, DuckLabs — the company founded by DuckDB's creators, which also maintains DuckLake and the Quack project — announced it is joining AWS. The engineering team stays in Amsterdam. AWS is explicit on one point: it is not acquiring the open-source DuckDB project itself, which remains under its own governance — a distinction part of the industry's coverage considers less relevant than the fact that the engine's core engineering team now reports to Amazon. MotherDuck, the main commercial vehicle built around DuckDB and which maintains a four-year partnership with DuckLabs' engineers, remains an independent company — but, since DuckLabs holds equity in MotherDuck, AWS indirectly becomes a minority MotherDuck shareholder once the deal closes.</p>
+<span class="label">How the market is applying this</span>
+<p>The mechanism behind AWS's interest: DuckDB solves a structurally different problem from what Snowflake and Databricks solve — it's an embedded, single-node analytics engine with no dedicated infrastructure, built for local analysis and lightweight pipelines, while the other two sell managed, distributed, multi-tenant warehouses. Absorbing the core team suggests AWS wants its own presence in embedded/in-process analytics — likely for Redshift or Athena integration, or for agentic-pipeline use cases that run locally — without having to bet on a single distributed-warehouse narrative. For teams already running DuckDB or MotherDuck in production, the open-source engine itself remains, for now, explicitly untouched; it's worth watching whether the roadmap shifts direction as AWS integrates the team.</p>
+<div class="refs">
+<strong>References</strong>
+<ul>
+<li><a href="https://www.geekwire.com/2026/amazon-acquires-ducklabs-adding-the-team-behind-duckdb-amid-broader-shakeup-in-cloud-data/">GeekWire, August 26, 2026 — "Amazon acquires DuckLabs, adding the team behind open-source database DuckDB"</a></li>
+</ul>
+</div>
+</article>
+
+<h2 class="section-title archive-title">Previous reports</h2>
+<ul class="archive-list">
+<li><a href="archive/2026-11-06.html">November 6, 2026</a></li>
+<li><a href="archive/2026-10-30.html">October 30, 2026</a></li>
+<li><a href="archive/2026-10-23.html">October 23, 2026</a></li>
+<li><a href="archive/2026-10-16.html">October 16, 2026</a></li>
+<li><a href="archive/2026-10-09.html">October 9, 2026</a></li>
+<li><a href="archive/2026-10-02.html">October 2, 2026</a></li>
+<li><a href="archive/2026-09-25.html">September 25, 2026</a></li>
+<li><a href="archive/2026-09-18.html">September 18, 2026</a></li>
+<li><a href="archive/2026-09-11.html">September 11, 2026</a></li>
+<li><a href="archive/2026-08-28.html">August 28, 2026</a></li>
+<li><a href="archive/2026-08-21.html">August 21, 2026</a></li>
+<li><a href="archive/2026-08-17.html">August 17, 2026</a></li>
+<li><a href="archive/2026-08-16.html">August 16, 2026</a></li>
+</ul>
+
+<div class="methodology">
+<strong>Methodology note.</strong> This digest is produced weekly by a research agent that actively searches primary sources — academic papers on arXiv, research and engineering blogs from reference companies, universities, and market surveys — rather than answering from memory. Every non-trivial claim is accompanied by a verifiable link. In this edition, direct full-page fetch access worked only for anthropic.com; for arxiv.org, techblog.netflix.com and techcrunch.com, direct access was blocked by the execution environment's network, and figures cited from those domains and from research.meta.ai, epoch.ai, about.netflix.com, brasscom.org.br and Brazilian press outlets were confirmed by cross-checking independent searches citing the same primary content. Two data points used in this edition are older than the preferred three-month window — Meta's AIRS-Bench benchmark (February 2026) and Brasscom's ICT employment report (July 2026) — and this is flagged explicitly in their respective texts, as they are, per our research, the most current and substantial references available on these topics as of this date. Two specific figures have conflicting sources and were flagged as such: iFood's monthly volume of predictive decisions (25 billion per one source, 14 billion per another, neither confirmed directly by the company) and the exact data-collection window of LangChain's "State of Agent Engineering" survey. The exact announcement date of Meta's Muse Spark Open (October 2026) also could not be confirmed against a dated primary source. We found no new primary State of Data Brazil data this week, no Netflix Research or Netflix TechBlog publication on recommendation or personalization, no Google Research post on streaming or media, and no Databricks Blog announcement specifically about media or streaming — we'd rather flag these gaps explicitly than force a story that doesn't exist.
+</div>
+
+<div class="contact">
+  <p class="name">Ri Gonçalves</p>
+  <p><a href="mailto:goncalves.r@pm.me">goncalves.r@pm.me</a> · <a href="https://github.com/GoncalvesRD">github.com/GoncalvesRD</a></p>
+</div>
+
+<footer class="report-footer">
+  <p>Published via GitHub Pages from <a href="https://github.com/GoncalvesRD/ds-trends">github.com/GoncalvesRD/ds-trends</a>.</p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var buttons = document.querySelectorAll('[data-lang-btn]');
+  var blocks = document.querySelectorAll('[data-lang]');
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var lang = btn.getAttribute('data-lang-btn');
+      buttons.forEach(function(b){ b.classList.toggle('active', b === btn); });
+      blocks.forEach(function(block){
+        if (block.hasAttribute('data-lang-btn')) return;
+        block.hidden = block.getAttribute('data-lang') !== lang;
+      });
+    });
+  });
+})();
+</script>
+
+</main>
+</body>
+</html>
